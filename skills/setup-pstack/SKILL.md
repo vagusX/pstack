@@ -1,74 +1,46 @@
 ---
 name: setup-pstack
-description: Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", "pstack budget", or changing pstack's model choices.
+description: Configure pstack project agents and per-role model choices for Codex or Claude Code; update managed agent instructions after upgrading skills while preserving user configuration.
 ---
+
+## Host binding for this installation
+
+Before executing this skill, resolve its actual installed location and the calling project. Read the compatible installed `pstack-host/HOST.md` and run its preflight as described there with this skill directory. Project copies take precedence over global copies. If pstack-host is missing, stop and show a supplement command selecting pstack-host from the repository recorded in this skill’s `pstack-source.json`. The host binding overrides Cursor-only tools, model slugs and plugin paths below; retain the full task and workflow instructions. Never write project state into this installed directory.
 
 # Setup pstack
 
-Write `~/.cursor/rules/pstack-models.mdc`, an always-applied rule that sets pstack's model per role.
+Setup configures the calling project, even when skills were installed globally. It does not enable Benny automations. Use the installed `pstack-host` support skill from the same source revision; do not use a source checkout as proof that support files are installed.
 
-## Steps
+## 1. Read the current setup and available models
 
-### 1. Detect available models
+Read [the original role and budget specification](references/upstream-setup.md) in full. Preserve its role labels, budget intent and panel entry counts. Its Cursor rule path, Task model slugs and overwrite instruction are source behavior; use the host configuration and update rules below instead.
 
-Enumerate the model slugs you can pass to a `Task` subagent in this session. That is the dependable source. If Cursor also exposes a models API or CLI that lists the user's entitled models, prefer it for completeness. If you cannot detect any, ask the user to paste the slugs they have access to. Never write a real slug you have not confirmed is available. The aliases `inherit-parent` and `auto` are always valid even though they are not detected slugs.
+Inspect current project agents, project memory and `.pstack/setup/<host>.json`. Enumerate the actual models and effort controls the current host exposes. Do not guess model names or translate a Cursor slug by string replacement. With no confirmed choice, inherit the parent model. `inherit-parent` and `auto` mean omit a model override; they are not model identifiers to write into native configuration.
 
-### 2. Load current state
+Retain existing choices. If the user wants to change them, offer the original four budget intentions (`unlimited — max reasoning`, `large — xhigh reasoning`, `medium — high reasoning`, `small — medium reasoning`) and explain unsupported effort levels rather than claiming they exist. Present all original roles and preserve panel sizes. A panel can use the same available model with different review angles; report that this does not provide a cross-provider comparison.
 
-The default role-to-model mapping is the rule shape shown in step 5 below. If `~/.cursor/rules/pstack-models.mdc` already exists, read it and treat its `# budget` line and its role values as the current choices. Otherwise start from those defaults. A line whose role is not in step 5, such as `how critics`, is from a retired role. Drop it.
+## 2. Register or update agents
 
-### 3. Budget, map, and confirm
+Resolve the support skill's actual installed location and the installed `poteto-mode/SKILL.md` location. Run from the calling project, with absolute paths:
 
-**(a) Ask for a budget.** Prefer AskQuestion over free text. Offer these four options with these exact labels, and name the current budget when the rule records one. With no rule, say that `large` matches the skill defaults.
-
-- `unlimited — max reasoning`
-- `large — xhigh reasoning`
-- `medium — high reasoning`
-- `small — medium reasoning`
-
-**(b) Apply it.** Build the working table from the skill defaults, and on a re-run keep any role you changed by family, list, or alias (`inherit-parent`, `auto`). `unlimited`, `large`, `medium`, and `small` set the effort token of every real slug, panel entries included, to `max`, `xhigh`, `high`, or `medium`. The effort token is the last token, or the one before a trailing `fast`, on the ladder `max` > `xhigh` > `high` > `medium` > `low`. If the result is not a detected slug, use the same family's detected slug with the highest effort at or below the target, else mark the role as needing a choice. `inherit-parent` and `auto` do not change. So `unlimited` turns `claude-opus-5-5-xhigh` into `claude-opus-5-5-max`. Grok slugs top out at `xhigh`, so under `unlimited` the fallback puts Grok at `xhigh` and keeps `grok-4.7-xhigh-fast` as it is. `large` keeps both defaults. `small` turns them into `claude-opus-5-5-medium` and `grok-4.7-medium-fast`.
-
-**(c) Show the roles and confirm.** Show every role with its model, marking any real slug not in the detected set as needing a choice. Also list each line step 2 dropped. Ask whether to accept as-is or change specific roles, offering the detected models plus `inherit-parent` and `auto` (both mean: this role runs on the parent chat model, which is how Auto users stay on Auto) as the options. Prefer AskQuestion over free text. For panel roles (arena runners, architect runners, interrogate reviewers) the value is a list, and one subagent runs per entry, alias entries included, so the list length sets the count. `arena cross-judge pool` is also a list, but Arena selects one value from it whose model family differs from the parent's when possible. `swarm workers` is the default model for every worker unless a race or comparison assigns another model per arm.
-
-### 4. Validate
-
-Every real slug written must be in the detected set. `inherit-parent` and `auto` always pass. If a chosen real slug is not available, stop and ask again.
-
-### 5. Write the rule
-
-Write `~/.cursor/rules/pstack-models.mdc` with `alwaysApply: true`, a `# budget` line with the chosen label and its target effort, and one line per role, using the same labels poteto-mode uses. Overwrite the whole file so re-runs stay idempotent. Shape:
-
-```
----
-description: pstack per-role model choices (overrides skill defaults)
-alwaysApply: true
----
-# pstack model configuration. One line per role. Delete a line to fall back to the skill default.
-# `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.
-# budget: large (xhigh)
-feature, refactoring: grok-4.7-xhigh-fast
-bug-fix: grok-4.7-xhigh-fast
-perf-issue: grok-4.7-xhigh-fast
-hillclimb: grok-4.7-xhigh-fast
-judgment and prose: claude-opus-5-5-xhigh
-hardest tasks: claude-opus-5-5-xhigh
-how explorer: grok-4.7-xhigh-fast
-how explainer: claude-opus-5-5-xhigh
-why investigators: grok-4.7-xhigh-fast
-why synthesizer: claude-opus-5-5-xhigh
-reflect tooling: grok-4.7-xhigh-fast
-reflect judgment, divergent, synthesizer: claude-opus-5-5-xhigh
-arena runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-arena cross-judge pool: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-swarm workers: grok-4.7-xhigh-fast
-architect runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
-interrogate reviewers: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+```sh
+node '<installed-pstack-host>/setup/setup.mjs' --host codex --project '<calling-project>' --poteto-skill '<installed-poteto-mode>/SKILL.md'
 ```
 
-### 6. Confirm
+For Claude Code use `--host claude-code`. The script reads the original personas, embeds their complete bodies plus host mapping in project-scoped native files, and adds a managed host instruction section to `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Codex definitions use `.codex/agents/*.toml`; Claude Code definitions use `.claude/agents/*.md`. Model and permission overrides are omitted by default.
 
-Tell the user the rule was written and that it applies to new sessions. Re-running this skill updates it.
+The script records the actual support package `upstreamCommit`, successful file hashes and managed-section hashes in `.pstack/setup/<host>.json`. Source metadata and hashes are required for safe updates, not optional settings. Installed directories are read only. Updates keep configuration outside managed sections, including user model and permission fields. Edits inside managed sections, missing records for same-name agents, removed managed files and damaged records require review. Exit code 2 reports conflicts and proposed contents; no files are changed when any conflict exists. Show the current/proposed difference and agree a merge with the user. Never delete the record or silently force replacement to bypass a conflict.
 
-### 7. Offer a verification skill (optional)
+## 3. Apply selected model choices
 
-Check whether the project has a way to drive the real app for proof (a `verify-*` skill, or an existing harness). If not, offer once: "want a project-local verification skill, so agents can drive the app the way a user does and prove changes work? I can generate one with /create-verification-skill." On yes, invoke `/create-verification-skill` (resolves wherever pstack is installed: workspace, user, or plugin). On no, move on without pushing.
+If the user selected changes, patch the native agent model fields and project memory outside the managed section. Retain the original per-role labels and list entries in project memory; before delegating, choose from that mapping using only host-supported model and effort arguments. Codex separates model from `model_reasoning_effort`; Claude Code uses its supported agent model field and session effort controls. Do not encode Cursor reasoning suffixes as model names. These user choices are edits performed by the setup conversation, not automatic model detection by the Node script. Do not alter host permissions without a user choice.
+
+## 4. Read back and verify
+
+Read all reported output files and the state record. Report their paths, recorded source commit and script statuses. Start a new project session and actually delegate a small scoped task to both named agents. Confirm full persona loading, project skill paths, results and effective permissions. A successful script run proves file generation and readback, not native registration or delegation. Explain missing capabilities accurately.
+
+After upgrading skills, rerun setup and verify agents in a new session. Updating skills alone does not update copied project agent definitions. Offer the original optional project verification-skill step once when appropriate.
+
+Benny setup is separate. Follow the installed support skill's Benny instructions to prepare project files; do not enable real external automation without the user's specified target and authorization.
+
+Native configuration references: [Codex subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents), [Claude Code subagents](https://code.claude.com/docs/en/sub-agents). Project instruction files: [Codex AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md), [Claude Code memory](https://code.claude.com/docs/en/memory).

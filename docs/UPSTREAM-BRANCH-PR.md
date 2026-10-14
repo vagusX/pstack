@@ -1,0 +1,7 @@
+# upstream 分支的适配 PR
+
+此分支从3357d595的upstream建立，只提交原始目录的宿主适配；未导入旧core/build/packaging/CLI。
+
+对应main的完整PR保留旧管理工具。这条PR不执行合并；如果合并到upstream，upstream将包含适配提交，不再是cursor/plugins的原始提取镜像，原先只允许原始历史快进的同步workflow会拒绝更新。合并前需明确来源镜像分支与适配分支的职责，不能强推绕过。
+
+行为代码与main PR一致；差异仅为此分支的补装URL、源分支说明和不包含旧管理构建的Makefile。安装矩阵及Node测试在本分支重新执行；其余共用main PR的相同实现验证，未声称重复运行全部宿主真实会话。

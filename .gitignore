@@ -1,3 +1,20 @@
+# dist/ is generated per host by `make` (or `node build/build.mjs`). It is not committed:
+# install.sh from a checkout needs `make` first; `pip install pstack-cli` ships its own builds.
+dist/
+node_modules/
+.pstack-build.lock
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+packaging/dist/
+packaging/src/pstack_cli/data/
+*.egg-info/
+
+# Local pstack state (run records, host profile, scratch). Per checkout, never committed.
+.pstack/
+
+# Upstream plugin ignores
 node_modules/
 .DS_Store
 *.log

@@ -1,3 +1,30 @@
+# pstack for Codex and Claude Code
+
+This fork adapts the original Cursor pstack 0.15.24 directory (upstream commit `3357d59539a8dbe80f7a1d45bddda18abd632124`). It preserves all 54 upstream skill names and full workflows. Shared `pstack-host` is an adaptation addition containing host bindings, the two original agents and the benny project pack.
+
+## Install and update
+
+Until this PR is merged, use the implementation branch:
+
+```bash
+npx skills add 'https://github.com/vagusX/pstack#codex/upstream-host-adaptation-source' --skill '*' -a codex claude-code
+npx skills add 'https://github.com/vagusX/pstack#codex/upstream-host-adaptation-source' --skill architect pstack-host -a codex
+```
+
+After merge, use `vagusX/pstack` as the source. Full installation discovers 55 entries; benny's three internal instructions are not slash skills. Single-skill installation does not install sibling dependencies; preflight prints the exact supplement command. Add `-g` for global installation or `--copy` for independent host copies.
+
+In the target project, invoke `$setup-pstack` in Codex or `/setup-pstack` in Claude Code. Setup registers project `poteto-agent` and `comment-sicko` definitions and records source and managed-file hashes. Open a new session and verify both names are callable. Direct workflows retain `$architect`, `$interrogate`, `$poteto-mode` and the corresponding Claude slash commands. After updating skills, rerun setup and verify in a new session; updating skills alone does not update copied agents. Local edits produce conflicts instead of silent replacement; user-selected native model and permission configuration is retained.
+
+[Host bindings](skills/pstack-host/HOST.md) replace Cursor-only tool calls and model slugs. Installation requires Node/npm; tool workflows use their existing Node/Bun/Shell dependencies. Frozen Bun dependencies and tool caches are stored in the calling project, never in installed skill directories. No Python CLI is required for this installation.
+
+[Migration checklist](docs/UPSTREAM-MIGRATION.md) records every source file and per-host coverage. `Make Bot UI` remains present but is not adapted on these hosts: its Cursor update_state/webhook/sender-key integration has no verified equivalent. Cloud-only tasks require an actual remote executor; local worktrees do not supply one. Reviewer personas do not provide enforced permission isolation.
+
+[Benny deployment](skills/pstack-host/benny/DEPLOYMENT.md) provides project-pack merge and adapter-backed polling. Installation never activates it. Mock tests validate event handling and recovery; real Slack/tracker/UI adapters and automatic triggers are unverified and require explicit user targets and authorization.
+
+This source-only branch does not import the old CLI or portable build. The separate main PR preserves them at 0.15.15; [their scope](docs/LEGACY-MANAGEMENT.md) explains the difference. `pstack update` does not update the new root skills. Previous PRs #2–#4 package the old portable sources; this implementation instead uses original upstream directories and can be merged directly to main without those PRs.
+
+## Original upstream README
+
 # pstack
 
 i'm [poteto](https://x.com/poteto). i'm not a president or ceo, but i've worked with millions of lines of code at Meta, Netflix, and Cursor. i'm also on the react core team where i help build and maintain react compiler.
