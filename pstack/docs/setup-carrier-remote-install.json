@@ -1,0 +1,22 @@
+{
+  "source": "https://github.com/vagusX/pstack/tree/a1c439e509e80fe70d50610120cbc28bde0437c9",
+  "skills_count": 54,
+  "carrier": "setup-pstack",
+  "retired_support_entry_present": false,
+  "source_commit_from_installer_lock": true,
+  "hosts": {
+    "codex": {
+      "source_commit": "a1c439e509e80fe70d50610120cbc28bde0437c9",
+      "setup_readback": true,
+      "benny_pack_verified": true
+    },
+    "claude-code": {
+      "source_commit": "a1c439e509e80fe70d50610120cbc28bde0437c9",
+      "setup_readback": true,
+      "benny_pack_verified": true
+    }
+  },
+  "installed_hashes_unchanged": true,
+  "native_agent_invocation": "not tested by this install check",
+  "external_automation": "not activated"
+}

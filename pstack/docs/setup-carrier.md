@@ -47,3 +47,5 @@ Both hosts share one project Benny pack. When one host refreshes it, the second 
 - setup-pstack passes the skill validator and local Markdown links resolve.
 
 The parent 68 Bun tests and strict TypeScript check are unchanged implementation evidence; this revision does not edit those tools. Native agent invocation and external automation are not newly verified by these layout tests.
+
+Remote verification also passes for immutable implementation commit `a1c439e509e80fe70d50610120cbc28bde0437c9`: 54 entries, no retired support entry, both host helpers read that exact SHA from the installer lock and merge Benny, and installed content hashes are unchanged. See [remote install evidence](setup-carrier-remote-install.json). Subsequent commits only record validation evidence.
