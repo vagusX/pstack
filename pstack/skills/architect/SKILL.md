@@ -4,6 +4,9 @@ description: "Sketch types, signatures, and module structure before code, then s
 disable-model-invocation: true
 ---
 
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+
+
 # Architect
 
 Sketch types, function signatures, class shapes, and module boundaries with `not implemented` bodies and pseudocode. Synthesize across multiple model perspectives, then fill in code against the chosen sketch.
@@ -28,7 +31,7 @@ Skip Phase A only when the work is genuinely greenfield with no surrounding syst
 
 Run the **arena** skill with the design-sketch task and the Phase A grounding artifacts. Pass `references/runner-prompt.md` as each runner's prompt.
 
-Take the runners from the `architect runners` line in the `pstack-models.mdc` rule, in place of the `arena runners` line. If the rule or that line is missing, use `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Alias and rejected entries follow the runner rules in the **arena** skill's Phase A.
+Take the runners from `architect runners` in the project host instructions, default two `inherit-parent` seats. Keep separate design directions and the same candidate count. Use Arena's confirmed-model and native-delegation rules.
 
 Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
 

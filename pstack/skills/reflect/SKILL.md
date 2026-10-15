@@ -4,6 +4,9 @@ description: Spawn three parallel review subagents over the active transcript, s
 disable-model-invocation: true
 ---
 
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+
+
 # Reflect
 
 Mine the current conversation for durable learnings, then route them into skill edits.
@@ -12,31 +15,27 @@ Invoke when the user says "reflect" or "/reflect". Skip when the conversation is
 
 ## 1. Locate the active transcript
 
-Before fanning out, find this conversation's transcript in the `agent-transcripts/` directory the system prompt names. Do not glob across `~/.cursor/projects/*/`. That crosses workspace boundaries and reads private chats from unrelated projects.
+Locate this conversation's transcript through active host session metadata or a user-provided scoped export. Verify its recorded project. If unavailable, explain the history gap and use only the supplied conversation or decision trail. Do not glob other projects.
 
-```bash
-ls -t <agent-transcripts>/*.jsonl <agent-transcripts>/*/*.jsonl <agent-transcripts>/*/subagents/*.jsonl 2>/dev/null | head -10
-```
-
-That covers the legacy flat (`<id>.jsonl`), current nested (`<id>/<id>.jsonl`), and subagent (`<parent>/subagents/<child>.jsonl`) layouts. For each candidate, read the first JSONL line. Take the file whose `message.content[0].text` contains the conversation's opening user prompt. If none matches, pass a tight digest of the session instead.
+List only files in that verified export, ordered by real modification time. Inspect the host's actual metadata and message envelope to identify the opening user prompt; do not assume a Cursor JSONL layout or a fixed `message.content[0].text` field. If no trace matches, pass a tight session digest and report the missing history.
 
 ## 2. Spawn three reviewers in parallel
 
-One message, three `Task` calls, `subagent_type: generalPurpose`, agent mode (`readonly: false`). Reviewers need MCP access to look up the tickets, chat threads, and observability traces the transcript references, and readonly strips MCPs.
+One message, three native delegation calls, the host's general-purpose agent, agent mode (the tools this investigation needs under the parent's permissions). Reviewers need MCP access to look up the tickets, chat threads, and observability traces the transcript references, and review-only instructions do not remove MCP tools; inspect actual permissions.
 
-Each reviewer and the synthesizer name a role line in the `pstack-models.mdc` rule and a default. Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
+Resolve this workflow's role models from the pstack-managed block in the project `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Default to `inherit-parent`; retain the original panel size with distinct review angles. Use only models confirmed available in this session. Do not invent vendor aliases or retry with another vendor's model. See the installed **setup-pstack** host instructions for native delegation, effort and permission behavior.
 
 | Lens | Role line | Default `model` | Prompt template |
 |---|---|---|---|
-| Judgment | `reflect judgment, divergent, synthesizer` | `claude-opus-5-5-xhigh` | `references/judgment-reviewer.md` |
-| Tooling | `reflect tooling` | `grok-4.7-xhigh-fast` | `references/tooling-reviewer.md` |
-| Divergent | `reflect judgment, divergent, synthesizer` | `claude-opus-5-5-xhigh` | `references/divergent-reviewer.md` |
+| Judgment | `reflect judgment, divergent, synthesizer` | `inherit-parent` | `references/judgment-reviewer.md` |
+| Tooling | `reflect tooling` | `inherit-parent` | `references/tooling-reviewer.md` |
+| Divergent | `reflect judgment, divergent, synthesizer` | `inherit-parent` | `references/divergent-reviewer.md` |
 
-Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in the `Task` response body.
+Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in the native delegation response body.
 
 ## 3. Synthesize
 
-One `Task` call, `subagent_type: generalPurpose`, `model` from the `reflect judgment, divergent, synthesizer` line (default `claude-opus-5-5-xhigh`), agent mode (`readonly: false`). It spot-verifies citations through MCP, and readonly strips MCPs. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
+One native delegation call, the host's general-purpose agent, `model` from the `reflect judgment, divergent, synthesizer` line (default `inherit-parent`), agent mode (the tools this investigation needs under the parent's permissions). It spot-verifies citations through MCP, and review-only instructions do not remove MCP tools; inspect actual permissions. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
 
 ## 4. Structural enforcement check
 
@@ -51,9 +50,9 @@ File each Backlog item to your team's devex or backlog tracker without waiting. 
 Follow each approved row's Routing exactly:
 
 - Trivial existing-skill edit (a one-line bullet, a tightened sentence, a stale fact corrected): the parent does it directly.
-- Substantive existing-skill edit (a new section, a new pattern table, more than ~10 lines): hand to Cursor's built-in `create-skill` skill and run its draft / test / iterate loop.
-- `tune description: <skill path>` (the skill exists but didn't trigger when it should have): hand to `create-skill` and run its description-optimization loop.
-- `new skill via create-skill: <kebab-name>`: hand creation to `create-skill`. Do not invent the shape ad hoc.
+- Substantive existing-skill edit (a new section, a new pattern table, more than ~10 lines): hand to the available host skill-authoring workflow (`skill-creator` in Codex; otherwise author and validate Agent Skills files) skill and run its draft / test / iterate loop.
+- `tune description: <skill path>` (the skill exists but didn't trigger when it should have): hand to the available host skill-authoring workflow and run its description-optimization loop.
+- `new skill via create-skill: <kebab-name>`: hand creation to the available host skill-authoring workflow. Do not invent the shape ad hoc.
 
 If your environment ships a SKILL.md validator, run it on every touched skill before declaring done.
 

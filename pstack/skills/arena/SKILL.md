@@ -4,6 +4,9 @@ description: "Spawn N parallel candidates at the same task, pick a base, graft t
 disable-model-invocation: true
 ---
 
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+
+
 # Arena
 
 Open a todolist with one entry per phase (Frame, Fan out, Cross-judge, Pick, Graft, Verify) before launching anything.
@@ -12,20 +15,17 @@ Open a todolist with one entry per phase (Frame, Fan out, Cross-judge, Pick, Gra
 
 Every candidate gets the same prompt, so the prompt is the contract.
 
-1. State the artifact each candidate is producing.
-2. Derive the rubric, 3-6 concrete gradeable criteria for what success looks like on *this* task. It is the picker's tool in Phase D. Candidates only see the task.
-3. Pick the runners. Use the `arena runners` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, default to one each on `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. An `auto` or `inherit-parent` entry in this line or the cross-judge line means the parent model, so omit `model` for it. If the Task tool rejects a configured entry, run that seat on its family's default and say so. Families go by prefix: `claude-*`, and `grok-*` with `cursor-grok-*` and `composer-*`. A refused `composer-*` entry runs on `grok-4.7-xhigh-fast`. With no family match, use `claude-opus-5-5-xhigh`. If it rejects a default, use the closest valid slug of the same family from its error message. Spawn more runners when the arena covers multiple design directions. Use the same model N times when the work is generation-bound rather than judgment-sensitive. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
-4. Give each candidate its own output location (a git worktree where possible, otherwise `/tmp/arena-<slug>/candidate-<n>/`), per the **separate-before-serializing-shared-state** principle skill.
+Resolve this workflow's role models from the pstack-managed block in the project `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Default to `inherit-parent`; retain the original panel size with distinct review angles. Use only models confirmed available in this session. Do not invent vendor aliases or retry with another vendor's model. See the installed **setup-pstack** host instructions for native delegation, effort and permission behavior.
 
 ## Phase B: Fan out
 
-Spawn all N subagents in one message with `run_in_background: true`, each with the task, the path to the shared grounding, its own output path, and instructions to produce the artifact and a short rationale naming the alternatives it considered and what it rejected.
+Spawn all N subagents in one message with native asynchronous delegation where supported, each with the task, the path to the shared grounding, its own output path, and instructions to produce the artifact and a short rationale naming the alternatives it considered and what it rejected.
 
 If a candidate produces no output, proceed with N-1 and note the dropout.
 
 ## Phase C: Cross-judge
 
-After all Phase B candidates complete, choose one model from the `arena cross-judge pool` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, choose from `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Prefer a different model family from the parent's. Spawn one readonly judge subagent on that model. It sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. It runs in parallel with your reading in Phase D. Don't spawn it while candidates are still writing.
+After all Phase B candidates complete, choose one confirmed model from `arena cross-judge pool` in the host instructions, default `inherit-parent`. Prefer a different available model when possible. Spawn one review-only judge. It sees the rubric and candidates by path label, scores each criterion, and recommends a base with rationale. Run it in parallel with your reading in Phase D. Do not spawn it while candidates are still writing.
 
 ## Phase D: Pick a base
 

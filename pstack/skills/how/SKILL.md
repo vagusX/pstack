@@ -4,11 +4,16 @@ description: "Use for \"how does X work\", code walkthroughs before changing som
 disable-model-invocation: true
 ---
 
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+
+
 # How
 
 Explore the codebase to answer "how does X work?" questions. Produce architectural explanations at the level of a senior engineer onboarding onto a subsystem, enough to build a working mental model, not so much that it reads like annotated source code.
 
-Every spawn is a Task subagent with `subagent_type: generalPurpose` and `readonly: true`. Explorers use the `how explorer` line in the `pstack-models.mdc` rule (default `grok-4.7-xhigh-fast`), and every explainer uses the `how explainer` line (default `claude-opus-5-5-xhigh`). Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
+Resolve this workflow's role models from the pstack-managed block in the project `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Default to `inherit-parent`; retain the original panel size with distinct review angles. Use only models confirmed available in this session. Do not invent vendor aliases or retry with another vendor's model. See the installed **setup-pstack** host instructions for native delegation, effort and permission behavior.
+
+Explorers use the `how explorer` role and explainers the `how explainer` role. Both default to inheritance. Use the host's confirmed general-purpose native type with review-only instructions and verified real tool permissions.
 
 ## 1. Assess complexity
 
