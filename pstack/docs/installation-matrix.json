@@ -1,0 +1,173 @@
+{
+  "skills_cli": "1.7.2",
+  "rows": [
+    {
+      "host": "codex",
+      "scope": "project",
+      "selection": "full",
+      "mode": "copy",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "project",
+      "selection": "full",
+      "mode": "link",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "project",
+      "selection": "subset",
+      "mode": "copy",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "project",
+      "selection": "subset",
+      "mode": "link",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "global",
+      "selection": "full",
+      "mode": "copy",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "global",
+      "selection": "full",
+      "mode": "link",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "global",
+      "selection": "subset",
+      "mode": "copy",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex",
+      "scope": "global",
+      "selection": "subset",
+      "mode": "link",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "project",
+      "selection": "full",
+      "mode": "copy",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "project",
+      "selection": "full",
+      "mode": "link",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "project",
+      "selection": "subset",
+      "mode": "copy",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "project",
+      "selection": "subset",
+      "mode": "link",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "global",
+      "selection": "full",
+      "mode": "copy",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "global",
+      "selection": "full",
+      "mode": "link",
+      "count": 55,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "global",
+      "selection": "subset",
+      "mode": "copy",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "claude-code",
+      "scope": "global",
+      "selection": "subset",
+      "mode": "link",
+      "count": 3,
+      "source_removed": true,
+      "setup_readback": true,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex+claude-code",
+      "mode": "shared-links",
+      "count": 55,
+      "source_removed": true
+    }
+  ],
+  "native_agent_loading": "not tested by this installer harness",
+  "external_automation": "not tested"
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-14",
+  "codex": {
+    "version": "0.157.1",
+    "new_session": "ephemeral/read-only",
+    "named_agents_invoked": false,
+    "native_delegation_ran": false,
+    "reason": "Native spawn tool does not expose registered custom-agent selector; general agents were not substituted."
+  },
+  "claude_code": {
+    "version": "2.1.299",
+    "native_agent_definition_validation": "passed",
+    "live_invocation": "not logged in; isolated HOME, no user credentials imported"
+  },
+  "benny_external_tests": "not authorized or activated"
+}
