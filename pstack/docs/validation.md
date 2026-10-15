@@ -5,6 +5,7 @@ Validation window: 2026-10-14–15 (Asia/Shanghai). Tested source is the indepen
 | Check | Evidence / result |
 | --- | --- |
 | Original discovery | Real skills CLI 1.7.2 found 54 original names, including Poteto Mode and Make Bot UI. No Benny nested entry. |
+| Immutable GitHub installation | Real install from fork commit `16c9d599c6ff7825a3e75878f90822f1c781c682` found all 55 entries. Both setup writes read that exact SHA from skills-lock.json without a manual override; optional Benny merges across hosts, installed hashes unchanged. See remote-install.json. |
 | Shared-content layout | Real subset install copied only each selected skill directory; original agents/Benny/guide were absent. This demonstrated the need for one added pstack-support skill. |
 | Installation matrix | Node 22.20.0, skills 1.7.2; 16 rows across Codex/Claude Code, project/global, full/subset, copy/link, plus dual-host canonical links. Each source fixture removed before setup. Installed skill hashes unchanged. Final matrix JSON attached in this directory. |
 | Runtime dependencies | Bun 1.4.3. Both orch and watch-pr run from calling projects after source removal. First install uses original frozen lock, repeat retains marker mtime, lock revision creates another keyed cache. Installed hashes unchanged. Linked .pstack and a directory named ..calling-project inside a skill are refused. |

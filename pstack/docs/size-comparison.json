@@ -18,8 +18,8 @@
     "bytes": 824323
   },
   "working_pstack": {
-    "files": 240,
-    "bytes": 3819122,
+    "files": 241,
+    "bytes": 3819939,
     "shared_pack_instances": 1
   },
   "staged_diff_no_renames": {
@@ -29,8 +29,8 @@
       "deleted_lines": 38857
     },
     "pstack_adaptation": {
-      "files": 183,
-      "added_lines": 7981,
+      "files": 184,
+      "added_lines": 7999,
       "deleted_lines": 3436
     }
   }
