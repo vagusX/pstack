@@ -1,0 +1,711 @@
+[
+  {
+    "source": "pstack/README.md",
+    "target": "pstack/skills/pstack-support/README.md",
+    "assumptions": [
+      "28: new here? the [pstack guide](./docs/guide/README.md) walks you through a first real task, from setup and prompting through verification and overnight runs. stuck, or unsure which skill fits? ask [`/poteto-help`](./skills/poteto-help/SKILL.md).",
+      "34: use [`/poteto-mode`](./skills/poteto-mode/SKILL.md) at the start of a task. it reads your request, picks from a set of playbooks, and runs the other skills as the steps need them.",
+      "36: pick `/poteto-mode` from the `/` menu before you type your task, so cursor attaches the skill to the message.",
+      "71: | [autonomous run](./skills/poteto-mode/playbooks/autonomous-run.md) | drive a long task to completion without stopping. |",
+      "87: 1. matches your task to a [playbook](./skills/poteto-mode/playbooks/) and opens a todo list whose first items are its steps, copied in verbatim.",
+      "93: to keep [`/poteto-mode`](./skills/poteto-mode/SKILL.md) on across turns, pick it from the `/` menu and press option+enter (mac) or alt+enter (windows) instead of enter. that makes it a [custom mode](https://cursor.com/docs/skills), which cursor offers in the agents window and the cli. it stays in context every turn, applies itself when a playbook matches or the task needs rigor, and stays out of the way otherwise. plain enter attaches it to one message only. say so to opt out, or exit the mode to turn it off.",
+      "114: | [`/poteto-mode`](./skills/poteto-mode/SKILL.md) | default entry point for any non-trivial task. |",
+      "117: | [`/sharpen`](./skills/sharpen/SKILL.md) | you want a task approached the way a top expert would, aimed at what you're really after, without overspecifying it or deciding your choices for you. |",
+      "128: | [`/make-bot-ui`](./skills/make-bot-ui/SKILL.md) | you want a page or dashboard whose buttons wake a Grok Bot over a webhook, including the sender-key handoff and Tailscale. |",
+      "130: | [`/reflect`](./skills/reflect/SKILL.md) | a long task landed and you want the recipe captured as a skill edit. |",
+      "137: | [`/figure-it-out`](./skills/figure-it-out/SKILL.md) | no bundled playbook fits. designs a rigorous, auditable playbook for the task. |",
+      "151: mostly i type [`/poteto-mode`](./skills/poteto-mode/SKILL.md) at the start of a task and let it route to a playbook. the other skills fire as the steps need them. a few i reach for directly.",
+      "208: twenty-four short skills, one principle each. `poteto-mode` indexes them inline and reads that index at task start. the standalone files are there so other skills can reference a principle by name, and so the index can point at the full rule for each.",
+      "231: | [prove-it-works](./skills/principle-prove-it-works/SKILL.md) | verification | Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'. |",
+      "246: - `/deslop` and the `deslop` skill ship in the `cursor-team-kit` plugin.",
+      "247: - `control-cli` (for CLIs and TUIs) and `control-ui` (for browser, Electron, web) ship in `cursor-team-kit` too.",
+      "250: install `cursor-team-kit` alongside pstack if you want the full set.",
+      "270: to set it up, point cursor at [`FOR_AGENTS.md`](./automations/benny/FOR_AGENTS.md). setup copies the pack into the target repository at `.cursor/automations/benny/`, enables pstack there for shared skills, and keeps user configuration outside the copied pack."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/agents/poteto-agent.md",
+    "target": "pstack/skills/pstack-support/agents/poteto-agent.md",
+    "assumptions": [
+      "3: description: Delegate subagent for code-writing and helper tasks spawned during a `/poteto-mode` run. Use for delegates, not as the runner for `/poteto-mode` itself. Spawn a fresh `poteto-agent` for each new task, and resume one only in the strict cases that poteto-mode's Subagents section names. Reads the `poteto-mode` skill's `SKILL.md` in full before any work, including its inline Principles index. Substituting `generalPurpose` skips that read and drifts.",
+      "9: You are operating as poteto-mode's full agent style. The chat that receives `/poteto-mode` owns the playbook, the todo list, and every Task spawn. You are one of its delegates. Read the `poteto-mode` skill's `SKILL.md` in full before doing any work, including its inline Principles index. Use the absolute path your parent gave you. With no path, before any other work, search `~/.cursor/plugins/` for a file whose path ends in `skills/poteto-mode/SKILL.md`. If more than one file matches, use the copy whose `.cursor-plugin/plugin.json` has the highest `version`. Your skill catalog hides this skill, so a missing catalog entry does not mean pstack is absent. If no such file exists, stop and tell your parent. Navigate to a leaf `principle-*` skill whenever you apply that principle."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/FOR_AGENTS.md",
+    "target": "pstack/skills/pstack-support/automations/benny/FOR_AGENTS.md",
+    "assumptions": [
+      "31: - i want this entire pack committed at `.cursor/automations/benny/` in the target repository. its `SKILL.md` files are direct automation instructions, not registered plugin skills.",
+      "32: - i want pstack enabled through the target repository's committed `.cursor/settings.json` only for shared dependencies such as `how`, `why`, `tdd`, `unslop`, and the required principle skills.",
+      "34: - i keep user-owned configuration, feature maps, routing maps, and secrets outside `.cursor/automations/benny/` so pack refreshes cannot overwrite them.",
+      "53: start from [`configuration.example.yaml`](./templates/configuration.example.yaml) and [`feature-map.example.md`](./skills/reproduce-and-fix-issues/references/feature-map.example.md). copy and fill them outside this pack, for example under `.cursor/benny/`. keep secret values in a secret manager or environment.",
+      "61: 3. merge the entire source pack into `<target-repository>/.cursor/automations/benny/`.",
+      "65: 7. read and follow `.cursor/automations/benny/skills/setup-benny/SKILL.md` directly from the target repository.",
+      "67: i want you to merge this entry into the target repository's `.cursor/settings.json`:",
+      "81: if project-scoped plugins are unavailable or any shared dependency does not resolve, stop and explain what failed. do not add `.cursor/automations/benny/skills/` to a plugin manifest or expect its files to appear in the slash-skill list.",
+      "83: tell me that `.cursor/settings.json`, `.cursor/automations/benny/`, and any referenced secret-free configuration must be committed before either automation is enabled. do not create or update an automation until i explicitly ask.",
+      "87: paraphrase this intent and the finished configuration into each draft. the triage prompt must read and follow `.cursor/automations/benny/skills/triage-issue-reports/SKILL.md`. the repro prompt must read and follow `.cursor/automations/benny/skills/reproduce-and-fix-issues/SKILL.md`. use these repo-relative paths only after `/automate` confirms they are committed in the repository where the automation will run."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/README.md",
+    "target": "pstack/skills/pstack-support/automations/benny/README.md",
+    "assumptions": [
+      "10: 2. let setup merge this whole directory into the target at `.cursor/automations/benny/`. it must preserve destination-only files and review conflicts instead of overwriting local edits.",
+      "11: 3. let setup enable pstack in the target repository's `.cursor/settings.json` for shared dependencies:",
+      "21: 4. keep user-owned configuration outside the copied pack, for example in `.cursor/benny/`. adapt [`configuration.example.yaml`](./templates/configuration.example.yaml) and [`feature-map.example.md`](./skills/reproduce-and-fix-issues/references/feature-map.example.md).",
+      "22: 5. commit `.cursor/settings.json`, `.cursor/automations/benny/`, and any secret-free configuration before enabling either automation."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
+    "target": "pstack/skills/pstack-support/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
+    "assumptions": [
+      "7: Set the completed user-facing feature map path in `control.feature_map_path`. Copy and fill [`feature-map.example.md`](./feature-map.example.md) outside `.cursor/automations/benny/` instead of editing the copied example."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
+    "target": "pstack/skills/pstack-support/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
+    "assumptions": [
+      "5: Copy this file outside `.cursor/automations/benny/`, for example to `.cursor/benny/feature-map.md`, and set `control.feature_map_path` to the copy. Pack refreshes must not overwrite it.",
+      "61: These features belong to a fictional task app. They are examples, not required Benny features.",
+      "65: Lets a user enter the task app."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/skills/setup-benny/SKILL.md",
+    "target": "pstack/skills/pstack-support/automations/benny/skills/setup-benny/INSTRUCTIONS.md",
+    "assumptions": [
+      "11: The human enters setup by pointing Cursor at the pack's `FOR_AGENTS.md`. The bootstrap flow copies the whole pack into the target repository, then reads this file directly at `.cursor/automations/benny/skills/setup-benny/SKILL.md`.",
+      "21: Ask which repository will run the automations. The source pack is the directory containing `FOR_AGENTS.md`. The destination is `<target-repository>/.cursor/automations/benny/`.",
+      "34: Add pstack to the target repository's `.cursor/settings.json`. If the file or `.cursor` directory does not exist, create it.",
+      "65: The Benny files are read directly from `.cursor/automations/benny/`. Do not add that directory to a plugin manifest or expect its `SKILL.md` files to appear in the slash-skill list.",
+      "67: Tell the user that `.cursor/settings.json`, `.cursor/automations/benny/`, and any referenced secret-free configuration must be committed before either automation is enabled. Do not commit them unless the user asks.",
+      "78: Create user-owned copies outside `.cursor/automations/benny/`. These are configuration files, not pack files. Example locations:",
+      "80: - Project config, such as `.cursor/benny/configuration.yaml`",
+      "81: - Project feature map, such as `.cursor/benny/feature-map.md`",
+      "82: - Project routing map, such as `.cursor/benny/routing.md`",
+      "144: 1. Copy `../triage-issue-reports/references/routing.example.md` outside `.cursor/automations/benny/`.",
+      "181: 3. Tell the live prompt to read and follow its exact committed operational file under `.cursor/automations/benny/`.",
+      "192: - Read and follow `.cursor/automations/benny/skills/triage-issue-reports/SKILL.md` for every run.",
+      "203: - Read and follow `.cursor/automations/benny/skills/reproduce-and-fix-issues/SKILL.md` for every run.",
+      "225: - Direct instruction to read `.cursor/automations/benny/skills/triage-issue-reports/SKILL.md`",
+      "234: - Direct instruction to read `.cursor/automations/benny/skills/reproduce-and-fix-issues/SKILL.md`",
+      "254: Before testing, confirm that the target repository's `.cursor/settings.json`, `.cursor/automations/benny/`, and every referenced secret-free configuration file are committed on the branch used by the automation checkout. Confirm that both live prompts point at their exact committed operational files. If any check fails, stop. Tell the user that the automation cannot be enabled yet."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/skills/triage-issue-reports/references/routing.example.md",
+    "target": "pstack/skills/pstack-support/automations/benny/skills/triage-issue-reports/references/routing.example.md",
+    "assumptions": [
+      "3: Copy this file outside `.cursor/automations/benny/`, for example to `.cursor/benny/routing.md`, and replace every placeholder. Point `routing.map_path` at the copy. Pack refreshes must not overwrite it."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/templates/configuration.example.yaml",
+    "target": "pstack/skills/pstack-support/automations/benny/templates/configuration.example.yaml",
+    "assumptions": [
+      "42:   map_path: \".cursor/benny/routing.md\"",
+      "49:   feature_map_path: \".cursor/benny/feature-map.md\""
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/templates/reproduce-automation-prompt.md",
+    "target": "pstack/skills/pstack-support/automations/benny/templates/reproduce-automation-prompt.md",
+    "assumptions": [
+      "5: Read and follow `.cursor/automations/benny/skills/reproduce-and-fix-issues/SKILL.md` for this run."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/automations/benny/templates/triage-automation-prompt.md",
+    "target": "pstack/skills/pstack-support/automations/benny/templates/triage-automation-prompt.md",
+    "assumptions": [
+      "5: Read and follow `.cursor/automations/benny/skills/triage-issue-reports/SKILL.md` for this run."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/01-setup.md",
+    "target": "pstack/skills/pstack-support/docs/guide/01-setup.md",
+    "assumptions": [
+      "3: In this page you install the plugin, pick which models pstack uses, and run your first task. Setup is one command plus a short conversation.",
+      "23: [`/setup-pstack`](../../skills/setup-pstack/SKILL.md) detects the models you have access to, asks for a reasoning budget, shows you each role (code delegates, judgment, the review panels), and asks what you want. Answer the questions. It writes `~/.cursor/rules/pstack-models.mdc`, a small rule every pstack skill reads.",
+      "25: The defaults run at `xhigh` reasoning, the same as the `large` budget. `unlimited` lifts each model to its highest tier, up to `max`. Opus goes to `max`. Grok tops out at `xhigh`, so it stays there. `medium` and `small` lower the reasoning and spend fewer tokens.",
+      "35: Say yes and it writes `.cursor/skills/verify-<app>/`, a project-local skill that teaches agents to drive your app the way a user does. It proves the skill works once before handing it over. Say no and setup moves on. You can run `/create-verification-skill` yourself any time. [Verify and ship](./06-verify-and-ship.md#create-a-project-verification-skill) covers it in depth.",
+      "50: ## Run your first task"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/02-poteto-mode.md",
+    "target": "pstack/skills/pstack-support/docs/guide/02-poteto-mode.md",
+    "assumptions": [
+      "13:     C --> D{Match the task}",
+      "85: Short works because the playbook holds the structure, and a Custom Mode keeps `/poteto-mode` in context on every turn. [Set up pstack](./01-setup.md#run-your-first-task) shows how to start one. Your words carry the intent, and the skill carries the rigor.",
+      "87: ## Switch tasks with \"new task\"",
+      "89: A long chat accumulates context from the last task. When you change subjects, say so:",
+      "92: /poteto-mode new task. figure out why the cache entry survives logout. don't change any code yet.",
+      "95: \"new task\" tells `/poteto-mode` to re-match rather than continue the prior playbook. \"don't change any code yet\" pins this one to Investigation. Without those two phrases, a mode mid-Feature tends to treat your question as the next feature step.",
+      "99: If you run several agents against one repository on one computer, they will fight over the working tree, the ports, and the build output. The cleanest isolation is a [cloud subagent](https://cursor.com/docs/subagents#cloud-subagents). Each one gets its own VM and branch, so it can install dependencies, run your app, and record video of the result without touching your machine. Type `/in-cloud` before the task, or ask the parent chat to hand work to cloud subagents.",
+      "104: /poteto-mode new task. branch off <base> in a fresh worktree, then port the parser change there.",
+      "107: Each task in its own branch and worktree means no agent stomps another's files. Worktrees cost disk and machine resources, so a laptop runs only a handful at once. The [Opening a PR playbook](../../skills/poteto-mode/playbooks/opening-a-pr.md) already works from a worktree for code changes, so mostly you only say this when a specific base or location matters."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/03-understand.md",
+    "target": "pstack/skills/pstack-support/docs/guide/03-understand.md",
+    "assumptions": [
+      "17: \"don't change any code yet\" routes this to the [Investigation playbook](../../skills/poteto-mode/playbooks/investigation.md). It runs `/how`, adds `/why` for questions about motivation, and returns a cited explanation. For a choice between options, it returns a recommendation with a trade-offs table. Asking \"what data you used\" makes the agent separate its evidence from its guesses. When the findings point at a fix, start the fix as a new task."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/04-design.md",
+    "target": "pstack/skills/pstack-support/docs/guide/04-design.md",
+    "assumptions": [
+      "35:     A[One task] --> B[Configured panel]",
+      "47: The panel comes from your [`/setup-pstack`](../../skills/setup-pstack/SKILL.md) configuration, and you can adjust it per task. Ask for more candidates when the decision matters, fewer when it doesn't:",
+      "119: ## How much design work does a task deserve?"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/05-build-and-clean.md",
+    "target": "pstack/skills/pstack-support/docs/guide/05-build-and-clean.md",
+    "assumptions": [
+      "3: The build playbooks share one discipline. Say what you observed, let the playbook demand the evidence. This page shows what to put in the prompt for each common build task, then the cleanup habit that keeps diffs reviewable.",
+      "55: [`typescript-best-practices`](../../skills/typescript-best-practices/SKILL.md) turns the type-system principles into concrete rules: discriminated unions, `unknown` at boundaries, exhaustive variants, schema-derived types. It doesn't load on its own, so type `/typescript-best-practices` when a task touches `.ts` or `.tsx` files.",
+      "59: The [Opening a PR playbook](../../skills/poteto-mode/playbooks/opening-a-pr.md) runs `/deslop` on the diff before each commit and applies [`/unslop`](../../skills/unslop/SKILL.md) to the PR description and commit bodies. `/deslop` ships in the `cursor-team-kit` plugin, not in pstack. If you don't have it, ask for the same outcome in plain words: remove narrating comments, unsupported guards, dead compatibility paths, and unrelated edits."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/06-verify-and-ship.md",
+    "target": "pstack/skills/pstack-support/docs/guide/06-verify-and-ship.md",
+    "assumptions": [
+      "61: It writes `.cursor/skills/verify-<app>/`, agent-facing instructions with exact Launch, Doctor, Drive, Evidence, and Cleanup sections, plus a feature map under `features/` that indexes what the app does and what result proves each feature works. The skill ships a [worked feature-map example](../../skills/create-verification-skill/references/feature-map-example/) with a README index and one file per feature using the four required H2s. Before handing it over, the generator proves the skill once end to end: launch, doctor check, drive one feature, capture evidence, clean up. If that proof fails, don't use the output."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/07-overnight.md",
+    "target": "pstack/skills/pstack-support/docs/guide/07-overnight.md",
+    "assumptions": [
+      "3: This is the payoff for everything before it. An agent you can trust to verify its own work is an agent you can leave alone with a hard task. What makes that safe isn't hope. It's a checkable finish condition, an isolated worktree or cloud agent, and a decision log you audit in the morning.",
+      "11: - You've done the task once by hand, or watched an agent do it, so you know what good looks like.",
+      "60: [`/show-me-your-work`](../../skills/show-me-your-work/SKILL.md) is what makes the run reviewable. Each row records the time, phase, decision, reason, an evidence pointer, and the result, in a TSV at `decisions.tsv` (or `.audit/<task-slug>.tsv` when several runs share a directory). It stays local by default. Commit it when the work is ambitious enough that a reviewer needs the trail to trust the result.",
+      "70: ## When the night holds a queue, not a task",
+      "72: The contract above drives one task to one finish condition. Some nights hold more, a queue of independent changes or a whole program. Three playbooks scale the same trust up."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/08-principles.md",
+    "target": "pstack/skills/pstack-support/docs/guide/08-principles.md",
+    "assumptions": [
+      "3: pstack ships 24 principles as individual skills. `/poteto-mode` reads their index at the start of every multi-step task, applies the ones the task triggers, and names each applied principle in its reply along with the decision it changed."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/09-make-it-yours.md",
+    "target": "pstack/skills/pstack-support/docs/guide/09-make-it-yours.md",
+    "assumptions": [
+      "13: You don't describe your style, because [`/automate-me`](../../skills/automate-me/SKILL.md) reads it out of your history. It mines your recent transcripts in the active workspace for repeated preferences, in how you like replies, delegation, verification, code, prose, and process, then asks you which patterns are really you. It drafts `.cursor/skills/<your-name>-mode/SKILL.md` through Cursor's built-in `create-skill` flow, runs the draft through [`/unslop`](../../skills/unslop/SKILL.md), and opens a PR from a worktree so you review it like any other change.",
+      "25: Right after a task that taught you something, run:",
+      "79: /poteto-mode run the eval playbook on this skill change. same task for both variants, candidates stay blind.",
+      "82: When a skill keeps missing and you know what it should do, change and test it in one task:",
+      "90: The [Eval playbook](../../skills/poteto-mode/playbooks/eval.md) is built around one failure mode, the observer effect. An agent that knows it's being evaluated behaves differently. So candidate agents get an organic-looking task in sanitized directories, never the words \"eval\" or \"candidate\", and never each other's existence. One judge scores all outputs under neutral labels, and chain-following gets graded from which files each candidate actually read, not from what it claims.",
+      "96: One situational skill is for Grok Bot users. [`/make-bot-ui`](../../skills/make-bot-ui/SKILL.md) builds a small page whose buttons wake a bot over a webhook routine. For example, you could swipe through a review queue and have each swipe ask the bot to act on that item. A server on your machine holds the webhook's sender key, so the key never reaches the browser or the chat. The skill also covers exposing the page on Tailscale.",
+      "98: **Pitfall:** don't edit a skill mid-task because it's misbehaving. Fix it in its own PR and keep the task moving. A skill edit that ships tangled into feature work is invisible to review and impossible to evaluate."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/10-recipes-and-pitfalls.md",
+    "target": "pstack/skills/pstack-support/docs/guide/10-recipes-and-pitfalls.md",
+    "assumptions": [
+      "109: The full contract is on the [overnight page](./07-overnight.md). The short form works once the task and finish condition are already in the conversation.",
+      "154: That's the guide. If you skipped ahead, go back to [setup](./01-setup.md) and run one real task. The habits stick from use, not from reading."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/docs/guide/README.md",
+    "target": "pstack/skills/pstack-support/docs/guide/README.md",
+    "assumptions": [
+      "14: 8. [Steer with principle names](./08-principles.md). The 24 names that redirect an agent mid-task."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/architect/SKILL.md",
+    "target": "pstack/skills/architect/SKILL.md",
+    "assumptions": [
+      "29: Run the **arena** skill with the design-sketch task and the Phase A grounding artifacts. Pass `references/runner-prompt.md` as each runner's prompt.",
+      "31: Take the runners from the `architect runners` line in the `pstack-models.mdc` rule, in place of the `arena runners` line. If the rule or that line is missing, use `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Alias and rejected entries follow the runner rules in the **arena** skill's Phase A."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/architect/references/design-red-flags.md",
+    "target": "pstack/skills/architect/references/design-red-flags.md",
+    "assumptions": [
+      "41: ## Two ways to do one task",
+      "43: The design supports more than one way to do the same task. An agent copies whichever way it finds first, so every way keeps gaining callers."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/architect/references/runner-prompt.md",
+    "target": "pstack/skills/architect/references/runner-prompt.md",
+    "assumptions": [
+      "3: The orchestrator passes this file through to every parallel candidate runner during Phase B and fills in the variable inputs around it: the task, the Phase A grounding artifacts, the isolated working directory, and the path to write outputs. The working directory is a git worktree when available, otherwise a per-runner subdirectory under the sketch dir. What matters is independence between candidates."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/arena/SKILL.md",
+    "target": "pstack/skills/arena/SKILL.md",
+    "assumptions": [
+      "3: description: \"Spawn N parallel candidates at the same task, pick a base, graft the strongest parts of the losers into it. Use for /arena, 'arena this', 'throw it in the arena', or when one attempt at a non-trivial artifact would lock in the wrong shape.\"",
+      "16: 2. Derive the rubric, 3-6 concrete gradeable criteria for what success looks like on *this* task. It is the picker's tool in Phase D. Candidates only see the task.",
+      "17: 3. Pick the runners. Use the `arena runners` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, default to one each on `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. An `auto` or `inherit-parent` entry in this line or the cross-judge line means the parent model, so omit `model` for it. If the Task tool rejects a configured entry, run that seat on its family's default and say so. Families go by prefix: `claude-*`, and `grok-*` with `cursor-grok-*` and `composer-*`. A refused `composer-*` entry runs on `grok-4.7-xhigh-fast`. With no family match, use `claude-opus-5-5-xhigh`. If it rejects a default, use the closest valid slug of the same family from its error message. Spawn more runners when the arena covers multiple design directions. Use the same model N times when the work is generation-bound rather than judgment-sensitive. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.",
+      "22: Spawn all N subagents in one message with `run_in_background: true`, each with the task, the path to the shared grounding, its own output path, and instructions to produce the artifact and a short rationale naming the alternatives it considered and what it rejected.",
+      "28: After all Phase B candidates complete, choose one model from the `arena cross-judge pool` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, choose from `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Prefer a different model family from the parent's. Spawn one readonly judge subagent on that model. It sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. It runs in parallel with your reading in Phase D. Don't spawn it while candidates are still writing."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/automate-me/SKILL.md",
+    "target": "pstack/skills/automate-me/SKILL.md",
+    "assumptions": [
+      "17: Look recursively for `.cursor/skills/**/*-mode/SKILL.md` and `~/.cursor/skills/*-mode/SKILL.md` matching the user's handle. Mode skills can live in a personal category directory (`.cursor/skills/<handle>/`), not only at the top level. If one exists, confirm intent with `AskQuestion` (unless they already said \"update my skill\" or similar):",
+      "29: Locate the active workspace's transcripts before fanning out. The system prompt names the workspace's `agent-transcripts/` directory. Use only that path. Don't glob across `~/.cursor/projects/*/`. That crosses workspace boundaries and reads private chats from unrelated projects.",
+      "38: - Meta preferences (fixing skills mid-task, proposing new ones)",
+      "57: - **Subagents**: default, parallelism, model-to-task, specialized workflows.",
+      "69: - Path: preserve an existing mode skill's category. For a new mode, use `.cursor/skills/<handle>/<handle>-mode/SKILL.md` when the repo has an established personal category for that handle. Otherwise default to `.cursor/skills/<handle>-mode/SKILL.md` in the project (or `~/.cursor/skills/<handle>-mode/` if the user prefers a personal skill).",
+      "102: - User wants a task-specific skill (not working conventions): `create-skill` alone, no mining required."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/correct/SKILL.md",
+    "target": "pstack/skills/correct/SKILL.md",
+    "assumptions": [
+      "19: 1. **Eliminate it with architecture.** Give each piece of state one owner and each task one supported way. Hide internals so the wrong import fails. Replace hand-synced lists with one source of truth. Delete old ways and dead code an agent would copy."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/create-verification-skill/SKILL.md",
+    "target": "pstack/skills/create-verification-skill/SKILL.md",
+    "assumptions": [
+      "9: Every serious project needs a scripted way to drive the real app and prove behavior: launch it, exercise a feature the way a user would, and capture evidence. This skill generates that as a project-local skill (`.cursor/skills/verify-<app>/`) tailored to the repo. You write the generator's output for the next agent, not for a human: it will be read cold, mid-task, by an agent that has never seen the app.",
+      "25: Write `.cursor/skills/verify-<app>/SKILL.md` with YAML frontmatter (`name: verify-<app>` and a `description` that names the app, the surface, and when to reach for it \u2014 without frontmatter the skill never registers) and these sections, each grounded in what the interview actually found (no placeholders left):",
+      "36: Create `.cursor/skills/verify-<app>/features/README.md` plus one file per user-facing feature you can identify (aim for the top 3-5 to start, from routes, commands, menus, or docs). Follow the shape in [`references/feature-map-example/`](references/feature-map-example/), with a README index and one file per feature. Each file answers, from the user's point of view: what the feature is, how to reach it, how to drive it with the harness, and what observable end state proves it works. The four H2s are `Sub-features`, `How to get to it (user POV)`, `Driving it with <harness>`, and `Gotchas`. If the seed data lacks a precondition that a journey needs, the journey reports a failure and the reason goes in that feature's `Gotchas`. Never weaken the journey to make it pass. The map is the repo's maintained verification source; a proof that drives one convenient entry point is incomplete when the map lists others."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/figure-it-out/SKILL.md",
+    "target": "pstack/skills/figure-it-out/SKILL.md",
+    "assumptions": [
+      "3: description: \"Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'.\"",
+      "9: When the task matches no playbook, design one. The deliverable before any code is the workflow itself: a sequence of phases that scales rigor to the task, runs the scientific method, and leaves a decision trail a human can audit after stepping away."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/how/SKILL.md",
+    "target": "pstack/skills/how/SKILL.md",
+    "assumptions": [
+      "11: Every spawn is a Task subagent with `subagent_type: generalPurpose` and `readonly: true`. Explorers use the `how explorer` line in the `pstack-models.mdc` rule (default `grok-4.7-xhigh-fast`), and every explainer uses the `how explainer` line (default `claude-opus-5-5-xhigh`). Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/interrogate/SKILL.md",
+    "target": "pstack/skills/interrogate/SKILL.md",
+    "assumptions": [
+      "27: Launch all reviewers in a single message with the Task tool, one per entry on the `interrogate reviewers` line in `~/.cursor/rules/pstack-models.mdc`, labeled Reviewer A, B, and so on to match the entry count. If the rule or that line is missing, use the table defaults.",
+      "32: | Reviewer B | `grok-4.7-xhigh-fast` |",
+      "36: If the Task tool rejects a configured entry, run that reviewer on its family's table default and say so. Families go by prefix: `claude-*`, and `grok-*` with `cursor-grok-*` and `composer-*`. A refused `composer-*` entry runs on Reviewer B's default. With no family match, use Reviewer A's default. If it rejects a table default, spawn with the closest equivalent from the valid slugs in its error message (prefer the same family and reasoning tier), and open a separate PR to update the default table. Do not block the review on the slug issue. Never treat an alias entry as a rejected slug or apply either fallback to it."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/ketchup/SKILL.md",
+    "target": "pstack/skills/ketchup/SKILL.md",
+    "assumptions": [
+      "11: Use [`/bro`](../bro/SKILL.md)'s voice, not its task: plain words, short sentences, no jargon, like one person catching up another. Say what changed for the user, not how you did it. Say \"the tests pass\", not \"CI is green\". Leave out hashes, file paths, commands, build numbers, and test counts unless the user needs one to act. Call each PR, branch, or agent by a name the user would know, not by a label you invented. If a fact needs context to make sense, give the context or leave the fact out."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/maintain-verification-skill/SKILL.md",
+    "target": "pstack/skills/maintain-verification-skill/SKILL.md",
+    "assumptions": [
+      "25: 0. **Locate the target.** Find the verification skill to maintain: the project-local skill whose body has launch/drive sections and a feature map (usually `.cursor/skills/verify-*/`). Several candidates \u2192 ask which one; none \u2192 stop and point at `/create-verification-skill` instead of inventing a target."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/make-bot-ui/SKILL.md",
+    "target": "pstack/skills/make-bot-ui/SKILL.md",
+    "assumptions": [
+      "5:   Grok Bot over a webhook, when the user must provide a webhook sender key, or",
+      "15: Call `update_state` with target `routine` and action `create`. Set these fields:",
+      "20: If `update_state` shows a confirm card, wait for the user to confirm.",
+      "44: SendToUser",
+      "55: Store `{url, key}` in that UI's own directory. Buttons POST to this local server. The local server, not the browser, POSTs to the Grok Bot webhook."
+    ],
+    "status": "not-adapted; archived original with explicit blocked entry"
+  },
+  {
+    "source": "pstack/skills/no-comments/SKILL.md",
+    "target": "pstack/skills/no-comments/SKILL.md",
+    "assumptions": [
+      "19: 1. Spawn `Task` with `subagent_type: \"comment-sicko\"`. Pass the scope. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill. Do not restate its rules."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-help/SKILL.md",
+    "target": "pstack/skills/poteto-help/SKILL.md",
+    "assumptions": [
+      "3: description: Guides users through pstack setup, /poteto-mode, and picking the skill, playbook, or principle for a task. Type /poteto-help with a question.",
+      "20: - Start a task with `/poteto-mode`",
+      "27: - No `~/.cursor/rules/pstack-models.mdc` means `/setup-pstack` hasn't run for this user, so every role uses its default model.",
+      "39: 3. Start a real task with `/poteto-mode`, a goal, and a check that can pass or fail.",
+      "47: ## Start a task with `/poteto-mode`",
+      "49: `/poteto-mode` matches the task to a playbook, copies the playbook's steps into the todo list, and runs the other skills as the steps need them. A step it skips stays in the list as `skip: <reason>`. A good prompt states the goal and how to tell it's done. It doesn't list skills, because a hand-written sequence tends to drop or reorder steps the playbook would keep. Read [`references/prompting.md`](references/prompting.md) before you help word one. [Guide page 2](../../docs/guide/02-poteto-mode.md) has examples.",
+      "55: - Cursor's docs list Custom Modes in the Agents Window and the CLI. Elsewhere, start each new task with `/poteto-mode`.",
+      "57: Link [Cursor's skills docs](https://cursor.com/docs/skills) when this comes up. Mid-chat, \"new task\" makes the mode match a fresh playbook. `/poteto-mode` already uses `poteto-agent` for the subagents its playbook steps spawn. To get the same style from a subagent of your own, spawn it with `subagent_type: \"poteto-agent\"`.",
+      "65: | Do any non-trivial task with rigor | [`/poteto-mode`](../poteto-mode/SKILL.md) |",
+      "67: | Aim a task higher before starting: more expert, more outcome-focused, not overspecified | [`/sharpen`](../sharpen/SKILL.md) |",
+      "91: | Turn what a finished task taught into skill edits | [`/reflect`](../reflect/SKILL.md) |",
+      "93: | Build a page whose buttons wake a Grok Bot over a webhook | [`/make-bot-ui`](../make-bot-ui/SKILL.md) |",
+      "105: - `/figure-it-out` designs one rigorous run. The Orchestrate playbook runs a program that spans days and many PRs. The Autonomous run playbook drives one task to a finish condition.",
+      "109: - `/deslop`, `control-cli`, and `control-ui` ship in the `cursor-team-kit` plugin.",
+      "115: Playbooks are step lists inside `/poteto-mode`, not skills, so they have no slash command. Inside `/poteto-mode`, describing the task picks one, and these phrases name one directly:",
+      "134: | The mode stopped applying after a few turns | It was started with Enter. Start it as a Custom Mode, or start each task with `/poteto-mode`. |",
+      "135: | A question got treated as the next step of the last task | Say \"new task\", or say the turn doesn't need the mode. |"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-help/references/prompting.md",
+    "target": "pstack/skills/poteto-help/references/prompting.md",
+    "assumptions": [
+      "35: - \"do it\", \"continue\", and \"keep going until done\" are whole prompts once the chat holds the task.",
+      "36: - Start with \"new task\" when the subject changes. Otherwise the mode treats the message as the next step."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-help/references/recipes.md",
+    "target": "pstack/skills/poteto-help/references/recipes.md",
+    "assumptions": [
+      "9: - `/sharpen <your task>`"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/SKILL.md",
+    "target": "pstack/skills/poteto-mode/SKILL.md",
+    "assumptions": [
+      "20: - About to `AskQuestion` on a \"which approach\", \"how should I\", or \"what should this do\" fork \u2192 classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf, even whether an eval separates), it is not the human's to answer. Sketch it via the Prototype playbook (`playbooks/prototype.md`) and let the result decide. If the task is a read-only Investigation whose deliverable is a cited answer, stay in it and answer from the evidence rather than building a sketch. Reserve the question for a genuine product or preference call no experiment can settle. Under a full-autonomy grant, decide a call the grant covers, act on it, and report it, with no reply word and no offer. Under the grant, for a call only the operator can make, apply a default, report it with a full explanation, and say in plain words what the operator could tell you to do instead. The operator answers in their own words. Never give a shorthand token to type back. Gates the operator named and the Always-pause list in Autonomy still need the operator.",
+      "28: - Before commit \u2192 the `deslop` skill from the `cursor-team-kit` plugin (`/deslop`).",
+      "30: - Shipping UI / IDE / CLI \u2192 the matching control skill. `cursor-team-kit` publishes `control-cli` (CLIs and TUIs) and `control-ui` (browser / Electron / web UIs). For bug fixes, reproduce first on the same surface yourself. Hand to the user only under the narrow Bug fix step 1 exception.",
+      "35: - Broken skill mid-task \u2192 fix it in its own PR. Don't block. Don't silently work around it.",
+      "36: - Long, autonomous, or multi-phase work, or any task the user steps away from to review later (\"going to bed\", \"trust it when i'm back\", \"/loop until X\") \u2192 a decision trail via the **show-me-your-work** skill. Commit it when stakes need an auditable record. Keep it local otherwise.",
+      "66: - **Prove It Works.** After a task, before declaring done. Verify against the real artifact, not a proxy or \"it compiles\".",
+      "95: **Defaults for every `Task` call.** `run_in_background: true`, agent mode (readonly strips MCP), file pointers not inlined context, explicit model per role (configurable via `/setup-pstack`. Defaults `grok-4.7-xhigh-fast` for code, `claude-opus-5-5-xhigh` for prose and judgment). Code delegates tier by difficulty. The hardest changes (cross-cutting design, gnarly concurrency, subtle algorithms) go to your strongest judgment model (`claude-opus-5-5-xhigh`), whether the task needs judgment on vague intent or is a precisely specified sequence of steps to execute to the letter. Trivial mechanical edits go to your fast code model. Per-role lines in the `/setup-pstack` rule override these defaults and the model choices in the routed skills (`how`, `why`, `arena`, `swarm`, `architect`, `interrogate`, `reflect`). A role with no line keeps its default, and a role line of `inherit-parent` or `auto` runs that role on the parent chat model (omit Task `model`). Each code playbook's configured model comes from its line (`feature, refactoring`, `bug-fix`, `perf-issue`, or `hillclimb`), and the hardest changes read `hardest tasks`. Prose and judgment read `judgment and prose`.",
+      "97: **Match the model to the job.** Before each spawn, start from the role's line or default and pick the reasoning level and speed the job needs. The `/setup-pstack` budget sets each role's starting level, xhigh by default. Raise it one step, up to max, for the hardest or subtlest work. Lower it one step for judgment and two or more steps for routine work. Use fast mode only when the job is urgent, meaning CI or trunk is red or a person is blocked on the result right now. Otherwise use standard speed, the same slug without `-fast`. Verification is the exception and stays on the `swarm workers` model and speed (`grok-4.7-xhigh-fast` by default). Change only the effort level and whether the slug is fast, and keep the family the role names, so a diverse panel stays diverse. If the family has no slug at that level and speed, use its nearest slug. A role on `auto` or `inherit-parent` stays on the parent model. If the Task tool rejects the adjusted slug, do not try another adjusted slug. Use the role's line or default and say so.",
+      "123: Open a todolist whose first items are the matched playbook's steps, copied in verbatim, before any task-specific todos. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Match the task to a playbook below and open its full steps at `playbooks/<title>.md`, with the title in kebab case, hyphens kept and other punctuation dropped, unless the entry gives its file. Copy its steps in verbatim.",
+      "125: A large or cross-cutting effort (a migration across many call sites, an ambitious multi-part change), or work the user steps away from to trust later, routes to the **figure-it-out** skill even when a narrower playbook like Feature fits. Use **figure-it-out** whenever no bundled playbook fits. It designs a bespoke, rigorous playbook for the task. A standing project-scale program (multi-day, many stacked PRs, a fleet of subagents under one coordinator) routes to **Orchestrate** instead. figure-it-out designs one bespoke run, orchestrate runs the program.",
+      "141: - **Autonomous run.** A long task to drive to completion without stopping (\"run until done\", \"/loop until X\").",
+      "142: - **Orchestrate.** A standing project handed to one coordinator chat: multi-day, many stacked PRs, dozens to hundreds of subagents, minimal human turns (\"run this whole project\", \"own this migration until it lands\"). Distinct from Autonomous run, which drives one task to a predicate. Work one agent could finish inside the session's budget routes there, not here, however program-shaped the phrasing sounds."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+    "target": "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+    "assumptions": [
+      "10:    Open the PR early so CI and bots run alongside the work. The code is ready only after the slop-strip (the `deslop` skill from the `cursor-team-kit` plugin (`/deslop`)) and the `/no-comments` pass, so the full swarm runs on finished code. Then rebase onto current trunk and report the code-ready head before self-proof, so verification runs on the base the patch lands on. Report every later head, and merge-ready once self-proof, CI, and babysit are done. Fix rounds stay on that base unless trunk conflicts or breaks CI, because each rebase restarts CI. Run the repo's checks for the touched paths on the committed head before the code-ready push and before a later push that needs a verifier.",
+      "14: 4. **Swarm-verify once.** A full swarm runs once, at the code-ready head. Another full swarm runs only for new behavior, a redesign, or a large new diff. A rebase, a merge-conflict resolution, or a minor fix gets a single verifier at the new head. Fan out independent verifiers at the code-ready SHA per the **swarm** skill. They re-run the gates, prove the load-bearing behavior live on the real surface through its control skill (such as `control-ui` or `control-cli` from `cursor-team-kit`) or a named driver, and audit the diff. The verdict is not clean without the live lane, or before you audit the merge-ready report's receipts, because no lane trusts a claim it has not checked."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+    "target": "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+    "assumptions": [
+      "3: **You own this task. Plan, review, verify.** Delegate investigation and the fix to subagents, stay in the lead. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section.",
+      "9: 3. Plan the fix. If it crosses a function boundary, `architect` first. Delegate implementation to a subagent using your configured bug-fix model (default `grok-4.7-xhigh-fast`) with a specific scope."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/eval.md",
+    "target": "pstack/skills/poteto-mode/playbooks/eval.md",
+    "assumptions": [
+      "18: 2. **Set up sanitized environments.** Per-candidate working dir with the variant in place. Plant any context an organic task would have: a project skeleton, the skills the candidate would naturally read.",
+      "22: 6. **Verify the chain from transcripts, not self-report.** Read each candidate's local transcript under the active workspace's `agent-transcripts/` directory (the system prompt names this path). Do not glob across `~/.cursor/projects/*/`. That crosses workspace boundaries and reads private chats from unrelated projects. Look at which files each candidate actually opened. Grade chain-following from the files it really read plus the shape of the code, never from the candidate's own claims."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/feature.md",
+    "target": "pstack/skills/poteto-mode/playbooks/feature.md",
+    "assumptions": [
+      "12: 4. Delegate code-writing to a subagent using your configured feature model (default `grok-4.7-xhigh-fast`) with a specific scope (file paths, named data shape and its organizing structure per **principle-model-the-domain**, a state machine over scattered booleans, a table/registry over branching, a typed model over repeated shape assumptions, chosen before the delegate writes logic, and success criteria). Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section. When the implementation admits multiple valid shapes (error handling, abstraction layer, test structure), delegate via the **arena** skill instead so the runners surface the alternatives and the cross-judge guards the pick. Mandatory: no skip-with-reason escape, and Laziness Protocol does not override it (the gain is review separation, not lines saved). A subagent forbidden to spawn satisfies this by owning the diff directly with the same review separation. No \"standing by\" reply that waits on a nested agent. Comments per **Comments**. Surgical edits, re-ground against the source for upstream-derived files. Port shared-primitive improvements to all consumers and verify each. Commit liberally."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+    "target": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+    "assumptions": [
+      "12:    - Hand the change to a subagent using your configured hillclimb model (default `grok-4.7-xhigh-fast`) with a tight scope. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section. Supervise and review the diff rather than typing it (the **guard-the-context-window** principle skill). When several independent hypotheses are live, fan them to parallel subagents, each in its own worktree (the **separate-before-serializing-shared-state** principle skill)."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+    "target": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+    "assumptions": [
+      "9: 5. Write under `/technical-writing` in full, then `/unslop`. The body is one Di\u00e1taxis mode, how-to. Appendices hold explanation and reference. Each heading states the task or the finding. No long dashes. No mid-sentence colons.",
+      "13: **Verification.** Tests alone are not sufficient verification. A PR is verified only when its unit, live, and perf boxes are all checked (the **prove-it-works** principle skill). That sentence is the verification rule. Every verification block opens with it. The live block is mandatory. Ten lanes at the PR head drive the real surface through its control skill, per the **swarm** skill, on the `swarm workers` model (default `grok-4.7-xhigh-fast`). Each lane is one box with a concrete scenario, the screenshot it saves, and its pass predicate. One lane is the **Regression lane against trunk.** It runs the same load-bearing scenario on trunk and head. If trunk does not have the feature, the lane records that fact and gates the behavior the diff adds plus the end state the user waits for instead of inventing a trunk result. The perf gate is dual-sided. Trunk and head must both produce the named metric. If trunk lacks the feature, also isolate the work the diff adds and set an absolute budget for that work plus the end-to-end state the user waits for. Do not claim a ratio between unlike scenarios. The perf block names the metric, the interleaved probe, the trunk baseline measured first, and the rule with the number that fails. A PR that changes an interaction is review-gated. The operator reviews it in chat with screenshots and a video before merge. A PR that changes no interaction writes `**Review gate.** None. <PR id> is not review-gated.` and no boxes under it.",
+      "15: **Control skill.** Pick it by surface. Browser, Electron, and web UIs use `control-ui` from `cursor-team-kit`. CLIs and TUIs use `control-cli` from `cursor-team-kit`. Native mobile uses whatever simulator-driving skill the repo has. A PR that touches two surfaces gets lanes on both. A surface with no control skill is a risk in Appendix C, and its live block still names how each lane drives it.",
+      "71: Each live lane runs on its own cloud VM at the PR head. Drive through `control-ui` or `control-cli` from `cursor-team-kit`.",
+      "78: ## <Task as a verb phrase> (<PR id>)"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+    "target": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+    "assumptions": [
+      "5: **Worktree.** Work from a git worktree off main. Subagents inherit it. Multiple `Task` calls on the same branch each get their own worktree, or `git fetch && git reset --hard origin/<branch>` between them. Dirty branch with unrelated work: patch out, fresh worktree, apply. Snarled worktree: reset from main, redo minimally.",
+      "9: **PRs.** Run `/deslop` from `cursor-team-kit` over the diff before commit and `/no-comments` before review. Write every PR title, description, and commit body with `/technical-writing` (every layer except Di\u00e1taxis, and apply the STE vocabulary rules: one word per action, keep articles, a plain verb over `-ing` where one works), then apply `/unslop`."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+    "target": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+    "assumptions": [
+      "3: **You own the program, never the code. Author briefs, drain the queue, keep the frontier green, decide.** For a whole project handed to one standing coordinator chat: multi-day, many stacked PRs, dozens to hundreds of subagents, the human checking in twice a day instead of every five minutes. One task driven to a predicate is Autonomous run. One ambitious run needing a bespoke workflow is figure-it-out. Route here when the work outlives any single agent. Work one agent could finish inside the session's budget is not a program.",
+      "15: - **Coordinator (this chat).** Local. Frames, authors briefs, drains the inbox, owns the human report, makes judgment calls. It never authors or edits code. Conflicted merges, chain rebases, and code changes are always tasks. Mechanically landing a verified unit (fast-forward or clean cherry-pick of a worker's commit, then push) is bookkeeping the coordinator may do itself on repos where local git is cheap. Queueing finished work behind an idle stacker is how a deadline harvests nothing. The loop is agentic end to end. Agents are spawned, resumed, and drained only through the Task tool. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section. State reads and writes go through `scripts/orch/orch.ts` at drain points, one command in and one line out. The CLI never spawns, waits, or wakes anything.",
+      "16: - **Sub-coordinator.** Always local, durable, one per track, and only when the program exceeds what one coordinator's drains can manage. A track the coordinator can drain itself needs no middle layer. Each nested layer re-pays a full orientation preamble, and a blocking sub-coordinator hides its children while the parent idles. Owns its track's units and boards, authors its workers' briefs, spawns its own workers and verifiers (nesting works to depth 3, and a nested spawn has the full Task schema including `environment`). Rolls up aggregates at wave boundaries. Never forwards raw child reports. Cap in-flight children at what one drain can process, roughly ten, as a rolling window. Never as blocking batches, which cost the slowest child of every batch.",
+      "17: - **Worker / verifier.** Always `environment: \"cloud\"` unless the task needs this machine: `control-ui` or `control-cli` runtime verification (from `cursor-team-kit`). Reading local transcripts under `agent-transcripts/`. Simulators and local IDE state. Auth that exists only here. Cloud agents cannot read the local store, so their briefs inline what they need or point at repo paths. Prefer fewer, broader workers. One writer per worktree or branch (principle-separate-before-serializing-shared-state). Run a unit's verifier on a different model family from its worker."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+    "target": "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+    "assumptions": [
+      "17: 3. Plan the fix from the trace. If it crosses a function boundary, `architect` first. Delegate implementation to a subagent using your configured perf-issue model (default `grok-4.7-xhigh-fast`). Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section. Review the diff. Capture a post-fix trace."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/refactoring.md",
+    "target": "pstack/skills/poteto-mode/playbooks/refactoring.md",
+    "assumptions": [
+      "11: 5. Move in small behavior-preserving steps, each keeping the pin green. For API reshapes, migrate every caller and delete the old API in the same wave (**principle-migrate-callers-then-delete-legacy-apis**). No compatibility shims, no parallel old-and-new paths. Spot-check every rename against the actual files. Renames silently miss usages in strings, prose, and back-references. Delegate the mechanical edits to a subagent using your configured refactoring model (default `grok-4.7-xhigh-fast`) with a specific scope (file paths, the names being moved, the behavior to hold). Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+    "target": "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+    "assumptions": [
+      "5: 1. Locate the prior trail. A local transcript under the active workspace's `agent-transcripts/` directory (the system prompt names the path. Do not glob across `~/.cursor/projects/*/`, that crosses workspace boundaries and reads private chats from unrelated projects), a cloud-agent URL, or a pushed branch. Read the metadata overview and last messages first, then scan back for the decision points. Parse a long transcript in a subagent and keep the reduced timeline in the main thread (the **principle-guard-the-context-window** skill). Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/shipping.md",
+    "target": "pstack/skills/poteto-mode/playbooks/shipping.md",
+    "assumptions": [
+      "5: 1. **Resolve the forge, then verify each PR independently before it lands.** GitHub CLI (`gh`) is the default. If `command -v origin` succeeds and Origin can resolve the repository, use `origin pr` for every PR operation. Otherwise stay on `gh` and record the fallback. Never require Graphite (`gt`). One verifier per PR, each a Cursor cloud agent, runs the change the way a user would with the matching control skill (such as `control-ui` or `control-cli` from `cursor-team-kit`), parent against head, and posts `PASS`, `PASS+NOTES`, or `FAIL` on that PR. Only a verdict from an agent that did not write the code counts, because an author checks what it meant to build. Green CI and an approving bot review are not verdicts, because neither runs the change as a user would."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+    "target": "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+    "assumptions": [
+      "3: 1. Snapshot and audit. Record `df -h /`, then run `scripts/worktree-audit.sh [-b <pr-base-ref>] [repo-path]` (principle-build-the-lever). Without `-b` it checks `MERGED` against `origin/HEAD`, so pass `-b origin/<branch>` when PRs target another branch. It reads paths from `git worktree list`, never hand-typed, since a hand-typed `myrepo-worktrees/x` misses one that lives at `.cursor/worktrees/myrepo/x` (principle-encode-lessons-in-structure). It classifies each worktree by size, age, merge state, uncommitted work, PR state, and the newest chat that touched it, then suggests a bucket. The transcript scan is slow, so background it."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+    "target": "pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+    "assumptions": [
+      "64: # Transcripts dir: ~/.cursor/projects/<slugified-repo-path>/agent-transcripts.",
+      "66: transcripts=\"$HOME/.cursor/projects/$slug/agent-transcripts\""
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/principle-build-the-lever/SKILL.md",
+    "target": "pstack/skills/principle-build-the-lever/SKILL.md",
+    "assumptions": [
+      "12: Default to building the lever. Skip it only when the task is trivial, a couple of obvious edits you can see at a glance."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/principle-explain-the-number/SKILL.md",
+    "target": "pstack/skills/principle-explain-the-number/SKILL.md",
+    "assumptions": [
+      "13: For a performance number, run the full procedure with the [benchmark-checklist](../benchmark-checklist/SKILL.md) skill. For an eval result, ask the same of the trials: did every run do the task, does the gap hold across trials and models, and does the scenario matter."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/principle-prove-it-works/SKILL.md",
+    "target": "pstack/skills/principle-prove-it-works/SKILL.md",
+    "assumptions": [
+      "3: description: \"Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'\"",
+      "9: Verify every task output by checking the real thing directly. Do not infer from proxies, self-reports, or \"it compiles.\""
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/recall/SKILL.md",
+    "target": "pstack/skills/recall/SKILL.md",
+    "assumptions": [
+      "15: Transcripts live at `~/.cursor/projects/<slug>/agent-transcripts/<uuid>/<uuid>.jsonl`, where `<slug>` is the workspace path with the leading slash dropped and each \"/\" turned into \"-\" (so `/Users/you/proj` becomes `Users-you-proj`). Every line is one chat message.",
+      "17: 1. Classify, then route. One specific prior chat to resume is the `session-pickup` playbook, not this. Turning habits into a durable skill is `automate-me`. A human-readable summary of your work is a different task. Recall loads working context across recent chats before you act. If the user already gave you a full state capsule (paths, branch, the change), use it and skip the mining."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/reflect/SKILL.md",
+    "target": "pstack/skills/reflect/SKILL.md",
+    "assumptions": [
+      "15: Before fanning out, find this conversation's transcript in the `agent-transcripts/` directory the system prompt names. Do not glob across `~/.cursor/projects/*/`. That crosses workspace boundaries and reads private chats from unrelated projects.",
+      "25: One message, three `Task` calls, `subagent_type: generalPurpose`, agent mode (`readonly: false`). Reviewers need MCP access to look up the tickets, chat threads, and observability traces the transcript references, and readonly strips MCPs.",
+      "27: Each reviewer and the synthesizer name a role line in the `pstack-models.mdc` rule and a default. Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.",
+      "32: | Tooling | `reflect tooling` | `grok-4.7-xhigh-fast` | `references/tooling-reviewer.md` |",
+      "35: Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in the `Task` response body.",
+      "39: One `Task` call, `subagent_type: generalPurpose`, `model` from the `reflect judgment, divergent, synthesizer` line (default `claude-opus-5-5-xhigh`), agent mode (`readonly: false`). It spot-verifies citations through MCP, and readonly strips MCPs. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/reflect/references/divergent-reviewer.md",
+    "target": "pstack/skills/reflect/references/divergent-reviewer.md",
+    "assumptions": [
+      "21: Route findings only to skills, tools, or MCPs this transcript used. A skill counts as used when the transcript shows a `Read` of its `SKILL.md` (under `.cursor/skills/`, `~/.cursor/skills/`, or `~/.cursor/plugins/`), a `Task` prompt naming its path, or a tool call (Shell, Grep, MCP, etc.) matching its documented commands. Speculative routings to skills the parent never opened do not count."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/reflect/references/judgment-reviewer.md",
+    "target": "pstack/skills/reflect/references/judgment-reviewer.md",
+    "assumptions": [
+      "20: Route findings only to skills, tools, or MCPs this transcript used. A skill counts as used when the transcript shows a `Read` of its `SKILL.md` (under `.cursor/skills/`, `~/.cursor/skills/`, or `~/.cursor/plugins/`), a `Task` prompt naming its path, or a tool call (Shell, Grep, MCP, etc.) matching its documented commands. Speculative routings to skills the parent never opened do not count."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/reflect/references/tooling-reviewer.md",
+    "target": "pstack/skills/reflect/references/tooling-reviewer.md",
+    "assumptions": [
+      "31: Route findings only to skills, tools, or MCPs this transcript used. A skill counts as used when the transcript shows a `Read` of its `SKILL.md` (under `.cursor/skills/`, `~/.cursor/skills/`, or `~/.cursor/plugins/`), a `Task` prompt naming its path, or a tool call (Shell, Grep, MCP, etc.) matching its documented commands. Speculative routings to skills the parent never opened do not count."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/setup-pstack/SKILL.md",
+    "target": "pstack/skills/setup-pstack/SKILL.md",
+    "assumptions": [
+      "8: Write `~/.cursor/rules/pstack-models.mdc`, an always-applied rule that sets pstack's model per role.",
+      "14: Enumerate the model slugs you can pass to a `Task` subagent in this session. That is the dependable source. If Cursor also exposes a models API or CLI that lists the user's entitled models, prefer it for completeness. If you cannot detect any, ask the user to paste the slugs they have access to. Never write a real slug you have not confirmed is available. The aliases `inherit-parent` and `auto` are always valid even though they are not detected slugs.",
+      "18: The default role-to-model mapping is the rule shape shown in step 5 below. If `~/.cursor/rules/pstack-models.mdc` already exists, read it and treat its `# budget` line and its role values as the current choices. Otherwise start from those defaults. A line whose role is not in step 5, such as `how critics`, is from a retired role. Drop it.",
+      "29: **(b) Apply it.** Build the working table from the skill defaults, and on a re-run keep any role you changed by family, list, or alias (`inherit-parent`, `auto`). `unlimited`, `large`, `medium`, and `small` set the effort token of every real slug, panel entries included, to `max`, `xhigh`, `high`, or `medium`. The effort token is the last token, or the one before a trailing `fast`, on the ladder `max` > `xhigh` > `high` > `medium` > `low`. If the result is not a detected slug, use the same family's detected slug with the highest effort at or below the target, else mark the role as needing a choice. `inherit-parent` and `auto` do not change. So `unlimited` turns `claude-opus-5-5-xhigh` into `claude-opus-5-5-max`. Grok slugs top out at `xhigh`, so under `unlimited` the fallback puts Grok at `xhigh` and keeps `grok-4.7-xhigh-fast` as it is. `large` keeps both defaults. `small` turns them into `claude-opus-5-5-medium` and `grok-4.7-medium-fast`.",
+      "39: Write `~/.cursor/rules/pstack-models.mdc` with `alwaysApply: true`, a `# budget` line with the chosen label and its target effort, and one line per role, using the same labels poteto-mode uses. Overwrite the whole file so re-runs stay idempotent. Shape:",
+      "47: # `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.",
+      "49: feature, refactoring: grok-4.7-xhigh-fast",
+      "50: bug-fix: grok-4.7-xhigh-fast",
+      "51: perf-issue: grok-4.7-xhigh-fast",
+      "52: hillclimb: grok-4.7-xhigh-fast",
+      "55: how explorer: grok-4.7-xhigh-fast",
+      "57: why investigators: grok-4.7-xhigh-fast",
+      "59: reflect tooling: grok-4.7-xhigh-fast",
+      "61: arena runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast",
+      "62: arena cross-judge pool: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast",
+      "63: swarm workers: grok-4.7-xhigh-fast",
+      "64: architect runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast",
+      "65: interrogate reviewers: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/sharpen/SKILL.md",
+    "target": "pstack/skills/sharpen/SKILL.md",
+    "assumptions": [
+      "3: description: \"Sharpen a task before starting: the expert approach, what the user is really after, and the right level of specification. Use for /sharpen.\"",
+      "7: Before starting, ask how a top expert would approach this task (their raw sources, their real methods, an outside check that the result is right), what the user is really after, and whether the task is over- or underspecified. Loosen constraints that don't serve the goal as readily as you add ones that do, and leave choices that are the user's to make open instead of deciding them. Fold in only what makes the work better, not bigger, but always keep one outside check that the result is right, without narrating the framing, then do the work. Don't hand back a rewritten prompt."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/show-me-your-work/SKILL.md",
+    "target": "pstack/skills/show-me-your-work/SKILL.md",
+    "assumptions": [
+      "46: By default the log is a working artifact, not committed. Keep it at `decisions.tsv` in the work dir, or `.audit/<task-slug>.tsv` when several efforts run at once, and leave it out of git.",
+      "57: At the end of the run, before handing back, check the log told the truth. Read this run's transcript under the active workspace's `agent-transcripts/` directory (the system prompt names the path). Don't glob across `~/.cursor/projects/*/`. That reads unrelated private chats. Walk this run's rows against what actually happened. Each stretch of them begins at one of this run's `start` rows, or at the first row if this run created the log, and ends at the next `start` row of another run:"
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/swarm/SKILL.md",
+    "target": "pstack/skills/swarm/SKILL.md",
+    "assumptions": [
+      "25: 4. Pick the worker model from the `swarm workers` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, use `grok-4.7-xhigh-fast`. For `auto` or `inherit-parent`, omit `model` so the workers run on the parent model. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. For a model race, name each arm's model up front. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.",
+      "30: Spawn all N workers in one message with `subagent_type: generalPurpose`, `environment: \"cloud\"`, `run_in_background: true`, and the step 4 model, left unset for `auto` or `inherit-parent`. Use `environment: \"local\"` only when the worker needs access to something on the user's computer.",
+      "32: When a worker must start from a non-default pushed branch, pass `cloud_base_branch`."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/technical-writing/SKILL.md",
+    "target": "pstack/skills/technical-writing/SKILL.md",
+    "assumptions": [
+      "43: **How-to: steps to a goal.** Solve a problem a person has, not an operation the machine can perform. Assume competence and skip teaching. Action only: no digressions, no background, no completeness for its own sake. Link those instead. Allow forks and judgment: \"If you want x, do y.\" Name the guide by the task: \"How to calibrate the radar array\", not \"Radar array calibration\".",
+      "61: - Headings carry the point, not just the topic (\"Pick the mode first\", not \"Modes\"). Sentence case. A task heading is a bare verb phrase (\"Create an instance\"). A concept heading is a noun phrase. One h1 per page, no skipped levels."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  },
+  {
+    "source": "pstack/skills/why/SKILL.md",
+    "target": "pstack/skills/why/SKILL.md",
+    "assumptions": [
+      "11: Each spawn below names a role line in the `pstack-models.mdc` rule and a default. Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.",
+      "49: Spawn one investigator per category that has a matching MCP, all in a single message so they run concurrently, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. `model`: the `why investigators` line, default `grok-4.7-xhigh-fast`."
+    ],
+    "status": "adapted; native execution still requires fresh-host verification"
+  }
+]
