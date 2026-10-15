@@ -127,4 +127,4 @@ The source main contains 936 files / 6,495,568 bytes; its pstack subtree is 169 
 
 The earlier feat/codex-integration tree is 560 files / 8,782,600 bytes, including 267 files / 824,323 bytes under its generated skills tree (55 skill directories in that actual ref). Differences against it include changing source lineage and not importing its CLI/viewer/generator, so they must not be reported as pure deduplication savings. That branch and its published package are preserved. Exact final measurements are in size-comparison.json.
 
-The large main diff is dominated by the explicitly requested removal of 766 non-pstack files. Host changes and moved public files are counted separately with rename detection disabled in size-comparison.json; normal Git rename detection presents moved agents/assets/guide files as moves.
+The large main diff is dominated by 765 explicitly requested non-pstack removals plus the rewritten root README (766 changed files in that group). Host changes and moved public files are counted separately with rename detection disabled in size-comparison.json; normal Git rename detection presents moved agents/assets/guide files as moves.
