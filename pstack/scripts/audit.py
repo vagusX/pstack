@@ -7,7 +7,7 @@ import os
 import re
 
 PSTACK = Path(__file__).resolve().parents[1]
-SUPPORT = PSTACK / 'skills/pstack-support'
+SETUP = PSTACK / 'skills/setup-pstack'
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -18,9 +18,9 @@ def files(path):
 def target(source):
     relative = source.removeprefix('pstack/')
     if relative == '.cursor-plugin/plugin.json': return None
-    if relative == 'README.md': return 'pstack/skills/pstack-support/README.md'
+    if relative == 'README.md': return 'pstack/skills/setup-pstack/README.md'
     if relative.split('/')[0] in ('agents','automations','docs','assets','LICENSE'):
-        relative = 'skills/pstack-support/' + relative
+        relative = 'skills/setup-pstack/' + relative
         if '/automations/' in relative: relative = relative.replace('/SKILL.md','/INSTRUCTIONS.md')
     return 'pstack/' + relative
 
@@ -28,16 +28,16 @@ def build():
     inventory = json.loads((PSTACK / 'docs/source-inventory.json').read_text())
     skills = {}
     for directory in sorted((PSTACK/'skills').iterdir()):
-        if directory.name == 'pstack-support' or not directory.is_dir(): continue
+        if not directory.is_dir(): continue
         text = (directory/'SKILL.md').read_text()
         name = re.search(r'^name:\s*(.+)$',text,re.M).group(1).strip('"\'')
         manual = bool(re.search(r'^disable-model-invocation:\s*true$',text,re.M))
         if manual:
             metadata=directory/'agents/openai.yaml'; metadata.parent.mkdir(exist_ok=True)
             metadata.write_text('policy:\n  allow_implicit_invocation: false\n')
-        skills[directory.name]={'name':name,'manual':manual,'files':files(directory)}
-    manifest={'schema':1,'source_commit':inventory['commit'],'adapter_version':'0.15.24-host.1','skills':skills,'support_files':files(SUPPORT)}
-    (SUPPORT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        skills[directory.name]={'name':name,'manual':manual,'files':{'SKILL.md':sha(directory/'SKILL.md')} if directory == SETUP else files(directory)}
+    manifest={'schema':2,'carrier':'setup-pstack','source_commit':inventory['commit'],'adapter_version':'0.15.24-host.2','skills':skills,'shared_files':files(SETUP)}
+    (SETUP/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     lines=['# Source migration ledger','',f"Upstream: `{inventory['repository']}` at `{inventory['commit']}`. All original 54 frontmatter names and manual/path policies are retained. Benny instruction filenames change to avoid skill discovery, including full-depth scans.",'','| Source | Target | Decision | Verification |','| --- | --- | --- | --- |']
     for entry in inventory['files']:
         destination=target(entry['source']); entry['target']=destination
@@ -66,6 +66,6 @@ def build():
     (PSTACK/'docs/cursor-coupling.json').write_text(json.dumps(coupling,indent=2)+'\n')
     source_files=len(inventory['files']); source_bytes=sum(e['bytes'] for e in inventory['files'])
     current=list(p for p in PSTACK.rglob('*') if p.is_file() and '__pycache__' not in p.parts and 'node_modules' not in p.parts)
-    print(json.dumps({'source_files':source_files,'source_bytes':source_bytes,'current_files':len(current),'current_bytes':sum(p.stat().st_size for p in current),'original_skills':len(skills),'added_support_skills':1,'duplicated_shared_packs':0},indent=2))
+    print(json.dumps({'source_files':source_files,'source_bytes':source_bytes,'current_files':len(current),'current_bytes':sum(p.stat().st_size for p in current),'original_skills':len(skills),'added_support_skills':0,'duplicated_shared_packs':0},indent=2))
 
 if __name__=='__main__': build()

@@ -5,7 +5,7 @@ import unittest
 import sys
 sys.dont_write_bytecode = True
 
-path=Path(__file__).resolve().parents[1]/'skills/pstack-support/automations/benny/journal.py'
+path=Path(__file__).resolve().parents[1]/'skills/setup-pstack/automations/benny/journal.py'
 spec=importlib.util.spec_from_file_location('benny_journal',path); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
 
 class BennyTests(unittest.TestCase):

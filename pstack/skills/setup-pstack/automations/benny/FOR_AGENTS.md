@@ -64,7 +64,7 @@ the human enters setup by pointing the host agent at this file. do not look for 
 6. verify that the copied `FOR_AGENTS.md` and `skills/setup-benny/INSTRUCTIONS.md` exist in the target repository.
 7. read and follow `.pstack/automations/benny/skills/setup-benny/INSTRUCTIONS.md` directly from the target repository.
 
-Install pstack dependencies in the target project with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill "*" --agent <codex|claude-code> -y`. Read the installed setup-pstack and use its preview/write/merge contract. Do not enable a plugin through Cursor settings.
+Install pstack dependencies in the target project with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill "*" --agent <codex|claude-code> -y`. Read the installed setup-pstack and use its preview/write/merge contract. Do not enable a plugin through Cursor settings.
 
 Verify from a fresh session rooted in the target repository that how, why, tdd, unslop and Benny's required principle skills resolve in project scope. Global or current-session visibility is not proof. Operational files are INSTRUCTIONS.md, so they are never slash-skill entries.
 

@@ -4,7 +4,7 @@ description: "Fan out N parallel workers, drain them, and return one report. Use
 disable-model-invocation: true
 ---
 
-Before executing, read the installed **pstack-support** `references/host-instructions.md` and run its preflight with this skill's actual location. If support is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill pstack-support --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
 
 
 # Swarm
@@ -30,7 +30,7 @@ Open a todolist with one entry per phase before launching anything.
 
 ## Phase B: Fan out
 
-Spawn all N workers through the current host's native delegation interface described in **pstack-support**. First inspect available capabilities. Prefer a separate execution environment when the host actually supplies one. Otherwise use separate local worktrees, state that execution is local, and check required tools and credentials there. A worktree does not provide a VM, separate network, or cloud persistence.
+Spawn all N workers through the current host's native delegation interface described in **setup-pstack**. First inspect available capabilities. Prefer a separate execution environment when the host actually supplies one. Otherwise use separate local worktrees, state that execution is local, and check required tools and credentials there. A worktree does not provide a VM, separate network, or cloud persistence.
 
 Each worker must check out the exact branch and SHA specified in its brief. Do not pass a host-specific cloud branch parameter to a local agent.
 

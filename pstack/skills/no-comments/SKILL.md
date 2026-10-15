@@ -4,7 +4,7 @@ description: "Spawn Comment Sicko, fix accepted findings, and offer encodings fo
 disable-model-invocation: true
 ---
 
-Before executing, read the installed **pstack-support** `references/host-instructions.md` and run its preflight with this skill's actual location. If support is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill pstack-support --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
 
 
 # No comments

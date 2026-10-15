@@ -1,12 +1,14 @@
 # Host adaptation validation
 
+Current layout: shared files live inside the existing setup-pstack entry, with 54 published skills and no added support entry. See [this revision's validation](setup-carrier.md). Native-runtime and previous remote-install observations below are parent-branch evidence; they are not new end-to-end claims for the carrier move.
+
 Validation window: 2026-10-14–15 (Asia/Shanghai). Tested source is the independent implementation checkout based on upstream `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`. This is a draft delivery, not a claim that all 54 workflows have run natively.
 
 | Check | Evidence / result |
 | --- | --- |
 | Original discovery | Real skills CLI 1.7.2 found 54 original names, including Poteto Mode and Make Bot UI. No Benny nested entry. |
-| Immutable GitHub installation | Real install from fork commit `16c9d599c6ff7825a3e75878f90822f1c781c682` found all 55 entries. Both setup writes read that exact SHA from skills-lock.json without a manual override; optional Benny merges across hosts, installed hashes unchanged. See remote-install.json. |
-| Shared-content layout | Real subset install copied only each selected skill directory; original agents/Benny/guide were absent. This demonstrated the need for one added pstack-support skill. |
+| Immutable GitHub installation | Historical parent-branch check: install from fork commit `16c9d599c6ff7825a3e75878f90822f1c781c682` found its 55 entries before carrier consolidation. Current revision checks are recorded separately below. Both setup writes read that exact SHA from skills-lock.json without a manual override; optional Benny merges across hosts, installed hashes unchanged. See remote-install.json. |
+| Shared-content layout | Real subset install copied only each selected skill directory; original agents/Benny/guide were absent. This demonstrated the need for an installable carrier for shared files; the current revision uses the existing setup-pstack entry, not an added skill. |
 | Installation matrix | Node 22.20.0, skills 1.7.2; 16 rows across Codex/Claude Code, project/global, full/subset, copy/link, plus dual-host canonical links. Each source fixture removed before setup. Installed skill hashes unchanged. Final matrix JSON attached in this directory. |
 | Runtime dependencies | Bun 1.4.3. Both orch and watch-pr run from calling projects after source removal. First install uses original frozen lock, repeat retains marker mtime, lock revision creates another keyed cache. Installed hashes unchanged. Linked .pstack and a directory named ..calling-project inside a skill are refused. |
 | Upstream tools | All 68 upstream Bun tests pass, 246 assertions across 5 files. Strict watch-pr TypeScript check passes from a private project runtime copy. |
@@ -78,7 +80,7 @@ Each entry retains its frontmatter name, resources and invocation/path policy. S
 | `unslop` | unslop | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
 | `why` | why | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
 
-The added pstack-support entry is shared installation support, not one of the original 54. Manual Codex metadata maps the original disable-model-invocation policy; TypeScript paths remain in frontmatter and are enforced by host routing instructions because unsupported skill fields are not assumed to be native filters.
+The existing setup-pstack entry carries shared files; the published catalog has only the original 54 skills. Manual Codex metadata maps the original disable-model-invocation policy; TypeScript paths remain in frontmatter and are enforced by host routing instructions because unsupported skill fields are not assumed to be native filters.
 
 ## Reproduce checks
 
@@ -108,7 +110,7 @@ Rebuild the source ledger and integrity metadata after changes with `python3 pst
 
 | Added item | Purpose | Can it be deleted? |
 | --- | --- | --- |
-| pstack-support/manifest.json | Version/content integrity and mixed-install refusal | No, it is required installed metadata. |
+| setup-pstack/manifest.json | Version/content integrity and mixed-install refusal | No, it is required installed metadata. |
 | .pstack/setup-codex.json / setup-claude-code.json | Actual installed fork commit, upstream source, last-write hashes and merge baseline | Keep while using setup; deleting loses ownership evidence and requires explicit adoption. Secret-free configuration only. |
 | .codex/agents / .claude/agents | Host-native project persona definitions | Deleting removes that host's registered names. Setup can recreate missing managed files. |
 | AGENTS.md / CLAUDE.md bounded block and pstack-role rows | Native persistent instructions and original per-role model choices | Other user content is never removed. Removing the block disables project overrides; rerun setup for a managed installation. |

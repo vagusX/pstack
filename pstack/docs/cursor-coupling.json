@@ -1,7 +1,7 @@
 [
   {
     "source": "pstack/README.md",
-    "target": "pstack/skills/pstack-support/README.md",
+    "target": "pstack/skills/setup-pstack/README.md",
     "assumptions": [
       "28: new here? the [pstack guide](./docs/guide/README.md) walks you through a first real task, from setup and prompting through verification and overnight runs. stuck, or unsure which skill fits? ask [`/poteto-help`](./skills/poteto-help/SKILL.md).",
       "34: use [`/poteto-mode`](./skills/poteto-mode/SKILL.md) at the start of a task. it reads your request, picks from a set of playbooks, and runs the other skills as the steps need them.",
@@ -26,7 +26,7 @@
   },
   {
     "source": "pstack/agents/poteto-agent.md",
-    "target": "pstack/skills/pstack-support/agents/poteto-agent.md",
+    "target": "pstack/skills/setup-pstack/agents/poteto-agent.md",
     "assumptions": [
       "3: description: Delegate subagent for code-writing and helper tasks spawned during a `/poteto-mode` run. Use for delegates, not as the runner for `/poteto-mode` itself. Spawn a fresh `poteto-agent` for each new task, and resume one only in the strict cases that poteto-mode's Subagents section names. Reads the `poteto-mode` skill's `SKILL.md` in full before any work, including its inline Principles index. Substituting `generalPurpose` skips that read and drifts.",
       "9: You are operating as poteto-mode's full agent style. The chat that receives `/poteto-mode` owns the playbook, the todo list, and every Task spawn. You are one of its delegates. Read the `poteto-mode` skill's `SKILL.md` in full before doing any work, including its inline Principles index. Use the absolute path your parent gave you. With no path, before any other work, search `~/.cursor/plugins/` for a file whose path ends in `skills/poteto-mode/SKILL.md`. If more than one file matches, use the copy whose `.cursor-plugin/plugin.json` has the highest `version`. Your skill catalog hides this skill, so a missing catalog entry does not mean pstack is absent. If no such file exists, stop and tell your parent. Navigate to a leaf `principle-*` skill whenever you apply that principle."
@@ -35,7 +35,7 @@
   },
   {
     "source": "pstack/automations/benny/FOR_AGENTS.md",
-    "target": "pstack/skills/pstack-support/automations/benny/FOR_AGENTS.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/FOR_AGENTS.md",
     "assumptions": [
       "31: - i want this entire pack committed at `.cursor/automations/benny/` in the target repository. its `SKILL.md` files are direct automation instructions, not registered plugin skills.",
       "32: - i want pstack enabled through the target repository's committed `.cursor/settings.json` only for shared dependencies such as `how`, `why`, `tdd`, `unslop`, and the required principle skills.",
@@ -52,7 +52,7 @@
   },
   {
     "source": "pstack/automations/benny/README.md",
-    "target": "pstack/skills/pstack-support/automations/benny/README.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/README.md",
     "assumptions": [
       "10: 2. let setup merge this whole directory into the target at `.cursor/automations/benny/`. it must preserve destination-only files and review conflicts instead of overwriting local edits.",
       "11: 3. let setup enable pstack in the target repository's `.cursor/settings.json` for shared dependencies:",
@@ -63,7 +63,7 @@
   },
   {
     "source": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
-    "target": "pstack/skills/pstack-support/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
     "assumptions": [
       "7: Set the completed user-facing feature map path in `control.feature_map_path`. Copy and fill [`feature-map.example.md`](./feature-map.example.md) outside `.cursor/automations/benny/` instead of editing the copied example."
     ],
@@ -71,7 +71,7 @@
   },
   {
     "source": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
-    "target": "pstack/skills/pstack-support/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
     "assumptions": [
       "5: Copy this file outside `.cursor/automations/benny/`, for example to `.cursor/benny/feature-map.md`, and set `control.feature_map_path` to the copy. Pack refreshes must not overwrite it.",
       "61: These features belong to a fictional task app. They are examples, not required Benny features.",
@@ -81,7 +81,7 @@
   },
   {
     "source": "pstack/automations/benny/skills/setup-benny/SKILL.md",
-    "target": "pstack/skills/pstack-support/automations/benny/skills/setup-benny/INSTRUCTIONS.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/skills/setup-benny/INSTRUCTIONS.md",
     "assumptions": [
       "11: The human enters setup by pointing Cursor at the pack's `FOR_AGENTS.md`. The bootstrap flow copies the whole pack into the target repository, then reads this file directly at `.cursor/automations/benny/skills/setup-benny/SKILL.md`.",
       "21: Ask which repository will run the automations. The source pack is the directory containing `FOR_AGENTS.md`. The destination is `<target-repository>/.cursor/automations/benny/`.",
@@ -104,7 +104,7 @@
   },
   {
     "source": "pstack/automations/benny/skills/triage-issue-reports/references/routing.example.md",
-    "target": "pstack/skills/pstack-support/automations/benny/skills/triage-issue-reports/references/routing.example.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/skills/triage-issue-reports/references/routing.example.md",
     "assumptions": [
       "3: Copy this file outside `.cursor/automations/benny/`, for example to `.cursor/benny/routing.md`, and replace every placeholder. Point `routing.map_path` at the copy. Pack refreshes must not overwrite it."
     ],
@@ -112,7 +112,7 @@
   },
   {
     "source": "pstack/automations/benny/templates/configuration.example.yaml",
-    "target": "pstack/skills/pstack-support/automations/benny/templates/configuration.example.yaml",
+    "target": "pstack/skills/setup-pstack/automations/benny/templates/configuration.example.yaml",
     "assumptions": [
       "42:   map_path: \".cursor/benny/routing.md\"",
       "49:   feature_map_path: \".cursor/benny/feature-map.md\""
@@ -121,7 +121,7 @@
   },
   {
     "source": "pstack/automations/benny/templates/reproduce-automation-prompt.md",
-    "target": "pstack/skills/pstack-support/automations/benny/templates/reproduce-automation-prompt.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/templates/reproduce-automation-prompt.md",
     "assumptions": [
       "5: Read and follow `.cursor/automations/benny/skills/reproduce-and-fix-issues/SKILL.md` for this run."
     ],
@@ -129,7 +129,7 @@
   },
   {
     "source": "pstack/automations/benny/templates/triage-automation-prompt.md",
-    "target": "pstack/skills/pstack-support/automations/benny/templates/triage-automation-prompt.md",
+    "target": "pstack/skills/setup-pstack/automations/benny/templates/triage-automation-prompt.md",
     "assumptions": [
       "5: Read and follow `.cursor/automations/benny/skills/triage-issue-reports/SKILL.md` for this run."
     ],
@@ -137,7 +137,7 @@
   },
   {
     "source": "pstack/docs/guide/01-setup.md",
-    "target": "pstack/skills/pstack-support/docs/guide/01-setup.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/01-setup.md",
     "assumptions": [
       "3: In this page you install the plugin, pick which models pstack uses, and run your first task. Setup is one command plus a short conversation.",
       "23: [`/setup-pstack`](../../skills/setup-pstack/SKILL.md) detects the models you have access to, asks for a reasoning budget, shows you each role (code delegates, judgment, the review panels), and asks what you want. Answer the questions. It writes `~/.cursor/rules/pstack-models.mdc`, a small rule every pstack skill reads.",
@@ -149,7 +149,7 @@
   },
   {
     "source": "pstack/docs/guide/02-poteto-mode.md",
-    "target": "pstack/skills/pstack-support/docs/guide/02-poteto-mode.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/02-poteto-mode.md",
     "assumptions": [
       "13:     C --> D{Match the task}",
       "85: Short works because the playbook holds the structure, and a Custom Mode keeps `/poteto-mode` in context on every turn. [Set up pstack](./01-setup.md#run-your-first-task) shows how to start one. Your words carry the intent, and the skill carries the rigor.",
@@ -165,7 +165,7 @@
   },
   {
     "source": "pstack/docs/guide/03-understand.md",
-    "target": "pstack/skills/pstack-support/docs/guide/03-understand.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/03-understand.md",
     "assumptions": [
       "17: \"don't change any code yet\" routes this to the [Investigation playbook](../../skills/poteto-mode/playbooks/investigation.md). It runs `/how`, adds `/why` for questions about motivation, and returns a cited explanation. For a choice between options, it returns a recommendation with a trade-offs table. Asking \"what data you used\" makes the agent separate its evidence from its guesses. When the findings point at a fix, start the fix as a new task."
     ],
@@ -173,7 +173,7 @@
   },
   {
     "source": "pstack/docs/guide/04-design.md",
-    "target": "pstack/skills/pstack-support/docs/guide/04-design.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/04-design.md",
     "assumptions": [
       "35:     A[One task] --> B[Configured panel]",
       "47: The panel comes from your [`/setup-pstack`](../../skills/setup-pstack/SKILL.md) configuration, and you can adjust it per task. Ask for more candidates when the decision matters, fewer when it doesn't:",
@@ -183,7 +183,7 @@
   },
   {
     "source": "pstack/docs/guide/05-build-and-clean.md",
-    "target": "pstack/skills/pstack-support/docs/guide/05-build-and-clean.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/05-build-and-clean.md",
     "assumptions": [
       "3: The build playbooks share one discipline. Say what you observed, let the playbook demand the evidence. This page shows what to put in the prompt for each common build task, then the cleanup habit that keeps diffs reviewable.",
       "55: [`typescript-best-practices`](../../skills/typescript-best-practices/SKILL.md) turns the type-system principles into concrete rules: discriminated unions, `unknown` at boundaries, exhaustive variants, schema-derived types. It doesn't load on its own, so type `/typescript-best-practices` when a task touches `.ts` or `.tsx` files.",
@@ -193,7 +193,7 @@
   },
   {
     "source": "pstack/docs/guide/06-verify-and-ship.md",
-    "target": "pstack/skills/pstack-support/docs/guide/06-verify-and-ship.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/06-verify-and-ship.md",
     "assumptions": [
       "61: It writes `.cursor/skills/verify-<app>/`, agent-facing instructions with exact Launch, Doctor, Drive, Evidence, and Cleanup sections, plus a feature map under `features/` that indexes what the app does and what result proves each feature works. The skill ships a [worked feature-map example](../../skills/create-verification-skill/references/feature-map-example/) with a README index and one file per feature using the four required H2s. Before handing it over, the generator proves the skill once end to end: launch, doctor check, drive one feature, capture evidence, clean up. If that proof fails, don't use the output."
     ],
@@ -201,7 +201,7 @@
   },
   {
     "source": "pstack/docs/guide/07-overnight.md",
-    "target": "pstack/skills/pstack-support/docs/guide/07-overnight.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/07-overnight.md",
     "assumptions": [
       "3: This is the payoff for everything before it. An agent you can trust to verify its own work is an agent you can leave alone with a hard task. What makes that safe isn't hope. It's a checkable finish condition, an isolated worktree or cloud agent, and a decision log you audit in the morning.",
       "11: - You've done the task once by hand, or watched an agent do it, so you know what good looks like.",
@@ -213,7 +213,7 @@
   },
   {
     "source": "pstack/docs/guide/08-principles.md",
-    "target": "pstack/skills/pstack-support/docs/guide/08-principles.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/08-principles.md",
     "assumptions": [
       "3: pstack ships 24 principles as individual skills. `/poteto-mode` reads their index at the start of every multi-step task, applies the ones the task triggers, and names each applied principle in its reply along with the decision it changed."
     ],
@@ -221,7 +221,7 @@
   },
   {
     "source": "pstack/docs/guide/09-make-it-yours.md",
-    "target": "pstack/skills/pstack-support/docs/guide/09-make-it-yours.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/09-make-it-yours.md",
     "assumptions": [
       "13: You don't describe your style, because [`/automate-me`](../../skills/automate-me/SKILL.md) reads it out of your history. It mines your recent transcripts in the active workspace for repeated preferences, in how you like replies, delegation, verification, code, prose, and process, then asks you which patterns are really you. It drafts `.cursor/skills/<your-name>-mode/SKILL.md` through Cursor's built-in `create-skill` flow, runs the draft through [`/unslop`](../../skills/unslop/SKILL.md), and opens a PR from a worktree so you review it like any other change.",
       "25: Right after a task that taught you something, run:",
@@ -235,7 +235,7 @@
   },
   {
     "source": "pstack/docs/guide/10-recipes-and-pitfalls.md",
-    "target": "pstack/skills/pstack-support/docs/guide/10-recipes-and-pitfalls.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/10-recipes-and-pitfalls.md",
     "assumptions": [
       "109: The full contract is on the [overnight page](./07-overnight.md). The short form works once the task and finish condition are already in the conversation.",
       "154: That's the guide. If you skipped ahead, go back to [setup](./01-setup.md) and run one real task. The habits stick from use, not from reading."
@@ -244,7 +244,7 @@
   },
   {
     "source": "pstack/docs/guide/README.md",
-    "target": "pstack/skills/pstack-support/docs/guide/README.md",
+    "target": "pstack/skills/setup-pstack/docs/guide/README.md",
     "assumptions": [
       "14: 8. [Steer with principle names](./08-principles.md). The 24 names that redirect an agent mid-task."
     ],

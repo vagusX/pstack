@@ -11,9 +11,9 @@ import re
 import tempfile
 import tomllib
 
-SUPPORT = Path(__file__).resolve().parents[1]
-SOURCE = "https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation"
-INSTALL = f"npx skills@1.7.2 add {SOURCE} --skill pstack-support --agent codex claude-code"
+SETUP = Path(__file__).resolve().parents[1]
+SOURCE = "https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content"
+INSTALL = f"npx skills@1.7.2 add {SOURCE} --skill setup-pstack --agent codex claude-code"
 
 
 def digest(data):
@@ -22,20 +22,20 @@ def digest(data):
 
 def read_manifest():
     try:
-        manifest = json.loads((SUPPORT / "manifest.json").read_text())
-        if manifest["schema"] != 1 or not re.fullmatch(r"[0-9a-f]{40}", manifest["source_commit"]):
+        manifest = json.loads((SETUP / "manifest.json").read_text())
+        if (manifest["schema"] != 2 or manifest["carrier"] != "setup-pstack") or not re.fullmatch(r"[0-9a-f]{40}", manifest["source_commit"]):
             raise ValueError("invalid provenance")
-        if not isinstance(manifest["skills"], dict) or not isinstance(manifest["support_files"], dict):
+        if not isinstance(manifest["skills"], dict) or not isinstance(manifest["shared_files"], dict):
             raise ValueError("invalid file catalog")
         required = {"scripts/setup.py", "references/host-instructions.md", "agents/poteto-agent.md", "agents/comment-sicko.md", "LICENSE"}
-        if not required.issubset(manifest["support_files"]):
-            raise ValueError("incomplete support catalog")
-        for name, expected in manifest["support_files"].items():
+        if not required.issubset(manifest["shared_files"]):
+            raise ValueError("incomplete shared-file catalog")
+        for name, expected in manifest["shared_files"].items():
             if not isinstance(name, str) or not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected):
-                raise ValueError("invalid support hash")
-            path = SUPPORT / name
-            if not path.resolve().is_relative_to(SUPPORT) or digest(path.read_bytes()) != expected:
-                raise ValueError(f"damaged support file: {name}")
+                raise ValueError("invalid shared-file hash")
+            path = SETUP / name
+            if not path.resolve().is_relative_to(SETUP) or digest(path.read_bytes()) != expected:
+                raise ValueError(f"damaged shared file: {name}")
         for name, skill in manifest["skills"].items():
             if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name) or not isinstance(skill, dict) or not isinstance(skill.get("files"), dict) or "SKILL.md" not in skill["files"]:
                 raise ValueError("invalid skill catalog")
@@ -43,7 +43,7 @@ def read_manifest():
                 raise ValueError("invalid skill hash")
         return manifest
     except (OSError, ValueError, KeyError, TypeError) as error:
-        raise ValueError(f"Invalid pstack-support installation: {error}. Reinstall with: {INSTALL}") from error
+        raise ValueError(f"Invalid setup-pstack installation: {error}. Reinstall with: {INSTALL}") from error
 
 
 def skill_roots(project, host):
@@ -56,22 +56,22 @@ def skill_roots(project, host):
 def preflight(project, host, required=(), skill_location=None):
     manifest = read_manifest()
     roots = skill_roots(project, host)
-    installed_support = next((r / "pstack-support" for r in roots if (r / "pstack-support").exists()), None)
-    if installed_support is None or installed_support.resolve() != SUPPORT:
-        raise ValueError(f"This support copy is not the active {host} installation. Project skills override global copies. {INSTALL}")
+    installed_setup = next((r / "setup-pstack" for r in roots if (r / "setup-pstack").exists()), None)
+    if installed_setup is None or installed_setup.resolve() != SETUP:
+        raise ValueError(f"This setup copy is not the active {host} installation. Project skills override global copies. {INSTALL}")
     required = set(required)
     seen = set()
     for name, spec in manifest["skills"].items():
         location = next((r / name for r in roots if (r / name).exists()), None)
         if location is None:
             if name in required:
-                raise ValueError(f"Missing project or global skill {name}; install it with pstack-support from {SOURCE}")
+                raise ValueError(f"Missing project or global skill {name}; install it with setup-pstack from {SOURCE}")
             continue
         seen.add(location.resolve())
         for file, expected in spec["files"].items():
             path = location / file
             if not path.resolve().is_relative_to(location.resolve()) or not path.is_file() or digest(path.read_bytes()) != expected:
-                raise ValueError(f"Mixed, modified or incomplete pstack installation at {path}. Reinstall matching skills and support from {SOURCE}")
+                raise ValueError(f"Mixed, modified or incomplete pstack installation at {path}. Reinstall matching skills and setup-pstack from {SOURCE}")
     if required - manifest["skills"].keys():
         raise ValueError("Unknown required skill")
     if skill_location and Path(skill_location).resolve() not in seen:
@@ -109,7 +109,7 @@ def parse_agent(text, host):
 
 
 def agent_text(name, host):
-    original = (SUPPORT / "agents" / f"{name}.md").read_text()
+    original = (SETUP / "agents" / f"{name}.md").read_text()
     fields = parse_agent(original, "claude-code")
     body = fields["developer_instructions"]
     if host == "codex":
@@ -149,7 +149,7 @@ def managed_block(text, host):
     if begin in text and existing is None:
         raise ValueError("Invalid pstack instruction block order")
     models = "\n".join(line for line in (existing.group() if existing else "").splitlines() if line.startswith("pstack-role "))
-    content = (SUPPORT / "references/host-instructions.md").read_text().strip()
+    content = (SETUP / "references/host-instructions.md").read_text().strip()
     block = f"{begin}\n{content}\n\nHost: {host}.\n{models}\n{end}"
     return text[:existing.start()] + block + text[existing.end():] if existing else text.rstrip() + "\n\n" + block + "\n"
 
@@ -185,24 +185,29 @@ def setup(project, host, write=False, benny=False, accepted=None, source_commit=
                 if other["schema"] != 1 or other["host"] != other_host or not re.fullmatch(r"[0-9a-f]{40}", other["source_commit"]):
                     raise ValueError("Invalid other-host setup provenance")
                 for relative, record in other["files"].items():
-                    if relative.startswith(".pstack/automations/benny/") and relative not in records:
+                    if relative.startswith(".pstack/automations/benny/"):
                         if digest(record["written"].encode()) != record["sha256"]:
                             raise ValueError("Invalid other-host pack hash")
-                        records[relative] = record
+                        path = project / relative
+                        if not path.resolve().is_relative_to(project) or path.is_symlink():
+                            raise ValueError("Linked shared pack file")
+                        # Both hosts own the same pack; the latest matching receipt is its baseline.
+                        if relative not in records or (path.is_file() and digest(path.read_bytes()) == record["sha256"]):
+                            records[relative] = record
             except (ValueError, KeyError, TypeError) as error:
                 raise ValueError(f"Corrupt other-host pack receipt: {error}") from error
-    manifest_hash = digest((SUPPORT / "manifest.json").read_bytes())
+    manifest_hash = digest((SETUP / "manifest.json").read_bytes())
     if source_commit is None:
         lock_path = project / "skills-lock.json"
         if lock_path.exists():
             try:
-                locked = json.loads(lock_path.read_text())["skills"]["pstack-support"]
+                locked = json.loads(lock_path.read_text())["skills"]["setup-pstack"]
                 ref = locked.get("ref", "")
                 if re.fullmatch(r"[0-9a-f]{40}", ref):
                     source_commit = ref
             except (ValueError, KeyError, TypeError):
                 pass
-    if source_commit is None and state.get("support_manifest_sha256") == manifest_hash:
+    if source_commit is None and state.get("setup_manifest_sha256") == manifest_hash:
         source_commit = state["source_commit"]
     if source_commit is not None and not re.fullmatch(r"[0-9a-f]{40}", source_commit):
         raise ValueError("Installed source commit must be a full 40-character Git SHA")
@@ -217,9 +222,9 @@ def setup(project, host, write=False, benny=False, accepted=None, source_commit=
     instruction_path = project / instruction
     desired[instruction] = managed_block(instruction_path.read_text() if instruction_path.exists() else "", host)
     if benny:
-        for relative in manifest["support_files"]:
+        for relative in manifest["shared_files"]:
             if relative.startswith("automations/benny/"):
-                desired[f".pstack/{relative}"] = (SUPPORT / relative).read_text()
+                desired[f".pstack/{relative}"] = (SETUP / relative).read_text()
     for relative, candidate in desired.items():
         path = project / relative
         if not path.resolve().is_relative_to(project) or path.is_symlink():
@@ -287,7 +292,7 @@ def setup(project, host, write=False, benny=False, accepted=None, source_commit=
     if conflicts:
         raise ValueError("Resolve ownership/local changes before setup: " + ", ".join(conflicts) + ". No managed files written. Review and merge, then pass --accept-merge path=sha256 for each exact reviewed file.")
     receipt = json.dumps({"schema": 1, "host": host, "source_commit": source_commit,
-                          "upstream_commit": manifest["source_commit"], "support_manifest_sha256": manifest_hash,
+                          "upstream_commit": manifest["source_commit"], "setup_manifest_sha256": manifest_hash,
                           "adapter_version": manifest["adapter_version"], "files": new_records}, indent=2) + "\n"
     if not state_path.exists() or state_path.read_text() != receipt:
         changes[state_path] = receipt.encode()
@@ -322,7 +327,7 @@ def main():
             accepted[path] = checksum
         if args.check:
             manifest = preflight(project, args.host, args.require, args.skill_location)
-            print(json.dumps({"source_commit": manifest["source_commit"], "support": str(SUPPORT), "status": "ok"}))
+            print(json.dumps({"source_commit": manifest["source_commit"], "support": str(SETUP), "status": "ok"}))
         else:
             if args.write:
                 lock_path = project / ".pstack/.setup.lock"

@@ -7,7 +7,7 @@ disable-model-invocation: true
 Resolve `<project-skill-root>` to `.agents/skills` for Codex or `.claude/skills` for Claude Code, and `<global-skill-root>` to the current host's actual global skill root. Prefer the active host catalog when updating an existing skill. Preserve an established category only after confirming that the host discovers it; use a flat named skill directory for new skills.
 
 
-Before executing, read the installed **pstack-support** `references/host-instructions.md` and run its preflight with this skill's actual location. If support is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill pstack-support --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
 
 
 # Create a verification skill

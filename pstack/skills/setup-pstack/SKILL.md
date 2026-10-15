@@ -5,7 +5,13 @@ description: Configure pstack's project-scoped Codex or Claude Code agents, role
 
 # Setup pstack
 
-Configure the calling project from the actual installed **pstack-support** location. Read its `references/host-instructions.md`. Do not write global rules or project state in the skill installation.
+This original pstack entry also carries shared host instructions, agent personas, Benny, the guide, assets and license. Files are stored here once; no separate support skill is required.
+
+For workflow preflight, read [host instructions](references/host-instructions.md), then run `python3 <actual-setup-pstack-location>/scripts/setup.py --host <codex|claude-code> --project <calling-project> --check --skill-location <invoking-skill-directory>`. Python 3.11+ is required. This read-only check does not configure the project. Subset installations must explicitly include setup-pstack and the workflow dependencies; skills CLI does not resolve them automatically.
+
+For configuration, follow the steps below using this installed skill's actual location. Project state is written to the calling project, never this skill directory.
+
+Shared resources: [poteto-agent](agents/poteto-agent.md), [comment-sicko](agents/comment-sicko.md), [Benny entry](automations/benny/FOR_AGENTS.md), [guide](docs/guide/README.md), [upstream README](README.md) and [license](LICENSE). Benny operational files remain INSTRUCTIONS.md and are not registered as skills.
 
 ## Steps
 
@@ -17,16 +23,16 @@ Identify Codex or Claude Code from the current session. Inspect native delegatio
 
 Read the project's `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code), the two host agent files, and `.pstack/setup-<host>.json` when present. Preserve unrelated content, role choices, permissions and personal edits. The receipt records the source commit, adapter version and each file's last-written SHA-256. An existing name with no receipt is not automatically pstack-owned.
 
-Run the installed support script in preview mode:
+Run the installed setup script in preview mode:
 
 ```sh
-python3 <actual-support-location>/scripts/setup.py --host <codex|claude-code> --project <calling-project>
+python3 <actual-setup-pstack-location>/scripts/setup.py --host <codex|claude-code> --project <calling-project>
 ```
 
-It requires matching `setup-pstack`, `poteto-mode` and support installations. Missing support must be installed explicitly:
+Agent registration requires matching `setup-pstack` and `poteto-mode` installations. Install these original entries explicitly if missing:
 
 ```sh
-npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill pstack-support setup-pstack 'Poteto Mode' --agent codex claude-code
+npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack 'Poteto Mode' --agent codex claude-code
 ```
 
 ### 3. Budget, map and confirm
@@ -46,7 +52,7 @@ Panel rows are lists: one native agent per entry, including inherited entries. D
 
 ### 4. Validate
 
-Run support preflight for the chosen host and installed locations. Every chosen real model must be confirmed available, and each effort level supported. Check named-agent tool selection; do not assume a generic spawn can invoke a registered persona. For local edits or unowned same-name files, show current and proposed content and resolve ownership before writing. There is no force-overwrite mode.
+Run setup preflight for the chosen host and installed locations. Every chosen real model must be confirmed available, and each effort level supported. Check named-agent tool selection; do not assume a generic spawn can invoke a registered persona. For local edits or unowned same-name files, show current and proposed content and resolve ownership before writing. There is no force-overwrite mode.
 
 ### 5. Write the project configuration
 

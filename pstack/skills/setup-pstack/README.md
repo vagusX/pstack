@@ -14,7 +14,7 @@ fork it. improve it. make it yours. PRs are welcome!
 
 ## install
 
-Install all 54 original skills plus shared support with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill "*" --agent codex claude-code -y`. Use `--copy` for copies, the default for links between host directories, and `--global` for global content. Run setup from each calling project.
+Install all 54 original skills plus shared support with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill "*" --agent codex claude-code -y`. Use `--copy` for copies, the default for links between host directories, and `--global` for global content. Run setup from each calling project.
 
 ## get started
 

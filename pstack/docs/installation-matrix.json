@@ -6,7 +6,7 @@
       "scope": "project",
       "selection": "full",
       "mode": "copy",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -16,7 +16,7 @@
       "scope": "project",
       "selection": "full",
       "mode": "link",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -26,7 +26,7 @@
       "scope": "project",
       "selection": "subset",
       "mode": "copy",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -36,7 +36,7 @@
       "scope": "project",
       "selection": "subset",
       "mode": "link",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -46,7 +46,7 @@
       "scope": "global",
       "selection": "full",
       "mode": "copy",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -56,7 +56,7 @@
       "scope": "global",
       "selection": "full",
       "mode": "link",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -66,7 +66,7 @@
       "scope": "global",
       "selection": "subset",
       "mode": "copy",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -76,7 +76,7 @@
       "scope": "global",
       "selection": "subset",
       "mode": "link",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -86,7 +86,7 @@
       "scope": "project",
       "selection": "full",
       "mode": "copy",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -96,7 +96,7 @@
       "scope": "project",
       "selection": "full",
       "mode": "link",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -106,7 +106,7 @@
       "scope": "project",
       "selection": "subset",
       "mode": "copy",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -116,7 +116,7 @@
       "scope": "project",
       "selection": "subset",
       "mode": "link",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -126,7 +126,7 @@
       "scope": "global",
       "selection": "full",
       "mode": "copy",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -136,7 +136,7 @@
       "scope": "global",
       "selection": "full",
       "mode": "link",
-      "count": 55,
+      "count": 54,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -146,7 +146,7 @@
       "scope": "global",
       "selection": "subset",
       "mode": "copy",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -156,7 +156,7 @@
       "scope": "global",
       "selection": "subset",
       "mode": "link",
-      "count": 3,
+      "count": 2,
       "source_removed": true,
       "setup_readback": true,
       "installed_hash_unchanged": true
@@ -164,8 +164,24 @@
     {
       "host": "codex+claude-code",
       "mode": "shared-links",
-      "count": 55,
+      "count": 54,
       "source_removed": true
+    },
+    {
+      "host": "codex+claude-code",
+      "case": "minimal-how-plus-setup",
+      "count": 2,
+      "project_configuration_written": false,
+      "installed_hash_unchanged": true
+    },
+    {
+      "host": "codex+claude-code",
+      "case": "upgrade-retired-support-carrier",
+      "old_count": 55,
+      "count": 54,
+      "models_permissions_and_receipts_preserved": true,
+      "user_config_and_pack_files_preserved": true,
+      "installed_hash_unchanged": true
     }
   ],
   "native_agent_loading": "not tested by this installer harness",

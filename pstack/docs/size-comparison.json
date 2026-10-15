@@ -19,7 +19,7 @@
   },
   "working_pstack": {
     "files": 241,
-    "bytes": 3819992,
+    "bytes": 3831839,
     "shared_pack_instances": 1
   },
   "staged_diff_no_renames": {
@@ -33,5 +33,13 @@
       "added_lines": 7999,
       "deleted_lines": 3436
     }
+  },
+  "carrier_consolidation": {
+    "base_branch": "codex/pstack-host-adaptation",
+    "base_commit": "a8a489dc2a55d4058f3afb331ee63b140fd5eefc",
+    "before_entries": 55,
+    "after_entries": 54,
+    "shared_pack_instances": 1,
+    "carrier": "setup-pstack"
   }
 }

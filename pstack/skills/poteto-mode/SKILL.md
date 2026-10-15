@@ -6,7 +6,7 @@ icon: crown
 color: yellow
 ---
 
-Before executing, read the installed **pstack-support** `references/host-instructions.md` and run its preflight with this skill's actual location. If support is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill pstack-support --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
+Before executing, read the installed **setup-pstack** `references/host-instructions.md` and run its preflight with this skill's actual location. If setup-pstack is missing, stop and show `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill setup-pstack --agent codex claude-code`. Read sibling dependencies from the host's active skill locations, with project copies taking precedence.
 
 
 # Poteto mode
@@ -95,7 +95,7 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 **Use the registered `poteto-agent` for any subagent you spawn inside a playbook step** (code-writing delegates, ad-hoc helpers). The chat that receives `/poteto-mode` runs the playbook. Never spawn a `poteto-agent` to run the playbook itself. Routed workflow skills (`how`, `why`, `interrogate`, `reflect`, `swarm`) choose their own native agent roles for independent review. Respect what the skill prescribes, don't override to `poteto-agent`.
 
-Resolve this workflow's role models from the pstack-managed block in the project `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Default to `inherit-parent`; retain the original panel size with distinct review angles. Use only models confirmed available in this session. Do not invent vendor aliases or retry with another vendor's model. See the installed **pstack-support** host instructions for native delegation, effort and permission behavior.
+Resolve this workflow's role models from the pstack-managed block in the project `AGENTS.md` (Codex) or `CLAUDE.md` (Claude Code). Default to `inherit-parent`; retain the original panel size with distinct review angles. Use only models confirmed available in this session. Do not invent vendor aliases or retry with another vendor's model. See the installed **setup-pstack** host instructions for native delegation, effort and permission behavior.
 
 **Match the model and effort to the job.** Code delegates start from `feature, refactoring`, `bug-fix`, `perf-issue` or `hillclimb`; prose and judgment use `judgment and prose`. Hard cross-cutting design, concurrency and subtle algorithms use the strongest confirmed `hardest tasks` choice. Trivial mechanical changes use a confirmed fast code choice where available. Setup's budget sets the starting effort. Raise effort one supported step for the hardest work and lower it for routine tasks, without changing a chosen model family. Only use a supported fast mode when CI/trunk is red or a person is blocked; verification retains the `swarm workers` choice. Inherited roles stay inherited. If a supported adjustment is rejected, use the configured role or inheritance once and report the rejection.
 

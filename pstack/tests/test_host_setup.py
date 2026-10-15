@@ -16,7 +16,7 @@ class SetupTests(unittest.TestCase):
         self.home = Path(self.tmp.name) / 'home'; self.home.mkdir()
         skills=self.project / '.agents/skills'; shutil.copytree(PSTACK/'skills',skills)
         (self.project/'.claude').mkdir(); (self.project/'.claude/skills').symlink_to(skills, target_is_directory=True)
-        self.support=skills/'pstack-support'; self.script=self.support/'scripts/setup.py'
+        self.carrier=skills/'setup-pstack'; self.script=self.carrier/'scripts/setup.py'
         self.sha='a'*40
     def tearDown(self): self.tmp.cleanup()
     def run_setup(self, host='codex', *extra, success=True):
@@ -26,9 +26,9 @@ class SetupTests(unittest.TestCase):
         return result
     def receipt(self,host='codex'): return json.loads((self.project/f'.pstack/setup-{host}.json').read_text())
     def seal(self):
-        f=self.support/'manifest.json'; data=json.loads(f.read_text()); data['adapter_version']+='-updated'
-        for name in data['support_files']:
-            data['support_files'][name]=hashlib.sha256((self.support/name).read_bytes()).hexdigest()
+        f=self.carrier/'manifest.json'; data=json.loads(f.read_text()); data['adapter_version']+='-updated'
+        for name in data['shared_files']:
+            data['shared_files'][name]=hashlib.sha256((self.carrier/name).read_bytes()).hexdigest()
         f.write_text(json.dumps(data))
     def checksum(self,path): return hashlib.sha256(path.read_bytes()).hexdigest()
     def test_preview_and_idempotence(self):
@@ -54,7 +54,7 @@ class SetupTests(unittest.TestCase):
             else: agent.write_text(agent.read_text().replace('model: inherit','model: user-model\npermissionMode: default\ntools: Read, Glob, Grep'))
             self.run_setup(host,'--write',success=False)
             self.run_setup(host,'--write','--accept-merge',filename+'='+self.checksum(agent))
-            persona=self.support/'agents/poteto-agent.md'; persona.write_text(persona.read_text()+'\nAn upstream behavior update.\n'); self.seal()
+            persona=self.carrier/'agents/poteto-agent.md'; persona.write_text(persona.read_text()+'\nAn upstream behavior update.\n'); self.seal()
             self.run_setup(host,'--write')
             self.assertIn('An upstream behavior update.',agent.read_text()); self.assertIn('user-model',agent.read_text())
             if host=='claude-code': self.assertIn('tools: Read, Glob, Grep',agent.read_text())
@@ -67,7 +67,7 @@ class SetupTests(unittest.TestCase):
         self.run_setup('codex','--write','--accept-merge','.codex/agents/comment-sicko.toml='+'f'*64,success=False)
         self.run_setup('codex','--write','--accept-merge','.codex/agents/comment-sicko.toml='+self.checksum(agent))
         self.run_setup('codex','--write'); self.assertIn('My reviewer behavior',agent.read_text())
-        persona=self.support/'agents/comment-sicko.md'; persona.write_text(persona.read_text()+'\nUpdated upstream.\n'); self.seal()
+        persona=self.carrier/'agents/comment-sicko.md'; persona.write_text(persona.read_text()+'\nUpdated upstream.\n'); self.seal()
         self.run_setup('codex','--write',success=False); self.assertIn('My reviewer behavior',agent.read_text())
     def test_adopted_block_keeps_local_instruction_and_model_changes(self):
         instructions=self.project/'AGENTS.md'; instructions.write_text('Project-owned instructions.\n')
@@ -86,19 +86,24 @@ class SetupTests(unittest.TestCase):
         self.run_setup('codex','--write','--benny'); self.assertIn('My pack customization.',original.read_text())
     def test_corrupt_manifest_and_receipt_fail_closed(self):
         self.run_setup('codex','--write'); path=self.project/'.pstack/setup-codex.json'; data=self.receipt(); data['files']['AGENTS.md']['sha256']='0'*64; path.write_text(json.dumps(data)); self.run_setup('codex','--write',success=False)
-        path.unlink(); manifest=self.support/'manifest.json'; manifest.write_text('{broken'); self.run_setup('codex','--write',success=False)
+        path.unlink(); manifest=self.carrier/'manifest.json'; manifest.write_text('{broken'); self.run_setup('codex','--write',success=False)
     def test_two_hosts_share_pack_ownership(self):
         self.run_setup('codex','--write','--benny')
         pack=self.project/'.pstack/automations/benny/FOR_AGENTS.md'; stamp=pack.stat().st_mtime_ns
         self.run_setup('claude-code','--write','--benny')
         self.assertEqual(stamp,pack.stat().st_mtime_ns)
         self.assertIn('.pstack/automations/benny/FOR_AGENTS.md',self.receipt('claude-code')['files'])
+        source=self.carrier/'automations/benny/FOR_AGENTS.md'; source.write_text(source.read_text()+'\nUpdated shared pack instructions.\n'); self.seal()
+        self.run_setup('codex','--write','--benny'); stamp=pack.stat().st_mtime_ns
+        self.run_setup('claude-code','--write','--benny')
+        self.assertEqual(stamp,pack.stat().st_mtime_ns)
+        self.assertIn('Updated shared pack instructions.',pack.read_text())
     def test_missing_dependency_and_mixed_skill_rejected(self):
         skill=self.project/'.agents/skills/poteto-mode'; (skill/'SKILL.md').write_text('wrong version'); self.run_setup('codex','--write',success=False)
         shutil.rmtree(skill); self.run_setup('codex','--write',success=False)
-    def test_global_copy_cannot_bypass_project_support(self):
+    def test_global_copy_cannot_bypass_project_setup(self):
         global_skills=self.home/'.agents/skills'; shutil.copytree(self.project/'.agents/skills',global_skills)
-        self.script=global_skills/'pstack-support/scripts/setup.py'; self.run_setup('codex','--check',success=False)
+        self.script=global_skills/'setup-pstack/scripts/setup.py'; self.run_setup('codex','--check',success=False)
     def test_unordered_marker_and_linked_destination_rejected(self):
         (self.project/'AGENTS.md').write_text('<!-- pstack:end -->\n<!-- pstack:begin -->'); self.run_setup('codex','--write',success=False)
         (self.project/'AGENTS.md').unlink(); shutil.rmtree(self.project/'.pstack'); outside=Path(self.tmp.name)/'outside'; outside.mkdir(); (self.project/'.pstack').symlink_to(outside,target_is_directory=True)

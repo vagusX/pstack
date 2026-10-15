@@ -6,7 +6,7 @@ In this page you install the plugin, pick which models pstack uses, and run your
 
 In a terminal with Node 22.20+ installed, run the pinned skills CLI:
 
-Install all 54 original skills plus shared support with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/pstack-host-adaptation --skill "*" --agent codex claude-code -y`. Use `--copy` for copies, the default for links between host directories, and `--global` for global content. Run setup from each calling project.
+Install all 54 original skills plus shared support with `npx skills@1.7.2 add https://github.com/vagusX/pstack/tree/codex/setup-pstack-shared-content --skill "*" --agent codex claude-code -y`. Use `--copy` for copies, the default for links between host directories, and `--global` for global content. Run setup from each calling project.
 
 ## Pick your models
 
