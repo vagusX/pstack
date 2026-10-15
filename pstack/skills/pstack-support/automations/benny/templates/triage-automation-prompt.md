@@ -1,6 +1,6 @@
 # Triage automation prompt
 
-> Source material for the copied host setup workflow. Prepare a reviewed task for the actual available scheduler only after repository commands confirm the operational pack and configuration are committed on its execution branch and commit.
+> Source material for the copied host setup workflow. Prepare a reviewed task for the actual available scheduler only after repository commands confirm the operational pack and any referenced configuration files are committed on its execution branch and commit.
 
 Read and follow `.pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md` for this run.
 
@@ -39,4 +39,4 @@ End the single verdict with exactly one configured marker:
 A bug or performance marker may add `tracker=<URL>`.
 
 
-Read configuration from the committed same-repository `.pstack/benny/configuration.yaml`. Record and verify this runner's exact branch and commit. Fail closed if that file, committed instructions, project skills, connector tools or persistent journal storage are missing. Read new top-level source-channel reports and pending original threads if this task uses polling; disclose polling and the runner's persistence requirements. Keep immutable channel and root thread coordinates. Claim external write intents using `.pstack/automations/benny/journal.py` before sending, reconcile any pending intent against external state, and record successful object IDs. Never blindly repeat a reply, ticket or PR after a crash. Repro accepts markers only from the configured trusted triage identity in the original thread. No child agent receives Slack credentials or posting tools.
+Use the configuration source supplied above: read the selected committed same-repository file, or use the configured values paraphrased into this prompt. Record and verify this runner's exact branch and commit, including that any referenced configuration file is committed there. Fail closed if the supplied configuration is missing, malformed or incomplete, or if committed instructions, project skills, connector tools or persistent journal storage are missing. Read new top-level source-channel reports and pending original threads if this task uses polling; disclose polling and the runner's persistence requirements. Keep immutable channel and root thread coordinates. Claim external write intents using `.pstack/automations/benny/journal.py` before sending, reconcile any pending intent against external state, and record successful object IDs. Never blindly repeat a reply, ticket or PR after a crash. Repro accepts markers only from the configured trusted triage identity in the original thread. No child agent receives Slack credentials or posting tools.

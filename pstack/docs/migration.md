@@ -104,7 +104,7 @@ Upstream: `https://github.com/cursor/plugins` at `1e5c90a4b6f249917bd21fe361b3a2
 | `pstack/skills/poteto-mode/scripts/orch/orch.test.ts` | `pstack/skills/poteto-mode/scripts/orch/orch.test.ts` | preserve byte for byte | hash matches |
 | `pstack/skills/poteto-mode/scripts/orch/orch.ts` | `pstack/skills/poteto-mode/scripts/orch/orch.ts` | host adaptation; full workflow retained (Make Bot UI original retained in its reference) | present; source hash recorded; static/test coverage in validation report |
 | `pstack/skills/poteto-mode/scripts/orch/store.ts` | `pstack/skills/poteto-mode/scripts/orch/store.ts` | preserve byte for byte | hash matches |
-| `pstack/skills/poteto-mode/scripts/package.json` | `pstack/skills/poteto-mode/scripts/package.json` | preserve byte for byte | hash matches |
+| `pstack/skills/poteto-mode/scripts/package.json` | `pstack/skills/poteto-mode/scripts/package.json` | host adaptation; full workflow retained (Make Bot UI original retained in its reference) | present; source hash recorded; static/test coverage in validation report |
 | `pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts` | `pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts` | preserve byte for byte | hash matches |
 | `pstack/skills/poteto-mode/scripts/watch-pr/cli.ts` | `pstack/skills/poteto-mode/scripts/watch-pr/cli.ts` | host adaptation; full workflow retained (Make Bot UI original retained in its reference) | present; source hash recorded; static/test coverage in validation report |
 | `pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts` | `pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts` | preserve byte for byte | hash matches |

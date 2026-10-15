@@ -149,8 +149,8 @@
       "bytes": 13992,
       "mode": "0o644",
       "target": "pstack/skills/pstack-support/automations/benny/skills/setup-benny/INSTRUCTIONS.md",
-      "target_sha256": "5fe55795d9938a94ba74a49d8e46bdd817095c58a98d75a06cdc77a5879a69e1",
-      "target_bytes": 14028,
+      "target_sha256": "086b73e37fe6d89e95b4c303c45d29079b8e27098b85bcf26c93ade75640d3c1",
+      "target_bytes": 14136,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -193,8 +193,8 @@
       "bytes": 1822,
       "mode": "0o644",
       "target": "pstack/skills/pstack-support/automations/benny/templates/reproduce-automation-prompt.md",
-      "target_sha256": "24c1c0879142697893546af6a4e5d72d35ecdfefa988b5f6d42e01c77e8fd17d",
-      "target_bytes": 2722,
+      "target_sha256": "62bfba9f2bb2f14fbfaec806208765bfba62f8f9a848817af94e320c686345b4",
+      "target_bytes": 2935,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -204,8 +204,8 @@
       "bytes": 1569,
       "mode": "0o644",
       "target": "pstack/skills/pstack-support/automations/benny/templates/triage-automation-prompt.md",
-      "target_sha256": "7b487226f57fde05a207814ea5639a7c092a2b01de5a9f67c41d566730eb05e3",
-      "target_bytes": 2469,
+      "target_sha256": "f597b07ff40cba52c5eec0404319ff7c7475d4af6f45a26cab4fbbe670ab865b",
+      "target_bytes": 2682,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -1106,10 +1106,10 @@
       "bytes": 371,
       "mode": "0o644",
       "target": "pstack/skills/poteto-mode/scripts/package.json",
-      "target_sha256": "fd511a0c01f522e0c781ddd8eccea0e91697a0856c6e6a3261de78a6a0287c72",
-      "target_bytes": 371,
-      "decision": "preserve byte for byte",
-      "verification": "hash matches"
+      "target_sha256": "f5e4eff6e56cdfeceda49d73df469e67bd31571a88dcbd28567eba20e4d4b845",
+      "target_bytes": 345,
+      "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
+      "verification": "present; source hash recorded; static/test coverage in validation report"
     },
     {
       "source": "pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts",

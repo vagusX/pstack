@@ -17,6 +17,22 @@ Validation window: 2026-10-14–15 (Asia/Shanghai). Tested source is the indepen
 | External automations | No tasks activated; no Slack/tracker/PR/app writes for Benny. Journal tests simulate duplicate delivery, trusted markers and restart recovery. Real event triggers, polling scheduling, connector tools and UI repro remain unverified until dedicated targets are authorized. |
 | Make Bot UI | Explicitly NOT ADAPTED in both hosts; original full source retained in a historical reference. No invented webhook/secret-request substitute. |
 
+## Review follow-up, 2026-10-15
+
+The local fixes based on `a8a489dc2a55d4058f3afb331ee63b140fd5eefc` restore the package's `bun run test` entry point by running the tests in a temporary calling project. All 68 tests and 246 assertions pass with Bun 1.3.13; all 16 Python tests pass. The installation matrix was rerun on these fixes with Node 24.7.0 and skills 1.7.2: all 16 combinations and the additional shared-link case pass, including source removal, setup readback and unchanged installed content where checked by the harness.
+
+Benny setup and both prompt templates now accept the selected committed configuration file or configuration values included in the live prompt. Non-default paths and inline configuration were checked in both templates; no automations were activated.
+
+| Migration goal | Follow-up result |
+| --- | --- |
+| Source files, resources and invocation policies | 169 source inventory entries accounted for: 168 target files and one explicit Cursor registration removal; 54 original skills plus one support skill; all 53 original manual entries retain Codex implicit-invocation restrictions. |
+| Installation, setup and tool tests | Verified by the local matrix and test runs above. Remote installation evidence still refers to `16c9d599c6ff7825a3e75878f90822f1c781c682`, not this follow-up revision. |
+| Native named agents and all 54 workflows | Still unverified; the earlier native-host limits remain. File generation and passing tests do not establish actual host execution. |
+| Benny real triggers, connectors and application reproduction | Still unverified; no dedicated external targets were activated. |
+| Make Bot UI | Still not adapted. |
+
+File migration and the tested installation paths meet their checks. Complete native workflow migration remains unverified, with Make Bot UI still missing an implementation.
+
 ## Per-entry coverage
 
 Each entry retains its frontmatter name, resources and invocation/path policy. Static adaptation, references and installation are checked. A representative test does not imply a real execution of every entry. The following statuses deliberately distinguish those facts.
@@ -94,10 +110,11 @@ Run the real CLI matrix with paths to a locally prepared Node 22.20+ binary, ski
 python3 pstack/tests/install_matrix.py --node <node> --cli <skills-package>/bin/cli.mjs --bun <bun> --output <results.json>
 ```
 
-Run preserved upstream tests from a separate calling project, not from the installed skill directory:
+Run preserved upstream tests through the package entry point. It creates and removes a temporary calling project, so dependency installation does not write into the skill directory:
 
 ```sh
-bun test <installed-poteto-mode>/scripts/orch <installed-poteto-mode>/scripts/watch-pr <installed-poteto-mode>/scripts/check-plan.test.ts
+cd <installed-poteto-mode>/scripts
+bun run test
 ```
 
 For strict typechecking, copy script sources into the calling project's private dependency cache and use that cache's TypeScript compiler. No node_modules or emitted code may be written into the installed skill.
