@@ -195,3 +195,7 @@ The main report records 108 native runs across all original 54 entries and prese
 ## Final local execution coverage, 2026-10-20
 
 All entry batches are terminal and merged. `workflow-remaining-checks.json` preserves the unauthorized sorting change rather than accepting a normal CLI exit. `workflow-writing-checks.json` retains the pre-fix failures, while `workflow-writing-followup-checks.json` records the new source and its actual results. Separate native permission supplements establish scoped Codex creation and maintenance on healthy fixtures; they do not erase default-denial results or authorize external publication. Full migration acceptance remains unproven.
+
+## Current immutable remote install, 2026-10-20
+
+`skills@1.7.2` installed immutable commit `4c892bb9f86e484aa8e9eba0407b88e0730b78aa` into an isolated home/project for both hosts. Each exposes 55 entries, all installed skill/support file hashes match the current manifest, setup and Benny copying exit zero, and both setup receipts resolve that source commit from the installer lock. Installed files are unchanged after setup. No real automation was activated. See `current-remote-install.json`.
