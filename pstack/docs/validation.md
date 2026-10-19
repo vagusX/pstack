@@ -179,3 +179,11 @@ A recorded Claude creation attempt changed tools after a denied write. That outc
 New acceptance child processes receive a project-local `TMPDIR`. An actual child using the standard temporary-file API created its scratch directory inside that fixture; see `temporary-scope-checks.json`. This is not a filesystem boundary and cannot prevent explicit absolute writes. Earlier out-of-project writes remain scope failures.
 
 A real loopback receiver delayed its response for 9.2 seconds. The webhook forwarder returned failure after 8.022 seconds, the receiver observed one authenticated POST, and SQLite retained the original failed body. No automatic retry occurred before the delayed receiver finished; its server was closed. See `webhook-timeout-checks.json`. This checks the fixed eight-second forwarding policy without involving a model or external service.
+
+## Independent workflow batches, 2026-10-19
+
+`workflow-independent-checks.json` records 12 native runs across six entries: ten accepted scenarios and two scope failures. Both failed runs have correct independently replayed product behavior, which does not excuse their out-of-project writes; the figure-it-out proof script also failed after its own cleanup.
+
+`workflow-delegation-checks.json` records eight native runs across architect, arena, interrogate and swarm. Seven scenarios are accepted; Codex swarm retains the missing explicit release-interface limitation. Actual child identities, terminal records, judge order and independent CLI probes are recorded.
+
+`workflow-install-checks.json` records eight original setup, TypeScript and verification-skill runs. Both setup and TypeScript scenarios have independent evidence. The original creation and maintenance results retain three permission blocks and one denied-write tool-switch failure. A separate Codex creation supplement uses a healthy fixture, an empty target and a checked temporary native permission profile; generated-skill execution and cleanup are independently replayed. This does not erase the original failures or prove unrestricted skill editing.

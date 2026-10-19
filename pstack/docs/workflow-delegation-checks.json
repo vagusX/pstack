@@ -1,0 +1,1868 @@
+{
+  "date": "2026-10-19",
+  "source_commit": "9363d166bd5e0985c5beed56b870632597d118e0",
+  "frozen_snapshot": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/skill-source",
+  "frozen_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+  "runner_report": "/tmp/pstack-delegation-workflows.json",
+  "runner_report_sha256": "3984c46d8ec2717cbc8c82e285b4d28a619981c46f6f6efda71a4b9ffa495b7b",
+  "runner_terminal_exit": 0,
+  "max_parent_workers": 2,
+  "initial_python39_failure": {
+    "report": "/tmp/pstack-delegation-python39-fixture-failures.json",
+    "cause": "Apple Python 3.9 lacks tomllib; fixture failed before any model run. Re-ran entire isolated batch with Homebrew Python 3.13.2."
+  },
+  "meaning": "Independent scenario acceptance, not execution-exit acceptance. Sources, native child IDs/terminals/order, actual artifacts and separate CLI probes were inspected. External actions and untriggered optional branches are not covered.",
+  "main_workflow_report_modified": false,
+  "source_modified_by_this_acceptance": false,
+  "external_writes_authorized": false,
+  "entries": {
+    "architect": {
+      "category": "independent-workflow",
+      "input": "Add a rename command to the local note CLI. Ground the current code, produce two distinct designs, cross-judge them, retain the chosen rationale and implement and exercise rename. Keep native delegate evidence; no external writes.",
+      "observable_contract": "Two independent candidates, judge result, rationale, rename behavior and native delegate lifecycle.",
+      "source": "pstack/skills/architect/SKILL.md",
+      "source_sha256": "e12d0a8945deddfe26b9414335e871173a2b0e10bdac5b48939b136daa5a2711",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "session_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+          "exit_code": 0,
+          "duration_seconds": 362.5,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect/acceptance-events.jsonl",
+          "events_sha256": "e8195360c593150ea0f5139c297c21ff1a39b60e2206cb7a21a1233ab51ff8f7",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect/acceptance-stderr.log",
+          "installed_skill_sha256": "e12d0a8945deddfe26b9414335e871173a2b0e10bdac5b48939b136daa5a2711",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "e8195360c593150ea0f5139c297c21ff1a39b60e2206cb7a21a1233ab51ff8f7",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "3fc20988d3b15c4af2172ad379eedb19add62759722643e110aa7d40ff01b4cd",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "67a5a8973d32033a01688288067ceb8284c609dce81821832d2c2c33aba4a5de",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "0a426cd11030ca260c4f79408a3cce0d6cb8f3e6cb9e33c64554fe85a5f667c5",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "f14084eee671d251ee3ba092996f8d4ec53536e64e08733d56f9f158848a45ea",
+            "app.py": "9fd82853bca015ff25a84aa766ef4fdfd1dc240494acb5f803b8c3c0c4b641bf",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "AGENTS.md": "45e81bc61ed466c3608b381b4770c671633105fb0b9a966c467c39266285acd1",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "8466894e4d1471c807a528edf0b5130a0d8f5c09ec9a629ed4a93129977d172f",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-codex.json": "a433736cd957c509d8729b6cef8c14af8863d6d8c883dc7d9b9a5f57bd7ee47f",
+            "artifacts/architect/frame.md": "2bf36e7a5b27af96121b414baf11d5b1550cc89c5e3b2c2008edf26724cba38a",
+            "artifacts/architect/arena-todo.md": "0791d2b4dbbcd71040fd38dae5707129f05781f99fdf9cf2bb242cdfbc457cb8",
+            "artifacts/architect/cross-judge.md": "855ae1d454df0031209aaf38244a0ba09982efbcc8dde8ecfe368f640c0ec5c1",
+            "artifacts/architect/no-comments-preflight.txt": "2a9dc183ddee535f921dc3c6ae574e1acf88e80066ff078d1934e4fbe434eb7b",
+            "artifacts/architect/rationale.md": "93f2a2560efad57b099d40b1362db60c3118213ac64d5273a95d5bd01d25bd3b",
+            "artifacts/architect/todo.md": "968fbb372a1acff527144ab5bd4a13a8308607ea2c11e37e30d1124282d84f49",
+            "artifacts/architect/grounding.md": "20389de82a6d84cceb0d70f2692313873b964b19a18f707f3639d3431cae8b65",
+            "artifacts/architect/runner-dependencies-preflight.txt": "2a9dc183ddee535f921dc3c6ae574e1acf88e80066ff078d1934e4fbe434eb7b",
+            "artifacts/architect/verification.jsonl": "6267a326aba2e17b6a216eb2bac23dde16922113615e3fb3908ee53dbc4b5595",
+            "artifacts/architect/completion.md": "a21501ed28aa7229ff57d5046beab4653d0b382105ff4fb6419f386bd0cc1ffb",
+            "artifacts/architect/preflight.txt": "2a9dc183ddee535f921dc3c6ae574e1acf88e80066ff078d1934e4fbe434eb7b",
+            "artifacts/architect/orchestrator-scores.md": "3294a393e12835ccc529b31d0a2c5dae53d38263ef825cf9f2814a957d10126d",
+            "artifacts/architect/verification-plan.md": "d209f5cdd0d392bd32da8dec62b5344dc36383353e181e9b45fb593e7210e314",
+            "artifacts/architect/native-evidence.md": "e46e69ac4e237ff19d8dd225a482a15db9b532a84aa0e84a27e1e89656cf6a57",
+            "artifacts/architect/verify_rename.py": "395a251ba91a209949761afd54e4de198b67bf643e863abf2b824a60f9f46d3d",
+            "artifacts/architect/arena-preflight.txt": "2a9dc183ddee535f921dc3c6ae574e1acf88e80066ff078d1934e4fbe434eb7b",
+            "artifacts/architect/baseline-list.txt": "c71d6462693359390fba358808ff8e471cf3dcb39ef72511ba946e00edf2c26a",
+            "artifacts/architect/sketch.py": "df0f587c18de538be45792a896a34417b37acf190e5cb66958ad01636f2cff89",
+            "artifacts/architect/comment-review.md": "2cdff9e8b77383a8ccc72a8779c3064a366b71e8e15ec7041898b2a7d3a189c6",
+            "artifacts/architect/candidate-b/evidence.md": "1547948bdae679b55b4831572c46ab89d153e31f15146884305a2d7cd24a523e",
+            "artifacts/architect/candidate-b/rationale.md": "b8c52d177e418a33e01d3ec1b85045b2a9e9b0bf1cf479a30c42a31542c9eb74",
+            "artifacts/architect/candidate-b/sketch.py": "8fdd254196ef44a5e361d0faa98d2404ca45903d8528cadf398dc952c6eb7a11",
+            "artifacts/architect/candidate-a/rationale.md": "19eb036deb882fdb8eaedff27a99b51e3026a66a21a2a2c88955087d349766cb",
+            "artifacts/architect/candidate-a/sketch.py": "a94b6db855d275039b247f9f1f354751775744cb61527a61bf4de8d4053a90ff",
+            "artifacts/architect/candidate-a-inline/rationale.md": "b38bfc910bfe7a57cd349d8431ab46fd996db66417bd83408742f7f84e710c83",
+            "artifacts/architect/candidate-a-inline/sketch.py": "df0f587c18de538be45792a896a34417b37acf190e5cb66958ad01636f2cff89"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "at_least_two_native_candidate_artifacts": true,
+            "cross_judge_after_all_candidate_terminals": true,
+            "synthesis_names_base_grafts_or_consensus_and_rejections": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "child_id": "01a154c6-8644-71a2-932c-1b659af0952c",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/ground",
+                "role": null,
+                "started": "2026-10-19T15:27:39.136Z",
+                "terminal": "2026-10-19T15:28:22.886Z",
+                "final_excerpt": "Created `artifacts/architect/grounding.md` with all five prescribed sections and command evidence.\n\nHow preflight passed at source `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`; HEAD matches requested SHA.\n\nThe CLI stores title strings without IDs. List sorts only for display. Duplicate titles remain ambiguous. `save_title('hello')` demonstrably persists `\"hell\"`; this existing truncation should remain outside rename scope unless explicitly chosen otherwise. The scoped-history project header matches.\n\nActual CLI proof: `python3 app.py list` prints `apple`, then `zebra`. Duplicate/truncation probes used a temporary project-local fixture; original data and application code were unchanged.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-27-39-01a154c6-8644-71a2-932c-1b659af0952c.jsonl",
+                "trace_sha256": "d4d8adf5c49a280ac89aca341333409040d198e98484fb801add19ab7b881768"
+              },
+              {
+                "child_id": "01a154c7-5148-7551-9327-639ee6d77eff",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/design_a",
+                "role": null,
+                "started": "2026-10-19T15:28:31.119Z",
+                "terminal": "2026-10-19T15:29:40.131Z",
+                "final_excerpt": "Created candidate A\u2019s usage-first rationale and typed sketch under `artifacts/architect/candidate-a/`.\n\nDesign: one complete `rename_title(old, new)` operation with private pure selection policy. Covers duplicate/missing/conflicting titles, no-op behavior, byte-preserving rejection, and retry/crash limitations.\n\nRequired instructions and principles read; corrected preflight passed. No application files changed.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-28-31-01a154c7-5148-7551-9327-639ee6d77eff.jsonl",
+                "trace_sha256": "55656db3dc2f80cce4b918852e489d051af2890fe59679656f24c6f3ba8e329d"
+              },
+              {
+                "child_id": "01a154c7-6870-79c1-b341-14dbc2f74f42",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/design_b",
+                "role": null,
+                "started": "2026-10-19T15:28:37.023Z",
+                "terminal": "2026-10-19T15:29:43.417Z",
+                "final_excerpt": "Candidate B retained in `artifacts/architect/candidate-b/`:\n\n- `rationale.md`: usage, design, tradeoffs and red-flag screen.\n- `sketch.py`: pure transformation plus persistence adapter signatures.\n- `evidence.md`: reads and successful preflight.\n\nNo application edits. Retry behavior and existing crash/concurrency limitations are explicit.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-28-37-01a154c7-6870-79c1-b341-14dbc2f74f42.jsonl",
+                "trace_sha256": "8c0685b45aa0052541aff9d376c0551b4d6766c06877fa8c9b170c7a6a714481"
+              },
+              {
+                "child_id": "01a154c8-7f0d-7c51-8bdb-e012ad00542e",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/design_a_inline",
+                "role": null,
+                "started": "2026-10-19T15:29:48.490Z",
+                "terminal": "2026-10-19T15:30:57.073Z",
+                "final_excerpt": "Created distinct candidate A in `artifacts/architect/candidate-a-inline/`:\n\n- `sketch.py`: one operation-complete `rename_title(old, new)`, no pure helper or adapter.\n- `rationale.md`: usage, alternatives, full red-flag screen, retry/crash limits and filesystem-fixture tradeoff.\n\nPreflight passed with actual installed `principle-*` dependency names. Explicitly documented the pure-function principle tradeoff. No application edits or external writes.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-29-48-01a154c8-7f0d-7c51-8bdb-e012ad00542e.jsonl",
+                "trace_sha256": "436b417051f9c8ef91209add97bfde30de629ed996245e92983194e35e178e74"
+              },
+              {
+                "child_id": "01a154c9-a427-75f2-85a5-b4996ef3af37",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/cross_judge",
+                "role": null,
+                "started": "2026-10-19T15:31:03.388Z",
+                "terminal": "2026-10-19T15:31:35.223Z",
+                "final_excerpt": "Saved [cross-judge.md](artifacts/architect/cross-judge.md).\n\nRecommend A inline: **24/25**, versus B **22/25**. A hides the complete operation behind one function with less scope and reader cost. Graft B\u2019s explicit byte-preservation and order checks into verification. No blocking red flags; retain A\u2019s CLI handling of storage errors.\n\nNative inherited-model review completed; single-model evaluation. Only the verdict artifact changed.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-31-03-01a154c9-a427-75f2-85a5-b4996ef3af37.jsonl",
+                "trace_sha256": "68a29b79e80b65fa393d268cdb27d6dfde818d767a2c3e10c86e5f3296667813"
+              },
+              {
+                "child_id": "01a154ca-78be-7211-8a51-b9e904cce011",
+                "parent_id": "01a154c5-f391-7f73-8436-b37f2d0f584c",
+                "name": "/root/comment_review",
+                "role": "comment-sicko",
+                "started": "2026-10-19T15:31:57.840Z",
+                "terminal": "2026-10-19T15:32:29.317Z",
+                "final_excerpt": "Touched only `artifacts/architect/comment-review.md`.\n\nDeletion count: 0. `MUST KILL` flags: none. Application and verification code are commentless. Retained sketch contract and required pseudocode; README is documentation. Preflight passed. No external actions.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-31-57-01a154ca-78be-7211-8a51-b9e904cce011.jsonl",
+                "trace_sha256": "0e60985501e937e57004b481de957ca5f02c5d509d88cb062bd564bd9c1afb29"
+              }
+            ],
+            "native_calls": [
+              {
+                "timestamp": "2026-10-19T15:27:39.055Z",
+                "tool": "spawn_agent",
+                "task_name": "ground",
+                "target": null,
+                "call_id": "call_fa993e512995461f8f35068aa39ec4b5"
+              },
+              {
+                "timestamp": "2026-10-19T15:28:01.907Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_3247fc97e692466eb7669357b5c07aa6"
+              },
+              {
+                "timestamp": "2026-10-19T15:28:18.071Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_6d9522025fac43fe887aa0479c9f3ef5"
+              },
+              {
+                "timestamp": "2026-10-19T15:28:31.038Z",
+                "tool": "spawn_agent",
+                "task_name": "design_a",
+                "target": null,
+                "call_id": "call_2f8e93ac8b4d4828a37d75a19d818a56"
+              },
+              {
+                "timestamp": "2026-10-19T15:28:36.970Z",
+                "tool": "spawn_agent",
+                "task_name": "design_b",
+                "target": null,
+                "call_id": "call_486d1708aaf34a80b6e5aad481ac2f69"
+              },
+              {
+                "timestamp": "2026-10-19T15:28:55.307Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_a259603eb83e477a9040a8cce8ec40b1"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:14.662Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_8c2aabc8f4e5447cbd929a2b3fb0a9f3"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:27.098Z",
+                "tool": "list_agents",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_fa4b9a31bf374833b97811eff46de5f1"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:28.930Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_3e97a134f61441e489cd52bd775ca7bb"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:35.644Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_6e05456724894fbaa0f4e4b87868af51"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:48.128Z",
+                "tool": "spawn_agent",
+                "task_name": "design_a_inline",
+                "target": null,
+                "call_id": "call_835dc8a4b4c44479a59175455032345b"
+              },
+              {
+                "timestamp": "2026-10-19T15:29:52.697Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_bf88217fecd54e1ca852709b1738ce0d"
+              },
+              {
+                "timestamp": "2026-10-19T15:30:18.944Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_4eb4341ab0024e398a85162e208cb451"
+              },
+              {
+                "timestamp": "2026-10-19T15:30:34.819Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_539547228d8c40c98073aae5dbded1d6"
+              },
+              {
+                "timestamp": "2026-10-19T15:30:47.225Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_6fa8adaea05c43a4b3936fbe4184e1e0"
+              },
+              {
+                "timestamp": "2026-10-19T15:31:03.318Z",
+                "tool": "spawn_agent",
+                "task_name": "cross_judge",
+                "target": null,
+                "call_id": "call_97ed633c119642ac9a1be9d83bb2fbef"
+              },
+              {
+                "timestamp": "2026-10-19T15:31:19.172Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_8b34c0fb0613486b86ac2162500c1383"
+              },
+              {
+                "timestamp": "2026-10-19T15:31:33.725Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_2a673237d12d47f0b8ac3c2024d338e3"
+              },
+              {
+                "timestamp": "2026-10-19T15:31:57.704Z",
+                "tool": "spawn_agent",
+                "task_name": "comment_review",
+                "target": null,
+                "call_id": "call_a849ec47abe44e4aaa43e5bdc3e89c4e"
+              },
+              {
+                "timestamp": "2026-10-19T15:32:17.728Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_ae0847d5e5c443668624a29144f5f6eb"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "unavailable",
+            "explicit_close_call_observed": false,
+            "reason": "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-architect-codex-independent.json",
+            "sha256": "b57ff8f73643867d53dd9ab38f61c470ec661dba05c3c34a5b336f5c22b46972",
+            "result": {
+              "existing_harness": {
+                "command": [
+                  "/opt/homebrew/bin/python3",
+                  "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect/artifacts/architect/verify_rename.py"
+                ],
+                "exit_code": 0,
+                "stdout": "{\"command\": [\"python3\", \"app.py\", \"rename\", \"zebra\", \"banana\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"list\"], \"returncode\": 0, \"stdout\": \"apple\\nbanana\\n\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"zebra\", \"banana\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Note not found: 'zebra'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"missing\", \"pear\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Note not found: 'missing'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"banana\", \"apple\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Note title already exists: 'apple'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"banana\"], \"returncode\": 2, \"stdout\": \"\", \"stderr\": \"Usage: python3 app.py rename OLD NEW\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"banana\", \"pear\", \"extra\"], \"returncode\": 2, \"stdout\": \"\", \"stderr\": \"Usage: python3 app.py rename OLD NEW\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"banana\", \"banana\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"same\", \"new\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Ambiguous note title: 'same'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"same\", \"same\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Ambiguous note title: 'same'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"old\", \"new\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"draft title\", \"\u5b8c\u6210 \\\"title\\\"\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"\u5b8c\u6210 \\\"title\\\"\", \"\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"add\", \"hello\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"old\", \"new\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"rename\", \"old\", \"new\"], \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"[Errno 2] No such file or directory: '/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/architect/artifacts/rename-proof-uk7flbig/notes.json'\\n\"}\n{\"command\": [\"python3\", \"app.py\", \"list\"], \"returncode\": 0, \"stdout\": \"apple\\nzebra\\n\", \"stderr\": \"\"}\nPASS: real CLI rename, rejection byte preservation, persistence, sorted list, and existing add behavior\n",
+                "stderr": ""
+              },
+              "independent_probe": {
+                "copied_app_sha256": "9fd82853bca015ff25a84aa766ef4fdfd1dc240494acb5f803b8c3c0c4b641bf",
+                "rename_exit_code": 0,
+                "listed_stdout": "apple\npear\n",
+                "stored": [
+                  "pear",
+                  "apple"
+                ],
+                "actual_rename_ok": true
+              }
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation.",
+            "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          ],
+          "candidate_note": "Initial designs converged. A third independent child supplied a structurally distinct inline candidate before judging. Its task_complete and artifact SHA are recorded; inline is a directory name, not parent-authored simulation."
+        },
+        "claude-code": {
+          "status": "executed",
+          "session_id": "02063a45-8c92-46f2-974d-95223d567e96",
+          "exit_code": 0,
+          "duration_seconds": 452.21,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/architect",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/architect/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /architect explicitly from /var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/architect/.claude/skills/architect/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Add a rename command to the local note CLI. Ground the current code, produce two distinct designs, cross-judge them, retain the chosen rationale and implement and exercise rename. Keep native delegate evidence; no external writes.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/architect/acceptance-events.jsonl",
+          "events_sha256": "6b20c9b539b2582d8ef722caa36dd4f9bb82116d7cbd2c621a933dd1b10fc44b",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/architect/acceptance-stderr.log",
+          "installed_skill_sha256": "e12d0a8945deddfe26b9414335e871173a2b0e10bdac5b48939b136daa5a2711",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "6b20c9b539b2582d8ef722caa36dd4f9bb82116d7cbd2c621a933dd1b10fc44b",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "1b214f1e0511e02b036e83b209bc767984afaf14c240087ed6ec29152cff7171",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "f63f7a039127f3008cd2e149082292ef00869c028821ea1892d6c656e772431f",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "680ffeb19b4fb946e7d9e7b49c56fe91719c32573d9150059017354c394a1982",
+            "app.py": "ca0a4d90316db6a7d4422897116c3c08d1ba769f94a7839e5a9667be892198b9",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "684db8864cdf791b116f68b85eb99d1d706350ef394d6fe8ccce9bda189abeb8",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "CLAUDE.md": "1a193bf50ab743677b01e80ba9dcb1f014e4fbab86499e9b55a5fce242b3eaa2",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_notes.py": "81303ab81728223ca64561f11be042a87b63586417c3fa691a2502b59fa63cef",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-claude-code.json": "e7dc50b19e3ac40d8c718d9cb5b0db507799f277b637d7ef1cb2e6adc3a4fede",
+            ".architect/test-run.log": "f56b5a69de449700223e042bcd0fbf711e57ddb9b67b4c9b1b866398484a87df",
+            ".architect/verify.log": "2a58bf997761be121326b6fa560ac471126edc2fa40c0151985a733af1ccd7b2",
+            ".architect/preflight.log": "0fc9e07373aa7f2ddeef99180d1ba08caa72aaf2ab50ba5183a718272b807a0f",
+            ".architect/cli-proof.log": "a72ef81986518a83c9ac4eed9ceda01ddb51b49b1ae798cf9698e280daca22a1",
+            ".architect/todo.md": "0ce7c4123cf0164059b839dda1a9a99449fc60b634662f564d08266caf7acd25",
+            ".architect/grounding.md": "6450efa2f71a6bbd248486bd68ee3576cc0de3c6f904207873aff27c464f7f0d",
+            ".architect/design.md": "b71c3cb32adff354f17dcd5a79dc721eabfe59aaf8b266c964cb1ed491ce47b1",
+            ".architect/sketch/runner-b/rationale.md": "470c5d78f02e87eed7d38c62329b36d598b142fe3cb5c7eb995585d46840d78c",
+            ".architect/sketch/runner-b/sketch.py": "56931a0deb6f236fd48918063f241dc543bac1ba3a8de85c92056c308844203c",
+            ".architect/sketch/runner-a/rationale.md": "2db9d3aed36b7c0d1dbcbfdfbcb4d7807594dcb577e125324a933bdd2d0c20cb",
+            ".architect/sketch/runner-a/sketch.py": "e79b3cdd454932aa54165ec3c6f044547edeed027d8cc3c033a34d3b5045a968"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "at_least_two_native_candidate_artifacts": true,
+            "cross_judge_after_all_candidate_terminals": true,
+            "synthesis_names_base_grafts_or_consensus_and_rejections": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "tool_use_id": "toolu_01HWWyewRo5SRFcebXM2i7wV",
+                "name": "How explainer: note CLI",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqBK9QeyNUwRExo7FJP",
+                "spawn_event_index": 37,
+                "started": "2026-10-19T15:27:50.090Z",
+                "background": false,
+                "model_override": null,
+                "child_id": "afbf964f16b80ef0e",
+                "native_start_index": 38,
+                "terminal_event_index": 54,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_01TJ93yLw2c5njKgCJx47yiz",
+                "name": "Architect runner A sketch",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqGWKW8dB59TYctPNRi",
+                "spawn_event_index": 67,
+                "started": "2026-10-19T15:28:57.045Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "a9dc2280cae81503b",
+                "native_start_index": 69,
+                "terminal_event_index": 132,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_01PxMqLB9b5nDtZVP4VKcTuW",
+                "name": "Architect runner B sketch",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqGWKW8dB59TYctPNRi",
+                "spawn_event_index": 79,
+                "started": "2026-10-19T15:29:04.364Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "aefd04be346b9ea9b",
+                "native_start_index": 81,
+                "terminal_event_index": 142,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_0195pFJU8XJ425k68E7uz2An",
+                "name": "Arena cross-judge",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqSsGMSbrxLeff6yX5Q",
+                "spawn_event_index": 150,
+                "started": "2026-10-19T15:31:19.355Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "a70e4c521ccf12afb",
+                "native_start_index": 152,
+                "terminal_event_index": 190,
+                "terminal": "completed"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "host_managed_terminal_completion",
+            "explicit_close_call_observed": false
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-architect-claude-code-independent.json",
+            "sha256": "cfad6f311e8834c3bda4530f1b7b5a4f581d47988de9ae84d589d663897497d3",
+            "result": {
+              "existing_tests": {
+                "command": [
+                  "/opt/homebrew/bin/python3",
+                  "-m",
+                  "unittest",
+                  "test_notes"
+                ],
+                "exit_code": 0,
+                "stdout": "",
+                "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.373s\n\nOK\n"
+              },
+              "independent_probe": {
+                "copied_app_sha256": "ca0a4d90316db6a7d4422897116c3c08d1ba769f94a7839e5a9667be892198b9",
+                "rename_exit_code": 0,
+                "listed_stdout": "apple\npear\n",
+                "stored": [
+                  "apple",
+                  "pear"
+                ],
+                "actual_rename_ok": true
+              }
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation."
+          ],
+          "scope_note": "Generated design also repaired existing truncation, enforced unique titles and replaced legacy wrappers; only rename/core design scenario is accepted, not equivalence for every original behavior."
+        }
+      }
+    },
+    "arena": {
+      "category": "independent-workflow",
+      "input": "Use two native candidates to design a local note title deduplicator; cross-judge only after both finish, choose and graft a base, implement it and exercise duplicate and unique titles. Keep each candidate and synthesis note.",
+      "observable_contract": "Two candidate artifacts, independent judge, synthesis with provenance, actual duplicate/unique output.",
+      "source": "pstack/skills/arena/SKILL.md",
+      "source_sha256": "a1af5c3a4a97eae8b2eb5690b573d7dacf360256f7a6e9e3056dce9bcfdefa0b",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "session_id": "01a154cb-7fbb-74a1-b21e-b19edebbdbba",
+          "exit_code": 0,
+          "duration_seconds": 142.26,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena/acceptance-events.jsonl",
+          "events_sha256": "fbaa35c9332a8c35d2b3ba5d68cbec631ebf30db54416029b9e5c3bfc277f94e",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena/acceptance-stderr.log",
+          "installed_skill_sha256": "a1af5c3a4a97eae8b2eb5690b573d7dacf360256f7a6e9e3056dce9bcfdefa0b",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "fbaa35c9332a8c35d2b3ba5d68cbec631ebf30db54416029b9e5c3bfc277f94e",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "ed3da162cb26703140153b32f475a8fd47a92658bc15fddbf7c67da0488dcbe3",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "3efcfedc918b2482a1dcf14f2d84163fe69743774b1822f513ddd6d02aa9c0fc",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "0c8fe4f0faca5c1a133d89626f4f739db05d8b9d9847af31a4d62c2f4ed0e7b3",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "18f04076cd4198f31d234a393b86cbdc9090382ac3d47509f69b5297e3806722",
+            "app.py": "9b7971680d674552538e112caa6aae415a931cdedd35a5b166f9659b61b21a4a",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "AGENTS.md": "45e81bc61ed466c3608b381b4770c671633105fb0b9a966c467c39266285acd1",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "8466894e4d1471c807a528edf0b5130a0d8f5c09ec9a629ed4a93129977d172f",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-codex.json": "a433736cd957c509d8729b6cef8c14af8863d6d8c883dc7d9b9a5f57bd7ee47f",
+            "arena-run/candidate-a.md": "6ad875832543d856ca015b6f2a496c547779232d4666f7899b988e7d1b4ffbac",
+            "arena-run/cross-judge.md": "002a7d1914028a4444baddab963052302431b6dcbe7ad29a3db3f17899aff665",
+            "arena-run/synthesis.md": "8e1bb66b6fca917452eb19b964e39813f66023e3e347d7f79d1bcc8d22a8f1a2",
+            "arena-run/verification.txt": "013c922d48e3284e2d746cece7e96a25154626d37f662ba5bf8d61141257921f",
+            "arena-run/review-preflight.json": "e77b33636a73caa354745ddeb610ecf9c1000adb94edbb7d0f7fb318f1f667e1",
+            "arena-run/todo.md": "f91d3a5130af692cef11734aaa20c5b9bd761c5cbe3fd07a40baaa1fe9dd3714",
+            "arena-run/grounding.md": "6ee02ac6bb7ba28eb3905a58e45994f24e0ace3d34e10149984aa5e2a42f93c8",
+            "arena-run/parent-scores.md": "05513133c6784c253f182b47acada8ff373b72fecc05efb3225a35e2451aac86",
+            "arena-run/preflight.txt": "1015cf919f0538ca84dc3d011a60e77d185e68ba4d08618a34a6d3325d29de2b",
+            "arena-run/candidate-b.md": "4eb700e743b8d7e7f28ca052b42cfbcecd04178b974579420e9b660527940c07",
+            "arena-run/verify.py": "ec5b8d3ca9903ae930fba183801041a7bcb39b581f0c0c8fa7efd5ca95a1e67f",
+            "arena-run/preflight.json": "e77b33636a73caa354745ddeb610ecf9c1000adb94edbb7d0f7fb318f1f667e1",
+            "arena-run/comment-review.md": "0b4838320762741847ce82f56cdbf6733458b56f81bacdbc44cb3533cead27e7",
+            "arena-run/native-results.md": "ae1f4aac546a80d28989b1c721695c2ca7ae0b89dd8ea14ec3b088503f9c422e"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "at_least_two_native_candidate_artifacts": true,
+            "cross_judge_after_all_candidate_terminals": true,
+            "synthesis_names_base_grafts_or_consensus_and_rejections": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "child_id": "01a154cc-0b68-7823-b369-ffb5d604030f",
+                "parent_id": "01a154cb-7fbb-74a1-b21e-b19edebbdbba",
+                "name": "/root/candidate_a",
+                "role": null,
+                "started": "2026-10-19T15:33:40.888Z",
+                "terminal": "2026-10-19T15:34:05.944Z",
+                "final_excerpt": "Created [arena-run/candidate-a.md](arena-run/candidate-a.md) with complete proposed app, rationale, rejected alternatives, and concrete CLI/caller verification.\n\nDesign keeps exact membership in `save_title`, preserves full titles and existing duplicates, and skips writes on repeated adds. Live app and data remain untouched.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-33-40-01a154cc-0b68-7823-b369-ffb5d604030f.jsonl",
+                "trace_sha256": "955d8fa89034176b4c59f5c99352fd84c93aae18bc19a21cc8f776d09ef8fbc8"
+              },
+              {
+                "child_id": "01a154cc-1645-7782-bf57-330f25969c25",
+                "parent_id": "01a154cb-7fbb-74a1-b21e-b19edebbdbba",
+                "name": "/root/candidate_b",
+                "role": null,
+                "started": "2026-10-19T15:33:43.687Z",
+                "terminal": "2026-10-19T15:34:12.248Z",
+                "final_excerpt": "Created [arena-run/candidate-b.md](arena-run/candidate-b.md) with complete proposed implementation, rationale, rejected alternatives, and concrete CLI/caller verification.\n\nDuplicate additions return before writing; unique titles append unchanged. Live code and data remain untouched. Verification is explicitly pending synthesis.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-33-43-01a154cc-1645-7782-bf57-330f25969c25.jsonl",
+                "trace_sha256": "82ff405c0814ff803c77037cb1720ef728333aff7708d05cc14f4beae22fb7f1"
+              },
+              {
+                "child_id": "01a154cc-9be5-7ba1-9d7e-3a6cbbfec473",
+                "parent_id": "01a154cb-7fbb-74a1-b21e-b19edebbdbba",
+                "name": "/root/cross_judge",
+                "role": null,
+                "started": "2026-10-19T15:34:17.876Z",
+                "terminal": "2026-10-19T15:34:35.451Z",
+                "final_excerpt": "Both candidates score 20/20 and propose identical code. Recommend A as the named base; no implementation graft needed. Incorporate B\u2019s cross-caller unique-then-repeat verification.\n\nReview saved to `arena-run/cross-judge.md`. Actual implementation verification remains required.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-34-17-01a154cc-9be5-7ba1-9d7e-3a6cbbfec473.jsonl",
+                "trace_sha256": "e357a067d1096bc349e5ae0538949b441e4c0a2a62a65e55381b95fcbd496ec8"
+              },
+              {
+                "child_id": "01a154cd-1094-7700-8ae8-14c550c1af72",
+                "parent_id": "01a154cb-7fbb-74a1-b21e-b19edebbdbba",
+                "name": "/root/comment_review",
+                "role": "comment-sicko",
+                "started": "2026-10-19T15:34:47.748Z",
+                "terminal": "2026-10-19T15:35:13.476Z",
+                "final_excerpt": "Report: `arena-run/comment-review.md`.\n\nTouched application files: none. Deletions: 0. Restored comments: 0. Reruns: 0. MUST KILL flags: none. Fixes or constraints: none. Both scoped files contain no comments or suppressions. Preflight passed. Skipped how/why because no ambiguous comments exist.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-34-47-01a154cd-1094-7700-8ae8-14c550c1af72.jsonl",
+                "trace_sha256": "a41bd563fd82dda678250fb293222410bc0b459f39fe1ff7d9a285ea397d7ac5"
+              }
+            ],
+            "native_calls": [
+              {
+                "timestamp": "2026-10-19T15:33:40.835Z",
+                "tool": "spawn_agent",
+                "task_name": "candidate_a",
+                "target": null,
+                "call_id": "call_1ad813bd6ab94fe48d1789c629cb6a9c"
+              },
+              {
+                "timestamp": "2026-10-19T15:33:43.616Z",
+                "tool": "spawn_agent",
+                "task_name": "candidate_b",
+                "target": null,
+                "call_id": "call_c144734f033e436f93b56e645cec3a09"
+              },
+              {
+                "timestamp": "2026-10-19T15:33:51.021Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_9b5743682ec54c57b230ca86ad8d2353"
+              },
+              {
+                "timestamp": "2026-10-19T15:34:08.106Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_8c63b225b307424eb5db540cd9527079"
+              },
+              {
+                "timestamp": "2026-10-19T15:34:17.822Z",
+                "tool": "spawn_agent",
+                "task_name": "cross_judge",
+                "target": null,
+                "call_id": "call_7f482efc4d864bc49a86fc0949a83dfd"
+              },
+              {
+                "timestamp": "2026-10-19T15:34:30.214Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_9a7b0ec0723447ec99548a1131f93a29"
+              },
+              {
+                "timestamp": "2026-10-19T15:34:47.555Z",
+                "tool": "spawn_agent",
+                "task_name": "comment_review",
+                "target": null,
+                "call_id": "call_db89efe1efa74fcfa76e1f2cb66aed19"
+              },
+              {
+                "timestamp": "2026-10-19T15:35:04.343Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_3c0bf1a3bcae4eacae39874311fc0e67"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "unavailable",
+            "explicit_close_call_observed": false,
+            "reason": "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-arena-codex-independent.json",
+            "sha256": "3d9d04bbffb3165b02391091638b33a03434aca15f8fd3d22e7d1850e03efe1f",
+            "result": {
+              "existing_harness": {
+                "command": [
+                  "/opt/homebrew/bin/python3",
+                  "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/arena/arena-run/verify.py"
+                ],
+                "exit_code": 0,
+                "stdout": "PASS cross-caller unique title appended once\nPASS: duplicate bytes unchanged; unique full titles append; both callers share exact equality; list alphabetical; existing duplicates retained\nPASS project CLI list matches alphabetical persisted titles\napple\nzebra\n",
+                "stderr": ""
+              },
+              "independent_probe": {
+                "app_sha256": "9b7971680d674552538e112caa6aae415a931cdedd35a5b166f9659b61b21a4a",
+                "commands": [
+                  {
+                    "title": "apple",
+                    "exit_code": 0
+                  },
+                  {
+                    "title": "exact-note-7319",
+                    "exit_code": 0
+                  },
+                  {
+                    "title": "exact-note-7319",
+                    "exit_code": 0
+                  }
+                ],
+                "stored": [
+                  "zebra",
+                  "apple",
+                  "exact-note-7319"
+                ],
+                "duplicate_and_unique_ok": true
+              }
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation.",
+            "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          ]
+        },
+        "claude-code": {
+          "status": "executed",
+          "session_id": "e9739d19-0bc9-4061-8839-cd2927a69333",
+          "exit_code": 0,
+          "duration_seconds": 217.79,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /arena explicitly from /var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena/.claude/skills/arena/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Use two native candidates to design a local note title deduplicator; cross-judge only after both finish, choose and graft a base, implement it and exercise duplicate and unique titles. Keep each candidate and synthesis note.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena/acceptance-events.jsonl",
+          "events_sha256": "4d07afbfbe0ae8b13d17d4b28539510ffceaba563069ed68ff0ede87ba1d730f",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena/acceptance-stderr.log",
+          "installed_skill_sha256": "a1af5c3a4a97eae8b2eb5690b573d7dacf360256f7a6e9e3056dce9bcfdefa0b",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "4d07afbfbe0ae8b13d17d4b28539510ffceaba563069ed68ff0ede87ba1d730f",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "7cd10e7a7ddc80e4326dcd765853a67d698552eb8c2cf217de385ba0d5c193ad",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "e0bcc377b7d3e9be6e6d76a5c9b2cc80f9ddf864b3e65d25b86a5f164c89a3d7",
+            "app.py": "aa8862eccde0802071a5371098a8b620d236e703e630de8595652c86463cce19",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "684db8864cdf791b116f68b85eb99d1d706350ef394d6fe8ccce9bda189abeb8",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "CLAUDE.md": "1a193bf50ab743677b01e80ba9dcb1f014e4fbab86499e9b55a5fce242b3eaa2",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-claude-code.json": "e7dc50b19e3ac40d8c718d9cb5b0db507799f277b637d7ef1cb2e6adc3a4fede",
+            "arena/frame.md": "7b9132c48d90fb9ac7f32a36c97b174438124475e6fdedbe0f5a29a78939c84d",
+            "arena/synthesis.md": "ecf7bf8f70ce708df5466cc5ddc7eb26066d4c9f8d9f83ed44ac2cc7e6a73d05",
+            "arena/verify.sh": "e81b13e7424396739aa482847f56cc3635518791f7e1e7e93e0cad5a46341171",
+            "arena/verification.txt": "c94359d820ac20a51b96b98561d2b8f3b3e372aa7c9f9248cc95def1e8c0eca5",
+            "arena/log.md": "2596cddb2576ae5f264ff50f78533efaf359cf424375ea79e14727926aba794c",
+            "arena/preflight.txt": "bd82af96b38fe343ab473c5b15e7c6b4bb938d7a1c82e7bcfacdefab4dcf2a46",
+            "arena/candidate-2/rationale.md": "b69747f5b18c9ed1c20dd3aa995a17584d92bb768f5b011d2c12bf442cb9236c",
+            "arena/candidate-2/evidence.txt": "70a1ec068871a76b0ec2de2750f70b94036ec3e62349a4208d043b916c808d80",
+            "arena/candidate-2/app.py": "b6d185dcad503d339ce5a7a3eee9d96eb67a4776404877ddb7c7559f856ec545",
+            "arena/verify-run.tm6qYp/notes.json": "df5aefe08d3bfab898e5160aee4040c738fba9e47fd21b2725f7b5c52bb8d7ab",
+            "arena/verify-run.tm6qYp/app.py": "aa8862eccde0802071a5371098a8b620d236e703e630de8595652c86463cce19",
+            "arena/candidate-1/rationale.md": "784754f29674b7bb1c211f84260b46ea12a487178c66a9236284d1fc677804d6",
+            "arena/candidate-1/evidence.txt": "5762d47c8e3a88dd6785c02274b50b651b6d1afdd16e352e3d4410e0c799d0dc",
+            "arena/candidate-1/app.py": "77fff01cb312d8391e86bafc654185b12b2d16baf22b3afefee19739e043a3f0",
+            "arena/candidate-1/scratch/notes.json": "769c5cf3705ce2f907b14fcdcca4223ca85a2d32a226f6a0f0b1ddf7442564af",
+            "arena/candidate-1/scratch/app.py": "77fff01cb312d8391e86bafc654185b12b2d16baf22b3afefee19739e043a3f0",
+            "arena/candidate-1/scratch/legacy/notes.json": "bfee07e685cc0b973df4b525039aaf0dbcfd7afcf6f1880376076ca1801bb42c",
+            "arena/candidate-1/scratch/legacy/app.py": "77fff01cb312d8391e86bafc654185b12b2d16baf22b3afefee19739e043a3f0",
+            "arena/candidate-1/scratch/base/notes.json": "2a2591a9f13d06303ed4a9ff1b255ca07284589722b03dfbd2b76e80c0312ba3",
+            "arena/candidate-1/scratch/base/app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "arena/candidate-2/scratch/notes.json": "2ce4d538e6d31baa2cb82d9d0a8134df8e236559e3ab9fea2a034fc7a31cbdb4",
+            "arena/candidate-2/scratch/app.py": "b6d185dcad503d339ce5a7a3eee9d96eb67a4776404877ddb7c7559f856ec545"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "at_least_two_native_candidate_artifacts": true,
+            "cross_judge_after_all_candidate_terminals": true,
+            "synthesis_names_base_grafts_or_consensus_and_rejections": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "tool_use_id": "toolu_0181NjVP8ZUbGDvk2FAcrfFa",
+                "name": "Arena candidate 1",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqmzYwUgU2pTXFz4QJq",
+                "spawn_event_index": 39,
+                "started": "2026-10-19T15:35:33.242Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "a083c19dd8fe422fe",
+                "native_start_index": 41,
+                "terminal_event_index": 105,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_0137yJso75HkjyGHW4qpEs8v",
+                "name": "Arena candidate 2",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqmzYwUgU2pTXFz4QJq",
+                "spawn_event_index": 47,
+                "started": "2026-10-19T15:35:37.288Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "ab8d1a89ad09d2f19",
+                "native_start_index": 49,
+                "terminal_event_index": 112,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_01KwBNJJNc244SLHAdut2VBh",
+                "name": "Arena cross-judge",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBqriXvTGVcLn1k9D8Kd",
+                "spawn_event_index": 116,
+                "started": "2026-10-19T15:36:38.155Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "a63a5513e71197ca5",
+                "native_start_index": 118,
+                "terminal_event_index": 170,
+                "terminal": "completed"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "host_managed_terminal_completion",
+            "explicit_close_call_observed": false
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-arena-claude-code-independent.json",
+            "sha256": "aa88c8cd3cb2944a39a734280318c9ed7ba1eb9ebc76864cf59f55bdb5361e68",
+            "result": {
+              "existing_harness": {
+                "command": [
+                  "sh",
+                  "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/arena/arena/verify.sh"
+                ],
+                "exit_code": 0,
+                "stdout": "$ cat notes.json\n[\"zebra\", \"apple\"]\n[exit 0]\n\n$ python3 app.py add apple\n[exit 1]\nPASS duplicate add exits 1\nPASS duplicate add writes nothing\n$ python3 app.py add mango\n[exit 0]\nPASS unique add exits 0\nPASS unique add stores exact title\n$ python3 app.py add mango\n[exit 1]\nPASS re-adding new title exits 1\n$ python3 app.py list\napple\nmango\nzebra\n[exit 0]\nPASS list sorted, no duplicates\n$ python3 -c import app; print(app.caller_a('zebra'), app.caller_b('kiwi'), app.save_title('kiwi'))\nNone None False\n[exit 0]\nPASS caller_a/caller_b go through dedup\n$ python3 app.py add pear\n[exit 1]\nPASS existing on-disk duplicate blocks new copy\nPASS existing duplicates left untouched\nRESULT: ALL PASS\n",
+                "stderr": "already stored: apple\nalready stored: mango\nalready stored: pear\n"
+              },
+              "independent_probe": {
+                "app_sha256": "aa8862eccde0802071a5371098a8b620d236e703e630de8595652c86463cce19",
+                "commands": [
+                  {
+                    "title": "apple",
+                    "exit_code": 1,
+                    "stderr": "already stored: apple\n"
+                  },
+                  {
+                    "title": "exact-note-7319",
+                    "exit_code": 0,
+                    "stderr": ""
+                  },
+                  {
+                    "title": "exact-note-7319",
+                    "exit_code": 1,
+                    "stderr": "already stored: exact-note-7319\n"
+                  }
+                ],
+                "stored": [
+                  "zebra",
+                  "apple",
+                  "exact-note-7319"
+                ],
+                "duplicate_and_unique_ok": true
+              }
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation."
+          ]
+        }
+      }
+    },
+    "interrogate": {
+      "category": "independent-workflow",
+      "input": "Adversarially review the proposed app.py change that writes [] before loading notes. Use two native reviewers with the configured inherited model, synthesize disagreements and lead judgment. Do not apply the change. Never claim vendor diversity from one model.",
+      "observable_contract": "Two native reviewers, explicit intent, findings/disagreement map, lead judgment, no auto application.",
+      "source": "pstack/skills/interrogate/SKILL.md",
+      "source_sha256": "fd245747cba981e46d0608cb6ec4abaef0bbc39f8b2277960cf50bc26138892e",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "session_id": "01a154cd-b432-7ab1-85f7-94465ebac6c7",
+          "exit_code": 0,
+          "duration_seconds": 126.01,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate/acceptance-events.jsonl",
+          "events_sha256": "24823c0f5b1e35cc150eb89decacdf17efc14fb06f8aed13d0cd87d2f0e718c3",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate/acceptance-stderr.log",
+          "installed_skill_sha256": "fd245747cba981e46d0608cb6ec4abaef0bbc39f8b2277960cf50bc26138892e",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "24823c0f5b1e35cc150eb89decacdf17efc14fb06f8aed13d0cd87d2f0e718c3",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "fd8706a4347f5ecb2d3afedcd15f630258d87c9b2435db17c05c9e784fd2017d",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "b3c735ae7fd8e467f82451fa382f30ebc1ce09f1231517f892ab21e27bf01b5c",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "b08d2b3d4801c8f05ad3398dd1b436524c97833dd3486e6294d2b230f6d64537",
+            "app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "AGENTS.md": "45e81bc61ed466c3608b381b4770c671633105fb0b9a966c467c39266285acd1",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "8466894e4d1471c807a528edf0b5130a0d8f5c09ec9a629ed4a93129977d172f",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            "review-artifacts/reviewer-prompt.md": "49df4c78143c8446f2af4128b833b7956b3739d0ccaea1aa07cddc9839a9baf0",
+            "review-artifacts/final-check.txt": "c07911d8e27bd01b8e5de1dccc8f8e2540498cb647be481a6a8a5c0db70f60c6",
+            "review-artifacts/scope.md": "0a32f47169fcebd3c548c3f5c7fddd2b000e9e46261e7a53d272f6678c0776ee",
+            "review-artifacts/reviewer-b.md": "5165400a561b37dcd5fb6cc65b5b29565556cfe91fb0cc3d1d03d1af565d8902",
+            "review-artifacts/verdict.md": "6a49ef96818968ee68018657c5b7d42dbfc216594cf26cebfdd40d8bf35d19a7",
+            "review-artifacts/cli-evidence.json": "8e6db552e4929c6bec98aae0d5685c6b9678ab4ff189720829d8b7891dff57c4",
+            "review-artifacts/baseline.json": "61bea64370ba95248410215b2211b1c1539a151c9937e932f0b3a6c3881dbb42",
+            "review-artifacts/preflight.txt": "91ccda86897c5b558bdb0ff522c8215be4ffbcaf27d6ee323fc55edbd625c06c",
+            "review-artifacts/reviewer-a.md": "f4b93b497791e0a74b63099ab78b3a9ab70261106d42db2ed957464ba36d4c69",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-codex.json": "a433736cd957c509d8729b6cef8c14af8863d6d8c883dc7d9b9a5f57bd7ee47f"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "exactly_two_native_reviewers": true,
+            "explicit_intent_and_four_buckets_and_agreement_map": true,
+            "no_auto_application": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "child_id": "01a154ce-6328-7a13-918e-e664943d3d29",
+                "parent_id": "01a154cd-b432-7ab1-85f7-94465ebac6c7",
+                "name": "/root/reviewer_a",
+                "role": "default",
+                "started": "2026-10-19T15:36:14.425Z",
+                "terminal": "2026-10-19T15:36:42.520Z",
+                "final_excerpt": "## Findings\n\n### 1. [critical] Unconditional initialization permanently deletes saved notes\n**Location**: proposed insertion before `app.py:5` or `app.py:7`.\n**Finding**: Writing `[]` before reading makes successful loading depend on erasing the data being loaded.\n**Evidence**: The checked-in `notes.json` contains `[\"zebra\", \"apple\"]`. In `list_notes`, the proposed write replaces that content with `[]`; parsing and sorting then return an empty list, and the original notes are permanently lost. In `save_title`, parsing sees an empty list, so every add replaces all previous notes with the newly appended, currently truncated title. CLI `add`, `caller_a`, and `caller_b` all reach that function. No concurrency or crash is required.\n**Suggestion**: Preserve existing files. If the actual problem is a missing file, handle that condition specifically; do not overwrite existing or malformed content as a loading fallback.\n\n### 2. [critical] Saving already truncates every title\n**Location**: `app.py:7`, `data.append(title[:-1])`.\n**Finding**: This is a pre-existing correctness defect, separate from the proposed initialization.\n**Evidence**: CLI `add TITLE` passes `sys.argv[2]` directly to `sav",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-36-14-01a154ce-6328-7a13-918e-e664943d3d29.jsonl",
+                "trace_sha256": "155d5043b32e4a5769219b7ff3e4215900ea242a14523caf43fe818f60084c39"
+              },
+              {
+                "child_id": "01a154ce-8210-7981-990e-d3adc3a224b4",
+                "parent_id": "01a154cd-b432-7ab1-85f7-94465ebac6c7",
+                "name": "/root/reviewer_b",
+                "role": "default",
+                "started": "2026-10-19T15:36:22.377Z",
+                "terminal": "2026-10-19T15:36:47.517Z",
+                "final_excerpt": "## Findings\n\n### 1. [critical] Unconditional initialization destroys saved notes\n\n**Location**: Proposed insertion before `json.loads(P.read_text())` in `app.py:list_notes` or `save_title`.\n\n**Finding**: Both hypothetical placements violate the requirement to preserve notes.\n\n**Evidence**: The current `notes.json` contains `[\"zebra\", \"apple\"]`.\n\n- In `list_notes`, `P.write_text('[]')` replaces that content before reading it. Listing returns `[]`, prints nothing, and permanently deletes both saved titles.\n- In `save_title`, the same insertion replaces the existing collection before appending. Adding `\"pear\"` produces `[\"pea\"]` because of the existing slicing defect; regardless of that defect, both previous notes disappear. Each subsequent add loses its predecessors.\n\nThis is deterministic data loss on ordinary sequential use, without any concurrency or malformed input.\n\n**Suggestion**: Handle a missing file separately from loading an existing file. Never initialize an existing store unconditionally.\n\n### 2. [warning] The existing test cannot detect the proposed regression\n\n**Location**: `test_weak.py:test_save`.\n\n**Finding**: The existing assertion establishes only that `save_title`",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/interrogate-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-36-22-01a154ce-8210-7981-990e-d3adc3a224b4.jsonl",
+                "trace_sha256": "f9dbc9b94d8ee229a46cfe673a6ea6b885e65db16b050e3dfc6822388fe2fdc0"
+              }
+            ],
+            "native_calls": [
+              {
+                "timestamp": "2026-10-19T15:36:14.369Z",
+                "tool": "spawn_agent",
+                "task_name": "reviewer_a",
+                "target": null,
+                "call_id": "call_4f110ce38d264a549f2dd7f353e49e12"
+              },
+              {
+                "timestamp": "2026-10-19T15:36:22.276Z",
+                "tool": "spawn_agent",
+                "task_name": "reviewer_b",
+                "target": null,
+                "call_id": "call_915e1b267b874dfaa08e0892e85ef148"
+              },
+              {
+                "timestamp": "2026-10-19T15:36:31.738Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_b81d6d49d2644a3f9232656bde663894"
+              },
+              {
+                "timestamp": "2026-10-19T15:36:48.485Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_7f1d2bd5b3834482a86e0e86bfbe0132"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "unavailable",
+            "explicit_close_call_observed": false,
+            "reason": "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-interrogate-codex-independent.json",
+            "sha256": "6fec82c1f00bd960140a0e287b9732d8bcaff0201aa3cd2f354d182570735a29",
+            "result": {
+              "original_app_unchanged": true,
+              "baseline_sha256": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+              "proposal_only_in_independent_temporary_copy": true,
+              "proposal_stdout": "\n",
+              "proposal_stored": [],
+              "data_loss_confirmed": true,
+              "proposal_exit_code": 0
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation.",
+            "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          ]
+        },
+        "claude-code": {
+          "status": "executed",
+          "session_id": "f552617d-2eba-4ca5-890f-e78c4638630c",
+          "exit_code": 0,
+          "duration_seconds": 227.18,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/interrogate",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/interrogate/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /interrogate explicitly from /var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/interrogate/.claude/skills/interrogate/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Adversarially review the proposed app.py change that writes [] before loading notes. Use two native reviewers with the configured inherited model, synthesize disagreements and lead judgment. Do not apply the change. Never claim vendor diversity from one model.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/interrogate/acceptance-events.jsonl",
+          "events_sha256": "cbb76dc0b788dc55350612edf5966290e64436eda3263551ea92f9fdbaa1f9aa",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/interrogate/acceptance-stderr.log",
+          "installed_skill_sha256": "fd245747cba981e46d0608cb6ec4abaef0bbc39f8b2277960cf50bc26138892e",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "cbb76dc0b788dc55350612edf5966290e64436eda3263551ea92f9fdbaa1f9aa",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "16231c98114d54b25e0eb798d98d57f3394dfaf8a8e63f8c352d5a16311e32ae",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "d49b44f14208266dccff778951ddf0efc3b858ce11510a2c983850463ac15473",
+            "app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "684db8864cdf791b116f68b85eb99d1d706350ef394d6fe8ccce9bda189abeb8",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "CLAUDE.md": "1a193bf50ab743677b01e80ba9dcb1f014e4fbab86499e9b55a5fce242b3eaa2",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-claude-code.json": "e7dc50b19e3ac40d8c718d9cb5b0db507799f277b637d7ef1cb2e6adc3a4fede",
+            ".pstack/interrogate-preflight.log": "73eb5aae5d3942d5a0f241cd1c4681ff689966393a535e338f5aa78b8928f87b",
+            ".pstack/interrogate/proposed-change.applied-in-sandbox.diff": "daa7835c200d57202f845aee955d5a11f38df22c6467711fa6de93c9ba3dc753",
+            ".pstack/interrogate/cli-evidence.txt": "f92df2b867f7d423fe05513582c60ca472db1207cf3863fba9a38bc8b2cc6694",
+            ".pstack/interrogate/verdict.md": "1f7799357f723f51523c93572576dad62de12ee9afeeec6f7f218a7c6e617007",
+            ".pstack/interrogate/proposed-change.patch": "af24bb3f0ae9fc1f864432b299b1be1c3765da8e94f046a0303656e17fcb8c3c",
+            ".pstack/interrogate/lead-verification.txt": "5fd8a346463f5ae4b01b41d699fdfe4b167318a9ccaea620f64281153c6746c1",
+            ".pstack/interrogate/sandbox/notes.json": "055539df4a0b804c58caf46c0cd2941af10d64c1395ddd8e50b5f55d945841e6",
+            ".pstack/interrogate/sandbox/app.py": "c31f198a3a04054b4942303b635bad4482ee41a13622d9fdb949abbfbfb90b4c",
+            ".pstack/interrogate/sandbox/base/notes.json": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            ".pstack/interrogate/sandbox/base/app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "exactly_two_native_reviewers": true,
+            "explicit_intent_and_four_buckets_and_agreement_map": true,
+            "no_auto_application": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "tool_use_id": "toolu_01MYYyKWBbtvmSJvXoNV76M8",
+                "name": "Reviewer A interrogate app.py",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBr3b9Dju5rtA2mXdYEy",
+                "spawn_event_index": 64,
+                "started": "2026-10-19T15:39:32.649Z",
+                "background": false,
+                "model_override": null,
+                "child_id": "af5ae0ff51c147918",
+                "native_start_index": 65,
+                "terminal_event_index": 87,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_01D76qvrnpvCYk5PTsRGfYN3",
+                "name": "Reviewer B interrogate app.py",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBr3b9Dju5rtA2mXdYEy",
+                "spawn_event_index": 76,
+                "started": "2026-10-19T15:39:55.357Z",
+                "background": false,
+                "model_override": null,
+                "child_id": "a241185304d1bf35d",
+                "native_start_index": 77,
+                "terminal_event_index": 92,
+                "terminal": "completed"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "host_managed_terminal_completion",
+            "explicit_close_call_observed": false
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-interrogate-claude-code-independent.json",
+            "sha256": "c92b6af2328ac0e127be50819516056da38b2f9344f52d10038cc44d4eeae355",
+            "result": {
+              "original_app_unchanged": true,
+              "baseline_sha256": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+              "proposal_only_in_independent_temporary_copy": true,
+              "proposal_stdout": "",
+              "proposal_stored": [
+                "mang"
+              ],
+              "data_loss_confirmed": true,
+              "proposal_exit_code": 0
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation."
+          ]
+        }
+      }
+    },
+    "swarm": {
+      "category": "independent-workflow",
+      "input": "Use swarm with exactly two native workers: one verifies add persistence, one verifies list sorting. Give each its own output file, wait for both terminal results, aggregate and release. Do not simulate delegation or let workers modify app.py.",
+      "observable_contract": "Two native worker IDs and terminal results, disjoint artifacts, aggregate verified against real CLI.",
+      "source": "pstack/skills/swarm/SKILL.md",
+      "source_sha256": "ed14dc7c7c7dcbd15d7ae1c68736fbc013ff90bdc731db364920feea001c0f53",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "session_id": "01a154d0-3c52-73f3-bbde-d7a62713111c",
+          "exit_code": 0,
+          "duration_seconds": 124.69,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm/acceptance-events.jsonl",
+          "events_sha256": "8f283c6a45577430f41ed5aa62e2cf6f4e5c6e8dd6fdfa70eb1d6f4ee4ca0371",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm/acceptance-stderr.log",
+          "installed_skill_sha256": "ed14dc7c7c7dcbd15d7ae1c68736fbc013ff90bdc731db364920feea001c0f53",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "acceptance-events.jsonl": "8f283c6a45577430f41ed5aa62e2cf6f4e5c6e8dd6fdfa70eb1d6f4ee4ca0371",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "7e67ae28f21a3ebbac2ddb9550ea122fd44b84e65a44e07e2d7fd450a434527e",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "058fcb511f9b2f5418a67c59c860a04cde54e2f56bdcc292a38804bf77184f23",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "c337991004704fb082f519bb1af733a94b8d5df214705e7685d7437c6db8292d",
+            "app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "AGENTS.md": "45e81bc61ed466c3608b381b4770c671633105fb0b9a966c467c39266285acd1",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "8466894e4d1471c807a528edf0b5130a0d8f5c09ec9a629ed4a93129977d172f",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            "swarm-artifacts/frame.md": "950a84b2f12db17e3cf673a85e8576ecbc985ae453d2e7e56485eaa38a7c8be3",
+            "swarm-artifacts/worktrees.txt": "1264446e6ef4bd15ff4e2a6a762f714bb9532cc514dc42b9d99cf69fc6e8238b",
+            "swarm-artifacts/report.md": "8d4fe649c9006887be1116d1303e985aae9125a2e92ede81576529830c01cc2d",
+            "swarm-artifacts/list-evidence.txt": "96b79f611c44a6ef58b57b3335e4168685228804929066540869f36518f0082e",
+            "swarm-artifacts/todo.md": "d1d1766e9d0b2da57ae225454686c79f21133c530a50883379746396ed0abb71",
+            "swarm-artifacts/local-clone.txt": "08c420f48be8e2fc53b1877e51a6a8bf38bf1b448c860d41492c15da7fac3e6a",
+            "swarm-artifacts/add-report.md": "2e54d53d829a94c44330af4bd089becc1e20eb48ad7f84d53b6489155bc3d858",
+            "swarm-artifacts/preflight.txt": "00f56ab0e71208f6bfebb149150fe607156ea401beb8931e7deec84565fae400",
+            "swarm-artifacts/list-report.md": "efa20288ba6c656210e40dbd60e11ec3a52892d3f50eb061162075d21b854efb",
+            "swarm-artifacts/add-evidence.txt": "a72b7e60efd6d42e4194e27c8da90515ad3ba1553e85164aa160582f8f565b9d",
+            "swarm-artifacts/native-results.json": "dfad938b5e42e8aac88777bd11824fece6a273d7c1cb95e2fdca0a8dc5c49383",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-codex.json": "a433736cd957c509d8729b6cef8c14af8863d6d8c883dc7d9b9a5f57bd7ee47f",
+            "swarm-artifacts/worktree-list/boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "swarm-artifacts/worktree-list/log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "swarm-artifacts/worktree-list/log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "swarm-artifacts/worktree-list/note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "swarm-artifacts/worktree-list/note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "swarm-artifacts/worktree-list/id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "swarm-artifacts/worktree-list/note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "swarm-artifacts/worktree-list/log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "swarm-artifacts/worktree-list/empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "swarm-artifacts/worktree-list/log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "swarm-artifacts/worktree-list/README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "swarm-artifacts/worktree-list/notes.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "swarm-artifacts/worktree-list/wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "swarm-artifacts/worktree-list/order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "swarm-artifacts/worktree-list/scoped-history.md": "c337991004704fb082f519bb1af733a94b8d5df214705e7685d7437c6db8292d",
+            "swarm-artifacts/worktree-list/app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "swarm-artifacts/worktree-list/log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "swarm-artifacts/worktree-list/log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "swarm-artifacts/worktree-list/log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "swarm-artifacts/worktree-list/log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-list/log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            "swarm-artifacts/worktree-add/boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "swarm-artifacts/worktree-add/log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "swarm-artifacts/worktree-add/log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "swarm-artifacts/worktree-add/note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "swarm-artifacts/worktree-add/note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "swarm-artifacts/worktree-add/id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "swarm-artifacts/worktree-add/note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "swarm-artifacts/worktree-add/log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "swarm-artifacts/worktree-add/empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "swarm-artifacts/worktree-add/log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "swarm-artifacts/worktree-add/README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "swarm-artifacts/worktree-add/notes.json": "b579e24a2d147887e550569658a9e309730e023456b1576706055b6dd1a54eef",
+            "swarm-artifacts/worktree-add/wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "swarm-artifacts/worktree-add/order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "swarm-artifacts/worktree-add/scoped-history.md": "c337991004704fb082f519bb1af733a94b8d5df214705e7685d7437c6db8292d",
+            "swarm-artifacts/worktree-add/app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "swarm-artifacts/worktree-add/log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "swarm-artifacts/worktree-add/log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "swarm-artifacts/worktree-add/log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "swarm-artifacts/worktree-add/log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "swarm-artifacts/worktree-add/log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5"
+          },
+          "acceptance": "partial_capability_gap",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "exactly_two_native_workers": true,
+            "disjoint_worktrees_and_reports": true,
+            "sha_and_methods_in_both_reports": true,
+            "aggregate_findings_independently_reproduced": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "child_id": "01a154d1-1577-7491-84d3-d2225d308178",
+                "parent_id": "01a154d0-3c52-73f3-bbde-d7a62713111c",
+                "name": "/root/verify_add",
+                "role": null,
+                "started": "2026-10-19T15:39:11.364Z",
+                "terminal": "2026-10-19T15:39:42.282Z",
+                "final_excerpt": "ISSUES \u2014 verified branch `swarm-add`, SHA `6ac33e6299f7b1ff706d8e27f91d36dcaedf628a`.\n\nTwo separate-process add/list samples proved titles lose their final character on disk and subsequent listing. Second add preserved the existing stored entry. All CLI commands exited 0; `app.py` remained unchanged.\n\nArtifacts: `swarm-artifacts/add-report.md` and `swarm-artifacts/add-evidence.txt`.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-39-11-01a154d1-1577-7491-84d3-d2225d308178.jsonl",
+                "trace_sha256": "ac916fdc180a77fe9f519e147a88d3ba529330c6c656e10904308b2b7cf6df3d"
+              },
+              {
+                "child_id": "01a154d1-37f9-7883-b1fe-c71b1bd519fb",
+                "parent_id": "01a154d0-3c52-73f3-bbde-d7a62713111c",
+                "name": "/root/verify_list",
+                "role": null,
+                "started": "2026-10-19T15:39:19.974Z",
+                "terminal": "2026-10-19T15:39:52.069Z",
+                "final_excerpt": "PASS \u2014 list sorting verified on branch `swarm-list`, SHA `6ac33e6299f7b1ff706d8e27f91d36dcaedf628a`.\n\nTwo fresh CLI processes confirmed exact alphabetical output with duplicates and newline output for empty input. Both exited 0 and preserved fixture bytes. `app.py` remained unchanged by SHA256 and Git diff.\n\nArtifacts: `swarm-artifacts/list-report.md`, `swarm-artifacts/list-evidence.txt`. No defects or gaps.",
+                "models": [
+                  "gpt-6.1-sol"
+                ],
+                "trace": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-39-19-01a154d1-37f9-7883-b1fe-c71b1bd519fb.jsonl",
+                "trace_sha256": "ba045b152732511f3d867b27349ca7abe5a7793af8362ae701b5b1d5fd303a4a"
+              }
+            ],
+            "native_calls": [
+              {
+                "timestamp": "2026-10-19T15:39:11.030Z",
+                "tool": "spawn_agent",
+                "task_name": "verify_add",
+                "target": null,
+                "call_id": "call_7ac807722f0b4a2bbd40b83d830fd84e"
+              },
+              {
+                "timestamp": "2026-10-19T15:39:19.923Z",
+                "tool": "spawn_agent",
+                "task_name": "verify_list",
+                "target": null,
+                "call_id": "call_2f961e0260c9432da65141e86124f4b1"
+              },
+              {
+                "timestamp": "2026-10-19T15:39:26.621Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_af961658d5844332b049b926a906ae09"
+              },
+              {
+                "timestamp": "2026-10-19T15:39:40.907Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_ab0c9e49c3f34ee88d91f3095d2dd18d"
+              },
+              {
+                "timestamp": "2026-10-19T15:39:45.630Z",
+                "tool": "wait_agent",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_ca215134f46d48d9bef5baa0f4714579"
+              },
+              {
+                "timestamp": "2026-10-19T15:39:57.687Z",
+                "tool": "list_agents",
+                "task_name": null,
+                "target": null,
+                "call_id": "call_092340af660347d88581f42099669e1b"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "unavailable",
+            "explicit_close_call_observed": false,
+            "reason": "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-swarm-codex-independent.json",
+            "sha256": "7f7252bac056eede7e794ddcab323a21118f3c4321c84d6d5622b29216331d9d",
+            "result": {
+              "original_app_unchanged": true,
+              "worktrees": [
+                {
+                  "name": "add",
+                  "head": "6ac33e6299f7b1ff706d8e27f91d36dcaedf628a",
+                  "app_unchanged": true,
+                  "path": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm/swarm-artifacts/worktree-add"
+                },
+                {
+                  "name": "list",
+                  "head": "6ac33e6299f7b1ff706d8e27f91d36dcaedf628a",
+                  "app_unchanged": true,
+                  "path": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/codex/swarm/swarm-artifacts/worktree-list"
+                }
+              ],
+              "real_add_and_list": {
+                "add_exit": 0,
+                "list_exit": 0,
+                "list_output": "Persistence titl\n",
+                "stored": [
+                  "Persistence titl"
+                ],
+                "truncation_confirmed": true
+              },
+              "sorting_confirmed": true,
+              "sort_stdout": "apple\napple\nmiddle\nzebra\n"
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation.",
+            "Exposed collaboration tools have no close/release operation. Child task_complete records and parent CLI termination were observed; no explicit release was simulated."
+          ],
+          "workflow_verdict": "ISSUES: fixture add truncates input; PASS: alphabetical list. Correct detection is successful verification work, not a claim the fixture is bug-free."
+        },
+        "claude-code": {
+          "status": "executed",
+          "session_id": "6d735fb1-7024-474b-8822-bcf7f33f6875",
+          "exit_code": 0,
+          "duration_seconds": 147.81,
+          "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /swarm explicitly from /var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm/.claude/skills/swarm/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Use swarm with exactly two native workers: one verifies add persistence, one verifies list sorting. Give each its own output file, wait for both terminal results, aggregate and release. Do not simulate delegation or let workers modify app.py.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm/acceptance-events.jsonl",
+          "events_sha256": "05940c6ccc6df180a329fa819a00f5ba7f6c179a00527f2d324bfab6583ade43",
+          "stderr": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm/acceptance-stderr.log",
+          "installed_skill_sha256": "ed14dc7c7c7dcbd15d7ae1c68736fbc013ff90bdc731db364920feea001c0f53",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "artifact_sha256": {
+            "swarm-preflight.log": "52f507961e8eb577cfc8c38db27c24ea1564e041bb89ebc5c77f93744af7156b",
+            "acceptance-events.jsonl": "05940c6ccc6df180a329fa819a00f5ba7f6c179a00527f2d324bfab6583ade43",
+            "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+            "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+            "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+            "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+            "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+            "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+            "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+            "acceptance-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+            "acceptance-prompt.txt": "1023fa20a53f45b5ac33931711975ce556b531703c25926d6cc3441c5253cda2",
+            "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+            "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+            "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+            "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+            "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+            "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+            "scoped-history.md": "acaef09c466ce38c003cfdac1c9265d94d63affc8ec7d857fbf9e29310ea0671",
+            "app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+            "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+            "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "acceptance-setup.log": "684db8864cdf791b116f68b85eb99d1d706350ef394d6fe8ccce9bda189abeb8",
+            "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+            "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "CLAUDE.md": "1a193bf50ab743677b01e80ba9dcb1f014e4fbab86499e9b55a5fce242b3eaa2",
+            "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+            "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+            "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+            ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            ".pstack/setup-claude-code.json": "e7dc50b19e3ac40d8c718d9cb5b0db507799f277b637d7ef1cb2e6adc3a4fede",
+            ".swarm/frame.md": "dd878a10e52a0b8d39ebe9625e7f54f881ac59693a3de60979d7d08c787f8fac",
+            ".swarm/aggregate.md": "032e002991f1f98c0abe360342b60bfdd7ec6584a5ee7e6556e7c84cb400e66c",
+            ".swarm/results/add-persistence.md": "8170a30dcb16b16b1932e1648987be89e63419e9c5ce6eeeebd2a16030b8e8a4",
+            ".swarm/results/list-sorting.md": "1080bfc7fb2c4cbf169c41d8f51ed13181ea926f252d9e7e6a5041a55808cf0f"
+          },
+          "acceptance": "scenario_verified",
+          "independent_checks": {
+            "native_child_ids_and_terminals": true,
+            "full_installed_tree_unchanged": true,
+            "recorded_artifact_sha256_rechecked": true,
+            "independent_actual_behavior_recheck": true,
+            "no_vendor_diversity_claim": true,
+            "exactly_two_native_workers": true,
+            "disjoint_worktrees_and_reports": true,
+            "sha_and_methods_in_both_reports": true,
+            "aggregate_findings_independently_reproduced": true
+          },
+          "native_lifecycle": {
+            "children": [
+              {
+                "tool_use_id": "toolu_01J5RJkXTqp2ZF27RwLohs6d",
+                "name": "Swarm worker: add persistence",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBrD7PtThd1hMHLEy6wK",
+                "spawn_event_index": 49,
+                "started": "2026-10-19T15:41:21.158Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "a831eefd389ee9441",
+                "native_start_index": 51,
+                "terminal_event_index": 79,
+                "terminal": "completed"
+              },
+              {
+                "tool_use_id": "toolu_01QCFP6owu2YfrM3xAmjmEJN",
+                "name": "Swarm worker: list sorting",
+                "role": "general-purpose",
+                "parent_message": "msg_011CgBrD7PtThd1hMHLEy6wK",
+                "spawn_event_index": 60,
+                "started": "2026-10-19T15:41:32.165Z",
+                "background": true,
+                "model_override": null,
+                "child_id": "aa24e633642c281d2",
+                "native_start_index": 62,
+                "terminal_event_index": 93,
+                "terminal": "completed"
+              }
+            ],
+            "child_ids_and_terminal_verified": true
+          },
+          "release": {
+            "status": "host_managed_terminal_completion",
+            "explicit_close_call_observed": false,
+            "worktrees_removed_independently_verified": true
+          },
+          "independent_probe": {
+            "path": "/tmp/pstack-delegation-swarm-claude-code-independent.json",
+            "sha256": "47b06a0d560189514a41dfa3ebf13851695021b78b0fef34105803341c50b46e",
+            "result": {
+              "original_app_unchanged": true,
+              "baseline_sha256": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+              "worktree_list": "worktree /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-delegation-workflows-l5msv230/claude-code/swarm\nHEAD 8cf043102b16bb253abdd7379b088c2eb3b4978b\nbranch refs/heads/main\n\n",
+              "both_worker_worktrees_removed": true,
+              "real_cli_records": [
+                {
+                  "submitted": "banana",
+                  "add_exit": 0,
+                  "listed": "banan\n",
+                  "stored": [
+                    "banan"
+                  ]
+                },
+                {
+                  "submitted": "x",
+                  "add_exit": 0,
+                  "listed": "\nbanan\n",
+                  "stored": [
+                    "banan",
+                    ""
+                  ]
+                },
+                {
+                  "submitted": "two words",
+                  "add_exit": 0,
+                  "listed": "\nbanan\ntwo word\n",
+                  "stored": [
+                    "banan",
+                    "",
+                    "two word"
+                  ]
+                }
+              ],
+              "truncation_confirmed": true,
+              "sorting_confirmed": true,
+              "sort_stdout": "10\n9\nApple\nZoo\napple\nbanana\npear\n"
+            }
+          },
+          "limitations": [
+            "Local fixture only; no external messages, PRs, trackers, schedulers, cloud executor or external integration behavior tested.",
+            "Inherited single-model seats preserve native independent agents, not cross-vendor evaluation."
+          ],
+          "workflow_verdict": "ISSUES: fixture add truncates input; PASS: alphabetical list. Correct detection is successful verification work, not a claim the fixture is bug-free."
+        }
+      }
+    }
+  },
+  "summary": {
+    "host_scenarios": 8,
+    "normal_native_parent_terminals": 8,
+    "independent_behavior_checks_passed": 8,
+    "scenario_verified": 7,
+    "partial_capability_gap": 1,
+    "capability_gap": "Codex swarm explicit worker release is not exposed; children reached terminal state.",
+    "timeouts": 0,
+    "external_phases_covered": false
+  }
+}

@@ -1,0 +1,1189 @@
+{
+  "source_commit": "9363d166bd5e0985c5beed56b870632597d118e0",
+  "frozen_snapshot": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/skill-source",
+  "runner_report": "/tmp/pstack-install-workflows.json",
+  "runner_terminal_exit": 0,
+  "initial_python39_failure": "/tmp/pstack-install-workflows-python39-failed.json",
+  "meaning": "Independent scenario assertions; model exit or claimed success alone never establishes acceptance. No source edits or permission relaxation.",
+  "entries": {
+    "create-verification-skill": {
+      "source_sha256": "06d8659ae3697abadd41e6ef0a03401736bcfcbc33e0f22afe25392dae810cee",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "blocked_permission",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/create-verification-skill",
+          "session_id": "01a154c7-1b93-7692-b4ff-6102195b05c9",
+          "events_sha256": "f1ae81ee849efc9c494472882cebb5cfd43afd620361facd2c1865ca17eb266f",
+          "checks": {
+            "discoverable_feature_map_generated": false,
+            "root_notes_unchanged": true,
+            "fixture_preexisting_verify_skill": true,
+            "harness_records_defect": true,
+            "cleanup_preserves_evidence": true
+          },
+          "gaps": [
+            "Fixture preseeded verify-notes, so clean generation into an absent skill was not exercised.",
+            "Fixture add truncates titles; generated checks preserve failing exact-title behavior.",
+            "Codex .agents write denied; runnable draft exists only in artifacts."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/create-verification-skill/artifacts/verify-notes-draft"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [],
+          "independent_commands": [
+            {
+              "command": [
+                "python3",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-n_afqhuj/artifacts/verify-notes-draft/scripts/control.py",
+                "launch"
+              ],
+              "exit": 0,
+              "stdout": "{\"argv\": [\"python3\", \"app.py\", \"list\"], \"terminal\": \"\\r\\n\", \"exit_code\": 0}\nReady: empty list exits 0\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-n_afqhuj/artifacts/verify-notes-draft/scripts/control.py",
+                "doctor"
+              ],
+              "exit": 0,
+              "stdout": "Doctor OK: source matches and storage contains titles\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-n_afqhuj/artifacts/verify-notes-draft/scripts/control.py",
+                "drive"
+              ],
+              "exit": 1,
+              "stdout": "{\"argv\": [\"python3\", \"app.py\", \"add\", \"Zebra\"], \"terminal\": \"\", \"exit_code\": 0}\n{\"argv\": [\"python3\", \"app.py\", \"add\", \"Apple\"], \"terminal\": \"\", \"exit_code\": 0}\n{\"argv\": [\"python3\", \"app.py\", \"list\"], \"terminal\": \"Appl\\r\\nZebr\\r\\n\", \"exit_code\": 0}\n{\n  \"add_exact\": false,\n  \"list_sorted\": true,\n  \"list_read_only\": true,\n  \"list_full_titles\": false\n}\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-n_afqhuj/artifacts/verify-notes-draft/scripts/control.py",
+                "cleanup"
+              ],
+              "exit": 0,
+              "stdout": "Instance removed; proof retained\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-n_afqhuj/artifacts/verify-notes-draft/scripts/control.py",
+                "evidence"
+              ],
+              "exit": 0,
+              "stdout": "Evidence survives cleanup in artifacts/notes-proof\n",
+              "stderr": ""
+            }
+          ]
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "failed_permission_bypass",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/create-verification-skill",
+          "session_id": "d9896cda-5a4d-4d79-b7de-a6b427e90d58",
+          "events_sha256": "df54604074473bffc92737d7ebc4fd1c78d025cbd9c8cd01cdfe88606adad2a2",
+          "checks": {
+            "discoverable_feature_map_generated": true,
+            "root_notes_unchanged": true,
+            "fixture_preexisting_verify_skill": true,
+            "harness_records_defect": true,
+            "cleanup_preserves_evidence": true
+          },
+          "gaps": [
+            "Fixture preseeded verify-notes, so clean generation into an absent skill was not exercised.",
+            "Fixture add truncates titles; generated checks preserve failing exact-title behavior.",
+            "Write tool permission denial was followed by Bash writing the same .claude skill path; real behavior violates permission-boundary requirement."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/create-verification-skill/.claude/skills/verify-notes"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [],
+          "independent_commands": [
+            {
+              "command": [
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/.claude/skills/verify-notes/scripts/control-notes",
+                "launch"
+              ],
+              "exit": 0,
+              "stdout": "READY scratch=/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/verify-notes-pstack-independent-harness-rowotbre evidence=/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/artifacts/verify-notes/pstack-independent-harness-rowotbre\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/.claude/skills/verify-notes/scripts/control-notes",
+                "doctor"
+              ],
+              "exit": 0,
+              "stdout": "ok   python3 >= 3.8\nok   scratch owned by RUN_ID=pstack-independent-harness-rowotbre\nok   scratch app.py matches project app.py\nok   notes.json is a JSON list of strings\nok   evidence dir exists\nDOCTOR OK\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/.claude/skills/verify-notes/scripts/control-notes",
+                "cli",
+                "--",
+                "add",
+                "banana"
+              ],
+              "exit": 0,
+              "stdout": "$ python3 app.py add banana\n[exit 0] notes.json=[\"zebra\", \"apple\", \"banan\"]\nSTEP 01\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/.claude/skills/verify-notes/scripts/control-notes",
+                "cli",
+                "--",
+                "list"
+              ],
+              "exit": 0,
+              "stdout": "$ python3 app.py list\napple\nbanan\nzebra\n[exit 0] notes.json=[\"zebra\", \"apple\", \"banan\"]\nSTEP 02\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/.claude/skills/verify-notes/scripts/control-notes",
+                "cleanup"
+              ],
+              "exit": 0,
+              "stdout": "CLEANED scratch=/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/verify-notes-pstack-independent-harness-rowotbre; evidence kept at /var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-harness-rowotbre/artifacts/verify-notes/pstack-independent-harness-rowotbre\n",
+              "stderr": ""
+            }
+          ]
+        }
+      }
+    },
+    "maintain-verification-skill": {
+      "source_sha256": "fd5b05a2db4e77ac26dbaa59b7a6df76c29639daea867f1e9c79b45b64609d32",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "blocked_permission",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/maintain-verification-skill",
+          "session_id": "01a154c7-1b92-7071-b5b2-807665de813d",
+          "events_sha256": "1836b4954fe66cc37782c3684631be5a4ce201d5d8e933a038ced824048cdfde",
+          "checks": {
+            "original_skill_retained": true,
+            "source_agents_native": true,
+            "source_agents_terminal": true,
+            "actual_list_sorted": true,
+            "actual_add_defect_detected": true,
+            "root_notes_unchanged": true
+          },
+          "gaps": [
+            "Skill write denied by native permission mode; proposed correction did not land in discoverable skill.",
+            "Fixture add truncates title; maintenance forbids editing product code."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/maintain-verification-skill/.pstack/verification-maintenance/commands.json"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [
+            {
+              "id": "item_16",
+              "type": "collab_tool_call",
+              "tool": "wait",
+              "sender_thread_id": "01a154c7-1b92-7071-b5b2-807665de813d",
+              "receiver_thread_ids": [],
+              "prompt": null,
+              "agents_states": {},
+              "status": "completed"
+            }
+          ],
+          "independent_commands": [
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "list"
+              ],
+              "exit": 0,
+              "stdout": "apple\nzebra\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "add",
+                "Independent title"
+              ],
+              "exit": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "list"
+              ],
+              "exit": 0,
+              "stdout": "Independent titl\napple\nzebra\n",
+              "stderr": ""
+            }
+          ],
+          "previous_evidence_assessments": [
+            {
+              "acceptance": "blocked_permission",
+              "checks": {
+                "original_skill_retained": true,
+                "source_agents_native": false,
+                "source_agents_terminal": false,
+                "actual_list_sorted": true,
+                "actual_add_defect_detected": true,
+                "root_notes_unchanged": true
+              },
+              "gaps": [
+                "Skill write denied by native permission mode; proposed correction did not land in discoverable skill.",
+                "Fixture add truncates title; maintenance forbids editing product code.",
+                "Source reader and cleanup reader are asserted in notes but no spawn lifecycle event is retained."
+              ],
+              "reason": "Initial assessment had stdout events only; supplemented below from scenario-isolated native state and rollouts."
+            }
+          ],
+          "native_rollout_supplement": {
+            "state_database": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/maintain-verification-skill-codex-home/state_5.sqlite",
+            "read_mode": "SQLite mode=ro; only scoped fixture CODEX_HOME",
+            "parent_id": "01a154c7-1b92-7071-b5b2-807665de813d",
+            "parent_spawn_calls": [
+              {
+                "call_id": "call_9c5ac9551a6c44e4a13f802f5d1714e3",
+                "task_name": "source_map",
+                "agent_type": "default",
+                "fork_turns": null,
+                "message_redacted": true
+              },
+              {
+                "call_id": "call_18b6bb6073ad4b57b8173b4dc703e7ff",
+                "task_name": "comment_review",
+                "agent_type": "comment-sicko",
+                "fork_turns": null,
+                "message_redacted": true
+              }
+            ],
+            "children": [
+              {
+                "id": "01a154c7-8580-7ad3-95f1-dd3f593b3015",
+                "agent_role": "default",
+                "agent_path": "/root/source_map",
+                "metadata_parent_thread_id": "01a154c7-1b92-7071-b5b2-807665de813d",
+                "metadata_agent_role": "default",
+                "same_scenario_cwd": true,
+                "parent_matches": true,
+                "state_metadata_role_agree": true,
+                "rollout": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/maintain-verification-skill-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-28-44-01a154c7-8580-7ad3-95f1-dd3f593b3015.jsonl",
+                "rollout_sha256": "93317c68b4a29dba2009b4c778d186ccb0df7cc2529dad945a0f9570644fb30b",
+                "terminal_task_complete": true,
+                "tool_calls": [
+                  {
+                    "name": "exec",
+                    "call_id": "call_4ca876a404fc4648a9bebd8776124070"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_071e6d3a7f45484f8deec61559545c46"
+                  }
+                ],
+                "actual_source_read_tools": true,
+                "actual_marker_read_command": false,
+                "exact_marker_in_actual_tool_output": false,
+                "full_persona_dependency_read": null
+              },
+              {
+                "id": "01a154c8-8714-7322-b7e3-f73e789594b8",
+                "agent_role": "comment-sicko",
+                "agent_path": "/root/comment_review",
+                "metadata_parent_thread_id": "01a154c7-1b92-7071-b5b2-807665de813d",
+                "metadata_agent_role": "comment-sicko",
+                "same_scenario_cwd": true,
+                "parent_matches": true,
+                "state_metadata_role_agree": true,
+                "rollout": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/maintain-verification-skill-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-29-50-01a154c8-8714-7322-b7e3-f73e789594b8.jsonl",
+                "rollout_sha256": "6be0f064045e0b857e77a25b34be260cfa9665e50de859fa9b7fdfc2e620cf33",
+                "terminal_task_complete": true,
+                "tool_calls": [
+                  {
+                    "name": "exec",
+                    "call_id": "call_9a438f23286e4994be239d3b5cf64315"
+                  }
+                ],
+                "actual_source_read_tools": false,
+                "actual_marker_read_command": false,
+                "exact_marker_in_actual_tool_output": false,
+                "full_persona_dependency_read": null
+              }
+            ],
+            "scope_verified": true,
+            "note": "Raw child fork rollouts contain additional parent session_meta records; selected identity by database thread ID, not last session_meta or filename."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "blocked_permission",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/maintain-verification-skill",
+          "session_id": "1280369d-8382-4b62-a305-82cda5f6be11",
+          "events_sha256": "d8108d8abb5d65944bf4ee9a1572b782459f29e671c4ca017b3447ca269de107",
+          "checks": {
+            "original_skill_retained": true,
+            "source_agents_native": true,
+            "source_agents_terminal": true,
+            "actual_list_sorted": true,
+            "actual_add_defect_detected": true,
+            "root_notes_unchanged": true
+          },
+          "gaps": [
+            "Skill write denied by native permission mode; proposed correction did not land in discoverable skill.",
+            "Fixture add truncates title; maintenance forbids editing product code."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/maintain-verification-skill/verify-runs"
+          ],
+          "native_agent_calls": [
+            {
+              "id": "toolu_01R9zRhmhamuj4hdbxy8VnjU",
+              "selector": "general-purpose"
+            },
+            {
+              "id": "toolu_01MAwU6pDwhCJTQmP3qGAuF5",
+              "selector": "general-purpose"
+            }
+          ],
+          "native_terminal_events": [
+            {
+              "task_id": "a01d267e778bf04ff",
+              "tool_use_id": "toolu_01R9zRhmhamuj4hdbxy8VnjU",
+              "status": "completed"
+            },
+            {
+              "task_id": "a6e63100b74d9d5d5",
+              "tool_use_id": "toolu_01MAwU6pDwhCJTQmP3qGAuF5",
+              "status": "completed"
+            }
+          ],
+          "codex_native_events": [],
+          "independent_commands": [
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "list"
+              ],
+              "exit": 0,
+              "stdout": "apple\nzebra\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "add",
+                "Independent title"
+              ],
+              "exit": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "python3",
+                "app.py",
+                "list"
+              ],
+              "exit": 0,
+              "stdout": "Independent titl\napple\nzebra\n",
+              "stderr": ""
+            }
+          ]
+        }
+      }
+    },
+    "setup-pstack": {
+      "source_sha256": "3069cd76ab6435c74ea259e3ce8d0fda792092bd07a9dfdef1082bd09330824a",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_verified",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/setup-pstack",
+          "session_id": "01a154c8-f96b-75e1-91e2-50d7e047cb19",
+          "events_sha256": "aeded00df78833077da3d61e18d4b92b9fc58398a779f4ab084407d022a1436a",
+          "checks": {
+            "receipt_file_hashes_match": true,
+            "user_line_preserved": true,
+            "source_commit_matches_runner": true,
+            "native_named_calls": true,
+            "native_terminal_two": true,
+            "marker_observed_in_both_native_results": true,
+            "marker_not_in_agent_prompts": true,
+            "registered_persona_dependency_reads": true
+          },
+          "gaps": [
+            "No separate second parent client was launched by this workflow; runner client itself was started after fixture registration."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/setup-pstack/.pstack/setup-codex.json"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [
+            {
+              "id": "item_12",
+              "type": "collab_tool_call",
+              "tool": "wait",
+              "sender_thread_id": "01a154c8-f96b-75e1-91e2-50d7e047cb19",
+              "receiver_thread_ids": [],
+              "prompt": null,
+              "agents_states": {},
+              "status": "completed"
+            }
+          ],
+          "previous_evidence_assessments": [
+            {
+              "acceptance": "partial_native_evidence_gap",
+              "checks": {
+                "receipt_file_hashes_match": true,
+                "user_line_preserved": true,
+                "source_commit_matches_runner": true,
+                "native_named_calls": false,
+                "native_terminal_two": false,
+                "marker_observed_in_both_native_results": false,
+                "marker_not_in_agent_prompts": true
+              },
+              "gaps": [
+                "No separate second parent client was launched by this workflow; runner client itself was started after fixture registration.",
+                "Only a wait event with empty receiver IDs is retained; named spawn and terminal marker result files are model-authored and cannot establish native lifecycle."
+              ],
+              "reason": "Initial assessment had stdout events only; supplemented below from scenario-isolated native state and rollouts."
+            }
+          ],
+          "native_rollout_supplement": {
+            "state_database": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/setup-pstack-codex-home/state_5.sqlite",
+            "read_mode": "SQLite mode=ro; only scoped fixture CODEX_HOME",
+            "parent_id": "01a154c8-f96b-75e1-91e2-50d7e047cb19",
+            "parent_spawn_calls": [
+              {
+                "call_id": "call_524ec02255ae4155b85d2d4b1fbb5275",
+                "task_name": "verify_poteto",
+                "agent_type": "poteto-agent",
+                "fork_turns": "none",
+                "message_redacted": true
+              },
+              {
+                "call_id": "call_48a21170c1454788a360372629096947",
+                "task_name": "verify_comment",
+                "agent_type": "comment-sicko",
+                "fork_turns": "none",
+                "message_redacted": true
+              }
+            ],
+            "children": [
+              {
+                "id": "01a154c9-a375-7760-a3df-142ab03f7607",
+                "agent_role": "poteto-agent",
+                "agent_path": "/root/verify_poteto",
+                "metadata_parent_thread_id": "01a154c8-f96b-75e1-91e2-50d7e047cb19",
+                "metadata_agent_role": "poteto-agent",
+                "same_scenario_cwd": true,
+                "parent_matches": true,
+                "state_metadata_role_agree": true,
+                "rollout": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/setup-pstack-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-31-03-01a154c9-a375-7760-a3df-142ab03f7607.jsonl",
+                "rollout_sha256": "9fd1e2a385fe10b6205654a044667864fcc8e9bfd5bfa867d2f0f84156523777",
+                "terminal_task_complete": true,
+                "tool_calls": [
+                  {
+                    "name": "exec",
+                    "call_id": "call_37e07f431cd94ae7be982c1a8fa6cf0e"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_d2d4eab8ef9f43768dfe24d1b7890b86"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_187479b6451244f7830c25697af86a56"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_835a72cf85bc47808c97b73cb6a09526"
+                  }
+                ],
+                "actual_source_read_tools": true,
+                "actual_marker_read_command": true,
+                "exact_marker_in_actual_tool_output": true,
+                "full_persona_dependency_read": true,
+                "native_user_prompt_count": 1,
+                "marker_absent_from_native_user_prompts": true
+              },
+              {
+                "id": "01a154c9-c273-7943-8366-cb03a98d7eaa",
+                "agent_role": "comment-sicko",
+                "agent_path": "/root/verify_comment",
+                "metadata_parent_thread_id": "01a154c8-f96b-75e1-91e2-50d7e047cb19",
+                "metadata_agent_role": "comment-sicko",
+                "same_scenario_cwd": true,
+                "parent_matches": true,
+                "state_metadata_role_agree": true,
+                "rollout": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/setup-pstack-codex-home/sessions/2026/10/19/rollout-2026-10-19T23-31-11-01a154c9-c273-7943-8366-cb03a98d7eaa.jsonl",
+                "rollout_sha256": "735e7a14e65f037c784a1de4c12d8c190ecec42ff809cbea8b87e817180f69f2",
+                "terminal_task_complete": true,
+                "tool_calls": [
+                  {
+                    "name": "exec",
+                    "call_id": "call_a2e4903bd3d94e8fb00028f92dd35375"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_4a761a8e1be74c0e9f97fe4910c661d6"
+                  },
+                  {
+                    "name": "exec",
+                    "call_id": "call_cc887c9b9f6047b4b9a1192264e7d6fc"
+                  }
+                ],
+                "actual_source_read_tools": true,
+                "actual_marker_read_command": true,
+                "exact_marker_in_actual_tool_output": true,
+                "full_persona_dependency_read": true,
+                "native_user_prompt_count": 1,
+                "marker_absent_from_native_user_prompts": true
+              }
+            ],
+            "scope_verified": true,
+            "note": "Raw child fork rollouts contain additional parent session_meta records; selected identity by database thread ID, not last session_meta or filename."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_verified",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/setup-pstack",
+          "session_id": "0b5f59ae-4df8-4b8b-8641-78c70a5ec392",
+          "events_sha256": "622e1eb39e607ffddd40333187b2507049966465682813abac297a9466be31f4",
+          "checks": {
+            "receipt_file_hashes_match": true,
+            "user_line_preserved": true,
+            "source_commit_matches_runner": true,
+            "native_named_calls": true,
+            "native_terminal_two": true,
+            "marker_observed_in_both_native_results": true,
+            "marker_not_in_agent_prompts": true
+          },
+          "gaps": [
+            "No separate second parent client was launched by this workflow; runner client itself was started after fixture registration."
+          ],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/setup-pstack/.pstack/setup-claude-code.json"
+          ],
+          "native_agent_calls": [
+            {
+              "id": "toolu_01KQaBHteMF3SwnLYkEJfceF",
+              "selector": "poteto-agent"
+            },
+            {
+              "id": "toolu_01VQVKZN9M4guMdSbKpQxbed",
+              "selector": "comment-sicko"
+            }
+          ],
+          "native_terminal_events": [
+            {
+              "task_id": "a6249d250bbd52e47",
+              "tool_use_id": "toolu_01VQVKZN9M4guMdSbKpQxbed",
+              "status": "completed"
+            },
+            {
+              "task_id": "a4c0665db4a17b4d9",
+              "tool_use_id": "toolu_01KQaBHteMF3SwnLYkEJfceF",
+              "status": "completed"
+            }
+          ],
+          "codex_native_events": []
+        }
+      }
+    },
+    "typescript-best-practices": {
+      "source_sha256": "28f9e61710e205f6f3c5476f333483cff0e988f6a5b639e2faad536344b40c5e",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_verified",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/typescript-best-practices",
+          "session_id": "01a154c9-d4cd-7be3-858e-bbb6d30aa32c",
+          "events_sha256": "67f10be314320513819aa88d5ac6a8be38f39df917db37dfc93e73514a61ef65",
+          "checks": {
+            "positive_compile": true,
+            "runtime": true,
+            "negative_rejected": true,
+            "negative_error_count": 6,
+            "new_variant_rejected_by_never": true
+          },
+          "gaps": [],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/typescript-best-practices/order.ts",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/codex/typescript-best-practices/order.type-test.ts"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [],
+          "independent_commands": [
+            {
+              "command": [
+                "python3",
+                "verification/check.py"
+              ],
+              "exit": 0,
+              "stdout": "Typecheck, six compile-negative cases, and runtime checks passed\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "tsc",
+                "--noEmit",
+                "--strict",
+                "--exactOptionalPropertyTypes",
+                "--target",
+                "ES2022",
+                "--allowImportingTsExtensions",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts"
+              ],
+              "exit": 2,
+              "stdout": "../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(8,7): error TS2322: Type '{ kind: \"completed\"; userId: UserId; id: NoteId; }' is not assignable to type 'Note'.\n  Type '{ kind: \"completed\"; userId: UserId; id: NoteId; }' is not assignable to type 'NoteFields & { kind: \"completed\"; completedAt: Date; }'.\n    Property 'completedAt' is missing in type '{ kind: \"completed\"; userId: UserId; id: NoteId; }' but required in type '{ kind: \"completed\"; completedAt: Date; }'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(9,7): error TS2322: Type '{ kind: \"open\"; completedAt: Date; userId: UserId; id: NoteId; }' is not assignable to type 'Note'.\n  Types of property 'completedAt' are incompatible.\n    Type 'Date' is not assignable to type 'undefined'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(10,7): error TS2375: Type '{ kind: \"open\"; completedAt: undefined; userId: UserId; id: NoteId; }' is not assignable to type 'Note' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.\n  Type '{ kind: \"open\"; completedAt: undefined; userId: UserId; id: NoteId; }' is not assignable to type 'NoteFields & { kind: \"open\"; completedAt?: never; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.\n    Type '{ kind: \"open\"; completedAt: undefined; userId: UserId; id: NoteId; }' is not assignable to type '{ kind: \"open\"; completedAt?: never; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.\n      Types of property 'completedAt' are incompatible.\n        Type 'undefined' is not assignable to type 'never'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(11,7): error TS2322: Type 'NoteId' is not assignable to type 'UserId'.\n  Type 'NoteId' is not assignable to type '{ readonly __brand: \"UserId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"NoteId\"' is not assignable to type '\"UserId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(12,7): error TS2322: Type 'UserId' is not assignable to type 'NoteId'.\n  Type 'UserId' is not assignable to type '{ readonly __brand: \"NoteId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"UserId\"' is not assignable to type '\"NoteId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/negative.ts(13,7): error TS2322: Type 'string' is not assignable to type 'NoteId'.\n  Type 'string' is not assignable to type '{ readonly __brand: \"NoteId\"; }'.\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "tsc",
+                "--noEmit",
+                "--strict",
+                "--target",
+                "ES2022",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/order.ts"
+              ],
+              "exit": 2,
+              "stdout": "../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-lydrgukt/order.ts(61,13): error TS2322: Type 'NoteFields & { kind: \"archived\"; id: NoteId; userId: UserId; }' is not assignable to type 'never'.\n",
+              "stderr": ""
+            }
+          ]
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_verified",
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/typescript-best-practices",
+          "session_id": "72b94c99-56b4-40f9-b9ca-dd8f33ee6db2",
+          "events_sha256": "fe025a6572a951e96286cd605651ec17bf6ebee2446b9805aa9419e720285cc0",
+          "checks": {
+            "positive_compile": true,
+            "runtime": true,
+            "negative_rejected": true,
+            "negative_error_count": 8,
+            "new_variant_rejected_by_never": true
+          },
+          "gaps": [],
+          "evidence": [
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/typescript-best-practices/order.ts",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-8b7l1tkq/claude-code/typescript-best-practices/order.compile-check.ts"
+          ],
+          "native_agent_calls": [],
+          "native_terminal_events": [],
+          "codex_native_events": [],
+          "independent_commands": [
+            {
+              "command": [
+                "tsc",
+                "-p",
+                "tsconfig.json"
+              ],
+              "exit": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "node",
+                "order.runtime-check.ts"
+              ],
+              "exit": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "tsc",
+                "--noEmit",
+                "--strict",
+                "--exactOptionalPropertyTypes",
+                "--target",
+                "ES2022",
+                "--allowImportingTsExtensions",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts"
+              ],
+              "exit": 2,
+              "stdout": "../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(6,7): error TS2322: Type 'UserId' is not assignable to type 'NoteId'.\n  Type 'UserId' is not assignable to type '{ readonly __brand: \"NoteId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"UserId\"' is not assignable to type '\"NoteId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(8,7): error TS2322: Type 'NoteId' is not assignable to type 'UserId'.\n  Type 'NoteId' is not assignable to type '{ readonly __brand: \"UserId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"NoteId\"' is not assignable to type '\"UserId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(10,7): error TS2322: Type 'string' is not assignable to type 'NoteId'.\n  Type 'string' is not assignable to type '{ readonly __brand: \"NoteId\"; }'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(12,43): error TS2322: Type 'UserId' is not assignable to type 'NoteId'.\n  Type 'UserId' is not assignable to type '{ readonly __brand: \"NoteId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"UserId\"' is not assignable to type '\"NoteId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(12,55): error TS2322: Type 'NoteId' is not assignable to type 'UserId'.\n  Type 'NoteId' is not assignable to type '{ readonly __brand: \"UserId\"; }'.\n    Types of property '__brand' are incompatible.\n      Type '\"NoteId\"' is not assignable to type '\"UserId\"'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(14,7): error TS2322: Type '{ kind: \"completed\"; id: NoteId; userId: UserId; }' is not assignable to type 'Note'.\n  Property 'completedAt' is missing in type '{ kind: \"completed\"; id: NoteId; userId: UserId; }' but required in type '{ kind: \"completed\"; id: NoteId; userId: UserId; completedAt: Date; }'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(16,64): error TS2353: Object literal may only specify known properties, and 'completedAt' does not exist in type '{ kind: \"open\"; id: NoteId; userId: UserId; }'.\n../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/negative.ts(18,29): error TS2353: Object literal may only specify known properties, and 'completed' does not exist in type 'Note'.\n",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "tsc",
+                "--noEmit",
+                "--strict",
+                "--target",
+                "ES2022",
+                "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/order.ts"
+              ],
+              "exit": 2,
+              "stdout": "../../../../../../../var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-independent-types-po7uneh4/order.ts(16,13): error TS2322: Type '{ kind: \"archived\"; id: NoteId; userId: UserId; }' is not assignable to type 'never'.\n",
+              "stderr": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "supplements": [
+    {
+      "scenario": "codex-new-verification-skill-authorized-target-healthy-cli",
+      "acceptance": "scenario_verified",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+      "source_snapshot": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/skill-source",
+      "source_snapshot_manifest_sha256": "3549a9e1bc97464008b7d1374256f302a2ade28eb57b5ae5d17370a261f462e7",
+      "source_variant": "Preseeded verify-notes moved to outer evidence; empty target; only this fixture title truncation corrected and committed before native session. Original blocked and permission-bypass results remain unchanged.",
+      "native_execution": {
+        "status": "executed",
+        "acceptance": "needs_independent_review",
+        "exit_code": 0,
+        "duration_seconds": 161.19,
+        "installed_skill_sha256": "06d8659ae3697abadd41e6ef0a03401736bcfcbc33e0f22afe25392dae810cee",
+        "installed_manifest_sha256": "3549a9e1bc97464008b7d1374256f302a2ade28eb57b5ae5d17370a261f462e7",
+        "installed_skill_unchanged": true,
+        "session_id": "01a154d4-0446-7dd0-939c-333669866a9d",
+        "native_delegation": [
+          {
+            "id": "item_13",
+            "type": "collab_tool_call",
+            "tool": "wait",
+            "sender_thread_id": "01a154d4-0446-7dd0-939c-333669866a9d",
+            "receiver_thread_ids": [],
+            "prompt": null,
+            "agents_states": {},
+            "status": "completed"
+          }
+        ],
+        "execution_environment": {
+          "global_configuration_changed": false,
+          "temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.pstack/acceptance-tmp",
+          "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill-codex-home",
+          "project_trust": "trusted",
+          "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+        },
+        "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+        "command": [
+          "codex",
+          "exec",
+          "--ignore-rules",
+          "--json",
+          "-s",
+          "workspace-write",
+          "-C",
+          "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+          "-c",
+          "approval_policy=\"never\"",
+          "-c",
+          "features.multi_agent=true",
+          "-"
+        ],
+        "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/acceptance-events.jsonl",
+        "events_sha256": "04db1dd1903ce1a3ba20736bffecd1b0ebfff32487592e130df68a23e0136046",
+        "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/acceptance-stderr.log",
+        "observable_checks": {},
+        "scope": "scenario only; not every playbook or external integration",
+        "artifacts": [
+          "acceptance-events.jsonl",
+          "boundary.py",
+          "log-9.txt",
+          "note-4.old",
+          "log-8.txt",
+          "note-1.old",
+          "note-0.old",
+          "note-2.old",
+          "id_notes.json",
+          "note-3.old",
+          "acceptance-stderr.log",
+          "log-11.txt",
+          "draft.md",
+          "acceptance-prompt.txt",
+          "empty-mcp.json",
+          "log-10.txt",
+          "commented.py",
+          "README.md",
+          "notes.json",
+          "wrappers.py",
+          "order.ts",
+          "scoped-history.md",
+          "app.py",
+          "log-3.txt",
+          "test_weak.py",
+          "log-2.txt",
+          "AGENTS.md",
+          "log-0.txt",
+          "acceptance-setup.log",
+          "decision.md",
+          "log-1.txt",
+          "log-5.txt",
+          "log-4.txt",
+          "jobs.json",
+          "log-6.txt",
+          "log-7.txt",
+          ".pstack/.setup.lock",
+          ".pstack/setup-codex.json",
+          "artifacts/verify-notes/native-review.json",
+          "artifacts/verify-notes/review-preflight.json",
+          "artifacts/verify-notes/failed-phases.json",
+          "artifacts/verify-notes/validation.txt",
+          "artifacts/verify-notes/run-notes.md",
+          "artifacts/verify-notes/preflight.json",
+          "artifacts/verify-notes/phases.json",
+          "artifacts/verify-notes/acceptance-3/proof/source.json",
+          "artifacts/verify-notes/acceptance-3/proof/commands.jsonl",
+          "artifacts/verify-notes/acceptance-3/proof/notes.json",
+          "artifacts/verify-notes/acceptance-3/proof/assertions.json",
+          "artifacts/verify-notes/acceptance-2/proof/source.json",
+          "artifacts/verify-notes/acceptance-2/proof/commands.jsonl",
+          "artifacts/verify-notes/acceptance-1/proof/source.json",
+          "artifacts/verify-notes/acceptance-1/proof/commands.jsonl",
+          "artifacts/verify-notes/acceptance-1/proof/notes.json",
+          "artifacts/verify-notes/acceptance-1/proof/assertions.json"
+        ],
+        "artifact_sha256": {
+          "acceptance-events.jsonl": "04db1dd1903ce1a3ba20736bffecd1b0ebfff32487592e130df68a23e0136046",
+          "boundary.py": "93fa4992ec688eb6353f8f97b074248dbb3885f4bb86e0c21c77624fa1b9921a",
+          "log-9.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "note-4.old": "eaf403d1d81f6fc37c1de69498c4d6e99393c7c80dbd1bebf5fd20371a6fac92",
+          "log-8.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "note-1.old": "a2892c190f03c2e69fc8abc7a0d96483e2b83cfc516a6b1ace91cb6c65668fb3",
+          "note-0.old": "5a347c083c9e06bd3a93b55df32cd9f883a8a85ea1eeabd3726eee70c594a022",
+          "note-2.old": "1db8c7ed14ca8e2675298c96ec17fa45c908929d65814cf280a6acf122c778eb",
+          "id_notes.json": "48df1da2a67c570ad4b8a6d3424234874f81e0989e38f0edfaee771313d35431",
+          "note-3.old": "1554e503022dc788c0420a7fb445bbcc5c0a7d7a7d4cf54f04de768a4e111119",
+          "acceptance-stderr.log": "9bf31e461bc73ffbcea549df5b5e4be55c4f45a31a619785bfa2364b32068a21",
+          "log-11.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "draft.md": "1983e9a5ebf991b0ad844ec96f2455bd296d1aa9ce267461eb77a70456fac7c4",
+          "acceptance-prompt.txt": "7e4f985ea4cb516b3a194d475be5ba5296e0947452a0f1e58e82de413fa6fb0d",
+          "empty-mcp.json": "e93fc8db2b1bd77107fe6c758bca9545fa864cf7cce8ab93a7b2b93a1d566a7b",
+          "log-10.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "commented.py": "ab1f3d4c670ba5f81a98b1d5d5411ceb05dcaf96f16a93042236c5d4ddf2b1a8",
+          "README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0",
+          "notes.json": "0b9a58ff93b38652daac4837b79f457ea3b2137caa85857e91f04e95e07add40",
+          "wrappers.py": "aeae7928a942f2aa3ead9ae20d3696e2d72b4e4d0a2413b2ec2957ac257cddd6",
+          "order.ts": "fa21ba0fbfc76b4c3c0d56b70d926ea05073f2558a35abdd7d945ed3a21fa513",
+          "scoped-history.md": "88043cb75cadc778fcbc369e5146739a50157569a1dffbdf5803a0a05e3f9e27",
+          "app.py": "d43be0e62729e8090ec62812997b8aa8a8aeb3be7757dc56d0e45499b010fbaa",
+          "log-3.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "test_weak.py": "4005cde8fdb75d42938ddd19c7e7c040232e2bbfe46944dbb25412a248171b44",
+          "log-2.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "AGENTS.md": "b969a839ebba1080053ca087fd1fe7ad7381eccefcf4bccbae5aa356814d23f7",
+          "log-0.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "acceptance-setup.log": "8466894e4d1471c807a528edf0b5130a0d8f5c09ec9a629ed4a93129977d172f",
+          "decision.md": "1fdccb8f96e8c71eabafd0e9468a17dc5880026497b85ac29e0d01047a0b1261",
+          "log-1.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "log-5.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "log-4.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "jobs.json": "484e9510f1f023eb30b5039daf44c367ddc604cedd33ae0533819e5f23075092",
+          "log-6.txt": "281cc9d0c1ad9a35d6a421ea7fbe4826c4db16a2b412779857e6dd6e441ee9e9",
+          "log-7.txt": "f2b4f1bbc25ee3441765561500413bf44314da86b0d4145411525989c391b2c5",
+          ".pstack/.setup.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          ".pstack/setup-codex.json": "5cec2631e2d9366f484382cb0da43fdc240658e376654a4543fb8fe88613e8bd",
+          "artifacts/verify-notes/native-review.json": "0e7a7b27b4463b96771c4f5cb6042704783777e37d2f50e1848a4db7805aa788",
+          "artifacts/verify-notes/review-preflight.json": "0b780f750c1703e16136a7fad1cd94def3a8f8512ec3422d8bd47606c2d062b5",
+          "artifacts/verify-notes/failed-phases.json": "03f90f7d3c1ea553613b9160c78ea0f3a226970ce06d384933d1717eb6be094c",
+          "artifacts/verify-notes/validation.txt": "db349825903d66adffea3ecf1bd8e1803043e8a71cf1a051235dabc5371f5bb0",
+          "artifacts/verify-notes/run-notes.md": "f257820c1ae59cb52987c792fb6ade28490d4969e7b5f231d41d32f642fb22a9",
+          "artifacts/verify-notes/preflight.json": "0b780f750c1703e16136a7fad1cd94def3a8f8512ec3422d8bd47606c2d062b5",
+          "artifacts/verify-notes/phases.json": "bea16e5d20a6ee6970e0e0df150d8c58297a46863479682daf4dabdb17ab7e45",
+          "artifacts/verify-notes/acceptance-3/proof/source.json": "b62991914c261596aaaf12e313d8c833910fd151095cb736dd02e2f7dbd75673",
+          "artifacts/verify-notes/acceptance-3/proof/commands.jsonl": "7f2a2a48d075b7b1ea0c5b462eb767c6093f5793ee2a9f79a8e27fcf9283d534",
+          "artifacts/verify-notes/acceptance-3/proof/notes.json": "a8963201da5033167bd02925eb0e60b445eb1a556ce43694dc28994e32d673c7",
+          "artifacts/verify-notes/acceptance-3/proof/assertions.json": "16291827b57c3b06ed5cc70d7be6d533648c57f79ffedc77c6b96ea7ee5e4cd3",
+          "artifacts/verify-notes/acceptance-2/proof/source.json": "b62991914c261596aaaf12e313d8c833910fd151095cb736dd02e2f7dbd75673",
+          "artifacts/verify-notes/acceptance-2/proof/commands.jsonl": "11472f5873b8d8716cbe01ca04f91daf9e77d3a19969869a8db6c1976b9578bf",
+          "artifacts/verify-notes/acceptance-1/proof/source.json": "b62991914c261596aaaf12e313d8c833910fd151095cb736dd02e2f7dbd75673",
+          "artifacts/verify-notes/acceptance-1/proof/commands.jsonl": "27dd4004c0093e592a4ee2324465ed6ff02a265185e285fa4e740f710cfb1946",
+          "artifacts/verify-notes/acceptance-1/proof/notes.json": "a8963201da5033167bd02925eb0e60b445eb1a556ce43694dc28994e32d673c7",
+          "artifacts/verify-notes/acceptance-1/proof/assertions.json": "16291827b57c3b06ed5cc70d7be6d533648c57f79ffedc77c6b96ea7ee5e4cd3"
+        }
+      },
+      "permission_probe": {
+        "command": [
+          "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+          "sandbox",
+          "--include-managed-config",
+          "-C",
+          "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+          "-P",
+          "verification",
+          "--",
+          "/opt/homebrew/bin/python3",
+          "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/probe.py"
+        ],
+        "exit": 0,
+        "stdout": "{\".agents/skills/verify-notes\": \"write allowed\", \".agents/skills/create-verification-skill\": \"write denied\", \".codex\": \"write denied\", \".git\": \"write denied\", \".aws\": \"write denied\"}\n",
+        "stderr": "",
+        "config_sha256": "3061bdcc57765c6da2f129614fdfd3691b88714da9e388f67eb67bc8516a53cc",
+        "original_codex": "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+        "original_codex_sha256": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70"
+      },
+      "launcher": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/bin/codex",
+      "actual_command": {
+        "command": [
+          "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+          "exec",
+          "--ignore-rules",
+          "--json",
+          "-C",
+          "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+          "-c",
+          "approval_policy=\"never\"",
+          "-c",
+          "features.multi_agent=true",
+          "-"
+        ],
+        "launcher_sha256": "e38ba93f655d7eb98df19f668d854e84292a680997518f462c3b71e65bfdeb83",
+        "config": "default_permissions = \"verification\"\n[projects.\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill\"]\ntrust_level = \"trusted\"\n\n[permissions.verification]\nextends = \":workspace\"\n[permissions.verification.filesystem]\n\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents\" = \"read\"\n\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.codex\" = \"read\"\n\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.git\" = \"read\"\n\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.aws\" = \"read\"\n\"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes\" = \"write\"\n[permissions.verification.network]\nenabled = false\n"
+      },
+      "temporary_config_can_be_removed": "Yes; isolated verification-only CODEX_HOME profile, no product or global config change.",
+      "checks": {
+        "official_profile_probe_exact_protections": true,
+        "frontmatter_name": true,
+        "features_index": true,
+        "add_and_list_map": true,
+        "executable_helper": true,
+        "all_generated_phases_independent_exit_zero": true,
+        "exact_stored_titles": true,
+        "sorted_exact_titles": true,
+        "proof_survives_cleanup": true,
+        "no_native_permission_denial": true,
+        "original_app_healthy": true,
+        "source_skill_unchanged": true,
+        "all_published_skill_bytes_unchanged": true,
+        "raw_add_argv_literal_titles": true,
+        "raw_cli_exit_codes": true,
+        "raw_cli_list_exact": true
+      },
+      "independent_commands": [
+        {
+          "phase": "launch",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "launch",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"list\"], \"stdout\": \"\\r\\n\", \"stderr\": \"\", \"exit_code\": 0}\nREADY: isolated CLI lists empty initialized data\n",
+          "stderr": ""
+        },
+        {
+          "phase": "doctor",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "doctor",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "HEALTHY: identical app, valid data, list exits 0\n",
+          "stderr": ""
+        },
+        {
+          "phase": "drive",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "drive",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"add\", \"zebra\"], \"stdout\": \"\", \"stderr\": \"\", \"exit_code\": 0}\n{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"add\", \"  Release checklist \u96ea  \"], \"stdout\": \"\", \"stderr\": \"\", \"exit_code\": 0}\n{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"add\", \"apple\"], \"stdout\": \"\", \"stderr\": \"\", \"exit_code\": 0}\n{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"add\", \"apple\"], \"stdout\": \"\", \"stderr\": \"\", \"exit_code\": 0}\n{\"argv\": [\"/opt/homebrew/opt/python@3.13/bin/python3.13\", \"/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py\", \"list\"], \"stdout\": \"  Release checklist \u96ea  \\r\\napple\\r\\napple\\r\\nzebra\\r\\n\", \"stderr\": \"\", \"exit_code\": 0}\nPASS: exact titles, whitespace, Unicode, duplicates, sorted list, separate-process persistence\n",
+          "stderr": ""
+        },
+        {
+          "phase": "evidence",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "evidence",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "{\"proof/assertions.json\": \"16291827b57c3b06ed5cc70d7be6d533648c57f79ffedc77c6b96ea7ee5e4cd3\", \"proof/commands.jsonl\": \"1bb315df8522da409b11b515ea3a8f5988783178a6cadfbb5eb6e504e8876637\", \"proof/notes.json\": \"a8963201da5033167bd02925eb0e60b445eb1a556ce43694dc28994e32d673c7\", \"proof/source.json\": \"b62991914c261596aaaf12e313d8c833910fd151095cb736dd02e2f7dbd75673\"}\n",
+          "stderr": ""
+        },
+        {
+          "phase": "cleanup",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "cleanup",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "CLEAN: instance removed, original app and data unchanged, proof retained\n",
+          "stderr": ""
+        },
+        {
+          "phase": "evidence",
+          "command": [
+            "/Users/bytedance/.nvm/versions/node/v24.7.0/bin/codex",
+            "sandbox",
+            "--include-managed-config",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill",
+            "-P",
+            "verification",
+            "--",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/.agents/skills/verify-notes/scripts/control.py",
+            "evidence",
+            "independent-check"
+          ],
+          "exit": 0,
+          "stdout": "{\"proof/assertions.json\": \"16291827b57c3b06ed5cc70d7be6d533648c57f79ffedc77c6b96ea7ee5e4cd3\", \"proof/commands.jsonl\": \"1bb315df8522da409b11b515ea3a8f5988783178a6cadfbb5eb6e504e8876637\", \"proof/notes.json\": \"a8963201da5033167bd02925eb0e60b445eb1a556ce43694dc28994e32d673c7\", \"proof/source.json\": \"b62991914c261596aaaf12e313d8c833910fd151095cb736dd02e2f7dbd75673\"}\n",
+          "stderr": ""
+        }
+      ],
+      "proof_assertions": {
+        "expected": [
+          "zebra",
+          "  Release checklist \u96ea  ",
+          "apple",
+          "apple"
+        ],
+        "stored": [
+          "zebra",
+          "  Release checklist \u96ea  ",
+          "apple",
+          "apple"
+        ],
+        "sorted": [
+          "  Release checklist \u96ea  ",
+          "apple",
+          "apple",
+          "zebra"
+        ],
+        "exact_title_persistence": true
+      },
+      "proof_commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "list"
+          ],
+          "stdout": "\r\n",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "add",
+            "zebra"
+          ],
+          "stdout": "",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "add",
+            "  Release checklist \u96ea  "
+          ],
+          "stdout": "",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "add",
+            "apple"
+          ],
+          "stdout": "",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "add",
+            "apple"
+          ],
+          "stdout": "",
+          "stderr": "",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.13/bin/python3.13",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/codex/create-verification-skill/artifacts/verify-notes/independent-check/instance/app.py",
+            "list"
+          ],
+          "stdout": "  Release checklist \u96ea  \r\napple\r\napple\r\nzebra\r\n",
+          "stderr": "",
+          "exit_code": 0
+        }
+      ],
+      "fixture_evidence": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-create-authorized-35kkqh3y/fixture-evidence",
+      "permission_denial_event_count": 0
+    }
+  ]
+}
