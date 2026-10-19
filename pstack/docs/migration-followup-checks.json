@@ -65,5 +65,23 @@
         "stderr": ""
       }
     ]
+  },
+  "subtract_fixture_check": {
+    "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-subtract-seed-qw3u1zcz/seed-check.json",
+    "sha256": "ceeeb419246b60d4458e30a3b9d341b0ad4a7e93b1a7284e9717d5fd854a7636",
+    "checks": {
+      "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-subtract-seed-qw3u1zcz/codex/principle-subtract-before-you-add",
+      "baseline_commit": "11fd68e01e3972150f64fb9a91e02136da246f41",
+      "unused_function_present": true,
+      "stale_readme_reference_present": true,
+      "committed_baseline_matches": true,
+      "existing_cli_output": "apple\nzebra\n",
+      "app_sha256": "4915e26c61dd35c5f2e939da631382937689342633a2ae63a17faf26c7b8ebc7"
+    },
+    "scope": "Fixture seed only; native removal-before-addition acceptance is running separately. Earlier missing-seed scenario remains partial."
+  },
+  "documentation_followup": {
+    "current_manifest_sha256": "7811c140dafabc0674c8379b718b238bd53ceb368b8793ac45200e73a9ce900c",
+    "change": "Host instructions document existing Codex protected-path behavior and native approval; no runtime or permission configuration changed. Earlier test results retain their original manifest hash."
   }
 }

@@ -140,6 +140,9 @@ def fixture(parent, host, name, commit, source):
         "test_weak.py": "from app import save_title\ndef test_save():\n assert callable(save_title)\n",
         "empty-mcp.json": '{"mcpServers":{}}\n',
     }
+    if name == "principle-subtract-before-you-add":
+        files["app.py"] += "\ndef legacy_format(title):\n return 'legacy:' + title\n"
+        files["README.md"] += "\nLegacy formatter: `legacy_format` (unused, retained from an earlier draft).\n"
     for filename, content in files.items():
         (project / filename).write_text(content)
     for i in range(5):

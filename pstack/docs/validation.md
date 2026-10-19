@@ -31,7 +31,7 @@ Benny setup and both prompt templates now accept the selected committed configur
 | Benny real triggers, connectors and application reproduction | Still unverified; no dedicated external targets were activated. |
 | Make Bot UI | Still not adapted. |
 
-File migration and the tested installation paths meet their checks. Complete native workflow migration remains unverified, with Make Bot UI still missing an implementation.
+At the 2026-10-15 review, file migration and tested installation paths met their checks; complete workflow migration was unverified and Make Bot UI had no implementation. The 2026-10-19 evidence below supersedes that implementation status.
 
 ## Native and webhook follow-up, 2026-10-19
 
@@ -51,64 +51,64 @@ A deterministic shutdown test reproduced a lost condition notification in the ol
 
 ## Per-entry coverage
 
-Each entry retains its frontmatter name, resources and invocation/path policy. Static adaptation, references and installation are checked. A representative test does not imply a real execution of every entry. The following statuses deliberately distinguish those facts.
+Each entry retains its frontmatter name, resources and invocation/path policy. Static adaptation, references and installation are checked. The table is a snapshot of `workflow-acceptance.json` on 2026-10-19; running jobs can finish after this snapshot. Scenario acceptance does not cover every branch or external integration. A successful invocation is kept separate from independent acceptance.
 
 | Directory | Original name | Codex | Claude Code | Invocation |
 | --- | --- | --- | --- | --- |
-| `architect` | architect | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `arena` | arena | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `automate-me` | automate-me | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `benchmark-checklist` | benchmark-checklist | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `blast-radius` | blast-radius | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `bro` | bro | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `correct` | correct | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `create-verification-skill` | create-verification-skill | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `figure-it-out` | figure-it-out | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `how` | how | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `in-your-own-words` | in-your-own-words | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `interrogate` | interrogate | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `ketchup` | ketchup | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `maintain-verification-skill` | maintain-verification-skill | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `make-bot-ui` | Make Bot UI | not adapted; original webhook contract required | not adapted; original webhook contract required | explicit only / routed read |
-| `no-comments` | no-comments | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `poteto-help` | poteto-help | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `poteto-mode` | Poteto Mode | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-attack-the-premise` | principle-attack-the-premise | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-boundary-discipline` | principle-boundary-discipline | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-build-the-lever` | principle-build-the-lever | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-encode-lessons-in-structure` | principle-encode-lessons-in-structure | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-exhaust-the-design-space` | principle-exhaust-the-design-space | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-experience-first` | principle-experience-first | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-explain-the-number` | principle-explain-the-number | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-fix-root-causes` | principle-fix-root-causes | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-foundational-thinking` | principle-foundational-thinking | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-guard-the-context-window` | principle-guard-the-context-window | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-laziness-protocol` | principle-laziness-protocol | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-make-operations-idempotent` | principle-make-operations-idempotent | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-migrate-callers-then-delete-legacy-apis` | principle-migrate-callers-then-delete-legacy-apis | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-minimize-reader-load` | principle-minimize-reader-load | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-model-the-domain` | principle-model-the-domain | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-never-block-on-the-human` | principle-never-block-on-the-human | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-outcome-oriented-execution` | principle-outcome-oriented-execution | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-prove-it-works` | principle-prove-it-works | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-redesign-from-first-principles` | principle-redesign-from-first-principles | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-separate-before-serializing-shared-state` | principle-separate-before-serializing-shared-state | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-sequence-verifiable-units` | principle-sequence-verifiable-units | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-subtract-before-you-add` | principle-subtract-before-you-add | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-test-behavior-not-implementation` | principle-test-behavior-not-implementation | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `principle-type-system-discipline` | principle-type-system-discipline | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `recall` | recall | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `reflect` | reflect | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `setup-pstack` | setup-pstack | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | automatic discovery |
-| `sharpen` | sharpen | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `show-me-your-work` | show-me-your-work | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `swarm` | swarm | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `tdd` | tdd | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `teach` | teach | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `technical-writing` | technical-writing | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `typescript-best-practices` | typescript-best-practices | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `unslop` | unslop | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
-| `why` | why | static + install verified; actual workflow unverified | static + install verified; actual workflow unverified | explicit only / routed read |
+| `architect` | architect | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `arena` | arena | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `automate-me` | automate-me | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `benchmark-checklist` | benchmark-checklist | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `blast-radius` | blast-radius | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `bro` | bro | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `correct` | correct | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `create-verification-skill` | create-verification-skill | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `figure-it-out` | figure-it-out | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `how` | how | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `in-your-own-words` | in-your-own-words | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `interrogate` | interrogate | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `ketchup` | ketchup | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `maintain-verification-skill` | maintain-verification-skill | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `make-bot-ui` | Make Bot UI | native webhook probe and project action passed; full scenario/Tailscale unverified | native webhook probe and project action passed; full scenario/Tailscale unverified | explicit only / routed read |
+| `no-comments` | no-comments | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `poteto-help` | poteto-help | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `poteto-mode` | Poteto Mode | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `principle-attack-the-premise` | principle-attack-the-premise | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-boundary-discipline` | principle-boundary-discipline | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-build-the-lever` | principle-build-the-lever | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-encode-lessons-in-structure` | principle-encode-lessons-in-structure | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-exhaust-the-design-space` | principle-exhaust-the-design-space | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-experience-first` | principle-experience-first | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-explain-the-number` | principle-explain-the-number | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-fix-root-causes` | principle-fix-root-causes | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-foundational-thinking` | principle-foundational-thinking | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-guard-the-context-window` | principle-guard-the-context-window | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-laziness-protocol` | principle-laziness-protocol | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-make-operations-idempotent` | principle-make-operations-idempotent | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-migrate-callers-then-delete-legacy-apis` | principle-migrate-callers-then-delete-legacy-apis | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-minimize-reader-load` | principle-minimize-reader-load | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-model-the-domain` | principle-model-the-domain | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-never-block-on-the-human` | principle-never-block-on-the-human | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-outcome-oriented-execution` | principle-outcome-oriented-execution | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-prove-it-works` | principle-prove-it-works | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-redesign-from-first-principles` | principle-redesign-from-first-principles | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-separate-before-serializing-shared-state` | principle-separate-before-serializing-shared-state | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-sequence-verifiable-units` | principle-sequence-verifiable-units | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
+| `principle-subtract-before-you-add` | principle-subtract-before-you-add | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `principle-test-behavior-not-implementation` | principle-test-behavior-not-implementation | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `principle-type-system-discipline` | principle-type-system-discipline | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `recall` | recall | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `reflect` | reflect | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `setup-pstack` | setup-pstack | static + install verified; scenario not run | static + install verified; scenario not run | automatic discovery |
+| `sharpen` | sharpen | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `show-me-your-work` | show-me-your-work | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `swarm` | swarm | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `tdd` | tdd | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `teach` | teach | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `technical-writing` | technical-writing | static + install verified; scenario not run | scenario partial; see recorded scope deviation | explicit only / routed read |
+| `typescript-best-practices` | typescript-best-practices | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `unslop` | unslop | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `why` | why | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
 
 The added pstack-support entry is shared installation support, not one of the original 54. Manual Codex metadata maps the original disable-model-invocation policy; TypeScript paths remain in frontmatter and are enforced by host routing instructions because unsupported skill fields are not assumed to be native filters.
 
@@ -165,3 +165,9 @@ The large main diff is dominated by 765 explicitly requested non-pstack removals
 ## Benny local decisions, 2026-10-19
 
 Both native hosts read the committed operational files in an isolated repository and returned the expected anonymous Bug, Performance and Feature request classifications, ownership stop and existing-fix verification decision. The runner checked actual read tool events, committed blob hashes and unchanged operational files; the journal rejected five untrusted marker variants and required reconciliation after restart. Session IDs and artifact hashes are in `benny-local-checks.json`. This does not verify live triggers, connector actions, shared dependency invocations, real UI reproduction or scheduler activation.
+
+## Acceptance fixture correction, 2026-10-19
+
+The original subtract-before-you-add scenario asked to remove `legacy_format` and its README reference, but the fixture contained neither. That run cannot establish removal order and remains partial. The fixture now commits both before the run; an independent seed check confirms the unused function, old reference, committed baseline and unchanged list output. Both corrected native runs now have independently checked, distinct removal-before-addition tool calls, intermediate source trees and three-stage CLI results; see `workflow-subtract-checks.json`. The older missing-seed results remain partial.
+
+Host instructions now describe the documented protected paths and native approval requirement. Current non-interactive tests do not grant that approval: drafts outside the discoverable skill directory remain uninstalled, and those workflow outcomes remain partial. This documentation edit does not establish an approved installation run.
