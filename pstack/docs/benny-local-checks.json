@@ -1,0 +1,147 @@
+{
+  "scope": "Local synthetic decisions and operational-file reads; not live automation acceptance",
+  "external_writes_authorized": false,
+  "source_pack_sha256": {
+    "journal.py": "eebe0aec3e03fd60074117f77a902b32770ad6f150813558a65241995b17f047",
+    "feishu_readonly.py": "32140854afb2e4b2e10e7ce2bddd75b343fe012f55e03415c3c711ff576ac270",
+    "README.md": "b0c3e343d80b0188ce6b6e140d0eb2fa5302543f8ccc587f2a687c093a50d243",
+    "FOR_AGENTS.md": "b5cee008b140fc3f02d6b7e5c5d50eac1c3eca86f65718a604d5c0247c4ce954",
+    "references/feishu-readonly.md": "06d02788ebc5ae023ec0c7b4fb51f85979a9ef1c9258776ac5b3b8458550cb90",
+    "templates/configuration.example.yaml": "0a576ce29231205d6af09954487a2832e2ff20f092a6adcabd6a7ea44f6211d1",
+    "templates/triage-automation-prompt.md": "f597b07ff40cba52c5eec0404319ff7c7475d4af6f45a26cab4fbbe670ab865b",
+    "templates/reproduce-automation-prompt.md": "62bfba9f2bb2f14fbfaec806208765bfba62f8f9a848817af94e320c686345b4",
+    "skills/reproduce-and-fix-issues/INSTRUCTIONS.md": "869d8db5efd45aad65c4bdbbb5b8ddeb8827a180b2290ed307e1490254d1f8df",
+    "skills/setup-benny/INSTRUCTIONS.md": "086b73e37fe6d89e95b4c303c45d29079b8e27098b85bcf26c93ade75640d3c1",
+    "skills/triage-issue-reports/INSTRUCTIONS.md": "216a758b8711e64d19a55e6032c496527daac6364d010611040f3c04ef1a448f",
+    "skills/triage-issue-reports/references/routing.example.md": "7170b7e4554f224bdca42f597c7644809156af8e7cfa77b48a30bf5b92d2712a",
+    "skills/reproduce-and-fix-issues/references/feature-map.example.md": "3adfdf2fb3a7b0e286c1da264548681663f6cf1131f0e067538a5e0710a2e778",
+    "skills/reproduce-and-fix-issues/references/verify-existing-fix.md": "c90eae00abcdec71a58fa8d60f2c495b082a526ad50b8e8e494837609129bf29",
+    "skills/reproduce-and-fix-issues/references/control-adapter.md": "3071a5a9eaf4f7d9c4be5fca4407fc5f49edff686900ccddf2b778e5ad2f77f7"
+  },
+  "marker_and_journal": {
+    "trusted_marker_accepted": true,
+    "untrusted_variants_rejected": 5,
+    "pending_intent_requires_reconciliation_after_restart": true,
+    "external_objects_created": 0
+  },
+  "hosts": {
+    "codex": {
+      "status": "local_checks_passed",
+      "session_id": "01a154be-f0ac-7312-a30b-b1c29a3aec6d",
+      "exit_code": 0,
+      "timeout": false,
+      "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-benny-local-q0rwwi3x/codex",
+      "fixture_commit": "e1e5a5bae2708830981f33f7265516605410ae23",
+      "operational_sha256": {
+        ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": "216a758b8711e64d19a55e6032c496527daac6364d010611040f3c04ef1a448f",
+        ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": "869d8db5efd45aad65c4bdbbb5b8ddeb8827a180b2290ed307e1490254d1f8df"
+      },
+      "checks": {
+        "committed_operational_files_read": {
+          ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": true,
+          ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": true
+        },
+        "fixture_unchanged": true,
+        "synthetic_decision_matches": true,
+        "committed_blobs_match": {
+          ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": true,
+          ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": true
+        }
+      },
+      "observed_decision": {
+        "classifications": {
+          "wrong-result": "Bug",
+          "slow": "Performance",
+          "feature": "Feature request"
+        },
+        "owned_stop": true,
+        "existing_verify_only": true,
+        "authored_fix": false,
+        "live_repro_verified": false,
+        "automation_enabled": false
+      },
+      "events_sha256": "48e637113f1d6af7de2cbbc04f00b802f893e253e23d6862746cde5ed153620b",
+      "artifacts_sha256": {
+        "synthetic-threads.json": "a9b955c1b5ac4ea5f652afcfa9dbb903273edfd8c2482a74363b78355e25a7b5",
+        "existing-fix.patch": "5f5eb60e3e72d35eea23de27b76ab16d8035a2c4f7a9c18d50b02b871cf31f12",
+        "app.py": "3bbcd9aa3a528599ae9afd3e80492e1bcce6758900d0a04d40f2e45a732865b4",
+        "events.jsonl": "48e637113f1d6af7de2cbbc04f00b802f893e253e23d6862746cde5ed153620b",
+        "acceptance-prompt.txt": "2e4889fdb0567fa5c2ec35a4b26929c6662fc202929b3471ee8068a8ddc98cf8"
+      },
+      "host_tools": [
+        "read-only sandbox shell; no MCP configured"
+      ],
+      "observed_tool_operations": [
+        "cat (committed operational files and anonymous fixture only)"
+      ],
+      "external_mutation_tool_calls": 0,
+      "execution_notes": "This recorded run used empty isolated config and read-only sandbox. Built-in apps MCP attempted startup and timed out; no MCP tool was called. Runner now explicitly disables apps and plugins for future runs."
+    },
+    "claude-code": {
+      "status": "local_checks_passed",
+      "session_id": "7c72fa95-8c5d-4f45-829b-0f68e40889d9",
+      "exit_code": 0,
+      "timeout": false,
+      "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-benny-local-q0rwwi3x/claude-code",
+      "fixture_commit": "0d060a25df1c9403f08655cd1377b0d616aaf2eb",
+      "operational_sha256": {
+        ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": "216a758b8711e64d19a55e6032c496527daac6364d010611040f3c04ef1a448f",
+        ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": "869d8db5efd45aad65c4bdbbb5b8ddeb8827a180b2290ed307e1490254d1f8df"
+      },
+      "checks": {
+        "committed_operational_files_read": {
+          ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": true,
+          ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": true
+        },
+        "fixture_unchanged": true,
+        "synthetic_decision_matches": true,
+        "committed_blobs_match": {
+          ".pstack/automations/benny/skills/triage-issue-reports/INSTRUCTIONS.md": true,
+          ".pstack/automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": true
+        }
+      },
+      "observed_decision": {
+        "classifications": {
+          "wrong-result": "Bug",
+          "slow": "Performance",
+          "feature": "Feature request"
+        },
+        "owned_stop": true,
+        "existing_verify_only": true,
+        "authored_fix": false,
+        "live_repro_verified": false,
+        "automation_enabled": false
+      },
+      "events_sha256": "a9dbd7dab0ffa744a47e9700114731b9118cff7c50ef957bf59a7fc21014ca89",
+      "artifacts_sha256": {
+        "synthetic-threads.json": "b8430cad78d9982a3c79329bdea149b8736edb77dbe287117ced1f83b90f7d8d",
+        "existing-fix.patch": "a2375ec46ba7467526d8e394e5bcb207abd38b0617dbd88bb0e9a4852aa53202",
+        "app.py": "3bbcd9aa3a528599ae9afd3e80492e1bcce6758900d0a04d40f2e45a732865b4",
+        "events.jsonl": "a9dbd7dab0ffa744a47e9700114731b9118cff7c50ef957bf59a7fc21014ca89",
+        "acceptance-prompt.txt": "2e4889fdb0567fa5c2ec35a4b26929c6662fc202929b3471ee8068a8ddc98cf8"
+      },
+      "host_tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "observed_tool_operations": [
+        "Read: 6 calls",
+        "Glob: 1 call"
+      ],
+      "external_mutation_tool_calls": 0
+    }
+  },
+  "not_tested": [
+    "fresh-session invocation of every shared project skill dependency",
+    "real automatic trigger",
+    "Slack thread reply and read-back",
+    "Feishu sends/replies/reactions (forbidden)",
+    "tracker search/write/compensation",
+    "real UI baseline and patched builds twice",
+    "screenshots/video and attachment inspection",
+    "worker credential isolation in a live connector session",
+    "remote draft PR creation",
+    "scheduler activation"
+  ]
+}

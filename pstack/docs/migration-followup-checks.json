@@ -23,5 +23,47 @@
   "original_files": 169,
   "original_skill_names_and_invocation_policies": 54,
   "manual_codex_controls": 53,
-  "goal_status": "incomplete; remaining entry workflows and external integration coverage still pending"
+  "goal_status": "incomplete; remaining entry workflows and external integration coverage still pending",
+  "typescript": {
+    "compiler": "7.0.2",
+    "strict_checks": 2,
+    "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-typechecks-gjmhoklj/result.json",
+    "sha256": "c9eaefc5f7cf5fefd12c9a87c8907dcaefde517da9fab9d62886ff832c15d44a",
+    "dependencies": "Exact versions from bun.lock, copied from existing local Bun cache; installed skill unchanged",
+    "results": [
+      {
+        "command": [
+          "/Users/bytedance/.bun/install/cache/@typescript/typescript-darwin-arm64@7.0.2@@@1/lib/tsc",
+          "--project",
+          "watch-pr/tsconfig.json",
+          "--noEmit",
+          "--strict"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/Users/bytedance/.bun/install/cache/@typescript/typescript-darwin-arm64@7.0.2@@@1/lib/tsc",
+          "--noEmit",
+          "--strict",
+          "--target",
+          "esnext",
+          "--module",
+          "preserve",
+          "--moduleResolution",
+          "bundler",
+          "--allowImportingTsExtensions",
+          "--types",
+          "bun-types",
+          "test.ts",
+          "bootstrap.ts"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ]
+  }
 }

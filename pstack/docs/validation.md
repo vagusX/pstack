@@ -45,7 +45,7 @@ The user supplied a production Feishu topic group for read-only tests and explic
 
 ## Local regression checks, 2026-10-19
 
-The follow-up content passed 34 Python tests with resource warnings treated as errors, 68 Bun tests with 246 assertions, and all 17 installation cases. Source mapping, target modes, original names and invocation policies were rechecked. Exact content and local evidence hashes are recorded in `migration-followup-checks.json`. The package test entry preinstalls its locked dependencies in the temporary project before timed test cases begin; slow downloads no longer consume a five-second CLI test budget.
+The follow-up content passed 34 Python tests with resource warnings treated as errors, 68 Bun tests with 246 assertions, all 17 installation cases, and both strict TypeScript checks using compiler 7.0.2 with exact locked dependencies in an isolated project. Source mapping, target modes, original names and invocation policies were rechecked. Exact content and local evidence hashes are recorded in `migration-followup-checks.json`. The package test entry preinstalls its locked dependencies in the temporary project before timed test cases begin; slow downloads no longer consume a five-second CLI test budget.
 
 A deterministic shutdown test reproduced a lost condition notification in the old webhook worker. The worker now rechecks stopping while holding the condition; the old code fails that regression and the fix passes. The independent review findings and these fixes do not establish completion of all entry workflows.
 
@@ -161,3 +161,7 @@ The source main contains 936 files / 6,495,568 bytes; its pstack subtree is 169 
 The earlier feat/codex-integration tree is 560 files / 8,782,600 bytes, including 267 files / 824,323 bytes under its generated skills tree (55 skill directories in that actual ref). Differences against it include changing source lineage and not importing its CLI/viewer/generator, so they must not be reported as pure deduplication savings. That branch and its published package are preserved. Exact final measurements are in size-comparison.json.
 
 The large main diff is dominated by 765 explicitly requested non-pstack removals plus the rewritten root README (766 changed files in that group). Host changes and moved public files are counted separately with rename detection disabled in size-comparison.json; normal Git rename detection presents moved agents/assets/guide files as moves.
+
+## Benny local decisions, 2026-10-19
+
+Both native hosts read the committed operational files in an isolated repository and returned the expected anonymous Bug, Performance and Feature request classifications, ownership stop and existing-fix verification decision. The runner checked actual read tool events, committed blob hashes and unchanged operational files; the journal rejected five untrusted marker variants and required reconciliation after restart. Session IDs and artifact hashes are in `benny-local-checks.json`. This does not verify live triggers, connector actions, shared dependency invocations, real UI reproduction or scheduler activation.

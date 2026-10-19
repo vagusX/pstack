@@ -16,7 +16,7 @@ status: active
 - [ ] 为全部 54 个入口建立明确输入、行为断言和输出凭据，在两个宿主实际执行；失败项修复后重跑。
 - [ ] Make Bot UI 保留 UI、服务端密钥、认证 webhook、真实 agent 唤醒、事件解析、8 秒单次转发、失败日志及 Tailscale 流程，补实现并实际验证。
 - [ ] Benny 保留分类、可信线程标记、已有修复检查、两次复现、验证及有界修复顺序，实际验证触发、连接器、线程隔离及重启去重。
-- [ ] 安装矩阵、Bun/Python 测试、TypeScript 检查与来源哈希回读通过。
+- [x] 安装矩阵、Bun/Python 测试、TypeScript 检查与来源哈希回读通过。
 - [ ] 按 OCR delegate 对所有新增修改复审，更新迁移/验证记录，提交推送并回读 PR。
 
 # 当前并行任务
@@ -35,7 +35,10 @@ status: active
 - 命名 agent：两个宿主均实际调用两份 persona，见 `pstack/docs/native-agent-followup.json`。
 - 原生 webhook：两个宿主的真实 HTTP probe 与临时项目写入均已回读；另用浏览器实际点击并回读事件 `9801f29f-08c2-4e2d-9c30-d50b912da0bb`，状态 completed、退出码 0、实际响应 ignored，见 `pstack/docs/bot-ui-live-checks.json`。Tailscale 未装、未验。
 - 飞书只读：今日限定范围首次 10 份本地报告，第二次 0；没有发送、回复、反应或建票。公共仓库不保存内部正文与标识。
-- 入口行为：历史 8 个入口双宿主实跑；另外 46 个未跑。新文档规则的交付通过，但一次临时备份越出指定目录，记录为 partial 而非通过。
+- 入口行为：历史 8 个入口双宿主实跑；24 个原则入口及另外 6 个入口的双宿主场景正在执行，尚未全数验收。新文档规则的交付通过，但一次临时备份越出指定目录，记录为 partial 而非通过。
 - 回归：Python 34 项通过；Bun 68 项、246 断言通过。停服丢通知的新增回归在旧代码失败、修复代码通过。
 - 安装矩阵已终态通过全部 17 项，日志 `/tmp/pstack-full-matrix-final.log`。慢在 TypeScript 原生二进制下载，原进程正常推进，没有重启或换弱检查。
 - 本提交记录已审查的修复与当前验收快照。原则入口任务继续执行，后续结果另行提交；当前快照不代表全部入口通过。
+
+- TypeScript：按 bun.lock 复制现有缓存依赖到隔离目录，7.0.2 编译器两项 strict 检查退出码均为 0，见 migration-followup-checks.json。
+- Benny 本地场景：两宿主实际读取已提交操作文件，匿名分类、负责人停止、已有修复仅验证与 journal 检查通过；session ID 和文件哈希见 benny-local-checks.json。真实触发、外部写入与 UI 双次复现未验。
