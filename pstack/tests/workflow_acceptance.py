@@ -240,8 +240,10 @@ def run_one(host, name, parent, commit, source):
               "Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. "
               "The scenario does not authorize external publication even when an original workflow requests it.\n")
     (project / "acceptance-prompt.txt").write_text(prompt)
-    host_env = {**os.environ, "NODE_OPTIONS": "", "CLAUDECODE": ""}
-    execution_environment = {"global_configuration_changed": False}
+    temporary_directory = project / ".pstack/acceptance-tmp"
+    temporary_directory.mkdir(parents=True, exist_ok=True)
+    host_env = {**os.environ, "NODE_OPTIONS": "", "CLAUDECODE": "", "TMPDIR": str(temporary_directory)}
+    execution_environment = {"global_configuration_changed": False, "temporary_directory": str(temporary_directory)}
     if host == "codex":
         # Match native_agents.py's verified trust fixture. Ignoring this isolated
         # config would suppress project role discovery and invalidate delegation tests.

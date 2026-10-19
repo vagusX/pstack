@@ -1,0 +1,10 @@
+{
+  "runner_sha256": "b9c4bbd6dfacfdf38bfeeef8f228a197a906ee76fac5584e0760c202f10fb97f",
+  "artifact_root": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-temp-scope-s6k6jfw5",
+  "child_temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-temp-scope-s6k6jfw5/.pstack/acceptance-tmp/tmp12w6p_f5",
+  "child_exit_code": 0,
+  "child_timeout": false,
+  "standard_library_scratch_within_fixture": true,
+  "limitation": "TMPDIR scopes cooperating temporary-file APIs; it does not prevent an explicit absolute /tmp path or enforce a filesystem sandbox. Existing scope violations remain recorded.",
+  "configuration": "Uses existing TMPDIR only for acceptance child processes; no new product flag. Removable, but default temporary files would again leave the fixture."
+}

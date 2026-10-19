@@ -1,0 +1,15 @@
+{
+  "scope": "Real loopback HTTP slow receiver; no model or external service called",
+  "helper_sha256": "0b7e56cd07f358299f3cc6ccb6d85b9dca74379f29b69b0af7f1c484ffe82422",
+  "event_id": "1a32feb1-be4b-4756-a14a-96a73818b639",
+  "forward_returned": false,
+  "elapsed_seconds": 8.022,
+  "server_delay_seconds": 9.2,
+  "requests_observed_after_response_delay": 1,
+  "authenticated": true,
+  "failed_body_preserved": true,
+  "failed_body_sha256": "d4984ecf3bf456d92c50991a5b45627dfe5a2d6bdcc0dfb6a8235e8620c5d812",
+  "automatic_retry_observed": false,
+  "receiver_closed": true,
+  "artifact_root": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-real-forward-timeout-nf9tnfih"
+}

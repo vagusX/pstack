@@ -173,3 +173,9 @@ The original subtract-before-you-add scenario asked to remove `legacy_format` an
 Host instructions now describe the documented protected paths and native approval requirement. Current non-interactive tests do not grant that approval: drafts outside the discoverable skill directory remain uninstalled, and those workflow outcomes remain partial. This documentation edit does not establish an approved installation run.
 
 A recorded Claude creation attempt changed tools after a denied write. That outcome is not accepted. Host instructions now explicitly forbid retrying the same denied write through another tool or command. Separate native sandbox checks exercised one temporary directory grant and four protected-path denials; see `native-permission-checks.json`. Those checks do not prove a generated-skill installation or authorize broad permission changes.
+
+## Temporary files and forwarding timeout, 2026-10-19
+
+New acceptance child processes receive a project-local `TMPDIR`. An actual child using the standard temporary-file API created its scratch directory inside that fixture; see `temporary-scope-checks.json`. This is not a filesystem boundary and cannot prevent explicit absolute writes. Earlier out-of-project writes remain scope failures.
+
+A real loopback receiver delayed its response for 9.2 seconds. The webhook forwarder returned failure after 8.022 seconds, the receiver observed one authenticated POST, and SQLite retained the original failed body. No automatic retry occurred before the delayed receiver finished; its server was closed. See `webhook-timeout-checks.json`. This checks the fixed eight-second forwarding policy without involving a model or external service.
