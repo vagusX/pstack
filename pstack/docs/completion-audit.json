@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-19T16:14:47.184948+00:00",
+  "objective": "Complete original pstack migration to Codex and Claude Code",
+  "full_objective_verified": false,
+  "requirements": [
+    {
+      "requirement": "Original file mappings, modes, names and invocation policies",
+      "status": "verified",
+      "mapped_files": 168,
+      "explicit_cursor_registration_removals": 1,
+      "original_entries": 54,
+      "manual_codex_controls": 53
+    },
+    {
+      "requirement": "Actual named personas on both hosts",
+      "status": "verified_in_recorded_sessions",
+      "evidence": "native-agent-followup.json"
+    },
+    {
+      "requirement": "Installation and runtime regression checks",
+      "status": "verified_for_recorded_scope",
+      "python_tests": 34,
+      "bun_tests": 68,
+      "bun_assertions": 246,
+      "installation_matrix_rows": 17,
+      "strict_typescript_checks": 2,
+      "runtime_code_unchanged_since_tested_manifest": true,
+      "later_instruction_changes": [
+        "pstack-support/references/host-instructions.md",
+        "technical-writing/SKILL.md"
+      ],
+      "current_immutable_remote_install": "4c892bb9f86e484aa8e9eba0407b88e0730b78aa"
+    },
+    {
+      "requirement": "Every original entry executes and satisfies its workflow",
+      "status": "incomplete",
+      "executed_host_scenarios": 108,
+      "accepted_scenarios": 78,
+      "partial_blocked_or_failed": 30,
+      "all_branches_and_external_stages_verified": false
+    },
+    {
+      "requirement": "Make Bot UI complete live workflow",
+      "status": "partial",
+      "verified": "local browser/authenticated intake/native CLI/results/dedup/restart/real eight-second one-shot timeout",
+      "unverified": "Tailscale peer reachability; default Codex sandbox prevents loopback bind"
+    },
+    {
+      "requirement": "Benny automatic trigger, triage/reply, tracker and real UI reproduction/fix",
+      "status": "blocked_for_live_acceptance",
+      "verified": "local anonymous native decisions/journal and selected Feishu read-only intake/preview",
+      "missing": "authorized writable test destination, configured tracker, target application/repository and real trigger execution"
+    },
+    {
+      "requirement": "Review, commit/push and accurate PR handoff",
+      "status": "verified_before_audit_publication",
+      "pr": "https://github.com/vagusX/pstack/pull/3",
+      "pr_head_before_this_evidence_commit": "c25ae70ff35c0fe58c2c0d7aa5d3c00ef3402af8",
+      "draft": true
+    }
+  ],
+  "blocking_conditions": [
+    "The selected Feishu group is read-only; no sends, replies or reactions are authorized. No alternative writable test destination is configured.",
+    "Tracker and safe application targets required for real dedupe/reproduction/fix acceptance are not supplied.",
+    "Native host permission/release limitations and actual scenario failures remain recorded; repeating model samples is not proof of a fix."
+  ],
+  "evidence_sha256": {
+    "source-inventory.json": "1de6603e0b04357f08ed156acc24cdc11b0380bd4f05a03ad793c91cc9f565f6",
+    "native-agent-followup.json": "fd0e7d92934ff64cd9b87cb45b919c8b19fb25f83d70b9353569b5637b88eb16",
+    "migration-followup-checks.json": "453b1624baa2f669dc39b72c9517e4d3254db46d5607ddc1bd215108b45c4040",
+    "workflow-acceptance.json": "0ea0b4e553431dd452f4cb592825db0e2d2fdb43da20433710dd3ac50a5083c5",
+    "workflow-install-checks.json": "e2a125609a3121e118e86499a735e7c0e40e9bb0dca208fa4bce3d8e7cdad0c1",
+    "workflow-bot-checks.json": "237e80eac0e39e0ac2f4d961f517f82146481cd40eb571cee2cc8acf903f6074",
+    "webhook-timeout-checks.json": "84079016c3a5e75e6444748558aab7d7db8924255f4eaddde5bbe71743de8bff",
+    "benny-local-checks.json": "82ff3ab0fd15fa5642ffeacc20c149a527e34015b2690701fc271121e2679569",
+    "feishu-readonly-checks.json": "8860657e730e8f482c75b56cc98587862e2aa49b81e9af555464ba3ad50ffbb3",
+    "feishu-classification-preview.json": "b20b1815399157408d1dd3649d15bca47bb6c07cfda4ac9e7265a4f920e5dcb1",
+    "current-remote-install.json": "f742710897924fb0cecad46bcb8c944288f46cf3455c3293b9a4f57369515032"
+  },
+  "privacy": "No private group bodies, identifiers, names or images included; raw preview remains outside the repository.",
+  "material_scope_findings": [
+    {
+      "evidence": "pstack/docs/workflow-independent-checks.json",
+      "scenario": "figure-it-out / claude-code",
+      "action": "Native test copied its fixture to /tmp/x and deleted /tmp/x afterward",
+      "prior_destination_state_recorded": false,
+      "restoration_of_preexisting_temporary_content_verified": false,
+      "disposition": "Keep the scope failure; do not claim cleanup restored unknown prior state."
+    }
+  ]
+}

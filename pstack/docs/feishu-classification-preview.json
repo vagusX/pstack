@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-20",
+  "scope": "Read-only coordinator preview using a previously fetched private Feishu snapshot; not live automation acceptance",
+  "source_state_sha256": "ffb0f70eaef1ec99aa97623d7d5c3c024f82d3c9caa72077882c87789fc49dce",
+  "message_records": 10,
+  "issue_candidate_threads": 2,
+  "context_replies": 7,
+  "system_roots_ignored": 1,
+  "relevant_images_downloaded_and_reviewed": 2,
+  "provisional_categories": {
+    "Bug": 2
+  },
+  "classification_accuracy_verified": false,
+  "cause_routing_and_tracker_dedupe_verified": false,
+  "external_writes": 0,
+  "privacy": "No source IDs, text, images, names or private URLs included in this report",
+  "private_preview_sha256": "56ee9b54cd97b293e85ed0db44c95f73052364df410fd8ae24c2b390ccff2523",
+  "limitations": [
+    "target application code/history",
+    "tracker target/dedupe",
+    "confirmed intended behavior/entitlement",
+    "authorized verdict posting",
+    "automatic trigger and full automation configuration"
+  ],
+  "record_count_meaning": "Collector reports are changed message records, including replies/system events, not counts of new issue threads."
+}

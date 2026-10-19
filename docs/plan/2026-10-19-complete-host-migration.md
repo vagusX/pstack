@@ -2,7 +2,7 @@
 workspace: /Users/bytedance/Projects/gh/pstack
 title: 完成 Codex 与 Claude Code 迁移
 created: 2026-10-19
-status: active
+status: blocked
 ---
 
 # 目标与验收清单
@@ -47,3 +47,5 @@ status: active
 - 新增正文规则：已观察到、会影响读者操作的限制与警告必须留在文档，不能作为验证笔记外置。该版本正在单轮双宿主针对性回归，旧结果保留。
 
 - 2026-10-20：全部 54 入口双宿主共 108 个当前技能运行记录已合并，108 份原事件哈希/会话 ID 与当前技能哈希均回读匹配；78 场景通过，30 场景部分通过、受阻或失败。原失败和独立权限变体均保留。完整迁移仍未验收通过。
+
+- 2026-10-20 收尾审计：完整目标未达到，进入 blocked。现有群严格只读；真实回复、tracker、自动触发和应用复现缺少可用测试目标及授权。原生权限/release 限制及场景失败均保留，不通过重复采样改变结论。审计证据：pstack/docs/completion-audit.json。

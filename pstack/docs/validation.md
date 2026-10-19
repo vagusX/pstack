@@ -199,3 +199,9 @@ All entry batches are terminal and merged. `workflow-remaining-checks.json` pres
 ## Current immutable remote install, 2026-10-20
 
 `skills@1.7.2` installed immutable commit `4c892bb9f86e484aa8e9eba0407b88e0730b78aa` into an isolated home/project for both hosts. Each exposes 55 entries, all installed skill/support file hashes match the current manifest, setup and Benny copying exit zero, and both setup receipts resolve that source commit from the installer lock. Installed files are unchanged after setup. No real automation was activated. See `current-remote-install.json`.
+
+## Read-only live snapshot preview and completion audit, 2026-10-20
+
+The private ten-message snapshot contains two issue-candidate threads, seven context replies and one system root. Both relevant images were downloaded and reviewed. The current coordinator made two provisional Bug classifications; intended behavior, cause/owner and tracker dedupe remain unverified. No message was sent. Collector `new_reports` counts changed message records, not new issue threads; consumers must group by root coordinates and exclude system events from issue candidates. Only counts and hashes are distributed in `feishu-classification-preview.json`.
+
+`completion-audit.json` rechecks mapped bytes/modes, names/policies, evidence hashes and the unchanged runtime files since the recorded regression snapshot. Full acceptance remains blocked: the selected group is read-only, no alternate writable destination or tracker/application test targets are configured, and the recorded native workflow gaps cannot be counted as passes.
