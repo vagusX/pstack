@@ -1,7 +1,7 @@
 {
   "date": "2026-10-19",
   "baseline_commit": "0a6242e891091009416760dc9db6bc37f8d28d89",
-  "tested_content": "Local uncommitted migration changes; manifest SHA identifies installed skill content",
+  "tested_content": "Migration test snapshot identified by the manifest SHA below; later documentation and prompt changes are recorded separately.",
   "manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
   "python": {
     "tests": 34,
@@ -81,7 +81,16 @@
     "scope": "Fixture seed only; native removal-before-addition acceptance is running separately. Earlier missing-seed scenario remains partial."
   },
   "documentation_followup": {
-    "current_manifest_sha256": "3549a9e1bc97464008b7d1374256f302a2ade28eb57b5ae5d17370a261f462e7",
-    "change": "Host instructions document protected paths and prohibit retrying a denied write through another tool on both hosts. No runtime or active permission configuration changed. Earlier tests retain their original manifest hash."
+    "current_manifest_sha256": "b5c2305103d4c582e4b42500f25d4c26b40ce6879b93ccaba785889706fad7e7",
+    "change": "Host instructions document protected paths and prohibit denied-write tool switching; technical-writing keeps observed user-facing limitations in the document. Runtime code is unchanged from the earlier test snapshot; new prompt behavior has separate native follow-up reports."
+  },
+  "entry_execution_coverage": {
+    "report": "pstack/docs/workflow-acceptance.json",
+    "sha256": "0ea0b4e553431dd452f4cb592825db0e2d2fdb43da20433710dd3ac50a5083c5",
+    "entries": 54,
+    "native_runs": 108,
+    "accepted_scenarios": 78,
+    "partial_blocked_or_failed": 30,
+    "full_goal_verified": false
   }
 }

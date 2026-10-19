@@ -51,64 +51,64 @@ A deterministic shutdown test reproduced a lost condition notification in the ol
 
 ## Per-entry coverage
 
-Each entry retains its frontmatter name, resources and invocation/path policy. Static adaptation, references and installation are checked. The table is a snapshot of `workflow-acceptance.json` on 2026-10-19; running jobs can finish after this snapshot. Scenario acceptance does not cover every branch or external integration. A successful invocation is kept separate from independent acceptance.
+Each entry retains its frontmatter name, resources and invocation/path policy. Static adaptation, references and installation are checked. The table is a snapshot of `workflow-acceptance.json` on 2026-10-20; all 54 entries have recorded native runs on both hosts. Scenario acceptance does not cover every branch or external integration. A successful invocation is kept separate from independent acceptance.
 
 | Directory | Original name | Codex | Claude Code | Invocation |
 | --- | --- | --- | --- | --- |
-| `architect` | architect | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `arena` | arena | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `automate-me` | automate-me | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `benchmark-checklist` | benchmark-checklist | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `blast-radius` | blast-radius | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `architect` | architect | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `arena` | arena | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `automate-me` | automate-me | scenario partial; see recorded gaps | scenario partial; see recorded gaps | explicit only / routed read |
+| `benchmark-checklist` | benchmark-checklist | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `blast-radius` | blast-radius | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
 | `bro` | bro | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `correct` | correct | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `create-verification-skill` | create-verification-skill | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `figure-it-out` | figure-it-out | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `how` | how | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `correct` | correct | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `create-verification-skill` | create-verification-skill | native run recorded; required action denied | not accepted; denied-write tool switch | explicit only / routed read |
+| `figure-it-out` | figure-it-out | scenario passed; other branches unverified | not accepted; see scope/evidence findings | explicit only / routed read |
+| `how` | how | scenario passed; other branches unverified | not accepted; see scope/evidence findings | explicit only / routed read |
 | `in-your-own-words` | in-your-own-words | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `interrogate` | interrogate | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `interrogate` | interrogate | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
 | `ketchup` | ketchup | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `maintain-verification-skill` | maintain-verification-skill | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `make-bot-ui` | Make Bot UI | native webhook probe and project action passed; full scenario/Tailscale unverified | native webhook probe and project action passed; full scenario/Tailscale unverified | explicit only / routed read |
-| `no-comments` | no-comments | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `poteto-help` | poteto-help | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `poteto-mode` | Poteto Mode | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `principle-attack-the-premise` | principle-attack-the-premise | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-boundary-discipline` | principle-boundary-discipline | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-build-the-lever` | principle-build-the-lever | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-encode-lessons-in-structure` | principle-encode-lessons-in-structure | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-exhaust-the-design-space` | principle-exhaust-the-design-space | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-experience-first` | principle-experience-first | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-explain-the-number` | principle-explain-the-number | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-fix-root-causes` | principle-fix-root-causes | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-foundational-thinking` | principle-foundational-thinking | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-guard-the-context-window` | principle-guard-the-context-window | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-laziness-protocol` | principle-laziness-protocol | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-make-operations-idempotent` | principle-make-operations-idempotent | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-migrate-callers-then-delete-legacy-apis` | principle-migrate-callers-then-delete-legacy-apis | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-minimize-reader-load` | principle-minimize-reader-load | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-model-the-domain` | principle-model-the-domain | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-never-block-on-the-human` | principle-never-block-on-the-human | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-outcome-oriented-execution` | principle-outcome-oriented-execution | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-prove-it-works` | principle-prove-it-works | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-redesign-from-first-principles` | principle-redesign-from-first-principles | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-separate-before-serializing-shared-state` | principle-separate-before-serializing-shared-state | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-sequence-verifiable-units` | principle-sequence-verifiable-units | native execution recorded; independent review pending | static + install verified; scenario not run | explicit only / routed read |
-| `principle-subtract-before-you-add` | principle-subtract-before-you-add | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `principle-test-behavior-not-implementation` | principle-test-behavior-not-implementation | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `principle-type-system-discipline` | principle-type-system-discipline | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `recall` | recall | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `reflect` | reflect | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `setup-pstack` | setup-pstack | static + install verified; scenario not run | static + install verified; scenario not run | automatic discovery |
+| `maintain-verification-skill` | maintain-verification-skill | native run recorded; required action denied | native run recorded; required action denied | explicit only / routed read |
+| `make-bot-ui` | Make Bot UI | native run recorded; required action denied | scenario partial; see recorded gaps | explicit only / routed read |
+| `no-comments` | no-comments | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `poteto-help` | poteto-help | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `poteto-mode` | Poteto Mode | scenario partial; see recorded gaps | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-attack-the-premise` | principle-attack-the-premise | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-boundary-discipline` | principle-boundary-discipline | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-build-the-lever` | principle-build-the-lever | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-encode-lessons-in-structure` | principle-encode-lessons-in-structure | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-exhaust-the-design-space` | principle-exhaust-the-design-space | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-experience-first` | principle-experience-first | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-explain-the-number` | principle-explain-the-number | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-fix-root-causes` | principle-fix-root-causes | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-foundational-thinking` | principle-foundational-thinking | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-guard-the-context-window` | principle-guard-the-context-window | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-laziness-protocol` | principle-laziness-protocol | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-make-operations-idempotent` | principle-make-operations-idempotent | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-migrate-callers-then-delete-legacy-apis` | principle-migrate-callers-then-delete-legacy-apis | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-minimize-reader-load` | principle-minimize-reader-load | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-model-the-domain` | principle-model-the-domain | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-never-block-on-the-human` | principle-never-block-on-the-human | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-outcome-oriented-execution` | principle-outcome-oriented-execution | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-prove-it-works` | principle-prove-it-works | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-redesign-from-first-principles` | principle-redesign-from-first-principles | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-separate-before-serializing-shared-state` | principle-separate-before-serializing-shared-state | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-sequence-verifiable-units` | principle-sequence-verifiable-units | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-subtract-before-you-add` | principle-subtract-before-you-add | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `principle-test-behavior-not-implementation` | principle-test-behavior-not-implementation | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `principle-type-system-discipline` | principle-type-system-discipline | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `recall` | recall | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `reflect` | reflect | scenario partial; see recorded gaps | scenario partial; see recorded gaps | explicit only / routed read |
+| `setup-pstack` | setup-pstack | scenario passed; other branches unverified | scenario passed; other branches unverified | automatic discovery |
 | `sharpen` | sharpen | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `show-me-your-work` | show-me-your-work | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `swarm` | swarm | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `show-me-your-work` | show-me-your-work | scenario passed; other branches unverified | scenario failed; see actual behavior finding | explicit only / routed read |
+| `swarm` | swarm | scenario partial; host capability missing | scenario passed; other branches unverified | explicit only / routed read |
 | `tdd` | tdd | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `teach` | teach | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
-| `technical-writing` | technical-writing | static + install verified; scenario not run | scenario partial; see recorded scope deviation | explicit only / routed read |
-| `typescript-best-practices` | typescript-best-practices | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `teach` | teach | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
+| `technical-writing` | technical-writing | scenario passed; other branches unverified | scenario partial; see recorded gaps | explicit only / routed read |
+| `typescript-best-practices` | typescript-best-practices | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
 | `unslop` | unslop | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
-| `why` | why | static + install verified; scenario not run | static + install verified; scenario not run | explicit only / routed read |
+| `why` | why | scenario passed; other branches unverified | scenario passed; other branches unverified | explicit only / routed read |
 
 The added pstack-support entry is shared installation support, not one of the original 54. Manual Codex metadata maps the original disable-model-invocation policy; TypeScript paths remain in frontmatter and are enforced by host routing instructions because unsupported skill fields are not assumed to be native filters.
 
@@ -187,3 +187,11 @@ A real loopback receiver delayed its response for 9.2 seconds. The webhook forwa
 `workflow-delegation-checks.json` records eight native runs across architect, arena, interrogate and swarm. Seven scenarios are accepted; Codex swarm retains the missing explicit release-interface limitation. Actual child identities, terminal records, judge order and independent CLI probes are recorded.
 
 `workflow-install-checks.json` records eight original setup, TypeScript and verification-skill runs. Both setup and TypeScript scenarios have independent evidence. The original creation and maintenance results retain three permission blocks and one denied-write tool-switch failure. A separate Codex creation supplement uses a healthy fixture, an empty target and a checked temporary native permission profile; generated-skill execution and cleanup are independently replayed. This does not erase the original failures or prove unrestricted skill editing.
+
+## Consolidated evidence snapshot, 2026-10-19
+
+The main report records 108 native runs across all original 54 entries and preserves earlier assessments in `previous_results`. All current skill hashes, session IDs and 108 event-file hashes matched on reread. There are 78 accepted scenarios and 30 partial, blocked or failed outcomes; acceptance does not prove every branch or integration. Thirteen missing early session IDs were recovered from the exact original logs. The latest technical-writing rule produced observed-limit warnings in both documents; Codex met this writing scenario, while Claude retained scope and input-file findings. Authorized fixture-local CLI validation can change its test data; no unrequested net-zero-data gate was added.
+
+## Final local execution coverage, 2026-10-20
+
+All entry batches are terminal and merged. `workflow-remaining-checks.json` preserves the unauthorized sorting change rather than accepting a normal CLI exit. `workflow-writing-checks.json` retains the pre-fix failures, while `workflow-writing-followup-checks.json` records the new source and its actual results. Separate native permission supplements establish scoped Codex creation and maintenance on healthy fixtures; they do not erase default-denial results or authorize external publication. Full migration acceptance remains unproven.

@@ -475,7 +475,7 @@
       "name": "technical-writing",
       "manual": true,
       "files": {
-        "SKILL.md": "857a27d46158e14e2a395b2c4befca2d0995edd4646aa2b08e71dca49ad68262",
+        "SKILL.md": "74bd64e44dadd41bcffd6c508d05c698169d0b9dbb0b76928cca41bcb3d22f86",
         "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
       }
     },

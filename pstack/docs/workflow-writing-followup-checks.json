@@ -1,0 +1,243 @@
+{
+  "scope": "One regression round after the source rule requiring observed limitations before the affected step; original TASKS prompt and buggy app remain unchanged",
+  "runner_report": "/tmp/pstack-writing-followup-workflows.json",
+  "runner_report_sha256": "9a6027328dfd145f088616768491a81e1a5432df42c6abb2723116bb57b2916c",
+  "skill_source_sha256": "74bd64e44dadd41bcffd6c508d05c698169d0b9dbb0b76928cca41bcb3d22f86",
+  "main_workflow_report_modified": false,
+  "history_replaced": false,
+  "hosts": {
+    "codex": {
+      "status": "scenario_verified",
+      "session_id": "01a154de-4cc6-72d0-8f4b-29fda7622e2c",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/codex/technical-writing",
+      "execution_environment": {
+        "global_configuration_changed": false,
+        "temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/codex/technical-writing/.pstack/acceptance-tmp",
+        "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/codex/technical-writing-codex-home",
+        "project_trust": "trusted",
+        "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+      },
+      "events_sha256": "d57853f5380a8231b99a87be02c718384f0201ddfc1d05e0809bba7af00cbd64",
+      "document_sha256": "15ccc63672fe3bfc7ab2095c6fa4a752ca4c8b3acb8cea91ccf5b752140208c8",
+      "checks": {
+        "native_execution_completed": true,
+        "source_skill_unchanged": true,
+        "final_contains_only_how_to_document": true,
+        "documented_add_and_list_present": true,
+        "all_documented_commands_executed_exit_zero": true,
+        "no_invented_flags": true,
+        "source_app_draft_readme_and_notes_unchanged": false,
+        "model_tool_write_targets_within_project": true,
+        "known_title_truncation_disclosed_in_document": true,
+        "native_actual_cli_execution_observed": true,
+        "final_how_to_written_by_native_tool": true,
+        "observed_warning_before_affected_numbered_step": true,
+        "original_app_title_truncation_bug_not_fixed": true,
+        "application_code_and_input_readme_unchanged": true
+      },
+      "gaps": [],
+      "native_cli_event_lines": [
+        12
+      ],
+      "document_write_event_lines": [
+        14
+      ],
+      "model_tool_write_targets": [
+        {
+          "event_line": 12,
+          "path": "command-evidence.json",
+          "within_project": true
+        },
+        {
+          "event_line": 14,
+          "path": "result.txt",
+          "within_project": true
+        }
+      ],
+      "outside_write_evidence": [],
+      "source_files_changed": [
+        "notes.json"
+      ],
+      "independent_command_evidence": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/codex/technical-writing/.pstack/acceptance-tmp/independent-doc-w1dzb7dc/actual-commands.json",
+      "independent_command_evidence_sha256": "ceae2e4f11c6563f72d5d25f27dd3a022fb5827500a38409fcb43a6cf75302d0",
+      "actual_documented_commands": [
+        {
+          "documented_command": "python3 app.py add \"Buy milk\"",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "Buy milk"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Buy mil"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py list",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "list"
+          ],
+          "exit_code": 0,
+          "stdout": "Buy mil\napple\nzebra\n",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Buy mil"
+          ]
+        }
+      ],
+      "document_review": "Only how-to text, commands and expected-output examples. No verification log, editing commentary or writing-rule description appears in result.txt.",
+      "document_accuracy_regression": "warning now included",
+      "observed_source_rule_read_event_lines": [
+        7
+      ],
+      "fixture_data_change": "The actual documented add test left Buy mil appended to notes.json; application code, draft.md and README.md were untouched.",
+      "acceptance_interpretation": "The original TASKS contract requires an executable correct how-to and actual CLI verification. The prompt authorizes project-local artifacts and commands; running add changes fixture notes.json as an allowed verification side effect. Restoring fixture notes is not required by this contract. The false no-net-change check remains recorded as an observation, not an acceptance gate. Scope is this writing scenario only; broader user-data protection is not verified.",
+      "allowed_verification_side_effect": "The actual add command appended Buy mil to this disposable project\u2019s notes.json. The recorded diff and false source_app_draft_readme_and_notes_unchanged value remain unchanged."
+    },
+    "claude-code": {
+      "status": "partial",
+      "session_id": "02821888-9483-4266-8467-1af37901d3dc",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/claude-code/technical-writing",
+      "execution_environment": {
+        "global_configuration_changed": false,
+        "temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/claude-code/technical-writing/.pstack/acceptance-tmp"
+      },
+      "events_sha256": "441a808ad1d8ff2a85a429eaa7dccd43752d0148961e1b628c3435c1a41fdecb",
+      "document_sha256": "a0cefa0eae352d42e9f2ecacbdcb74a09bbdfc3ce4891ebfe003547dd59a751b",
+      "checks": {
+        "native_execution_completed": true,
+        "source_skill_unchanged": true,
+        "final_contains_only_how_to_document": true,
+        "documented_add_and_list_present": true,
+        "all_documented_commands_executed_exit_zero": true,
+        "no_invented_flags": true,
+        "source_app_draft_readme_and_notes_unchanged": false,
+        "model_tool_write_targets_within_project": false,
+        "known_title_truncation_disclosed_in_document": true,
+        "native_actual_cli_execution_observed": true,
+        "final_how_to_written_by_native_tool": true,
+        "observed_warning_before_affected_numbered_step": false,
+        "original_app_title_truncation_bug_not_fixed": true,
+        "application_code_and_input_readme_unchanged": true
+      },
+      "gaps": [
+        "Native tool successfully wrote a hard-coded /tmp backup despite project-local TMPDIR. This is a scope failure in this new run, not inherited historical evidence.",
+        "Tracked fixture files changed: draft.md. No net-zero cleanup is claimed.",
+        "The warning appears inside numbered step 1 after its initial Add/Run instruction, rather than before the affected step."
+      ],
+      "native_cli_event_lines": [
+        22
+      ],
+      "document_write_event_lines": [
+        47,
+        53
+      ],
+      "model_tool_write_targets": [
+        {
+          "event_line": 22,
+          "path": "/tmp/tw-notes-backup.json",
+          "within_project": false
+        },
+        {
+          "event_line": 47,
+          "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/claude-code/technical-writing/result.txt",
+          "within_project": true
+        },
+        {
+          "event_line": 53,
+          "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/claude-code/technical-writing/result.txt",
+          "within_project": true
+        }
+      ],
+      "outside_write_evidence": [
+        {
+          "event_line": 22,
+          "path": "/tmp/tw-notes-backup.json",
+          "exists_after_run": true,
+          "tool_success_output_event_line": 23
+        }
+      ],
+      "source_files_changed": [
+        "draft.md"
+      ],
+      "independent_command_evidence": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-2bvguv2d/claude-code/technical-writing/.pstack/acceptance-tmp/independent-doc-hewkw4gv/actual-commands.json",
+      "independent_command_evidence_sha256": "9575b06598fba5c5583181d586e15c53e992f834adbec48680b0b9538885ff86",
+      "actual_documented_commands": [
+        {
+          "documented_command": "python3 app.py add \"Meeting notes\"",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "Meeting notes"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Meeting note"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py list",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "list"
+          ],
+          "exit_code": 0,
+          "stdout": "Meeting note\napple\nzebra\n",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Meeting note"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py add banana",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "banana"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Meeting note",
+            "banan"
+          ]
+        }
+      ],
+      "document_review": "Only how-to text, commands and expected-output examples. No verification log, editing commentary or writing-rule description appears in result.txt.",
+      "document_accuracy_regression": "warning now included",
+      "observed_source_rule_read_event_lines": [
+        4
+      ]
+    }
+  },
+  "external_writes_authorized": false,
+  "previous_report_preserved": {
+    "path": "pstack/docs/workflow-writing-checks.json",
+    "sha256": "b23617419563cf95e8d9e612b615d5d0f9656485611091d7647e8696e74c33dd"
+  },
+  "source_change_under_test": "Keep user-facing prerequisites, observed limitations and warnings in the document, before the affected step. They are part of the instructions, not verification notes."
+}

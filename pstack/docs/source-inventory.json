@@ -1678,8 +1678,8 @@
       "bytes": 9093,
       "mode": "0o644",
       "target": "pstack/skills/technical-writing/SKILL.md",
-      "target_sha256": "857a27d46158e14e2a395b2c4befca2d0995edd4646aa2b08e71dca49ad68262",
-      "target_bytes": 9386,
+      "target_sha256": "74bd64e44dadd41bcffd6c508d05c698169d0b9dbb0b76928cca41bcb3d22f86",
+      "target_bytes": 9555,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },

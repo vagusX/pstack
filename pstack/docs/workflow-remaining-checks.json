@@ -1,0 +1,1755 @@
+{
+  "source_commit": "9363d166bd5e0985c5beed56b870632597d118e0",
+  "meaning": "Actual execution retained separately from independent scenario acceptance; no external writes authorized.",
+  "scenario_count": 8,
+  "last_run_root": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6",
+  "entries": {
+    "automate-me": {
+      "category": "independent-workflow",
+      "input": "Create acceptance-mode from supplied scoped-history.md. User handle is acceptance. Preferences: plain short replies; real CLI proof; project-local skills; no external publication. Author and iterate the skill locally; stop before any external PR. Record every unexercised interview/publication step.",
+      "observable_contract": "Project mode skill, two recurring scoped-history evidence pointers per rule, prose review; live interview and publication explicitly outstanding.",
+      "source": "pstack/skills/automate-me/SKILL.md",
+      "source_sha256": "b91cb3c41205b17096a58f522279c22ce58bc22a12187ed58f0342bce367d5f5",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_partial",
+          "exit_code": 0,
+          "duration_seconds": 160.52,
+          "installed_skill_sha256": "b91cb3c41205b17096a58f522279c22ce58bc22a12187ed58f0342bce367d5f5",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154c8-b052-7750-a36b-3bc953600e27",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/automate-me-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/automate-me",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/automate-me",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/automate-me/acceptance-events.jsonl",
+          "events_sha256": "8fe1376493dab06443b2243e92625c50baef26510b705a9bc4f90b42bcb8dffa",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/automate-me/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "artifacts/acceptance-mode/mining-results.md",
+            "artifacts/acceptance-mode/run-record.md",
+            "artifacts/acceptance-mode/skill/SKILL.md",
+            "artifacts/acceptance-mode/forward-result.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read scoped mining outputs, four native terminal rollouts, draft v1/final candidate, validator output and independent fresh-delegate CLI proof. Candidate remains under artifacts because native sandbox denied .agents/skills and git refs. No live interview feedback, installed discovery, commit or publication established.",
+            "evidence_read": [
+              {
+                "path": "artifacts/acceptance-mode/mining-results.md",
+                "sha256": "11632b742d9734a648cd960858768a794d596bc71ebf94ef17c2f82b8fd69229"
+              },
+              {
+                "path": "artifacts/acceptance-mode/run-record.md",
+                "sha256": "3687238c76d53deb3e308d45363910d25fcf118f0655d2118f5acdc9759761e8"
+              },
+              {
+                "path": "artifacts/acceptance-mode/skill/SKILL.md",
+                "sha256": "a0fdf5f6e648cf572a2a2c23d74b0f1e8c2827cf365ed6d1886450ab1453dfd0"
+              },
+              {
+                "path": "artifacts/acceptance-mode/forward-result.md",
+                "sha256": "b9bed6715eda2c3c2f8ca3900540f5874d6b65143e99130e41d120ad54dd16a4"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154c9-0540-7a91-9e55-ad02f058199c",
+                "role": null,
+                "terminal_observed": true,
+                "rollout_sha256": "dfe30bdc8d0c4b43d21578deb1c29ce969da8b965d51dd93e1cc6ccbe64017bd"
+              },
+              {
+                "id": "01a154c9-14c2-7c61-a9dc-93410873d6b9",
+                "role": null,
+                "terminal_observed": true,
+                "rollout_sha256": "420b1ba1fb48989cd030672c0ce475b3baddff5ee07b25e49b7d028b5a1c42d5"
+              },
+              {
+                "id": "01a154c9-edb7-7da3-aeed-c3171782008c",
+                "role": "comment-sicko",
+                "terminal_observed": true,
+                "rollout_sha256": "51f20dc72e6b27ba595a5ff19122377bae1dd2d934de454e6a3c74ae3fdc3f05"
+              },
+              {
+                "id": "01a154ca-6c35-7cb2-86e6-0117c42bfcf6",
+                "role": null,
+                "terminal_observed": true,
+                "rollout_sha256": "386620ebfa42cca5049fc51be618af18780d586e0ba95ff46c207ece0b09f6b6"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_partial",
+          "exit_code": 0,
+          "duration_seconds": 233.42,
+          "installed_skill_sha256": "b91cb3c41205b17096a58f522279c22ce58bc22a12187ed58f0342bce367d5f5",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "a73364b5-b4db-49bd-b42b-72a41fd03e36",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/automate-me",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/automate-me/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /automate-me explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/automate-me/.claude/skills/automate-me/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Create acceptance-mode from supplied scoped-history.md. User handle is acceptance. Preferences: plain short replies; real CLI proof; project-local skills; no external publication. Author and iterate the skill locally; stop before any external PR. Record every unexercised interview/publication step.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/automate-me/acceptance-events.jsonl",
+          "events_sha256": "12c2bfdfbdcd78667751321d025ab6ca82ff6ececef6b7c560bc93af937038c4",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/automate-me/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            ".pstack/acceptance-mode-run/mining.md",
+            ".pstack/acceptance-mode-run/run-log.md",
+            ".pstack/acceptance-mode-run/draft-4/SKILL.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read both scoped-history miner results, four prose drafts and native behavior/unslop reviews. CLI probes expose actual title truncation; final draft validation passes. Native permissions denied .claude skill placement. Interview, user vibe check, final-draft behavioral rerun, installation, commit and external publication remain unexercised.",
+            "evidence_read": [
+              {
+                "path": ".pstack/acceptance-mode-run/mining.md",
+                "sha256": "df1aef212e36ff8b79a205cab5568b9ef6b6eb725adfa259e7ebe558e480ef05"
+              },
+              {
+                "path": ".pstack/acceptance-mode-run/run-log.md",
+                "sha256": "2e52d401535615ee95363297300bf1833fa0e5080989036cfa7b61b9246800c6"
+              },
+              {
+                "path": ".pstack/acceptance-mode-run/draft-4/SKILL.md",
+                "sha256": "09c7a80b91a3e28cc1f1ae1ffeadd13b6218182ea4132504a945f5efac6ed492"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "af7f1d1f8bdfee5af",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfevkb4-1e637a73"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a91227b64675fccb6",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfevmr0-7552acbc"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "af7f1d1f8bdfee5af",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfevkb4-1e637a73"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a91227b64675fccb6",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfevmr0-7552acbc"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "ad50b17222dcac8ab",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfexdrc-c3202d50"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a8e51a59cec5a2ab6",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfexhge-f01e4548"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "ad50b17222dcac8ab",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfexdrc-c3202d50"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a8e51a59cec5a2ab6",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfexhge-f01e4548"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a5c16ba848c102bf0",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfeyem9-cfce5cd9"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a5c16ba848c102bf0",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfeyem9-cfce5cd9"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "poteto-help": {
+      "category": "text",
+      "input": "Help question only: Which pstack skill should I use to explain why the note CLI was designed this way? Write the concise answer, at most one example prompt and the public source link to result.txt. Do not start the investigation.",
+      "observable_contract": "Routes to why, short usable prompt and source link; no task started.",
+      "source": "pstack/skills/poteto-help/SKILL.md",
+      "source_sha256": "b83df573b74500253e71ecf09957dea68949c185de0751bc70767135385480b7",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 42.13,
+          "installed_skill_sha256": "b83df573b74500253e71ecf09957dea68949c185de0751bc70767135385480b7",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154cb-19bf-7570-ad19-21fbd2c31b59",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-help-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-help",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-help",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-help/acceptance-events.jsonl",
+          "events_sha256": "d8b42005ee6e2dcdc1ec06657ee117f998847375f68606fe84c7d5d38b4f5d93",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-help/acceptance-stderr.log",
+          "observable_checks": {
+            "result_exists": true
+          },
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "result.txt",
+            "help-preflight-evidence.txt"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read result.txt and every command event. Correct why routing, one prompt and exact public pstack/skills/why/SKILL.md URL. Only dependency instructions were read; no why investigation or delegation began.",
+            "evidence_read": [
+              {
+                "path": "result.txt",
+                "sha256": "d366e1a20cb5c3aa1507a74d8039c87fa0275ffe1bdba2316802e4acbad1bccb"
+              },
+              {
+                "path": "help-preflight-evidence.txt",
+                "sha256": "6205afae09d22cc56b602d79d9bfdb3cff6680895680b89e35f30bf63726487f"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 40.92,
+          "installed_skill_sha256": "b83df573b74500253e71ecf09957dea68949c185de0751bc70767135385480b7",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "eda5a66a-cc02-4569-9f38-8352c741c296",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-help",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-help/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /poteto-help explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-help/.claude/skills/poteto-help/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Help question only: Which pstack skill should I use to explain why the note CLI was designed this way? Write the concise answer, at most one example prompt and the public source link to result.txt. Do not start the investigation.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-help/acceptance-events.jsonl",
+          "events_sha256": "ed5b2ddcbbd266bfda52667b3cae4075c91a4a65a50d9c37b8acfedb36e5dc5c",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-help/acceptance-stderr.log",
+          "observable_checks": {
+            "result_exists": true
+          },
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "result.txt",
+            "preflight.log"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read result.txt and all native tool calls. Correct why routing, one prompt and exact public pstack/skills/why/SKILL.md URL. Help only; no investigation/native delegate or application mutation.",
+            "evidence_read": [
+              {
+                "path": "result.txt",
+                "sha256": "0c1c37b3a4f5286579e68d419033742b434c8a8c72bdd6564dabf4c1997df9f0"
+              },
+              {
+                "path": "preflight.log",
+                "sha256": "fd73f821fcfebd96666d0e0bd62ef721d92cb3182e055832d33706a9742b1ea6"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "poteto-mode": {
+      "category": "independent-workflow",
+      "input": "Use poteto-mode to fix the obvious local add-then-list bug in app.py: titles must survive process restart. Select its actual relevant playbook/principles and run real CLI regression. Keep changes local, do not ship or open a PR.",
+      "observable_contract": "Actual playbook routing, loaded principles, reproduced defect, corrected real restart behavior and scoped verification.",
+      "source": "pstack/skills/poteto-mode/SKILL.md",
+      "source_sha256": "cf08b279591d8712088a3cd65e44daaad712affc5dc4986d356829777991eefe",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_partial",
+          "exit_code": 0,
+          "duration_seconds": 236.06,
+          "installed_skill_sha256": "cf08b279591d8712088a3cd65e44daaad712affc5dc4986d356829777991eefe",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154cc-3777-7ff1-a982-8780cde14156",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-mode-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-mode",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-mode",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-mode/acceptance-events.jsonl",
+          "events_sha256": "695311ba038227ec2c7b781e807e979bd9a0d6011a61ceede82ba68d4a13a5cd",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/poteto-mode/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "test_cli.py",
+            "artifacts/plan.md",
+            "artifacts/before.txt",
+            "artifacts/after.txt",
+            "artifacts/cli-before.txt",
+            "artifacts/cli-after.txt",
+            "artifacts/why-synthesis.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read Bug fix playbook phase evidence, native investigator/source/fix/synthesizer and named comment-review terminals. One-line destructive slice removed. Independently reran real separate-process test_cli.py successfully. Ordered red/fix commits blocked by protected git metadata; no external PR authorized.",
+            "evidence_read": [
+              {
+                "path": "test_cli.py",
+                "sha256": "62cb516627abbca4b4f556f906ff3986fabfab71b7913c7a39ae78fabb9878db"
+              },
+              {
+                "path": "artifacts/plan.md",
+                "sha256": "ebe9c1a19d0076ba7259fa3332a8dd25863f729ce1281c5ada045acabbbb8f41"
+              },
+              {
+                "path": "artifacts/before.txt",
+                "sha256": "f771c08e071ae43eb310ba28edab7c13197cf287cf6d791045719db3c703da81"
+              },
+              {
+                "path": "artifacts/after.txt",
+                "sha256": "2d7a4197e9d68b50c8a9b6ec7bace36aeb86a16bae74c050eb91861edb9f1df1"
+              },
+              {
+                "path": "artifacts/cli-before.txt",
+                "sha256": "0546b479ae89b685002fbd12e9b5b2966409d8197f6b22a6627385ec574a5ca0"
+              },
+              {
+                "path": "artifacts/cli-after.txt",
+                "sha256": "0bb5e143ca5cfbc7fe9d8036f9dd1c4726ac24fb53a4d488bc441e55ca62c9cc"
+              },
+              {
+                "path": "artifacts/why-synthesis.md",
+                "sha256": "9e7dc3f3da596c379819db5b216ff5d49f1184749f9821686baaa3f6a7cf25f9"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154cc-e362-7941-adbe-c0549cf42491",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "326d24c4e93dffa6ec68f6ee34a72a22fdc2e822054624f4e8cc01de894f2354"
+              },
+              {
+                "id": "01a154cd-1a05-7111-9a02-59f35b115532",
+                "role": "comment-sicko",
+                "terminal_observed": true,
+                "rollout_sha256": "8c313016602de56ba1acac21b69436331785d2f4bdc03d086575718b33d84311"
+              },
+              {
+                "id": "01a154cd-712b-7c80-ad98-dfa7b0a79978",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "fa474f7c3bcc73d3a57b2ea89030029207c96a2433053c0f1e25dd058071490c"
+              },
+              {
+                "id": "01a154cd-c44a-7902-b7bf-a9b01f0278bd",
+                "role": "poteto-agent",
+                "terminal_observed": true,
+                "rollout_sha256": "efea4ce1206d6008df31cdc477217dcccb1d159972903150aa8473f8d7741277"
+              },
+              {
+                "id": "01a154ce-93ca-73c1-9ecf-c35a514f39dd",
+                "role": "comment-sicko",
+                "terminal_observed": true,
+                "rollout_sha256": "be94805d6a5b9114638db68a7d408c6eecb00be73683a882b7e32180e7894bb0"
+              },
+              {
+                "id": "01a154ce-e369-7540-a234-e61b2bc2361f",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "592530bfbfec4337bd33d63155805950c58683096388513152c295e225003352"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 247.94,
+          "installed_skill_sha256": "cf08b279591d8712088a3cd65e44daaad712affc5dc4986d356829777991eefe",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "425a44a0-5751-413a-8593-ca04073f8c9a",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-mode",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-mode/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /poteto-mode explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-mode/.claude/skills/poteto-mode/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Use poteto-mode to fix the obvious local add-then-list bug in app.py: titles must survive process restart. Select its actual relevant playbook/principles and run real CLI regression. Keep changes local, do not ship or open a PR.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-mode/acceptance-events.jsonl",
+          "events_sha256": "4e231acb95bc08c6a72e55b53d9f8ac01e838b78504870d13126508b0183c80c",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/poteto-mode/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "test_app.py",
+            "poteto-run/todo.md",
+            "poteto-run/repro-before.txt",
+            "poteto-run/repro-after.txt",
+            "poteto-run/test-before.txt",
+            "poteto-run/why-synthesis.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read native how/why investigation, named implementation/review evidence, selected principles and before/after CLI output. Independently reran test_app.py successfully. Local git retains failing test before fix; production now retains exact titles and sorting. External Opening a PR phase intentionally excluded, not validated.",
+            "evidence_read": [
+              {
+                "path": "test_app.py",
+                "sha256": "27b6f770fa4d1624009c1de1b9c9a5e5d6325f7fd4a8dcece1c4772903a5be17"
+              },
+              {
+                "path": "poteto-run/todo.md",
+                "sha256": "90e8728f906282ef1d2aa4e18a94397c9a78600c1a3b9b60f4f6e7fb2d2b369e"
+              },
+              {
+                "path": "poteto-run/repro-before.txt",
+                "sha256": "8bfc3cba3525a19c4f0c49e7f40ef5b1ade88c2055c89e10e3b9a9287c47ce47"
+              },
+              {
+                "path": "poteto-run/repro-after.txt",
+                "sha256": "73c6f543a3a77b5536db03e023e4ca58faeaf7a02ed96a8a510ce76075b7ed34"
+              },
+              {
+                "path": "poteto-run/test-before.txt",
+                "sha256": "03b19d0a6bf3646e5ccb56f630a69e40d4fe56d839ed247e7911795eae17e498"
+              },
+              {
+                "path": "poteto-run/why-synthesis.md",
+                "sha256": "94c247d7ab8d998f616fc9ac254830333ddd3d7b15468fbc4af8700bd4a341db"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "a4464a0c3e8dc9c3d",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvff1pbt-16a32e6d"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a60ef32d58dfa2634",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvff1umm-f5de06c7"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a4464a0c3e8dc9c3d",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff1pbt-16a32e6d"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a60ef32d58dfa2634",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff1umm-f5de06c7"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a7c85100df754d54b",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvff2pjt-a257bc56"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a7c85100df754d54b",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff2pjt-a257bc56"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "ad76b160deafa2a87",
+                "subagent_type": "poteto-agent",
+                "status": null,
+                "run_id": "0mvff3ahp-d714d0d8"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "bn9p340tl",
+                "subagent_type": null,
+                "status": null,
+                "run_id": "0mvff3tbt-6fcfb736"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "bn9p340tl",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff3tbt-6fcfb736"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "ad76b160deafa2a87",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff3ahp-d714d0d8"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a09e17f79ceb2122e",
+                "subagent_type": "comment-sicko",
+                "status": null,
+                "run_id": "0mvff4giq-483cbee1"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a09e17f79ceb2122e",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff4giq-483cbee1"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "recall": {
+      "category": "independent-workflow",
+      "input": "Recall the supplied scoped-history.md and local git history for this project. Explain current note ordering decisions and next work; inspect source-control shared evidence and explicitly report unavailable tracker/chat/telemetry rather than inventing it. Read only this verified export.",
+      "observable_contract": "Project-scoped history evidence, current-state capsule, shared-record search and explicit unavailable-source gaps.",
+      "source": "pstack/skills/recall/SKILL.md",
+      "source_sha256": "9dd8027a79c539740087f11a3e3d105a228f8b97e132fc5ea6be74a6f2fae278",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 141.39,
+          "installed_skill_sha256": "9dd8027a79c539740087f11a3e3d105a228f8b97e132fc5ea6be74a6f2fae278",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154cf-d89c-77e1-a79d-28195d457bc7",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/recall-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/recall",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/recall",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/recall/acceptance-events.jsonl",
+          "events_sha256": "b9938f61e05689cd6a76b1586a773092e1e3f8ad38a7aaebf59737b829093b32",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/recall/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "recall-evidence/brief.md",
+            "recall-evidence/history.md",
+            "recall-evidence/source-control.md",
+            "recall-evidence/coverage.md",
+            "recall-evidence/commands.txt"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read capsule, source-control findings, seven-source coverage and native investigator/synthesizer terminals. Scoped export project matches, actual git corrections and regressions cited, real CLI sorting verified, runtime ID enforcement not invented. app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": "recall-evidence/brief.md",
+                "sha256": "7dbc0bf982185a88be4d6928c877cc19ebca69edc03b81e103807e396e326672"
+              },
+              {
+                "path": "recall-evidence/history.md",
+                "sha256": "7b39cb7bebb4f2cab3be99c36a0984c5d18f5beb6c86cbac5f7b398cf3146569"
+              },
+              {
+                "path": "recall-evidence/source-control.md",
+                "sha256": "4bdbf30c4a5985759eac188c58d5e55c05d6dbafab25b8297adb427a9fba18fe"
+              },
+              {
+                "path": "recall-evidence/coverage.md",
+                "sha256": "27d29c9e4f87479f0291abd340102e5daf64f53337ed906dc6df103d84746432"
+              },
+              {
+                "path": "recall-evidence/commands.txt",
+                "sha256": "440bcbfc6d269f652521c8407b8ea4c55a1aab0d2f46457a42e78758df3a8e5a"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154d0-6e41-7a42-bf3f-c73ffeead6d5",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "54b588ea352e3e544d03d2e0e25d42d9f959c118dee60866bcc8dd06c411673c"
+              },
+              {
+                "id": "01a154d1-4ab0-7740-acf1-5064cad03366",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "c3d068f384e3fc53ab51c60ecf295342b3eac863121ed6ef334135f72c202e50"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 219.61,
+          "installed_skill_sha256": "9dd8027a79c539740087f11a3e3d105a228f8b97e132fc5ea6be74a6f2fae278",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "2b25c414-511d-490c-92cc-cae26d8a5d07",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/recall",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/recall/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /recall explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/recall/.claude/skills/recall/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Recall the supplied scoped-history.md and local git history for this project. Explain current note ordering decisions and next work; inspect source-control shared evidence and explicitly report unavailable tracker/chat/telemetry rather than inventing it. Read only this verified export.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/recall/acceptance-events.jsonl",
+          "events_sha256": "20a4a2ae356c70aaaa87498add4db1906b94d5d331ecc8748df997240162a271",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/recall/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            ".pstack/recall-run/brief.md",
+            ".pstack/recall-run/live-state.txt",
+            ".pstack/recall-run/investigator-source-control.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read retained capsule and source-control/synthesis native results. Two scoped sessions, five local commits and actual temporary CLI probe support ordering, truncation and repeated data-only ID corrections. Six external evidence categories unavailable; no fictional shipped fixes. app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": ".pstack/recall-run/brief.md",
+                "sha256": "8d7efd9bcb2e19a9e517b037c584e2b7099bc564b0fe8dace557ed39bd462fa7"
+              },
+              {
+                "path": ".pstack/recall-run/live-state.txt",
+                "sha256": "b5d6abc4ddbac59d596ea0577a0b95eff356f8085f9be0c3a635c31dd194fa19"
+              },
+              {
+                "path": ".pstack/recall-run/investigator-source-control.md",
+                "sha256": "84568e965ba5b71273ddf92e5682997139dd9a8fe1312565b41db74bf7f0b15c"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "ad4c972eb49832066",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvff6csx-905fad43"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "ad4c972eb49832066",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff6csx-905fad43"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a146695dfb7459cd5",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvff7ylf-ccf9dcb2"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a146695dfb7459cd5",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvff7ylf-ccf9dcb2"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "reflect": {
+      "category": "independent-workflow",
+      "input": "Reflect on scoped-history.md for this project: three native reviewers should identify recurring corrections, synthesize and propose concrete edits to the existing verify-notes skill. Do not read other projects or mutate global skills; record any approval still required.",
+      "observable_contract": "Three native review results, synthesizer, scoped evidence and concrete existing-skill edits or explicit pending approvals.",
+      "source": "pstack/skills/reflect/SKILL.md",
+      "source_sha256": "ed6e7aea31e33444574af98b3110fb776ba10c0848e48a38c8a75d88edc49687",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_partial",
+          "exit_code": 0,
+          "duration_seconds": 185.86,
+          "installed_skill_sha256": "ed6e7aea31e33444574af98b3110fb776ba10c0848e48a38c8a75d88edc49687",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154d2-0670-7720-9208-6ea731a243e6",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/reflect-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/reflect",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/reflect",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/reflect/acceptance-events.jsonl",
+          "events_sha256": "b76bfec6ea6a2130fc9ffaf934a44c4f21ae29b2dea4e53ac9fa766ef47932e6",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/reflect/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "reflect-artifacts/judgment.md",
+            "reflect-artifacts/tooling.md",
+            "reflect-artifacts/divergent.md",
+            "reflect-artifacts/synthesis.md",
+            "reflect-artifacts/approval-status.md",
+            "reflect-artifacts/backlog.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Three actual reviewers and one synthesizer completed; read all four reports. Concrete verify-notes sentence proposed but rejected because the summary export cannot prove historical invocation/missed trigger. Structural uniqueness/CLI checks retained as local backlog. Existing skill unchanged; no approved edit or external tracker phase established.",
+            "evidence_read": [
+              {
+                "path": "reflect-artifacts/judgment.md",
+                "sha256": "177553be82e71ce3ad4d9d59239ee013b8222a29bafc8e43e276563d8eefb736"
+              },
+              {
+                "path": "reflect-artifacts/tooling.md",
+                "sha256": "a32202e9473fb6e4d424fb0ba2fc7333b33c3c2290c15fe06f8347fdba43eba5"
+              },
+              {
+                "path": "reflect-artifacts/divergent.md",
+                "sha256": "c35396f856baa4f4b479e8dce749defecfba3faa59b3340d3bf852eafcf314a8"
+              },
+              {
+                "path": "reflect-artifacts/synthesis.md",
+                "sha256": "208c547922aa8fbb35dd0ca3d9a631b3900b33e0094ef064a32f870bf0f97dce"
+              },
+              {
+                "path": "reflect-artifacts/approval-status.md",
+                "sha256": "ca970663dfbb8a54a2da1aad935d0fd70464790f287cddf947b645bd0df590da"
+              },
+              {
+                "path": "reflect-artifacts/backlog.md",
+                "sha256": "fab1aa11a30b1e3162e380095fba95db69d9a1eb9cac8c890da8b33bf8d23cca"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154d2-9347-71d3-b7dd-20cf92db7415",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "97ac0f1e8351af442a0b28f31aca2c6d89ed9836b1992bc001aebc02cf2bf360"
+              },
+              {
+                "id": "01a154d2-e103-7983-856b-cde7220dbf07",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "cfb746da629037a9f5a5479c59fb4a96c14985c56141e19edc43e2872c04da84"
+              },
+              {
+                "id": "01a154d3-20f7-7022-8a32-203e7088aed8",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "b8e495e945e5c4959fbe9c2038ba4ed6ef4e74abe3028ec18793b0fef1d8adf1"
+              },
+              {
+                "id": "01a154d3-e11a-7b41-b8fa-2c8634006457",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "0310e40a3c140a43c21051ce52d7358ade2bc27b9917eb36d9f8445ca7fe0a18"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_partial",
+          "exit_code": 0,
+          "duration_seconds": 286.17,
+          "installed_skill_sha256": "ed6e7aea31e33444574af98b3110fb776ba10c0848e48a38c8a75d88edc49687",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "6c4676d7-1330-48e2-8711-bb3d61dddcdd",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/reflect",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/reflect/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /reflect explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/reflect/.claude/skills/reflect/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Reflect on scoped-history.md for this project: three native reviewers should identify recurring corrections, synthesize and propose concrete edits to the existing verify-notes skill. Do not read other projects or mutate global skills; record any approval still required.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/reflect/acceptance-events.jsonl",
+          "events_sha256": "8463147ef44bd02bba1c1615e26df39e93575da2fd2ca764d858f389ffd03dd1",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/reflect/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "reflect-run/reviewer-judgment.md",
+            "reflect-run/reviewer-tooling.md",
+            "reflect-run/reviewer-divergent.md",
+            "reflect-run/synthesis.md",
+            "reflect-run/pending-approval.md",
+            "reflect-run/backlog.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read three native reviewer results, synthesizer and concrete verify-notes description diff. Pending approval kept explicit, structural checks placed in local backlog, existing skill not changed. Live user approval/apply and external tracker filing intentionally unexercised.",
+            "evidence_read": [
+              {
+                "path": "reflect-run/reviewer-judgment.md",
+                "sha256": "0dff95028cd66a4fb744428e0d7a2883d6a03723a61400ec092642293af4d568"
+              },
+              {
+                "path": "reflect-run/reviewer-tooling.md",
+                "sha256": "442391c78188e4cf25237fcc7e9c8b2880d60d768c42a0cd2ed9490e95478cf7"
+              },
+              {
+                "path": "reflect-run/reviewer-divergent.md",
+                "sha256": "f57d708688bd7a0cee38f5828cd0c94d6f86e6627416f4342d46b41a256f5d23"
+              },
+              {
+                "path": "reflect-run/synthesis.md",
+                "sha256": "d9ed9563c5709f9d633725cb387ce732c31f2c0d5999609c51b849a52eb40072"
+              },
+              {
+                "path": "reflect-run/pending-approval.md",
+                "sha256": "9847d6e63ddc5c537e01b6778fa1ccbe25f242bd26cfeda09e2c3a8fd47f4f50"
+              },
+              {
+                "path": "reflect-run/backlog.md",
+                "sha256": "4aa5c494a2f6146fa440bf670d9cd8a22c96280e8bffd8c4cbe322ec782d3160"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "a0588d07964bd8733",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffb6am-75bc791a"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a110d61454958eeef",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffbg5a-865df8fb"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a0588d07964bd8733",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffb6am-75bc791a"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a57914e0a91101b03",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffboi2-d85b5101"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a110d61454958eeef",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffbg5a-865df8fb"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a57914e0a91101b03",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffboi2-d85b5101"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a8d70e62f06aa7f25",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffd9as-a106e2b1"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a8d70e62f06aa7f25",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffd9as-a106e2b1"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "show-me-your-work": {
+      "category": "independent-workflow",
+      "input": "Keep a canonical TSV decision trail while you reproduce and fix list ordering to be deterministic. Use the shipped logging script, retain one row per actual decision with real evidence pointers, then audit rows against commands actually executed.",
+      "observable_contract": "Shipped logging command output, six-column TSV, real evidence pointers and transcript audit.",
+      "source": "pstack/skills/show-me-your-work/SKILL.md",
+      "source_sha256": "fdbecf7b782f858b2109474f9fc21f7ffa41edcfb8d750a743b41468371259b0",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 235.44,
+          "installed_skill_sha256": "fdbecf7b782f858b2109474f9fc21f7ffa41edcfb8d750a743b41468371259b0",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154d4-d6dc-73b2-9172-cc08c5eee119",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/show-me-your-work-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/show-me-your-work",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/show-me-your-work",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/show-me-your-work/acceptance-events.jsonl",
+          "events_sha256": "c212b528d38d1bc6f649271a3aa828b95036c5fa5835cdec93293c127eb5cd23",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/show-me-your-work/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "decisions.tsv",
+            "test_list_order.py",
+            ".audit/audit.txt",
+            ".audit/trail-review.md",
+            ".audit/mutation.txt",
+            ".audit/run-commands.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read nine six-column TSV rows, actual shipped log.sh commands, evidence-pointer audit, mutation rejection and independent native trail review. Independently reran two real CLI tests successfully. Existing ordering already deterministic, so production unchanged. Current transcript unavailable; retained command evidence used as permitted and limitation disclosed. Cross-generation reviewer requested gpt-5.6-sol; this is not cross-vendor proof.",
+            "evidence_read": [
+              {
+                "path": "decisions.tsv",
+                "sha256": "3c596111f7d4e360ef9370295c9558b4491f21786b04e3655a53896501a250da"
+              },
+              {
+                "path": "test_list_order.py",
+                "sha256": "2353591cf7783f322fa2bc7dedf4b3714abe595cb2cc02df248deeec29675d95"
+              },
+              {
+                "path": ".audit/audit.txt",
+                "sha256": "ce73dc6e6127f7d2ae7ca4a6034d7ce106e7d526ca8553beb993deb1c0256aba"
+              },
+              {
+                "path": ".audit/trail-review.md",
+                "sha256": "9af8626e57e2d23076bde9d8cd40ce45dc529cecfde7c2d1551fc2f92037ee14"
+              },
+              {
+                "path": ".audit/mutation.txt",
+                "sha256": "5066074a58971c47bb81f35460a166a11114370d4994bfd4dc81e55121050e3f"
+              },
+              {
+                "path": ".audit/run-commands.md",
+                "sha256": "724fbf36f5bd79ae5790bf973b72449aff932a16ae2bebf91a7449a3092ff6f9"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154d5-ef2c-74c1-9e10-c45ea0630f5f",
+                "role": "comment-sicko",
+                "terminal_observed": true,
+                "rollout_sha256": "aef7650d1f0f1dbf6be5d32cc247ca62e481baffea2719758c664dce715ee292"
+              },
+              {
+                "id": "01a154d6-8b41-7e22-a1a0-871a0343ce55",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "eaaf8eb3a6bd340b290d8c826bd746285c9bac7b743e1c1c122c8051e72ea913"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_failed",
+          "exit_code": 0,
+          "duration_seconds": 212.7,
+          "installed_skill_sha256": "fdbecf7b782f858b2109474f9fc21f7ffa41edcfb8d750a743b41468371259b0",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "8d9727db-2cfe-42f6-91be-5820bb8dda99",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/show-me-your-work",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/show-me-your-work/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /show-me-your-work explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/show-me-your-work/.claude/skills/show-me-your-work/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Keep a canonical TSV decision trail while you reproduce and fix list ordering to be deterministic. Use the shipped logging script, retain one row per actual decision with real evidence pointers, then audit rows against commands actually executed.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/show-me-your-work/acceptance-events.jsonl",
+          "events_sha256": "8b9dcd9f6b02d0d6ab429307b95396144b3871bd484dd970df88b5bd9e0136bb",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/show-me-your-work/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "decisions.tsv",
+            "app.py",
+            "test_order.py",
+            ".audit/repro.txt",
+            ".audit/audit.md",
+            ".audit/test-before.txt",
+            ".audit/test-after.txt"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read all twelve TSV rows, command evidence, original/final app.py and native trail-review flags. Agent acknowledged original order was already deterministic yet changed case-sensitive order to case-insensitive without authorization. Before scratch was overwritten with fixed code, weakening rerunnable baseline; reviewer used same family. Honest Attention disclosure and append-only corrections do not establish requested behavior-preserving verification.",
+            "evidence_read": [
+              {
+                "path": "decisions.tsv",
+                "sha256": "ea919b2e1981ee6cb2509f863fd60936878421a637a681a8f79e5dac78acb458"
+              },
+              {
+                "path": "app.py",
+                "sha256": "5de28129b50d5dcd6fff7c75628fd86c5bc5a9e95486b350aac105751e30c36c"
+              },
+              {
+                "path": "test_order.py",
+                "sha256": "4915a1ad617135e55f6900479b515f0e13ba6ee482abbed1dec44e5b8a1d959c"
+              },
+              {
+                "path": ".audit/repro.txt",
+                "sha256": "a7f461182b43d79ae9ebeffba408ed2dc70babc2b38a1cedeb79c0d8f087cf28"
+              },
+              {
+                "path": ".audit/audit.md",
+                "sha256": "e88ba69e48801b2b2f264f77fe115fabb3ac3c50691e4eb036112d3bcbbddefc"
+              },
+              {
+                "path": ".audit/test-before.txt",
+                "sha256": "24a9d1793eefa8972ab13b01e42a78d1f4956a98b02b8bc6f5ef3c746d87ce1c"
+              },
+              {
+                "path": ".audit/test-after.txt",
+                "sha256": "5bdb7f00e8b9d6750c87718793d6dee3eb2e15cefe31fe3a62b0628de6b68802"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "a1db9f0c4e0567aa7",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffjdc9-583ce9e4"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a1db9f0c4e0567aa7",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffjdc9-583ce9e4"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "teach": {
+      "category": "independent-workflow",
+      "input": "Teach why the local note CLI sorts titles and how it reads/writes them. Invoke how and scoped why as real dependencies, preserve confidence language, cite local history, and leave app.py untouched.",
+      "observable_contract": "Dependency native calls, readable combined account with citations, original confidence separation.",
+      "source": "pstack/skills/teach/SKILL.md",
+      "source_sha256": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 162.12,
+          "installed_skill_sha256": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154d8-7011-79e2-a0f7-f5ee5e545fbc",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/teach-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/teach",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/teach",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/teach/acceptance-events.jsonl",
+          "events_sha256": "a0596169f9f678ac2a9a6292aeebcdddd74a3590e187be793868497d309376c3",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/teach/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "teach-artifacts/how-result.md",
+            "teach-artifacts/why-investigator.md",
+            "teach-artifacts/why-synthesis.md",
+            "teach-artifacts/explanation.md",
+            "teach-artifacts/commands.json"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read actual how explainer, why investigator and synthesizer outputs plus progressive explanation. Observed temporary CLI proves sorted output versus unsorted storage and pear->pea truncation; motivations without evidence remain Unknown. Original app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": "teach-artifacts/how-result.md",
+                "sha256": "2bba2f474f80ead01a8de41d3b881ba5a474df28d4ed90fc0f195c109b553e10"
+              },
+              {
+                "path": "teach-artifacts/why-investigator.md",
+                "sha256": "cf72dd5591e23df46bccf7b6c37b616034579c9d3b6443fee7dd6ac3e0b8d640"
+              },
+              {
+                "path": "teach-artifacts/why-synthesis.md",
+                "sha256": "e875580e7c6c78e01bafa42e37d80fa519e12d7bb4f5cd0df541e4ff65863290"
+              },
+              {
+                "path": "teach-artifacts/explanation.md",
+                "sha256": "bc9bdef32fccada2d9b3ead3b3b96ca578cd5f21cd7b527aa4cd1c285240a621"
+              },
+              {
+                "path": "teach-artifacts/commands.json",
+                "sha256": "2016ff2c9e7da93a34ee126188d52687373086f2de9defc68e8b73d988c944ff"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154d8-f261-7b30-b957-cd4b87f132ac",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "dc6d4e4fa72bbc0b51e9581533195c18e3e4c543d88ee874e0bd7f182ae33353"
+              },
+              {
+                "id": "01a154d9-0fde-7dd2-9738-1ac6b94d3766",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "b431db20ab6056d5608f5735923bcfe95ae46a93efc0d40b2f617099b13d0bc6"
+              },
+              {
+                "id": "01a154d9-fb94-72b2-bc27-a576727a5c7a",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "75ff7932af429c13ec1897fba54b821c735b8d50f73259237ce9f3a574f9267e"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 230.18,
+          "installed_skill_sha256": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "2e5d5b7b-bcd9-465f-9a9f-0699612baf0d",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/teach",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/teach/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /teach explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/teach/.claude/skills/teach/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Teach why the local note CLI sorts titles and how it reads/writes them. Invoke how and scoped why as real dependencies, preserve confidence language, cite local history, and leave app.py untouched.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/teach/acceptance-events.jsonl",
+          "events_sha256": "bc19b66cfde05480e6f5a372c437697c0f97fc29cbe6c61a1ccdf528452830ae",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/teach/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "teach-run/delegates.md",
+            "teach-run/cli-list.txt",
+            "teach-run/explanation.md"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read native how/why child results and progressive diagrams, actual temporary banana->banan storage probe and list output. Direct sorting rationale distinguished from inferred motivation and speculative truncation explanations. Original app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": "teach-run/delegates.md",
+                "sha256": "ce332acb598cd1373f5f1137762e75f76a3a0440ab3ea6975aba28f4d33c1b9b"
+              },
+              {
+                "path": "teach-run/cli-list.txt",
+                "sha256": "c71d6462693359390fba358808ff8e471cf3dcb39ef72511ba946e00edf2c26a"
+              },
+              {
+                "path": "teach-run/explanation.md",
+                "sha256": "3279a37cfece86658f67dd75d999b908177ce64757b3a9c8010768ad858102cc"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "a800035231f5bd0d5",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfflm2k-925e44d8"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a9c05a31e52f3e868",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvfflur8-89f89cd1"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a800035231f5bd0d5",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfflm2k-925e44d8"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a9c05a31e52f3e868",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvfflur8-89f89cd1"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "ad854614f8d90f2a6",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffng1e-b7c3d535"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "ad854614f8d90f2a6",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffng1e-b7c3d535"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    },
+    "why": {
+      "category": "independent-workflow",
+      "input": "Why are note titles sorted? Read local commits, blame and decision.md; use native source-control investigator and synthesizer. Discover evidence categories and record unavailable categories. Cite evidence and keep confidence distinct from inference. No remote writes.",
+      "observable_contract": "Native investigator and synthesizer, code/history anchor, seven-category coverage with justified gaps, cited confidence-separated result.",
+      "source": "pstack/skills/why/SKILL.md",
+      "source_sha256": "34b686c1b937f8bda6a08f69fb294c0cd13e2f6b9b6a39b3995d2ab0c301872a",
+      "hosts": {
+        "codex": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 168.79,
+          "installed_skill_sha256": "34b686c1b937f8bda6a08f69fb294c0cd13e2f6b9b6a39b3995d2ab0c301872a",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "01a154db-2950-76d2-baa0-87cbe19145ed",
+          "execution_environment": {
+            "global_configuration_changed": false,
+            "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/why-codex-home",
+            "project_trust": "trusted",
+            "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/why",
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-rules",
+            "--json",
+            "-s",
+            "workspace-write",
+            "-C",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/why",
+            "-c",
+            "approval_policy=\"never\"",
+            "-c",
+            "features.multi_agent=true",
+            "-"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/why/acceptance-events.jsonl",
+          "events_sha256": "c8ca469e3ade641a17cf82371e354141f618e0786fcfa7460ee003b08a26ecf5",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/codex/why/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            "why-artifacts/anchor.md",
+            "why-artifacts/coverage.md",
+            "why-artifacts/investigator-results.md",
+            "why-artifacts/synthesis.md",
+            "why-artifacts/command-evidence.txt"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read anchor, all local/git investigator outputs and native synthesizer. Seven-category map reflects actual live tool discovery, distinguishes exposed connectors from absent project linkage and avoids unrelated searches. Direct decision/commit rationale kept separate from inferred alphabetical preference. Original app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": "why-artifacts/anchor.md",
+                "sha256": "8629fd0f6383df8d346676d9cb556da2acc22b2b0e9a8d3ed3f9e6b6588f84fb"
+              },
+              {
+                "path": "why-artifacts/coverage.md",
+                "sha256": "2da3cdc1860eb78845a7cd842c2b9197bb7f5ad6326d663acf4b5783538e409a"
+              },
+              {
+                "path": "why-artifacts/investigator-results.md",
+                "sha256": "12479ebbe2e5b90eb8ea77eb233c65923bedc15c2fb1c40defdf8409f3c0a354"
+              },
+              {
+                "path": "why-artifacts/synthesis.md",
+                "sha256": "64cb55313a76fde20ea64fd58e144c3e186402e4bfdcfab4fa2403f8ac23c33d"
+              },
+              {
+                "path": "why-artifacts/command-evidence.txt",
+                "sha256": "e73248d1bc985feac0293b4a785f1f71c7f9437cf6e2c910830afee372e84610"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "id": "01a154db-ce6a-7253-a7f6-bb8448033619",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "68d02bbbdb4eb33c0c7de6f7101bd395eb42cb5ec30e66a8f2818c12e453d657"
+              },
+              {
+                "id": "01a154db-f338-72e1-9ae7-d6153b72927e",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "a59b8b17f39185af7fe981fc19039593a7d51ed56e47f6fe81a30af40f49bede"
+              },
+              {
+                "id": "01a154dc-0dee-7901-af63-60453bd2a1eb",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "6dc7dbcae7c4b5856d015e855658b25530487f559d63e1828efa7b0826c72ab1"
+              },
+              {
+                "id": "01a154dc-f504-7fb3-a805-929bf5285cdb",
+                "role": "default",
+                "terminal_observed": true,
+                "rollout_sha256": "568544da77bc0f631bb5548c809254ce16d0b9d3fb308f857ea28c933bc81369"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        },
+        "claude-code": {
+          "status": "executed",
+          "acceptance": "scenario_passed",
+          "exit_code": 0,
+          "duration_seconds": 185.56,
+          "installed_skill_sha256": "34b686c1b937f8bda6a08f69fb294c0cd13e2f6b9b6a39b3995d2ab0c301872a",
+          "installed_manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+          "installed_skill_unchanged": true,
+          "session_id": "b090573a-5d91-44bd-a13c-e34b0b66f125",
+          "execution_environment": {
+            "global_configuration_changed": false
+          },
+          "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/why",
+          "command": [
+            "claude",
+            "-p",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--no-session-persistence",
+            "--setting-sources",
+            "project,local",
+            "--strict-mcp-config",
+            "--mcp-config",
+            "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/why/empty-mcp.json",
+            "--permission-mode",
+            "dontAsk",
+            "--allowedTools",
+            "Read,Write,Edit,Glob,Grep,Bash,Agent",
+            "--disallowedTools",
+            "WebFetch,WebSearch",
+            "--",
+            "Invoke /why explicitly from /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/why/.claude/skills/why/SKILL.md. Read its full instructions and actual dependencies; this is a live behavioral acceptance run, not a summary or static check.\nTask: Why are note titles sorted? Read local commits, blame and decision.md; use native source-control investigator and synthesizer. Discover evidence categories and record unavailable categories. Cite evidence and keep confidence distinct from inference. No remote writes.\nWork only inside the current disposable project. You may write local artifacts and run local commands. No global changes, network writes, remote PRs, messages, tasks, schedulers or infrastructure. Do not read unrelated session history. The scoped-history.md export is the only authorized prior conversation. Do not use another host's tools or simulate delegation. Do not skip a required phase to claim success; report actual capability gaps. Local commits are permitted if the skill requires them. Keep concrete artifacts, command evidence and native delegate results; the acceptance runner will independently inspect them. The scenario does not authorize external publication even when an original workflow requests it.\n"
+          ],
+          "events": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/why/acceptance-events.jsonl",
+          "events_sha256": "c5e9920b0645328628bc2d23ba9ba2bb4f42c2cb99e50452391b0816b2277da9",
+          "stderr": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/claude-code/why/acceptance-stderr.log",
+          "observable_checks": {},
+          "scope": "scenario only; not every playbook or external integration",
+          "artifacts": [
+            ".pstack/why-run/coverage-map.md",
+            ".pstack/why-run/delegates.md",
+            ".pstack/why-run/command-evidence.txt"
+          ],
+          "independent_review": {
+            "reviewer": "review_fixes host agent",
+            "method": "Read actual artifacts/native event or rollout results; reran applicable actual CLI tests; no acceptance from exit code or self-report alone.",
+            "finding": "Read native source-control investigator and synthesizer results, five-commit/blame/string-search evidence and actual list command output. Direct repeatability rationale, alternative hypotheses and unknown case semantics kept distinct. Six unavailable MCP categories explicitly recorded. Original app.py independently matches HEAD.",
+            "evidence_read": [
+              {
+                "path": ".pstack/why-run/coverage-map.md",
+                "sha256": "79f7c82becc16425e1a8b562f491cb1211cd02fc7d642110cf24b725858dc131"
+              },
+              {
+                "path": ".pstack/why-run/delegates.md",
+                "sha256": "551420aa3e183c2c8cddc3cb08e754deb112ea7270c50db450beb207ce474ed7"
+              },
+              {
+                "path": ".pstack/why-run/command-evidence.txt",
+                "sha256": "dd6931b974077c2ff8aa65b8a6169b136460d61da3915b5df5422fc3c44cd71f"
+              }
+            ],
+            "raw_events_hash_matches": true,
+            "native_lifecycle": [
+              {
+                "subtype": "task_started",
+                "task_id": "a15c976cbfb286875",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffpabt-166b5f8a"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a15c976cbfb286875",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffpabt-166b5f8a"
+              },
+              {
+                "subtype": "task_started",
+                "task_id": "a489865dbc1b978e2",
+                "subagent_type": "general-purpose",
+                "status": null,
+                "run_id": "0mvffqw5x-fd035137"
+              },
+              {
+                "subtype": "task_notification",
+                "task_id": "a489865dbc1b978e2",
+                "subagent_type": null,
+                "status": "completed",
+                "run_id": "0mvffqw5x-fd035137"
+              }
+            ],
+            "limits": "One explicit local scenario. No external messages, tracker, publication, scheduler or global modifications authorized; external branches remain unverified."
+          }
+        }
+      }
+    }
+  },
+  "review_summary": {
+    "actual_runs": 16,
+    "acceptance_counts": {
+      "scenario_partial": 5,
+      "scenario_passed": 10,
+      "scenario_failed": 1
+    },
+    "all_54_complete": false,
+    "source_snapshot": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-remaining-nuybscf6/skill-source",
+    "failed_behavior": "Claude Code show-me-your-work changed case ordering without demonstrated defect.",
+    "external_scope": "No external writes authorized or performed by this acceptance harness."
+  }
+}
