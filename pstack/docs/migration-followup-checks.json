@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-19",
+  "baseline_commit": "0a6242e891091009416760dc9db6bc37f8d28d89",
+  "tested_content": "Local uncommitted migration changes; manifest SHA identifies installed skill content",
+  "manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+  "python": {
+    "tests": 34,
+    "resource_warning_is_error": true,
+    "log": "/tmp/pstack-full-python-final.log",
+    "log_sha256": "ff6dc38d995b25b03a996131e34a836dce7f8082e0c7fbc762a0a08718a04495"
+  },
+  "bun": {
+    "tests": 68,
+    "assertions": 246,
+    "log": "/tmp/pstack-full-bun-final.log",
+    "log_sha256": "dfe5e7de2f26fedc7ae3ba96a18d9053735f6cb0d634df3a4415aac46133eef8"
+  },
+  "installation_matrix": {
+    "rows": 17,
+    "evidence": "/tmp/pstack-full-matrix-final.json",
+    "sha256": "251f5c33cb91fafe25ae31a04222261a02da8a8bf791191baae7010e805f7c88"
+  },
+  "original_files": 169,
+  "original_skill_names_and_invocation_policies": 54,
+  "manual_codex_controls": 53,
+  "goal_status": "incomplete; remaining entry workflows and external integration coverage still pending"
+}

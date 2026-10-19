@@ -131,9 +131,11 @@
       "name": "Make Bot UI",
       "manual": true,
       "files": {
-        "SKILL.md": "cef8e2d5af85bd0189e19f1c9e544b72b16b7f4ded275b698038257f3efe829c",
+        "SKILL.md": "fb69c2c96d1ce53392c98f5a198f9581ca3d9cc78f42589a588596662ec2930f",
         "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
-        "references/cursor-webhook.md": "3624c8ef16cf2e48deb2a4049e72c6962a9431c8d6c6af90e7bd7ea0375224ec"
+        "references/cursor-webhook.md": "3624c8ef16cf2e48deb2a4049e72c6962a9431c8d6c6af90e7bd7ea0375224ec",
+        "references/native-webhook.md": "832adac74740ed4b21484804fe3e00bc8e7a0cd268a1ae5816044b8c2fda4247",
+        "scripts/webhook.py": "0b7e56cd07f358299f3cc6ccb6d85b9dca74379f29b69b0af7f1c484ffe82422"
       }
     },
     "no-comments": {
@@ -148,7 +150,7 @@
       "name": "poteto-help",
       "manual": true,
       "files": {
-        "SKILL.md": "6bb05862e13127e02385401ee78158209630242c7a11b9ab7f162648d21baa7a",
+        "SKILL.md": "b83df573b74500253e71ecf09957dea68949c185de0751bc70767135385480b7",
         "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
         "references/prompting.md": "463f450c44a60afd001a2f69fdf8a5dea174351f339369b12ec3c41515e564d3",
         "references/recipes.md": "5fb97a805976a82db0aba5cc8943e88d0cb38b17a0d6b8e89a44633677febb1a"
@@ -192,7 +194,7 @@
         "scripts/orch/orch.ts": "7e092f303e42e018b87b4ddf4e0d43948b1818fde33cc840f3ec5d197d1bf233",
         "scripts/orch/store.ts": "558cfda533e1ebe7c8d7842604f07e0be7618759cf129b4c2397a8e29516ecea",
         "scripts/package.json": "f5e4eff6e56cdfeceda49d73df469e67bd31571a88dcbd28567eba20e4d4b845",
-        "scripts/test.ts": "c908a509dfe556c106a1655e1dd7117ef4cc6a7d57138a12d167b0ec6beffd25",
+        "scripts/test.ts": "e87c4ed4b351871f252fd1d56d823a8b03c8734e5ebf1ea23805b25713486f0b",
         "scripts/watch-pr/cli.test.ts": "a35592b4c6da96caf8d47987e9cd503fab6c7774ab87d11a43f24b4b5df2a9d1",
         "scripts/watch-pr/cli.ts": "ef3e7ea343ff5ca5c9ac77ed6e56ec39e74245d217099248287ff823a0cc7a72",
         "scripts/watch-pr/fakes.test-helper.ts": "cf0c5ee61b4a73444c1b775cfb6c81a40d312e055dd21a1f5eae6276e54de13f",
@@ -473,7 +475,7 @@
       "name": "technical-writing",
       "manual": true,
       "files": {
-        "SKILL.md": "61fe9c424a798ebf36ad94941f87be049cb8827bdf86d21474a0dde37b513c43",
+        "SKILL.md": "857a27d46158e14e2a395b2c4befca2d0995edd4646aa2b08e71dca49ad68262",
         "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
       }
     },
@@ -517,14 +519,16 @@
   },
   "support_files": {
     "LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
-    "README.md": "7ad3303bcbc342e931d971b8557dc3949af85cdaa47b83857a558dda4e5d453d",
+    "README.md": "341aa550e195a8b432892267fe856be8e0268a9afd43ce0159f39dc3e2ab01a5",
     "SKILL.md": "df01e5bdad9c95b0c1ae1c516ee1520d57b2d448a2bb0a6ea392ea8a410dcabb",
     "agents/comment-sicko.md": "3e239e40b7b4b9beb2cf7f3ccc57f2388eb8b69bd1ba8ae888ef87ef6e0e2116",
     "agents/poteto-agent.md": "5287afce6a96497da1390ef7848a45b612991a90065c3ab28155cd5ed8fa3b31",
     "assets/logo.png": "672f6791589ef758b0ced2c4c477913fa2758623c438e265639a0d539ce90695",
     "automations/benny/FOR_AGENTS.md": "b5cee008b140fc3f02d6b7e5c5d50eac1c3eca86f65718a604d5c0247c4ce954",
     "automations/benny/README.md": "b0c3e343d80b0188ce6b6e140d0eb2fa5302543f8ccc587f2a687c093a50d243",
+    "automations/benny/feishu_readonly.py": "32140854afb2e4b2e10e7ce2bddd75b343fe012f55e03415c3c711ff576ac270",
     "automations/benny/journal.py": "eebe0aec3e03fd60074117f77a902b32770ad6f150813558a65241995b17f047",
+    "automations/benny/references/feishu-readonly.md": "06d02788ebc5ae023ec0c7b4fb51f85979a9ef1c9258776ac5b3b8458550cb90",
     "automations/benny/skills/reproduce-and-fix-issues/INSTRUCTIONS.md": "869d8db5efd45aad65c4bdbbb5b8ddeb8827a180b2290ed307e1490254d1f8df",
     "automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md": "3071a5a9eaf4f7d9c4be5fca4407fc5f49edff686900ccddf2b778e5ad2f77f7",
     "automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md": "3adfdf2fb3a7b0e286c1da264548681663f6cf1131f0e067538a5e0710a2e778",
@@ -543,7 +547,7 @@
     "docs/guide/06-verify-and-ship.md": "52f85e614cac2a987d287fbdcffbd604a170cd8e982b48958839cf72232bfad8",
     "docs/guide/07-overnight.md": "fb3cf2ec6e98b2db7214ac473217b9e17d5f3d51482d55c523af58cfe5d6495c",
     "docs/guide/08-principles.md": "4c28a6b0b72983acbbfebc93153e21b01c708db2382e1eef64ac35bd68ec37e0",
-    "docs/guide/09-make-it-yours.md": "eca33490bab3feb0ed843a24f2fd0ad72494fdae4a8516bbd66f7de636fbd36d",
+    "docs/guide/09-make-it-yours.md": "28ff74977910ed93f74c648150764babf5bad3161a182a4097302d2cae82fe15",
     "docs/guide/10-recipes-and-pitfalls.md": "cdef4ee3140aaa2182550d598e1bffefb8f88aef3bc4141f7c599e5986679f71",
     "docs/guide/README.md": "6ac64796f44a0f6877b150f276173cf17b1ba2607e55fba614c91a4f330a99bf",
     "docs/guide/images/design.jpg": "b8ed07427f6a0c37dd8ba97961fc0eb5071efeee6c4a230648bdb7547f6f2a8f",

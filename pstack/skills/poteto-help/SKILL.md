@@ -13,7 +13,7 @@ Answer the user's question about pstack, hand them a prompt they can send, and l
 
 A message that asks for work, such as "use pstack to fix this bug", is not a help question. Read [`poteto-mode`](../poteto-mode/SKILL.md), do the work under it, and mention once that the project instructions load host behavior.
 
-This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/vagusX/pstack/blob/codex/pstack-host-adaptation/pstack/` followed by its path.
+This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed skills, which the user may not be able to open, so give the user the file's public copy: `https://github.com/vagusX/pstack/blob/codex/pstack-host-adaptation/pstack/skills/` followed by its path relative to the skills directory. For example, `why/SKILL.md` resolves to `pstack/skills/why/SKILL.md`; the guide lives under `pstack-support/docs/guide/`.
 
 ## Find out what they need
 
@@ -43,7 +43,7 @@ Installing changes nothing until the user invokes a skill. Only `/setup-pstack` 
 
 If cost is the worry, say where the tokens go and how to spend fewer. pstack spends extra tokens on subagents and review panels. Rerun `/setup-pstack` and pick a smaller budget or cheaper models. A role set to `auto` or `inherit-parent` runs on the chat's model, which saves tokens when the chat runs on Auto or a cheaper model. A shorter panel list runs fewer subagents, one for each entry. Save `/poteto-mode` for work that needs rigor.
 
-This fork adapts the original pstack workflows to Codex and Claude Code. Native delegation and app verification depend on the current session's tools. Consult pstack-support and the host-adaptation coverage record. Make Bot UI remains explicitly not adapted; installed files alone do not prove every workflow ran.
+This fork adapts the original pstack workflows to Codex and Claude Code. Native delegation and app verification depend on the current session's tools. Consult pstack-support and the host-adaptation coverage record. Make Bot UI uses a project-local authenticated webhook receiver and native CLI executor; installed files alone do not prove every workflow ran.
 
 ## Start a task with `/poteto-mode`
 
@@ -89,7 +89,7 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 | Turn their own working habits into a personal mode skill | [`/automate-me`](../automate-me/SKILL.md) |
 | Turn what a finished task taught into skill edits | [`/reflect`](../reflect/SKILL.md) |
 | Stop agents from repeating the same mistakes in this repo | [`/correct`](../correct/SKILL.md) |
-| Build a page whose buttons wake a webhook bot (not yet adapted in these hosts) | [`/make-bot-ui`](../make-bot-ui/SKILL.md) |
+| Build a page whose buttons start native CLI tasks through authenticated webhooks | [`/make-bot-ui`](../make-bot-ui/SKILL.md) |
 | Find their way around pstack | `/poteto-help` |
 
 If a skill directory next to this one is missing from the table, read its frontmatter and route by its description. The `principle-*` directories are covered under principles below.

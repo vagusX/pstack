@@ -62,7 +62,7 @@ def build():
         original=subprocess.check_output(['git','show',f"{inventory['commit']}:{source}"],cwd=PSTACK.parent,text=True)
         matches=[f'{n}: {line}' for n,line in enumerate(original.splitlines(),1) if any(re.search(pattern,line,re.I) for pattern in patterns)]
         if matches:
-            coupling.append({'source':source,'target':entry['target'],'assumptions':matches,'status':'not-adapted; archived original with explicit blocked entry' if '/make-bot-ui/' in source else 'adapted; native execution still requires fresh-host verification'})
+            coupling.append({'source':source,'target':entry['target'],'assumptions':matches,'status':'adapted through project-local native CLI webhook executor; Tailscale access remains unverified' if '/make-bot-ui/' in source else 'adapted; native execution still requires fresh-host verification'})
     (PSTACK/'docs/cursor-coupling.json').write_text(json.dumps(coupling,indent=2)+'\n')
     source_files=len(inventory['files']); source_bytes=sum(e['bytes'] for e in inventory['files'])
     current=list(p for p in PSTACK.rglob('*') if p.is_file() and '__pycache__' not in p.parts and 'node_modules' not in p.parts)

@@ -123,7 +123,7 @@ For long runs, use a checkable finish predicate and a scheduler actually availab
 | [`/swarm`](../swarm/SKILL.md) | you want N parallel workers across different slices or races, then one aggregated report. |
 | [`/interrogate`](../interrogate/SKILL.md) | you have a diff and want different models to try to break it, including a strict code-quality lens. |
 | [`/automate-me`](../automate-me/SKILL.md) | you want your own `-mode` skill, drafted from how you've actually worked. |
-| [`/make-bot-ui`](../make-bot-ui/SKILL.md) | you want a page or dashboard whose buttons wake a Grok Bot over a webhook, including the sender-key handoff and Tailscale. |
+| [`/make-bot-ui`](../make-bot-ui/SKILL.md) | you want a page or dashboard whose buttons run a Codex or Claude Code CLI task over an authenticated webhook, with server-held keys and optional Tailscale access. |
 | [`/setup-pstack`](../setup-pstack/SKILL.md) | you want to pick which models pstack uses per role. detects your models and writes a config rule. |
 | [`/reflect`](../reflect/SKILL.md) | a long task landed and you want the recipe captured as a skill edit. |
 | [`/correct`](../correct/SKILL.md) | you keep correcting agents for the same mistakes. mines history for mistake classes, fixes each at the highest level that works (architecture, then types, lint, and ci, then tests, with docs last), and keeps a table pairing each rule with what enforces it. |

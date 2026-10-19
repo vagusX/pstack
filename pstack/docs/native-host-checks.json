@@ -1,16 +1,18 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-19",
   "codex": {
-    "version": "0.157.1",
-    "new_session": "ephemeral/read-only",
-    "named_agents_invoked": false,
-    "native_delegation_ran": false,
-    "reason": "Native spawn tool does not expose registered custom-agent selector; general agents were not substituted."
+    "version": "0.161.0",
+    "new_session": "trusted project/read-only",
+    "named_agents_invoked": true,
+    "native_delegation_ran": true,
+    "personas_loaded_exactly": true,
+    "evidence": "native-agent-followup.json"
   },
   "claude_code": {
-    "version": "2.1.299",
+    "version": "2.1.300",
     "native_agent_definition_validation": "passed",
-    "live_invocation": "not logged in; isolated HOME, no user credentials imported"
+    "live_invocation": "passed; two registered subagent types completed",
+    "evidence": "native-agent-followup.json"
   },
-  "benny_external_tests": "not authorized or activated"
+  "benny_external_tests": "read-only Feishu intake only; user forbids all chat writes; no tasks activated"
 }

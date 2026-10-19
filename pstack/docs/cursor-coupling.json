@@ -372,7 +372,7 @@
       "44: SendToUser",
       "55: Store `{url, key}` in that UI's own directory. Buttons POST to this local server. The local server, not the browser, POSTs to the Grok Bot webhook."
     ],
-    "status": "not-adapted; archived original with explicit blocked entry"
+    "status": "adapted through project-local native CLI webhook executor; Tailscale access remains unverified"
   },
   {
     "source": "pstack/skills/no-comments/SKILL.md",

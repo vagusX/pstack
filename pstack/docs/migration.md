@@ -156,7 +156,7 @@ Upstream: `https://github.com/cursor/plugins` at `1e5c90a4b6f249917bd21fe361b3a2
 | `pstack/skills/swarm/SKILL.md` | `pstack/skills/swarm/SKILL.md` | host adaptation; full workflow retained (Make Bot UI original retained in its reference) | present; source hash recorded; static/test coverage in validation report |
 | `pstack/skills/tdd/SKILL.md` | `pstack/skills/tdd/SKILL.md` | preserve byte for byte | hash matches |
 | `pstack/skills/teach/SKILL.md` | `pstack/skills/teach/SKILL.md` | preserve byte for byte | hash matches |
-| `pstack/skills/technical-writing/SKILL.md` | `pstack/skills/technical-writing/SKILL.md` | preserve byte for byte | hash matches |
+| `pstack/skills/technical-writing/SKILL.md` | `pstack/skills/technical-writing/SKILL.md` | host adaptation; full workflow retained (Make Bot UI original retained in its reference) | present; source hash recorded; static/test coverage in validation report |
 | `pstack/skills/typescript-best-practices/SKILL.md` | `pstack/skills/typescript-best-practices/SKILL.md` | preserve byte for byte | hash matches |
 | `pstack/skills/typescript-best-practices/references/patterns.md` | `pstack/skills/typescript-best-practices/references/patterns.md` | preserve byte for byte | hash matches |
 | `pstack/skills/unslop/SKILL.md` | `pstack/skills/unslop/SKILL.md` | preserve byte for byte | hash matches |

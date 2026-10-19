@@ -1,0 +1,41 @@
+---
+workspace: /Users/bytedance/Projects/gh/pstack
+title: 完成 Codex 与 Claude Code 迁移
+created: 2026-10-19
+status: active
+---
+
+# 目标与验收清单
+
+基线：PR #3，提交 0a6242e891091009416760dc9db6bc37f8d28d89。用户要求完整迁移；不以文件存在、安装通过或静态检查替代真实工作流执行。
+
+- [x] 拉取并回读最新代码，工作区初始干净。
+- [x] 原始 169 个文件逐项映射，54 个技能的名称、业务流程、资源及调用策略保持完整。
+- [x] Codex 新会话实际加载并调用 poteto-agent、comment-sicko，记录任务与调用凭据。
+- [x] Claude Code 新会话实际加载并调用两份命名 agent，记录任务与调用凭据。
+- [ ] 为全部 54 个入口建立明确输入、行为断言和输出凭据，在两个宿主实际执行；失败项修复后重跑。
+- [ ] Make Bot UI 保留 UI、服务端密钥、认证 webhook、真实 agent 唤醒、事件解析、8 秒单次转发、失败日志及 Tailscale 流程，补实现并实际验证。
+- [ ] Benny 保留分类、可信线程标记、已有修复检查、两次复现、验证及有界修复顺序，实际验证触发、连接器、线程隔离及重启去重。
+- [ ] 安装矩阵、Bun/Python 测试、TypeScript 检查与来源哈希回读通过。
+- [ ] 按 OCR delegate 对所有新增修改复审，更新迁移/验证记录，提交推送并回读 PR。
+
+# 当前并行任务
+
+- review_setup：隔离环境中的命名 agent 实测；仅写 native_agents.py 与 native-agent-followup.json。
+- goal_audit：54 入口行为验收脚本与逐项运行凭据；仅写 workflow_acceptance.py 与 workflow-acceptance.json。
+- review_workflows：Make Bot UI 官方能力调研与最小等价实现建议，只读。
+- 主线程：整合实现、Benny 测试目标确认、来源清单、验收与发布。
+
+# 外部验收条件
+
+用户已提供飞书话题群，并明确要求只读、不得回复。已验证该群为 topic 模式且可读取。只验证真实读取与本地分类；真实发送、回复、建票、应用复现与自动触发保持未验证。内部群正文、群标识和个人信息不提交到公共仓库。不得启用群内写入或真实定时任务。
+
+# 本轮可回读结果
+
+- 命名 agent：两个宿主均实际调用两份 persona，见 `pstack/docs/native-agent-followup.json`。
+- 原生 webhook：两个宿主的真实 HTTP probe 与临时项目写入均已回读；另用浏览器实际点击并回读事件 `9801f29f-08c2-4e2d-9c30-d50b912da0bb`，状态 completed、退出码 0、实际响应 ignored，见 `pstack/docs/bot-ui-live-checks.json`。Tailscale 未装、未验。
+- 飞书只读：今日限定范围首次 10 份本地报告，第二次 0；没有发送、回复、反应或建票。公共仓库不保存内部正文与标识。
+- 入口行为：历史 8 个入口双宿主实跑；另外 46 个未跑。新文档规则的交付通过，但一次临时备份越出指定目录，记录为 partial 而非通过。
+- 回归：Python 34 项通过；Bun 68 项、246 断言通过。停服丢通知的新增回归在旧代码失败、修复代码通过。
+- 安装矩阵已终态通过全部 17 项，日志 `/tmp/pstack-full-matrix-final.log`。慢在 TypeScript 原生二进制下载，原进程正常推进，没有重启或换弱检查。
+- 本提交记录已审查的修复与当前验收快照。原则入口任务继续执行，后续结果另行提交；当前快照不代表全部入口通过。

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-19",
+  "source": "user-selected Feishu topic group; identifier and bodies withheld from public repository",
+  "start": "2026-10-19T00:00:00+08:00",
+  "first_run_new_reports": 10,
+  "repeat_run_new_reports": 0,
+  "state_sha256": "ffb0f70eaef1ec99aa97623d7d5c3c024f82d3c9caa72077882c87789fc49dce",
+  "external_operations": "read only; no sends, replies, reactions or tracker mutations",
+  "coverage": "time-scoped live intake and persisted deduplication; classification and external replies not verified"
+}

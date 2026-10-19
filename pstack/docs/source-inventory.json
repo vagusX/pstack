@@ -39,8 +39,8 @@
       "bytes": 25431,
       "mode": "0o644",
       "target": "pstack/skills/pstack-support/README.md",
-      "target_sha256": "7ad3303bcbc342e931d971b8557dc3949af85cdaa47b83857a558dda4e5d453d",
-      "target_bytes": 24779,
+      "target_sha256": "341aa550e195a8b432892267fe856be8e0268a9afd43ce0159f39dc3e2ab01a5",
+      "target_bytes": 24819,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -303,8 +303,8 @@
       "bytes": 7632,
       "mode": "0o644",
       "target": "pstack/skills/pstack-support/docs/guide/09-make-it-yours.md",
-      "target_sha256": "eca33490bab3feb0ed843a24f2fd0ad72494fdae4a8516bbd66f7de636fbd36d",
-      "target_bytes": 7592,
+      "target_sha256": "28ff74977910ed93f74c648150764babf5bad3161a182a4097302d2cae82fe15",
+      "target_bytes": 7697,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -699,8 +699,8 @@
       "bytes": 4649,
       "mode": "0o644",
       "target": "pstack/skills/make-bot-ui/SKILL.md",
-      "target_sha256": "cef8e2d5af85bd0189e19f1c9e544b72b16b7f4ded275b698038257f3efe829c",
-      "target_bytes": 1577,
+      "target_sha256": "fb69c2c96d1ce53392c98f5a198f9581ca3d9cc78f42589a588596662ec2930f",
+      "target_bytes": 3505,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -721,8 +721,8 @@
       "bytes": 13956,
       "mode": "0o644",
       "target": "pstack/skills/poteto-help/SKILL.md",
-      "target_sha256": "6bb05862e13127e02385401ee78158209630242c7a11b9ab7f162648d21baa7a",
-      "target_bytes": 14223,
+      "target_sha256": "b83df573b74500253e71ecf09957dea68949c185de0751bc70767135385480b7",
+      "target_bytes": 14432,
       "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
       "verification": "present; source hash recorded; static/test coverage in validation report"
     },
@@ -1678,10 +1678,10 @@
       "bytes": 9093,
       "mode": "0o644",
       "target": "pstack/skills/technical-writing/SKILL.md",
-      "target_sha256": "61fe9c424a798ebf36ad94941f87be049cb8827bdf86d21474a0dde37b513c43",
-      "target_bytes": 9093,
-      "decision": "preserve byte for byte",
-      "verification": "hash matches"
+      "target_sha256": "857a27d46158e14e2a395b2c4befca2d0995edd4646aa2b08e71dca49ad68262",
+      "target_bytes": 9386,
+      "decision": "host adaptation; full workflow retained (Make Bot UI original retained in its reference)",
+      "verification": "present; source hash recorded; static/test coverage in validation report"
     },
     {
       "source": "pstack/skills/typescript-best-practices/SKILL.md",

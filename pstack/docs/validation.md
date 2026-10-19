@@ -1,6 +1,6 @@
 # Host adaptation validation
 
-Validation window: 2026-10-14–15 (Asia/Shanghai). Tested source is the independent implementation checkout based on upstream `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`. This is a draft delivery, not a claim that all 54 workflows have run natively.
+Validation window: 2026-10-14–19 (Asia/Shanghai). Tested source is the independent implementation checkout based on upstream `1e5c90a4b6f249917bd21fe361b3a2a7deb741b8`. This is a draft delivery, not a claim that all 54 workflows have run natively.
 
 | Check | Evidence / result |
 | --- | --- |
@@ -12,10 +12,10 @@ Validation window: 2026-10-14–15 (Asia/Shanghai). Tested source is the indepen
 | Upstream tools | All 68 upstream Bun tests pass, 246 assertions across 5 files. Strict watch-pr TypeScript check passes from a private project runtime copy. |
 | Setup and simulated Benny recovery | 16 Python behavioral tests pass: initial preview/write, provenance, repeat mtimes, both host formats, upstream update, model/effort/permissions preserved, modified files, ambiguous ownership, reviewed hash adoption, pack merge, dual-host pack ownership, damaged metadata, precedence, marker trust/duplicates, restart reconciliation. |
 | Independent review | Two independent read-only agents examined code and exercised separate fixtures. Confirmed findings were fixed: adopted instruction loss, symlink cache escape, parent-path segment check, marker order, timestamp schema, stale automate/why assumptions, provenance guidance, cross-host pack receipt and duplicate marker. |
-| Codex native session | Codex CLI 0.157.1, a real fresh ephemeral read-only session. Project files and dependency instructions were read; native tool lacks a registered custom-agent selector. Neither named agent was invoked; no generic substitute. Actual named registration/loading and delegated workflows remain NOT VERIFIED due to this capability gap. |
-| Claude Code native format | Claude Code 2.1.299 plugin validate against the generated .claude/agents directory passes. Live invocation is unverified in the isolated environment; no user credentials imported. Syntax validation does not prove successful execution. |
+| Codex native session | Follow-up with CLI 0.161.0 in a trusted project invoked both registered names. SQLite agent roles, terminal rollouts and exact developer-instruction hashes confirm actual persona loading. The earlier untrusted fixture had not loaded project roles; it did not establish a host capability limit. See native-agent-followup.json. |
+| Claude Code native format | Follow-up with 2.1.300 used the native Agent tool with poteto-agent and comment-sicko subagent types; both completed with actual reads. See native-agent-followup.json. |
 | External automations | No tasks activated; no Slack/tracker/PR/app writes for Benny. Journal tests simulate duplicate delivery, trusted markers and restart recovery. Real event triggers, polling scheduling, connector tools and UI repro remain unverified until dedicated targets are authorized. |
-| Make Bot UI | Explicitly NOT ADAPTED in both hosts; original full source retained in a historical reference. No invented webhook/secret-request substitute. |
+| Make Bot UI | Project-local native CLI executor implemented. Both hosts passed actual HTTP-to-agent probe runs; event IDs, session IDs and result hashes are in bot-ui-live-checks.json. Tailscale is not installed and has not been tested. The historical Cursor source is retained. |
 
 ## Review follow-up, 2026-10-15
 
@@ -32,6 +32,22 @@ Benny setup and both prompt templates now accept the selected committed configur
 | Make Bot UI | Still not adapted. |
 
 File migration and the tested installation paths meet their checks. Complete native workflow migration remains unverified, with Make Bot UI still missing an implementation.
+
+## Native and webhook follow-up, 2026-10-19
+
+Both hosts completed actual registered-persona calls; see `native-agent-followup.json`. Codex project trust must be configured by the user before starting a new session. No model change, empty project config or simulated generic delegate is required.
+
+Make Bot UI now has an authenticated local receiver, durable events, native CLI execution, stored results and reviewed manual retry. Actual HTTP probes completed through Codex and Claude Code and returned exactly `ignored`. Both hosts also wrote and read back an exact project-local test artifact under explicit native permissions; see `bot-ui-live-checks.json`. Claude correctly denied the earlier untrusted-project write; the passed check used an explicitly authorized native tool launcher, not a permission bypass. Unit tests also exercise initialization, key permissions, Host/Origin checks, one-shot forwarding, concurrent retries and restart interruption. Tailscale access remains unverified. Real project-writing actions still require an explicitly scoped routine and native host permissions.
+
+`workflow-acceptance.json` tracks a scenario for every original entry, actual execution and independent observable checks separately. An executed scenario is not proof of every branch of a workflow; unrun entries remain unverified. A real help run found the public link root missing `skills/`; it was fixed and its new output checked.
+
+The user supplied a production Feishu topic group for read-only tests and explicitly forbids replies. The added Benny read-only adapter preserves native Feishu IDs, scopes intake by an optional start time, and stores reports plus dedup checkpoints privately. It cannot send messages or perform tracker/app actions. Real Slack/Benny trigger, reply, tracker and application-fix paths remain unverified. Internal group contents and identifiers are not distributed with this repository.
+
+## Local regression checks, 2026-10-19
+
+The follow-up content passed 34 Python tests with resource warnings treated as errors, 68 Bun tests with 246 assertions, and all 17 installation cases. Source mapping, target modes, original names and invocation policies were rechecked. Exact content and local evidence hashes are recorded in `migration-followup-checks.json`. The package test entry preinstalls its locked dependencies in the temporary project before timed test cases begin; slow downloads no longer consume a five-second CLI test budget.
+
+A deterministic shutdown test reproduced a lost condition notification in the old webhook worker. The worker now rechecks stopping while holding the condition; the old code fails that regression and the fix passes. The independent review findings and these fixes do not establish completion of all entry workflows.
 
 ## Per-entry coverage
 

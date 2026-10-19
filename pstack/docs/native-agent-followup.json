@@ -1,0 +1,268 @@
+{
+  "tested_at": "2026-10-19",
+  "source_commit": "0a6242e891091009416760dc9db6bc37f8d28d89",
+  "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/project",
+  "raw_logs": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0",
+  "results": {
+    "codex": {
+      "exit_code": 0,
+      "thread_id": "01a153b6-3346-7800-bfd1-96e6af1b61a8",
+      "delegation": [
+        {
+          "id": "item_1",
+          "type": "collab_tool_call",
+          "tool": "wait",
+          "sender_thread_id": "01a153b6-3346-7800-bfd1-96e6af1b61a8",
+          "receiver_thread_ids": [],
+          "prompt": null,
+          "agents_states": {},
+          "status": "completed"
+        },
+        {
+          "id": "item_2",
+          "type": "collab_tool_call",
+          "tool": "wait",
+          "sender_thread_id": "01a153b6-3346-7800-bfd1-96e6af1b61a8",
+          "receiver_thread_ids": [],
+          "prompt": null,
+          "agents_states": {},
+          "status": "completed"
+        }
+      ],
+      "messages": [
+        "I\u2019ll invoke the two registered agents with the exact scopes you specified, then wait for both results.",
+        "Both registered agents completed with `fork_turns: none`.\n\n- `poteto-agent`: Read the full skill; final heading: \u201cPlaybooks.\u201d Preflight: `status: ok`, exit code 0.\n- `comment-sicko`: Found redundant comment at `sample.py:2`: `# Return the value.`\n\nNo file edits or additional delegation."
+      ],
+      "agents": [
+        {
+          "id": "01a153b6-5d82-7b03-abd0-6fd5e811ea23",
+          "name": "poteto-agent",
+          "sandbox_policy": "{\"type\":\"managed\",\"file_system\":{\"type\":\"restricted\",\"entries\":[{\"path\":{\"type\":\"special\",\"value\":{\"kind\":\"root\"}},\"access\":\"read\"}]},\"network\":\"restricted\"}",
+          "approval_mode": "never",
+          "completed": true,
+          "persona_loaded_exactly": true,
+          "persona_sha256": "fbf239633d453bed892e02ba387ed6d81d4ef7183231d7433eaf3b842f987da6",
+          "tool_calls": [
+            {
+              "name": "exec",
+              "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/poteto-mode/SKILL.md\",max_output_tokens:30000}));\n"
+            },
+            {
+              "name": "exec",
+              "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/pstack-support/references/host-instructions.md\",max_output_tokens:20000}));\ntext(await tools.exec_command({cmd:\"/opt/homebrew/bin/python3.13 /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/project/.agents/skills/pstack-support/scripts/setup.py --host codex --project /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/project --check --require poteto-mode --skill-location /private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/project/.agents/skills/poteto-mode\",max_output_tokens:3000}));\n"
+            }
+          ],
+          "terminal": {
+            "type": "task_complete",
+            "turn_id": "01a153b6-5de3-7ae0-820b-79790b448713",
+            "last_agent_message": "The skill\u2019s final heading is \u201cPlaybooks.\u201d Read the full skill and host instructions. Preflight returned `status: ok` with exit code 0. No files edited or agents spawned.",
+            "started_at": 1792405822,
+            "completed_at": 1792405836,
+            "duration_ms": 13250,
+            "time_to_first_token_ms": 4086
+          }
+        },
+        {
+          "id": "01a153b6-69a4-7282-92f5-21699da51f73",
+          "name": "comment-sicko",
+          "sandbox_policy": "{\"type\":\"managed\",\"file_system\":{\"type\":\"restricted\",\"entries\":[{\"path\":{\"type\":\"special\",\"value\":{\"kind\":\"root\"}},\"access\":\"read\"}]},\"network\":\"restricted\"}",
+          "approval_mode": "never",
+          "completed": true,
+          "persona_loaded_exactly": true,
+          "persona_sha256": "e34fe45f9f1046a30009868ba062bc7f503a412e5830c27802731ee73d127b5b",
+          "tool_calls": [
+            {
+              "name": "exec",
+              "input": "text(await tools.exec_command({cmd:\"cat sample.py\",\"max_output_tokens\":1000}));\n"
+            }
+          ],
+          "terminal": {
+            "type": "task_complete",
+            "turn_id": "01a153b6-69e8-7c30-a09d-cc09664f16c7",
+            "last_agent_message": "Finding: `sample.py:2` \u2014 `# Return the value.` redundantly narrates `identity`\u2019s return statement.\n\nTouched files: none. Deletions: 0. MUST KILL flags: none. Skips: none. Terminal status: complete.",
+            "started_at": 1792405826,
+            "completed_at": 1792405834,
+            "duration_ms": 8096,
+            "time_to_first_token_ms": 4686
+          }
+        }
+      ],
+      "status": "passed",
+      "command": [
+        "codex",
+        "exec",
+        "--ignore-rules",
+        "--json",
+        "-s",
+        "read-only",
+        "-C",
+        "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/project"
+      ],
+      "version": "codex-cli 0.161.0"
+    },
+    "claude-code": {
+      "exit_code": 0,
+      "session_id": "f1b5aee2-54d0-430c-a3c1-3264a5a417b3",
+      "agents": [
+        {
+          "name": "poteto-agent",
+          "id": "a47f107b4cd6193dd",
+          "run_id": "0mvf41jv8-27def581",
+          "background": true,
+          "completed": true
+        },
+        {
+          "name": "comment-sicko",
+          "id": "a1feb30d1a658c44f",
+          "run_id": "0mvf41lmv-ece6dcb2",
+          "background": false,
+          "completed": true
+        }
+      ],
+      "permission_mode": "dontAsk",
+      "tools": [
+        "Task",
+        "Bash",
+        "Read"
+      ],
+      "registered_agents": [
+        "claude",
+        "comment-sicko",
+        "Explore",
+        "general-purpose",
+        "Plan",
+        "poteto-agent",
+        "statusline-setup"
+      ],
+      "terminal_results": [
+        {
+          "is_error": false,
+          "subagent_stats": {
+            "spawned": 2,
+            "requested": {
+              "background": 0,
+              "foreground": 2,
+              "unset": 0
+            },
+            "started_in_background": 1,
+            "max_depth": 1,
+            "spawned_by_subagents": 0,
+            "completed": 2,
+            "failed": 0,
+            "killed": {
+              "parent": 0,
+              "user": 0,
+              "system": 0
+            },
+            "refused": {
+              "depth_limit": 0,
+              "concurrency_limit": 0,
+              "budget": 0
+            },
+            "by_type": {
+              "poteto-agent": 1,
+              "comment-sicko": 1
+            }
+          },
+          "permission_denials": [],
+          "result": "The comment-sicko agent has finished. The poteto-agent is still running in the background, even though I asked for it to run in the foreground. I'll give you the combined report once it finishes.\n\n**comment-sicko result** (registered `comment-sicko` type, no edits):\n- **Agent ID:** `a1feb30d1a658c44f`\n- **Redundant comment:** `sample.py:2`: `# Return the value.`\n- **Why it's redundant:** it repeats `return value` on line 3 and adds nothing the function name `identity` doesn't already say. None of the reasons to keep a comment apply.\n\n**poteto-agent** (registered `poteto-agent` type): still running. Its heading report, preflight output and ID will come once it finishes. I won't guess at them before then."
+        },
+        {
+          "is_error": false,
+          "subagent_stats": {
+            "spawned": 2,
+            "requested": {
+              "background": 0,
+              "foreground": 2,
+              "unset": 0
+            },
+            "started_in_background": 1,
+            "max_depth": 1,
+            "spawned_by_subagents": 0,
+            "completed": 2,
+            "failed": 0,
+            "killed": {
+              "parent": 0,
+              "user": 0,
+              "system": 0
+            },
+            "refused": {
+              "depth_limit": 0,
+              "concurrency_limit": 0,
+              "budget": 0
+            },
+            "by_type": {
+              "poteto-agent": 1,
+              "comment-sicko": 1
+            }
+          },
+          "permission_denials": [],
+          "result": "Both named agents ran to completion. Neither was replaced by a generic agent, neither made edits, and the poteto-agent didn't start any further agents.\n\n**poteto-agent** (registered `poteto-agent` type)\n- **Agent ID:** I can't give you this one. The launch message marked its ID as internal and said not to show it to you. I relaunched nothing, so there is no second ID to report either.\n- **SKILL.md:** read in full, all 153 lines. The last heading is `## Playbooks` at line 124.\n- **Preflight:** passed. Exit code 0, output:\n  `{\"source_commit\": \"1e5c90a4b6f249917bd21fe361b3a2a7deb741b8\", \"support\": \".../.claude/skills/pstack-support\", \"status\": \"ok\"}`\n- **Gap:** the command you gave leaves out `--skill-location <invoking skill directory>`, which `CLAUDE.md` asks for. So this check doesn't confirm that the poteto-mode copy the agent read is the one the support script uses. To check that too, add `--skill-location .../.claude/skills/poteto-mode`.\n\n**comment-sicko** (registered `comment-sicko` type)\n- **Agent ID:** `a1feb30d1a658c44f`\n- **Result:** the redundant comment is `sample.py:2`, `# Return the value.` It only repeats `return value` on line 3.\n\nBoth agents ran on the same model as this session, since I set no model override. Their tool permissions weren't limited, so \"read-only\" here was an instruction to them, not something enforced."
+        }
+      ],
+      "status": "passed",
+      "command": [
+        "claude",
+        "--print",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--no-session-persistence",
+        "--setting-sources",
+        "project,local",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-native-wjjg13f0/empty-mcp.json",
+        "--permission-mode",
+        "dontAsk",
+        "--permission-prompts",
+        "none",
+        "--allowedTools",
+        "Agent,Read,Bash",
+        "--tools",
+        "Agent,Read,Bash"
+      ],
+      "version": "2.1.300"
+    }
+  },
+  "limits": [
+    "Claude Agent/Read/Bash allowed: report-only is an instruction, not an isolated read-only sandbox.",
+    "Evidence uses the isolated 0a6242e fixture. Current personas match that tested baseline exactly."
+  ],
+  "codex_discovery": {
+    "source_version": "rust-v0.161.0",
+    "selector_condition": "tools/spec_plan.rs:1329 and :1417 expose_agent_type is true when config.agent_roles is nonempty",
+    "selector_resolution": "tools/handlers/multi_agents_v2/spawn.rs:125-139 resolves agent_type as role; task_name only names the child at :153",
+    "discovery": "agent-roles/src/loader.rs:35-78 discovers agents under each active config layer",
+    "trusted_project_test": "CLI -c trust override and --ignore-user-config yielded empty roles. Isolated CODEX_HOME with persisted project trust loaded registered roles.",
+    "empty_project_config_required": false,
+    "without_project_config": {
+      "thread_id": "01a15488-f71f-7642-b61e-f41cc3c3e0ae",
+      "result": "Actual spawn schema still exposed agent_type with both registered names after removing .codex/config.toml.",
+      "exit_code": 0
+    },
+    "sources": [
+      "https://github.com/openai/codex/blob/rust-v0.161.0/codex-rs/core/src/tools/spec_plan.rs#L1329",
+      "https://github.com/openai/codex/blob/rust-v0.161.0/codex-rs/core/src/tools/handlers/multi_agents_v2/spawn.rs#L125",
+      "https://github.com/openai/codex/blob/rust-v0.161.0/codex-rs/agent-roles/src/loader.rs#L35"
+    ]
+  },
+  "persona_baseline": {
+    "poteto-agent": {
+      "current_persona_equals_tested": true,
+      "developer_instructions_sha256": "fbf239633d453bed892e02ba387ed6d81d4ef7183231d7433eaf3b842f987da6",
+      "claude_registered_file_sha256": "0817eb196fe477a3d347b92bffc3efdd384394bb3506a7639608401e3a9a9c53"
+    },
+    "comment-sicko": {
+      "current_persona_equals_tested": true,
+      "developer_instructions_sha256": "e34fe45f9f1046a30009868ba062bc7f503a412e5830c27802731ee73d127b5b",
+      "claude_registered_file_sha256": "99d4ca31e5c7f8dbdef1b38f0d18be15de12e68081a0d7189ce2c815edc8e690"
+    }
+  },
+  "harness_validation": {
+    "syntax": "AST parse passed",
+    "help": "--help exit 0",
+    "end_to_end": "Not rerun: manual native sequence already proves all four named agents; first harness attempt stopped on a concurrent manifest update before any model call.",
+    "configuration": "Temporary CODEX_HOME config contains only fixture project trust; auth uses existing login via symlink; no global configuration edits and no project config required."
+  }
+}
