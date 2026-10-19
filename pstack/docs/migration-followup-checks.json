@@ -81,7 +81,7 @@
     "scope": "Fixture seed only; native removal-before-addition acceptance is running separately. Earlier missing-seed scenario remains partial."
   },
   "documentation_followup": {
-    "current_manifest_sha256": "7811c140dafabc0674c8379b718b238bd53ceb368b8793ac45200e73a9ce900c",
-    "change": "Host instructions document existing Codex protected-path behavior and native approval; no runtime or permission configuration changed. Earlier test results retain their original manifest hash."
+    "current_manifest_sha256": "3549a9e1bc97464008b7d1374256f302a2ade28eb57b5ae5d17370a261f462e7",
+    "change": "Host instructions document protected paths and prohibit retrying a denied write through another tool on both hosts. No runtime or active permission configuration changed. Earlier tests retain their original manifest hash."
   }
 }

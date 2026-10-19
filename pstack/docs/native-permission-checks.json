@@ -1,0 +1,34 @@
+{
+  "scope": "Native Codex sandbox command checks in a synthetic local fixture; not a model workflow or production permission change",
+  "cli_version": "0.161.0",
+  "official_sources": [
+    "https://learn.chatgpt.com/docs/permissions",
+    "https://learn.chatgpt.com/docs/agent-approvals-security#protected-paths-in-writable-roots"
+  ],
+  "default_workspace_results": {
+    ".agents/skills/verify-notes": "write denied",
+    ".agents/skills/sibling": "write denied",
+    ".codex": "write denied",
+    ".git": "write denied",
+    ".aws": "write denied"
+  },
+  "explicit_path_rules_results": {
+    ".agents/skills/verify-notes": "write allowed",
+    ".agents/skills/sibling": "write denied",
+    ".codex": "write denied",
+    ".git": "write denied",
+    ".aws": "write denied"
+  },
+  "config_scope": "Temporary isolated CODEX_HOME only; explicit read rules for .agents, .codex, .git, .aws and write for one synthetic verification directory",
+  "evidence": [
+    {
+      "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-protected-path-check-ukhob641/result.json",
+      "sha256": "cdbbdec0bae53472d4fbfb143106f0c91affba284d29628d4d76f202186dfec3"
+    },
+    {
+      "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-protected-path-check-ukhob641/explicit-protections-result.json",
+      "sha256": "93f27dac2b764c196b3c7f55cc287ecea0464a568301f7683bf80a7033eb7856"
+    }
+  ],
+  "limitation": "An inheritance-only custom profile did not preserve the tested protected paths on this client; it was rejected as an acceptance configuration. Only the five listed paths were checked. No global configuration or active workflow permissions were changed."
+}
