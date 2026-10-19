@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-19",
+  "baseline_commit": "0a6242e891091009416760dc9db6bc37f8d28d89",
+  "tested_content": "Migration test snapshot identified by the manifest SHA below; later documentation and prompt changes are recorded separately.",
+  "manifest_sha256": "95b0c817671c683d9d4c526359dcff1f3f7494e694e64b3688ba6006c0887dbb",
+  "python": {
+    "tests": 34,
+    "resource_warning_is_error": true,
+    "log": "/tmp/pstack-full-python-final.log",
+    "log_sha256": "ff6dc38d995b25b03a996131e34a836dce7f8082e0c7fbc762a0a08718a04495"
+  },
+  "bun": {
+    "tests": 68,
+    "assertions": 246,
+    "log": "/tmp/pstack-full-bun-final.log",
+    "log_sha256": "dfe5e7de2f26fedc7ae3ba96a18d9053735f6cb0d634df3a4415aac46133eef8"
+  },
+  "installation_matrix": {
+    "rows": 17,
+    "evidence": "/tmp/pstack-full-matrix-final.json",
+    "sha256": "251f5c33cb91fafe25ae31a04222261a02da8a8bf791191baae7010e805f7c88"
+  },
+  "original_files": 169,
+  "original_skill_names_and_invocation_policies": 54,
+  "manual_codex_controls": 53,
+  "goal_status": "incomplete; remaining entry workflows and external integration coverage still pending",
+  "typescript": {
+    "compiler": "7.0.2",
+    "strict_checks": 2,
+    "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-typechecks-gjmhoklj/result.json",
+    "sha256": "c9eaefc5f7cf5fefd12c9a87c8907dcaefde517da9fab9d62886ff832c15d44a",
+    "dependencies": "Exact versions from bun.lock, copied from existing local Bun cache; installed skill unchanged",
+    "results": [
+      {
+        "command": [
+          "/Users/bytedance/.bun/install/cache/@typescript/typescript-darwin-arm64@7.0.2@@@1/lib/tsc",
+          "--project",
+          "watch-pr/tsconfig.json",
+          "--noEmit",
+          "--strict"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/Users/bytedance/.bun/install/cache/@typescript/typescript-darwin-arm64@7.0.2@@@1/lib/tsc",
+          "--noEmit",
+          "--strict",
+          "--target",
+          "esnext",
+          "--module",
+          "preserve",
+          "--moduleResolution",
+          "bundler",
+          "--allowImportingTsExtensions",
+          "--types",
+          "bun-types",
+          "test.ts",
+          "bootstrap.ts"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ]
+  },
+  "subtract_fixture_check": {
+    "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-subtract-seed-qw3u1zcz/seed-check.json",
+    "sha256": "ceeeb419246b60d4458e30a3b9d341b0ad4a7e93b1a7284e9717d5fd854a7636",
+    "checks": {
+      "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-subtract-seed-qw3u1zcz/codex/principle-subtract-before-you-add",
+      "baseline_commit": "11fd68e01e3972150f64fb9a91e02136da246f41",
+      "unused_function_present": true,
+      "stale_readme_reference_present": true,
+      "committed_baseline_matches": true,
+      "existing_cli_output": "apple\nzebra\n",
+      "app_sha256": "4915e26c61dd35c5f2e939da631382937689342633a2ae63a17faf26c7b8ebc7"
+    },
+    "scope": "Fixture seed only; native removal-before-addition acceptance is running separately. Earlier missing-seed scenario remains partial."
+  },
+  "documentation_followup": {
+    "current_manifest_sha256": "b5c2305103d4c582e4b42500f25d4c26b40ce6879b93ccaba785889706fad7e7",
+    "change": "Host instructions document protected paths and prohibit denied-write tool switching; technical-writing keeps observed user-facing limitations in the document. Runtime code is unchanged from the earlier test snapshot; new prompt behavior has separate native follow-up reports."
+  },
+  "entry_execution_coverage": {
+    "report": "pstack/docs/workflow-acceptance.json",
+    "sha256": "0ea0b4e553431dd452f4cb592825db0e2d2fdb43da20433710dd3ac50a5083c5",
+    "entries": 54,
+    "native_runs": 108,
+    "accepted_scenarios": 78,
+    "partial_blocked_or_failed": 30,
+    "full_goal_verified": false
+  }
+}

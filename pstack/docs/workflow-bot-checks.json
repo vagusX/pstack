@@ -1,0 +1,202 @@
+{
+  "scope": "Independent inspection of this two-host Make Bot UI scenario, plus a separately authorized exact-permission Claude supplement",
+  "overall_status": "partial: Codex default sandbox blocks loopback bind",
+  "source_snapshot": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-64sqebtp/skill-source",
+  "source_skill_sha256": "fb69c2c96d1ce53392c98f5a198f9581ca3d9cc78f42589a588596662ec2930f",
+  "source_helper_sha256": "0b7e56cd07f358299f3cc6ccb6d85b9dca74379f29b69b0af7f1c484ffe82422",
+  "runner_report": "/tmp/pstack-bot-workflows.json",
+  "runner_report_sha256": "f8bd5140645a61d14ed6701c6b1846b93c737fd015db9bd471e014f5e76dd296",
+  "main_workflow_report_modified": false,
+  "external_messages_or_service_writes_authorized": false,
+  "hosts": {
+    "codex": {
+      "native_session_id": "01a154cd-5836-7080-a77c-366997d9d2d9",
+      "native_status": "executed",
+      "events_sha256": "6eb469ef9c3fdd5b455f4b1275c585c4afdd7290391bc45872412e00a65e92b3",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-64sqebtp/codex/make-bot-ui",
+      "helper_unchanged_from_frozen_source": true,
+      "durable_native_records": [],
+      "key_files_mode_0600": true,
+      "key_contents_read_by_independent_checker": false,
+      "eight_second_one_shot_implementation_preserved": true,
+      "actual_slow_receiver_timeout_tested": false,
+      "status": "blocked",
+      "reason": "Default workspace-write sandbox rejected loopback bind; no server or native event chain completed",
+      "block_evidence": [
+        {
+          "event_line": 24,
+          "tool_id": "item_11",
+          "exit_code": 1,
+          "command_sha256": "f2a308d8d47ae4fccbb995afad78535f2c19cba33e861b16c5b20f55612159ca"
+        }
+      ],
+      "durable_event_count": 0,
+      "checks": {
+        "actual_loopback_permission_denial_observed": true,
+        "no_false_success_from_intake": true
+      }
+    },
+    "claude-code": {
+      "native_session_id": "e7044e5e-5e8d-4720-8dbe-af4a0cec8d67",
+      "native_status": "executed",
+      "events_sha256": "97129bc18c2e5affc6d377486abea62132ff75d18ae6b3a61ec2049d1ccd2313",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-64sqebtp/claude-code/make-bot-ui",
+      "helper_unchanged_from_frozen_source": true,
+      "durable_native_records": [
+        {
+          "event_id": "ce667b41-fc1f-4664-9b7e-d73915307885",
+          "body_digest": "d4984ecf3bf456d92c50991a5b45627dfe5a2d6bdcc0dfb6a8235e8620c5d812",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "0098247e-ad31-4750-a990-72bf9262980c",
+          "business_output": "ignored",
+          "event_result_sha256": "ff8b02fba68ea83d7e3072827bc71db28e47c0939acf33a99ef4c9445e15c03b"
+        },
+        {
+          "event_id": "54eab3c8-b790-44f2-a87c-baa5e9c9b007",
+          "body_digest": "72b8c82aeaa1b10b73e0603421d738fbe4d6db7ea115ff4f196797304d056c5c",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "48a46153-fea0-465e-b54e-9f3ee2d8009c",
+          "business_output": "The event body matched the allowed `list_notes` action, but the required command could not be executed.\n\nThe Bash tool call for `python3 app.py list` was denied by the host's permission mode. The routine permits no other command and no workaround, so no note list was produced.\n\nTo complete this action, Bash permission for that single command must be granted in the host session.",
+          "event_result_sha256": "1025774a243c2bac52c70390b50c6f9fe04e5a19185610f00d01fe381a393c39"
+        },
+        {
+          "event_id": "ca5709a0-813c-4feb-a5ba-fbe4c226df09",
+          "body_digest": "72b8c82aeaa1b10b73e0603421d738fbe4d6db7ea115ff4f196797304d056c5c",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "0ce9bb7c-5fee-4815-a002-1079ae1b0344",
+          "business_output": "apple\nzebra",
+          "event_result_sha256": "29647d348c7693996e5f0daa6010d982564a9b2e3182b5eaf3e44c78e52ed4ff"
+        },
+        {
+          "event_id": "edef3e85-e32c-4533-8fe5-2c988ff86911",
+          "body_digest": "d4984ecf3bf456d92c50991a5b45627dfe5a2d6bdcc0dfb6a8235e8620c5d812",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "faeeb89c-ff84-44b9-a274-70ea75e5e486",
+          "business_output": "ignored",
+          "event_result_sha256": "7b3fba497fab916389afc188269425a69e5ca4a6b80ca52558a1c72bb0ec144e"
+        },
+        {
+          "event_id": "22617916-0fbd-426b-82ff-9480f9622126",
+          "body_digest": "72b8c82aeaa1b10b73e0603421d738fbe4d6db7ea115ff4f196797304d056c5c",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "fd7083bf-9845-46ce-8962-9ea75d6a1423",
+          "business_output": "apple\nzebra",
+          "event_result_sha256": "3fafdf69ec191d2ead2951e8b481d2c2b562a7cbaaa468843cd1fd9fd51e95d3"
+        },
+        {
+          "event_id": "1dc63cf2-d09c-49bc-890f-f5b23817c5ae",
+          "body_digest": "d4984ecf3bf456d92c50991a5b45627dfe5a2d6bdcc0dfb6a8235e8620c5d812",
+          "body_digest_matches": true,
+          "state": "completed",
+          "native_exit": 0,
+          "native_session_id": "72b3ca58-7812-43dd-b465-b4301d2d7b69",
+          "business_output": "ignored",
+          "event_result_sha256": "b144ef58d1c5322f76c4bdccf80ae98e4328a3eea5fa79653d63ca58df557073"
+        }
+      ],
+      "key_files_mode_0600": true,
+      "key_contents_read_by_independent_checker": false,
+      "eight_second_one_shot_implementation_preserved": true,
+      "actual_slow_receiver_timeout_tested": false,
+      "status": "passed_local_read_routine_scope_with_initial_denial_retained",
+      "checks": {
+        "actual_browser_probe_completed": true,
+        "actual_browser_list_matches_native_business_output": true,
+        "initial_bash_denial_retained": true,
+        "invalid_auth_rejected_without_new_event": true,
+        "duplicate_delivery_single_row_and_real_native_result": true,
+        "conflicting_body_rejected": true,
+        "real_running_and_queued_before_restart": true,
+        "queued_event_completed_after_restart": true,
+        "running_event_interrupted_without_automatic_replay": true,
+        "explicit_retry_after_effect_review_completed": true,
+        "no_direct_sql_fabrication_of_event_states": true,
+        "notes_unchanged_during_restart_test": true
+      },
+      "initial_denied_event_id": "54eab3c8-b790-44f2-a87c-baa5e9c9b007",
+      "read_routine_success_event_id": "ca5709a0-813c-4feb-a5ba-fbe4c226df09",
+      "business_routine_change": "The original Bash action was denied. A later new event used a revised read-only routine that reads notes.json; this does not prove the denied Bash action worked.",
+      "restart_scope": "Actual running CLI/server killed and queued event retained, then real restart/retry; independent checker read tool commands, native output and SQLite state.",
+      "restart_tool_event_lines": [
+        127,
+        140
+      ],
+      "evidence_sha256": {
+        "bot-evidence/drive.mjs": "36d1054ad026ab64c0c8466bcdb0e38de7f0632bcc70079c97c3cebee429f727",
+        "bot-evidence/probe_server.py": "40b6e4a6338bb2f282f3377689ecfe1477580ae19787d671911df693645f525d",
+        "bot-evidence/02-probe-browser.json": "72cb5eda5c12a143c47dbd9d4328b8d699d52acd1c8fb683d79e65cd944d88e4",
+        "bot-evidence/05-auth-duplicate.json": "4d5ea2546a1d91d78c2683d1f9c94e3bcf90aea8324179ff9ff1456be2e9426a",
+        "bot-evidence/03-list-browser.json": "1730456ab800565e09230c50e1693d7a93b96fab3c2b328ec33717faa23de37b",
+        "bot-evidence/08-one-shot.txt": "659c9f5b3992e1c8a5e19e8c00ca13ec8a44457dd4a1395f1ef427b05b631687",
+        "bot-evidence/06-restart.log": "5b2e97883e11860954c990297e79fc8eb0555370a3f642bd68e14da1a3919fe0",
+        "bot-evidence/04-list-browser.json": "9deb9f820333b794f1298553843be47bfcf8478885befbba6880a98791cd0d58"
+      },
+      "foreground_server_cleanup_check": {
+        "ports_connection_refused": {
+          "18787": true,
+          "18788": true
+        },
+        "event_line": 153
+      }
+    }
+  },
+  "not_tested": [
+    "Tailscale installation, login and peer reachability",
+    "actual eight-second forwarding timeout against a slow receiver",
+    "public exposure or external services"
+  ],
+  "historical_evidence_reference": {
+    "path": "pstack/docs/bot-ui-live-checks.json",
+    "sha256": "c247e17f69e43083cee223fcafa7bea07ce4c8059f72f133b9ebcda1ada60e0b",
+    "counted_as_this_scenario": false
+  },
+  "exact_permission_supplement": {
+    "scope": "Separate new exact-permission fixture; does not erase the default-run denial",
+    "fixture": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-exact-rbxgqnhl/project",
+    "native_permission": "Only Bash(python3 app.py list), set before the new invocation in project settings and exact --allowedTools; --tools Bash; dontAsk retained; empty MCP",
+    "session_id": "5a820674-138e-4e97-b9c1-ab506ea2f757",
+    "event_id": "fccd9a5b-c790-4669-94bd-44a2c9abdaaa",
+    "body_digest": "72b8c82aeaa1b10b73e0603421d738fbe4d6db7ea115ff4f196797304d056c5c",
+    "state": "completed",
+    "native_exit": 0,
+    "business_output": "apple\nzebra",
+    "checks": {
+      "actual_browser_clicked": true,
+      "native_business_output_matches": true,
+      "browser_displays_actual_business_output": true,
+      "notes_unchanged": true,
+      "invalid_auth_rejected": true,
+      "identical_delivery_reuses_native_result": true,
+      "conflicting_body_rejected": true,
+      "completed_result_survives_real_server_restart": true,
+      "only_one_durable_event": true,
+      "key_file_mode_0600": true
+    },
+    "restart_scope": "Completed event persistence and duplicate-delivery result reuse; not running/queued crash replay",
+    "not_tested": [
+      "Tailscale",
+      "interrupted native effects reconciliation",
+      "eight-second timeout failure under a slow local receiver"
+    ],
+    "artifacts_sha256": {
+      "browser-result.json": "047cf131dd259e105ac6bb46ea734fa33b40506f95cdef507a9f219a53f339cb",
+      "drive.mjs": "3448dcd30ff6efbab4c1ec99953598f93bb2cd853080bd16b3ab9bbed3faaff0",
+      "project/claude-exact.py": "00a3f386dc894cb31e28370225cb0e90a24e1632134a9aff70c9b97f1ecc6f26",
+      "project/.claude/settings.local.json": "b7fa47a935c7deb8ddb6b73542f36e26aefb50a2e926e49a00ac337f6febe44a"
+    },
+    "report_path": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-exact-rbxgqnhl/supplement.json",
+    "report_sha256": "d9e9906acc234875363009bebde27ede3108b6a39b9f3b9a565a905fc48893bc",
+    "counted_as_default_run": false,
+    "foreground_server_stopped": true
+  }
+}

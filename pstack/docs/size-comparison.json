@@ -1,0 +1,37 @@
+{
+  "main": {
+    "files": 936,
+    "bytes": 6495568,
+    "skill_directories": 0
+  },
+  "main_pstack": {
+    "files": 169,
+    "bytes": 3485346
+  },
+  "origin/feat/codex-integration": {
+    "files": 560,
+    "bytes": 8782600,
+    "skill_directories": 55
+  },
+  "legacy_published_skills": {
+    "files": 267,
+    "bytes": 824323
+  },
+  "working_pstack": {
+    "files": 241,
+    "bytes": 3819992,
+    "shared_pack_instances": 1
+  },
+  "staged_diff_no_renames": {
+    "marketplace_scope": {
+      "files": 766,
+      "added_lines": 19,
+      "deleted_lines": 38857
+    },
+    "pstack_adaptation": {
+      "files": 184,
+      "added_lines": 7999,
+      "deleted_lines": 3436
+    }
+  }
+}

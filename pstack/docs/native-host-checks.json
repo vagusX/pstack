@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "codex": {
+    "version": "0.161.0",
+    "new_session": "trusted project/read-only",
+    "named_agents_invoked": true,
+    "native_delegation_ran": true,
+    "personas_loaded_exactly": true,
+    "evidence": "native-agent-followup.json"
+  },
+  "claude_code": {
+    "version": "2.1.300",
+    "native_agent_definition_validation": "passed",
+    "live_invocation": "passed; two registered subagent types completed",
+    "evidence": "native-agent-followup.json"
+  },
+  "benny_external_tests": "read-only Feishu intake only; user forbids all chat writes; no tasks activated"
+}

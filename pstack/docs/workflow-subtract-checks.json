@@ -1,0 +1,518 @@
+{
+  "scope": "Two native sessions on the corrected real legacy fixture; independent tool-order and local CLI checks only",
+  "runner_report": "/tmp/pstack-subtract-workflows.json",
+  "runner_report_sha256": "0054545eeca4b4b38a4cbe9169e70a0b770f0548be5206caf54b687a9eea56ef",
+  "skill_sha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f",
+  "old_batch_results_modified": false,
+  "external_writes_authorized": false,
+  "hosts": {
+    "codex": {
+      "status": "passed_local_scope",
+      "session_id": "01a154c8-2de3-7993-bb8a-329fa613cfef",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-l_2o_bgw/codex/principle-subtract-before-you-add",
+      "baseline_commit": "b86b5377360293250b7cb9a16cc309f38b0bc35c",
+      "checks": {
+        "real_baseline_has_unused_function": true,
+        "real_baseline_has_stale_reference": true,
+        "removal_before_addition_in_distinct_tool_calls": true,
+        "no_same_edit_removal_and_addition": true,
+        "intermediate_tree_has_no_legacy_or_rename": true,
+        "intermediate_list_add_contract_unchanged": true,
+        "final_list_add_contract_unchanged": true,
+        "final_legacy_removed": true,
+        "rename_real_cli_works": true
+      },
+      "ordering_evidence": {
+        "removal": {
+          "line": 14,
+          "id": "item_6",
+          "exit_code": 128,
+          "command_sha256": "6177220433cd69dd16b285b79349f1461ac7f96637b153ad7b3df02abacb0cde"
+        },
+        "addition": {
+          "line": 21,
+          "id": "item_10",
+          "exit_code": 0,
+          "command_sha256": "c13fd2c68d0236f8fd659c113663e28dd4a796108ded8d52c26779efb472f7bb"
+        },
+        "intermediate_source": "native pre-addition snapshot evidence/03-subtracted-app.py",
+        "intermediate_sha256": {
+          "evidence/03-subtracted-app.py": "1466294b94bc57f63cd043e8805dc33dc60661df92c9aeaa18a5a9fa5a061de8",
+          "evidence/03-subtracted-README.md": "27c501e4da314db5f47f56779cbd27903a3a1a899ff0ce1058b43e8d3a8bd8f0"
+        },
+        "codex_local_commit_attempt_denied_without_permission_bypass": true
+      },
+      "cli_evidence": {
+        "baseline": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          }
+        },
+        "after_removal": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          }
+        },
+        "after_addition": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "pear",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "mang\npear\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "pear",
+              "mang"
+            ]
+          }
+        }
+      },
+      "events_sha256": "5340bc0179a3768fd16bc71c82d95998ff92cbafc4e46d454673de19efc8f723",
+      "final_artifact_sha256": {
+        "app.py": "5370d53a3cf76a6c591c24857dc1d3609e2df435f87982fccccbbfbed931ddc0",
+        "README.md": "5a72d6e071c65644b4cc7f1d54f341d5fbd73ce533fe18986e9447dd359a5f4c"
+      },
+      "limitation": "Existing add truncation is deliberately preserved and observed; this check does not assert that truncation is desirable."
+    },
+    "claude-code": {
+      "status": "passed_local_scope",
+      "session_id": "5b1f13ad-d09a-4464-be60-fa844312505f",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-l_2o_bgw/claude-code/principle-subtract-before-you-add",
+      "baseline_commit": "a6705d29e7d7fdd8178c665c9cfd8607311e3d84",
+      "checks": {
+        "real_baseline_has_unused_function": true,
+        "real_baseline_has_stale_reference": true,
+        "removal_before_addition_in_distinct_tool_calls": true,
+        "no_same_edit_removal_and_addition": true,
+        "intermediate_tree_has_no_legacy_or_rename": true,
+        "intermediate_list_add_contract_unchanged": true,
+        "final_list_add_contract_unchanged": true,
+        "final_legacy_removed": true,
+        "rename_real_cli_works": true
+      },
+      "ordering_evidence": {
+        "removal": {
+          "line": 28,
+          "id": "toolu_01GVXQ4QBBERS567pmndDc22",
+          "name": "Bash",
+          "success": true,
+          "command_sha256": "1c26d4629cf157110c140cb6665908ce36935bad9d0658a5622f55f859a31e57"
+        },
+        "addition": {
+          "line": 50,
+          "id": "toolu_0148d3GcvE93W699mmgBkfdf",
+          "name": "Edit",
+          "success": true,
+          "command_sha256": "9345f3b5d06252bebe264405db05ec9356cd5de6b3956ba982caacc62dca2dc6"
+        },
+        "intermediate_source": "committed subtraction tree 78799c0df950e345883318abd79e7ebfba9083ec",
+        "intermediate_sha256": {
+          "app.py": "e7b93d5f4e48f5f7e6bd91cdca4c54704c65a3751297cec02ed0078426c3a8f4",
+          "README.md": "7bbb2336864be068d1258cc09706413810d0bda84a98ff5bd98d29b6106eb3b4"
+        },
+        "codex_local_commit_attempt_denied_without_permission_bypass": false
+      },
+      "cli_evidence": {
+        "baseline": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          }
+        },
+        "after_removal": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          }
+        },
+        "after_addition": {
+          "list": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple"
+            ]
+          },
+          "add": {
+            "argv": [
+              "add",
+              "mango"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "list_after_add": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "apple\nmang\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "apple",
+              "mang"
+            ]
+          },
+          "rename": {
+            "argv": [
+              "rename",
+              "apple",
+              "pear"
+            ],
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "pear",
+              "mang"
+            ]
+          },
+          "list_after_rename": {
+            "argv": [
+              "list"
+            ],
+            "exit_code": 0,
+            "stdout": "mang\npear\nzebra\n",
+            "stderr": "",
+            "notes": [
+              "zebra",
+              "pear",
+              "mang"
+            ]
+          }
+        }
+      },
+      "events_sha256": "2363e6f69325361d12a5e812bed4610fa94c3585eac286cdb38dfeaf3cc8a644",
+      "final_artifact_sha256": {
+        "app.py": "1633f34da421b303bc3760eb4e4c0e81dba5de5070d2ff7231641dd6a09a2a78",
+        "README.md": "dec543a19bac4f7d3fd92a297281915a934c40b3c584166978ff0b5589c0ad5b"
+      },
+      "limitation": "Existing add truncation is deliberately preserved and observed; this check does not assert that truncation is desirable."
+    }
+  }
+}

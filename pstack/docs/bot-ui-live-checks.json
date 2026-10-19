@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19",
+  "path": "HTTP actions -> authenticated local receiver -> durable event -> native CLI -> saved result",
+  "results": [
+    {
+      "host": "codex",
+      "event_id": "7eeec76d-0cad-47a4-844e-cc0fb25b899d",
+      "state": "completed",
+      "native_exit": 0,
+      "session_id": "01a1548c-1003-7db3-b505-3d2b4e40ba4f",
+      "actual_response": "ignored",
+      "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-live-oskd10q5/codex/final.json",
+      "sha256": "0b1428d7363450cafb20ace61587a93186235f9ca09606ed16b51059e64af4d9"
+    },
+    {
+      "host": "claude-code",
+      "event_id": "45724758-ea7c-415f-b55a-ba96c8d06c46",
+      "state": "completed",
+      "native_exit": 0,
+      "session_id": "51ce2620-37c7-4303-b98a-98d132fbc624",
+      "actual_response": "ignored",
+      "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-live-oskd10q5/claude-code/final.json",
+      "sha256": "0b3173b4e62e05c9aef9ea78af7a526faec396e553c92aaf46cfe8ce85a12d83"
+    }
+  ],
+  "tailscale": "not installed; not verified",
+  "scope": "Harmless probe plus explicitly authorized artifact write in disposable projects; no external actions.",
+  "project_action_checks": [
+    {
+      "host": "codex",
+      "event_id": "33722dec-d13f-4363-965a-f88dbb9d2e73",
+      "state": "completed",
+      "native_exit": 0,
+      "artifact_matches": true,
+      "artifact_sha256": "8953b09e8d32968b3aed3f9c978aa309bf6d5c40084c6b9c4d0e239ee3a070ef",
+      "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-action-rmx1aubc/codex/final.json",
+      "evidence_sha256": "f006e7db8068f930c12b30769fa2bfbe98ff90b4d945de3d1f8d11e2af1de15b",
+      "permissions": "Explicit runtime sandbox_mode=workspace-write for the disposable project"
+    },
+    {
+      "host": "claude-code",
+      "event_id": "a2863ddb-843c-4d79-a5e2-6ceaaeb3ba45",
+      "state": "completed",
+      "native_exit": 0,
+      "artifact_matches": true,
+      "artifact_sha256": "9f2a11fb1f0c049ad5556c5257effb1fef71374a3d18a1ce8a69b47c90f79646",
+      "evidence": "/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-bot-action-fx5bzjr0/claude-code/final.json",
+      "evidence_sha256": "dbdf4a5990e197eed52f83260f8d6186391f296c2eebd7c26b208667f22dbbb9",
+      "permissions": "Explicit native --allowedTools Read,Write,Edit in fixture launcher. Default dontAsk correctly denied the earlier untrusted-project write; that failed action is not counted as passed."
+    }
+  ],
+  "browser_check": {
+    "host": "codex",
+    "interaction": "Actual browser clicks: Run harmless probe, then Read result",
+    "event_id": "9801f29f-08c2-4e2d-9c30-d50b912da0bb",
+    "session_id": "01a154b1-951b-7802-a0d1-48105b7bdf7e",
+    "state": "completed",
+    "native_exit": 0,
+    "actual_response": "ignored",
+    "evidence": "/tmp/pstack-bot-browser-result.json",
+    "evidence_sha256": "60e0b1841079db2d8392eff93241fbb694a68009643e35cc4a7a8c2c0efb3dbc",
+    "screenshot": "/tmp/pstack-bot-browser-proof.png",
+    "screenshot_sha256": "4a963a03fd1a007b6d3ac97ae3cdbf54a0b1eec9e644919bab839c6333611160",
+    "scope": "Local browser and receiver only; no external messages. Native CLI emitted plugin/MCP initialization warnings, retained in private evidence."
+  }
+}

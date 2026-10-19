@@ -31,6 +31,10 @@ A doc can obey every layer and still read machine-written: every sentence clippe
 
 One document, one mode. Two questions pick it: does the content inform action (doing) or understanding (thinking), and does it serve learning or work?
 
+When delivering a document file, put only the requested document in that file. Keep verification logs, editing notes and explanations of the rules outside it, unless the user asks to include them. Running the documented commands does not turn their captured output into part of the document.
+
+Keep user-facing prerequisites, observed limitations and warnings in the document, before the affected step. They are part of the instructions, not verification notes.
+
 - Action + learning: **tutorial**.
 - Action + work: **how-to**.
 - Understanding + work: **reference**.

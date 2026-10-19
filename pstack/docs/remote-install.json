@@ -1,0 +1,17 @@
+{
+  "source": "https://github.com/vagusX/pstack/tree/16c9d599c6ff7825a3e75878f90822f1c781c682",
+  "skills_count": 55,
+  "hosts": {
+    "codex": {
+      "source_commit": "16c9d599c6ff7825a3e75878f90822f1c781c682",
+      "benny_pack_verified": true
+    },
+    "claude-code": {
+      "source_commit": "16c9d599c6ff7825a3e75878f90822f1c781c682",
+      "benny_pack_verified": true
+    }
+  },
+  "installed_hashes_unchanged": true,
+  "source_commit_from_installer_lock": true,
+  "global_user_config_changed": false
+}

@@ -1,0 +1,40 @@
+{
+  "source": "https://github.com/vagusX/pstack/tree/4c892bb9f86e484aa8e9eba0407b88e0730b78aa",
+  "source_commit": "4c892bb9f86e484aa8e9eba0407b88e0730b78aa",
+  "skills_cli": "1.7.2",
+  "hosts": {
+    "codex": {
+      "skills_count": 55,
+      "all_manifest_hashes_match": true,
+      "setup_and_benny_copy_exit_zero": true,
+      "installed_tree_unchanged": true,
+      "source_commit_from_installer_lock": true
+    },
+    "claude-code": {
+      "skills_count": 55,
+      "all_manifest_hashes_match": true,
+      "setup_and_benny_copy_exit_zero": true,
+      "installed_tree_unchanged": true,
+      "source_commit_from_installer_lock": true
+    }
+  },
+  "global_user_config_changed": false,
+  "artifact_root": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-current-remote-install-r509xaqh",
+  "manifest_sha256": "b5c2305103d4c582e4b42500f25d4c26b40ce6879b93ccaba785889706fad7e7",
+  "scope": "Remote immutable full-copy installation for both hosts and setup/Benny readback; native workflow tests are separate",
+  "setup_receipts": {
+    "codex": {
+      "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-current-remote-install-r509xaqh/project/.pstack/setup-codex.json",
+      "sha256": "4650712aedbc10b71cbb0eb04c93e922670919ac6e1ed48bdbfbc977207510d8",
+      "source_commit": "4c892bb9f86e484aa8e9eba0407b88e0730b78aa",
+      "manifest_matches": true
+    },
+    "claude-code": {
+      "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-current-remote-install-r509xaqh/project/.pstack/setup-claude-code.json",
+      "sha256": "dc730c11abde3227dcad9af27c1f93bf2a56f54ca4762ec60bd859078a8b7ac4",
+      "source_commit": "4c892bb9f86e484aa8e9eba0407b88e0730b78aa",
+      "manifest_matches": true
+    }
+  },
+  "installer_lock_sha256": "f4b33c5458abaf6e98d1a548ae2c115129f123236323b7dc30d9d9ca44d77b19"
+}

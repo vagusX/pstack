@@ -1,10 +1,12 @@
 import { setTimeout as delay } from "node:timers/promises";
-import {
-  Command,
+import { loadCommander } from "../bootstrap.ts";
+const {
+  Command: CommanderCommand,
   CommanderError,
   InvalidArgumentError,
   Option,
-} from "commander";
+} = await loadCommander();
+type Command = InstanceType<typeof CommanderCommand>;
 import {
   GhGitHubReader,
   WatcherQueryError,
@@ -83,7 +85,7 @@ export function parseArgs(
   argv: readonly string[],
   io: Pick<CliRuntime, "stdout" | "stderr">
 ): CliOptions {
-  const program = new Command("watch-pr")
+  const program = new CommanderCommand("watch-pr")
     .description(
       "Watch one pull request, a connected stack, or an immutable queued stack.\nJSON (NDJSON while polling) is the default; --pretty renders human text."
     )

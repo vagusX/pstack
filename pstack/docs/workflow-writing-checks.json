@@ -1,0 +1,237 @@
+{
+  "scope": "New targeted technical-writing runs using the latest source snapshot and project-local TMPDIR; previous results are not replaced",
+  "runner_report": "/tmp/pstack-writing-workflows.json",
+  "runner_report_sha256": "6945e8bdc8e16ef87cae7476f73d4b9de5a6e52784c6c4e44f215fe8649ca02b",
+  "skill_source_sha256": "857a27d46158e14e2a395b2c4befca2d0995edd4646aa2b08e71dca49ad68262",
+  "main_workflow_report_modified": false,
+  "history_replaced": false,
+  "hosts": {
+    "codex": {
+      "status": "partial",
+      "session_id": "01a154da-6cec-7021-8d74-4ac86f3378f9",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/codex/technical-writing",
+      "execution_environment": {
+        "global_configuration_changed": false,
+        "temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/codex/technical-writing/.pstack/acceptance-tmp",
+        "codex_home": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/codex/technical-writing-codex-home",
+        "project_trust": "trusted",
+        "auth_handling": "Existing auth.json symlink only; contents not copied or logged."
+      },
+      "events_sha256": "5c8ffb20b8bb82913870c974599c13a007e3b4acff5ef02ebe73a51752e9b320",
+      "document_sha256": "cb00eff7d146c68aee1468511eceb0df5f3e8df8efbd47a6b13036cf6198c159",
+      "checks": {
+        "native_execution_completed": true,
+        "source_skill_unchanged": true,
+        "final_contains_only_how_to_document": true,
+        "documented_add_and_list_present": true,
+        "all_documented_commands_executed_exit_zero": true,
+        "no_invented_flags": true,
+        "source_app_draft_readme_and_notes_unchanged": true,
+        "model_tool_write_targets_within_project": true,
+        "known_title_truncation_disclosed_in_document": false,
+        "native_actual_cli_execution_observed": true,
+        "final_how_to_written_by_native_tool": true
+      },
+      "gaps": [
+        "The host measured Buy milk becoming Buy mil, but result.txt says add a note with your title without stating that add drops its last character. The limitation appears only outside the requested document."
+      ],
+      "native_cli_event_lines": [
+        14
+      ],
+      "document_write_event_lines": [
+        20
+      ],
+      "model_tool_write_targets": [
+        {
+          "event_line": 14,
+          "path": "notes-before-verification.json",
+          "within_project": true
+        },
+        {
+          "event_line": 14,
+          "path": "command-evidence.json",
+          "within_project": true
+        },
+        {
+          "event_line": 20,
+          "path": "result.txt",
+          "within_project": true
+        },
+        {
+          "event_line": 23,
+          "path": "notes-after-verification.json",
+          "within_project": true
+        },
+        {
+          "event_line": 23,
+          "path": "notes.json",
+          "within_project": true
+        },
+        {
+          "event_line": 23,
+          "path": "writing-review.txt",
+          "within_project": true
+        },
+        {
+          "event_line": 25,
+          "path": "native-delegate-result.json",
+          "within_project": true
+        }
+      ],
+      "outside_write_evidence": [],
+      "source_files_changed": [],
+      "independent_command_evidence": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/codex/technical-writing/.pstack/acceptance-tmp/independent-doc-ibpvhiy8/actual-commands.json",
+      "independent_command_evidence_sha256": "ceae2e4f11c6563f72d5d25f27dd3a022fb5827500a38409fcb43a6cf75302d0",
+      "actual_documented_commands": [
+        {
+          "documented_command": "python3 app.py add \"Buy milk\"",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "Buy milk"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Buy mil"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py list",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "list"
+          ],
+          "exit_code": 0,
+          "stdout": "Buy mil\napple\nzebra\n",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "Buy mil"
+          ]
+        }
+      ],
+      "document_review": "Only how-to text, commands and expected-output examples. No verification log, editing commentary or writing-rule description appears in result.txt."
+    },
+    "claude-code": {
+      "status": "partial",
+      "session_id": "2bb3c18f-06ff-443a-8c04-016cf8f45ad5",
+      "native_status": "executed",
+      "fixture": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/claude-code/technical-writing",
+      "execution_environment": {
+        "global_configuration_changed": false,
+        "temporary_directory": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/claude-code/technical-writing/.pstack/acceptance-tmp"
+      },
+      "events_sha256": "582218867e414bc4ac999a78e12b7354872840049446f15b2b7e188404c6fa0c",
+      "document_sha256": "a8f3e5ae52c7b3c3bfd3435f08f641db071804528461d639666cd34a38af1754",
+      "checks": {
+        "native_execution_completed": true,
+        "source_skill_unchanged": true,
+        "final_contains_only_how_to_document": true,
+        "documented_add_and_list_present": true,
+        "all_documented_commands_executed_exit_zero": true,
+        "no_invented_flags": true,
+        "source_app_draft_readme_and_notes_unchanged": true,
+        "model_tool_write_targets_within_project": false,
+        "known_title_truncation_disclosed_in_document": true,
+        "native_actual_cli_execution_observed": true,
+        "final_how_to_written_by_native_tool": true
+      },
+      "gaps": [
+        "Native tool successfully wrote a hard-coded /tmp backup despite project-local TMPDIR. This is a scope failure in this new run, not inherited historical evidence."
+      ],
+      "native_cli_event_lines": [
+        20
+      ],
+      "document_write_event_lines": [
+        43
+      ],
+      "model_tool_write_targets": [
+        {
+          "event_line": 20,
+          "path": "/tmp/notes.json.bak.tw",
+          "within_project": false
+        },
+        {
+          "event_line": 43,
+          "path": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/claude-code/technical-writing/result.txt",
+          "within_project": true
+        }
+      ],
+      "outside_write_evidence": [
+        {
+          "event_line": 20,
+          "path": "/tmp/notes.json.bak.tw",
+          "exists_after_run": true,
+          "tool_success_output_event_line": 21
+        }
+      ],
+      "source_files_changed": [],
+      "independent_command_evidence": "/private/var/folders/nz/8s3wl4rj7kg6hxc1dms3gr780000gn/T/pstack-workflow-acceptance-fsid3v7x/claude-code/technical-writing/.pstack/acceptance-tmp/independent-doc-46yz0i4j/actual-commands.json",
+      "independent_command_evidence_sha256": "8420a2f1c145c2c97acdb75d368e2a80e686dc147b08bb5f811b8086d0c3affb",
+      "actual_documented_commands": [
+        {
+          "documented_command": "python3 app.py add groceries",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "groceries"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "grocerie"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py add TITLE",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "add",
+            "acceptance-doc-note"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "grocerie",
+            "acceptance-doc-not"
+          ]
+        },
+        {
+          "documented_command": "python3 app.py list",
+          "executed_argv": [
+            "/opt/homebrew/bin/python3",
+            "app.py",
+            "list"
+          ],
+          "exit_code": 0,
+          "stdout": "acceptance-doc-not\napple\ngrocerie\nzebra\n",
+          "stderr": "",
+          "notes_after": [
+            "zebra",
+            "apple",
+            "grocerie",
+            "acceptance-doc-not"
+          ]
+        }
+      ],
+      "document_review": "Only how-to text, commands and expected-output examples. No verification log, editing commentary or writing-rule description appears in result.txt."
+    }
+  },
+  "external_writes_authorized": false
+}
