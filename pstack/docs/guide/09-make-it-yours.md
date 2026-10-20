@@ -97,4 +97,8 @@ One situational skill is for Grok Bot users. [`/make-bot-ui`](../../skills/make-
 
 **Pitfall:** don't edit a skill mid-task because it's misbehaving. Fix it in its own PR and keep the task moving. A skill edit that ships tangled into feature work is invisible to review and impossible to evaluate.
 
+## Check your source checkout for upstream changes
+
+Use [`/check-upstream`](../../skills/check-upstream/SKILL.md) in a pstack source checkout with `origin` pointing to your repository and `upstream` pointing to `cursor/plugins`. It fetches upstream `main` and reports commits missing from your local `main`, including the affected files. Checking leaves your local branches and working files unchanged. Ask it to prepare an update PR when you want to import those changes.
+
 Next: [Recipes and pitfalls](./10-recipes-and-pitfalls.md).

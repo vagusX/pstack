@@ -154,6 +154,7 @@ to keep [`/poteto-mode`](./skills/poteto-mode/SKILL.md) on across turns, pick it
 | [`/unslop`](./skills/unslop/SKILL.md) | you're cleaning up writing. removes AI tells. |
 | [`/bro`](./skills/bro/SKILL.md) | you want the last message restated in plain human language, no jargon. |
 | [`/technical-writing`](./skills/technical-writing/SKILL.md) | layered doc standard (Diátaxis + Google developer style + STE + Global English) for docs, RFCs, readmes, PR descriptions, commit messages. |
+| [`/check-upstream`](./skills/check-upstream/SKILL.md) | you're maintaining a pstack source checkout. checks upstream commits and file changes; prepares an update PR when requested. |
 
 </details>
 
